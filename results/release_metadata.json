@@ -1,0 +1,33 @@
+{
+  "artifact": "HealthRouter",
+  "pipeline": {
+    "edges": [
+      ["input", "index"],
+      ["index", "router"],
+      ["router", "route_trace"],
+      ["index", "classification"],
+      ["index", "segmentation"],
+      ["classification", "prediction"],
+      ["segmentation", "prediction"],
+      ["route_trace", "audit"],
+      ["prediction", "audit"]
+    ],
+    "nodes": [
+      {"id": "input", "label": "Restricted\nbenchmark\nimages", "type": "data"},
+      {"id": "index", "label": "Local split counts\n+ targeted duplicate\naudit", "type": "processing"},
+      {"id": "router", "label": "Five-way ConvNeXt\ngate evaluation", "type": "model"},
+      {"id": "route_trace", "label": "Reference / predicted\nroute trace", "type": "processing"},
+      {"id": "classification", "label": "Frozen encoder probe\nor ConvNeXt specialist", "type": "model"},
+      {"id": "segmentation", "label": "Supplied segmentation\ncheckpoint", "type": "model"},
+      {"id": "prediction", "label": "Task score, grade,\nor pixel mask", "type": "processing"},
+      {"id": "audit", "label": "Separate JSON ledgers +\nitem-bootstrap CIs", "type": "algorithm"}
+    ],
+    "type_labels": {
+      "algorithm": "Evaluation algorithm",
+      "data": "Data artifact",
+      "model": "Model/checkpoint",
+      "processing": "Processing/output"
+    }
+  },
+  "provenance": "release_metadata"
+}

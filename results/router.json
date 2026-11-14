@@ -1,0 +1,215 @@
+{
+  "classes": [
+    "chest_xray",
+    "endoscopy",
+    "pathology",
+    "fundus",
+    "mammography"
+  ],
+  "corruption_ablations": {
+    "blur": {
+      "ci_high": 0.99733,
+      "ci_low": 0.98267,
+      "correct": 743,
+      "n": 750,
+      "value": 0.99067
+    },
+    "grayscale": {
+      "ci_high": 0.9,
+      "ci_low": 0.85333,
+      "correct": 658,
+      "n": 750,
+      "value": 0.87733
+    },
+    "low_resolution": {
+      "ci_high": 0.996,
+      "ci_low": 0.98133,
+      "correct": 742,
+      "n": 750,
+      "value": 0.98933
+    }
+  },
+  "data_scale_ablation": {
+    "10": {
+      "mean": 0.98267,
+      "replicates": [
+        0.98667,
+        0.98533,
+        0.98267,
+        0.98667,
+        0.972
+      ],
+      "std": 0.00553
+    },
+    "100": {
+      "mean": 0.992,
+      "replicates": [
+        0.992,
+        0.992,
+        0.99333,
+        0.992,
+        0.99067
+      ],
+      "std": 0.00084
+    },
+    "200": {
+      "mean": 0.99387,
+      "replicates": [
+        0.99333,
+        0.99467,
+        0.99333,
+        0.992,
+        0.996
+      ],
+      "std": 0.00136
+    },
+    "25": {
+      "mean": 0.9912,
+      "replicates": [
+        0.99467,
+        0.99067,
+        0.98933,
+        0.992,
+        0.98933
+      ],
+      "std": 0.002
+    },
+    "400": {
+      "mean": 0.996,
+      "replicates": [
+        0.996,
+        0.996,
+        0.996,
+        0.996,
+        0.996
+      ],
+      "std": 0.0
+    },
+    "50": {
+      "mean": 0.99253,
+      "replicates": [
+        0.99067,
+        0.992,
+        0.99333,
+        0.99333,
+        0.99333
+      ],
+      "std": 0.00107
+    }
+  },
+  "frozen_imagenet_router_external": {
+    "ci_high": 1.0,
+    "ci_low": 0.99067,
+    "correct": 747,
+    "n": 750,
+    "value": 0.996
+  },
+  "frozen_imagenet_router_in_source": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "correct": 500,
+    "n": 500,
+    "value": 1.0
+  },
+  "in_source": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "correct": 500,
+    "n": 500,
+    "value": 1.0
+  },
+  "in_source_after_exact_dedup": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "correct": 499,
+    "n": 499,
+    "value": 1.0
+  },
+  "in_source_cross_split_duplicates": 1,
+  "provenance": "run",
+  "route_trace": [
+    {
+      "confidence": 0.99924,
+      "file": "MCUCXR_0001_0.png",
+      "predicted_route": "chest_xray",
+      "true_route": "chest_xray"
+    },
+    {
+      "confidence": 0.99761,
+      "file": "481.png",
+      "predicted_route": "endoscopy",
+      "true_route": "endoscopy"
+    },
+    {
+      "confidence": 0.99707,
+      "file": "294.png",
+      "predicted_route": "endoscopy",
+      "true_route": "endoscopy"
+    },
+    {
+      "confidence": 0.99558,
+      "file": "509.png",
+      "predicted_route": "endoscopy",
+      "true_route": "endoscopy"
+    },
+    {
+      "confidence": 0.98488,
+      "file": "80.png",
+      "predicted_route": "endoscopy",
+      "true_route": "endoscopy"
+    }
+  ],
+  "runtime_seconds": 270.83,
+  "seed": 0,
+  "simple_feature_baseline_external": {
+    "ci_high": 0.61867,
+    "ci_low": 0.54667,
+    "correct": 437,
+    "n": 750,
+    "value": 0.58267
+  },
+  "simple_feature_baseline_in_source": {
+    "ci_high": 0.998,
+    "ci_low": 0.984,
+    "correct": 496,
+    "n": 500,
+    "value": 0.992
+  },
+  "simple_feature_data_scale": {
+    "10": {
+      "mean": 0.568,
+      "std": 0.08034
+    },
+    "100": {
+      "mean": 0.59573,
+      "std": 0.0268
+    },
+    "200": {
+      "mean": 0.6216,
+      "std": 0.02409
+    },
+    "25": {
+      "mean": 0.58453,
+      "std": 0.02533
+    },
+    "400": {
+      "mean": 0.58347,
+      "std": 0.00275
+    },
+    "50": {
+      "mean": 0.62267,
+      "std": 0.05503
+    }
+  },
+  "unseen_institution_two_modalities": {
+    "ci_high": 1.0,
+    "ci_low": 0.996,
+    "correct": 749,
+    "n": 750,
+    "value": 0.99867
+  },
+  "unseen_source_counts": {
+    "chest_xray": 138,
+    "endoscopy": 612
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "imagenet_convnext_probe": {
+    "fold_aurocs": [
+      0.88904,
+      0.90356,
+      0.86429,
+      0.95729,
+      0.88955
+    ],
+    "fold_mean": 0.90075,
+    "fold_std": 0.03097,
+    "oof": {
+      "ci_high": 0.92345,
+      "ci_low": 0.876,
+      "value": 0.90007
+    }
+  },
+  "n_folds": 5,
+  "n_images": 662,
+  "paired_oof_auroc_difference": {
+    "ci_high": 0.10347,
+    "ci_low": 0.05845,
+    "value": 0.08029
+  },
+  "protocol": "paired five-fold out-of-fold evaluation",
+  "provenance": "run",
+  "rad_dino_probe": {
+    "fold_aurocs": [
+      0.97727,
+      0.9876,
+      0.97887,
+      0.9876,
+      0.97658
+    ],
+    "fold_mean": 0.98159,
+    "fold_std": 0.00497,
+    "oof": {
+      "ci_high": 0.98774,
+      "ci_low": 0.97196,
+      "value": 0.98036
+    }
+  },
+  "rad_dino_revision": "110cbc18d5133582e320b43d53bf5c44e410c936",
+  "runtime_seconds": 166.65
+}

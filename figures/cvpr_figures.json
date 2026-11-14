@@ -1,0 +1,18 @@
+[
+  {
+    "file": "figures/figure_1_teaser.pdf",
+    "caption_draft": "teaser"
+  },
+  {
+    "file": "figures/lane_skill_supervised.pdf",
+    "caption_draft": "per-lane retained skill, supervised gate"
+  },
+  {
+    "file": "figures/matched_grid_224.pdf",
+    "caption_draft": "matched grid at 224px"
+  },
+  {
+    "file": "figures/matched_grid_448.pdf",
+    "caption_draft": "matched grid at 448px"
+  }
+]

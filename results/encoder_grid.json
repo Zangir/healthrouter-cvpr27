@@ -1,0 +1,325 @@
+{
+  "architecture_control": "dinov2_base",
+  "best_package_by_domain": {
+    "chest_xray": "rad_dino",
+    "fundus": "imagenet_convnext",
+    "mammography": "imagenet_convnext",
+    "pathology": "dinov2_large"
+  },
+  "distinct_winning_packages": 3,
+  "domains": {
+    "chest_xray": {
+      "best_package": "rad_dino",
+      "metric": "auroc",
+      "n_items": 662,
+      "packages": {
+        "dinov2_base": {
+          "fold_mean": 0.90489,
+          "fold_scores": [
+            0.88792,
+            0.91825,
+            0.89162,
+            0.91068,
+            0.91596
+          ],
+          "fold_std": 0.01264,
+          "oof_score": 0.90345,
+          "parameters_millions": 86.6
+        },
+        "dinov2_large": {
+          "fold_mean": 0.90181,
+          "fold_scores": [
+            0.88859,
+            0.9132,
+            0.88037,
+            0.93617,
+            0.8907
+          ],
+          "fold_std": 0.02034,
+          "oof_score": 0.8985,
+          "parameters_millions": 304.4
+        },
+        "imagenet_convnext": {
+          "fold_mean": 0.90075,
+          "fold_scores": [
+            0.88904,
+            0.90356,
+            0.86429,
+            0.95729,
+            0.88955
+          ],
+          "fold_std": 0.03097,
+          "oof_score": 0.90007,
+          "parameters_millions": 28.6
+        },
+        "rad_dino": {
+          "fold_mean": 0.98159,
+          "fold_scores": [
+            0.97727,
+            0.9876,
+            0.97887,
+            0.9876,
+            0.97658
+          ],
+          "fold_std": 0.00497,
+          "oof_score": 0.98036,
+          "parameters_millions": 86.6
+        }
+      },
+      "paired_contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.01273,
+          "ci_low": -0.02279,
+          "value": -0.00495
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": 0.09905,
+          "ci_low": 0.05676,
+          "value": 0.07692
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": 0.10347,
+          "ci_low": 0.05845,
+          "value": 0.08029
+        }
+      },
+      "pool": "Shenzhen, all images"
+    },
+    "fundus": {
+      "best_package": "imagenet_convnext",
+      "metric": "qwk",
+      "n_items": 562,
+      "packages": {
+        "dinov2_base": {
+          "fold_mean": 0.81572,
+          "fold_scores": [
+            0.7891,
+            0.81769,
+            0.84848,
+            0.76211,
+            0.8612
+          ],
+          "fold_std": 0.03669,
+          "oof_score": 0.81582,
+          "parameters_millions": 86.6
+        },
+        "dinov2_large": {
+          "fold_mean": 0.82443,
+          "fold_scores": [
+            0.80815,
+            0.84965,
+            0.83099,
+            0.77957,
+            0.85379
+          ],
+          "fold_std": 0.02764,
+          "oof_score": 0.82478,
+          "parameters_millions": 304.4
+        },
+        "imagenet_convnext": {
+          "fold_mean": 0.85543,
+          "fold_scores": [
+            0.8635,
+            0.90121,
+            0.81449,
+            0.85804,
+            0.83989
+          ],
+          "fold_std": 0.02858,
+          "oof_score": 0.85701,
+          "parameters_millions": 28.6
+        },
+        "rad_dino": {
+          "fold_mean": 0.73734,
+          "fold_scores": [
+            0.74925,
+            0.8064,
+            0.65034,
+            0.72298,
+            0.75775
+          ],
+          "fold_std": 0.05119,
+          "oof_score": 0.73675,
+          "parameters_millions": 86.6
+        }
+      },
+      "paired_contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.04769,
+          "ci_low": -0.02889,
+          "value": 0.00896
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": -0.02461,
+          "ci_low": -0.1344,
+          "value": -0.07907
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": -0.06763,
+          "ci_low": -0.17414,
+          "value": -0.12026
+        }
+      },
+      "pool": "APTOS mirror holdout, exact-deduplicated"
+    },
+    "mammography": {
+      "best_package": "imagenet_convnext",
+      "metric": "auroc",
+      "n_items": 614,
+      "packages": {
+        "dinov2_base": {
+          "fold_mean": 0.61575,
+          "fold_scores": [
+            0.59054,
+            0.61671,
+            0.61959,
+            0.61867,
+            0.63321
+          ],
+          "fold_std": 0.01389,
+          "oof_score": 0.61305,
+          "parameters_millions": 86.6
+        },
+        "dinov2_large": {
+          "fold_mean": 0.60246,
+          "fold_scores": [
+            0.59784,
+            0.66685,
+            0.57849,
+            0.55046,
+            0.61867
+          ],
+          "fold_std": 0.03926,
+          "oof_score": 0.60192,
+          "parameters_millions": 304.4
+        },
+        "imagenet_convnext": {
+          "fold_mean": 0.69018,
+          "fold_scores": [
+            0.67703,
+            0.71753,
+            0.64452,
+            0.69835,
+            0.71345
+          ],
+          "fold_std": 0.02689,
+          "oof_score": 0.69154,
+          "parameters_millions": 28.6
+        },
+        "rad_dino": {
+          "fold_mean": 0.59849,
+          "fold_scores": [
+            0.56676,
+            0.61836,
+            0.57137,
+            0.66732,
+            0.56863
+          ],
+          "fold_std": 0.03941,
+          "oof_score": 0.59488,
+          "parameters_millions": 86.6
+        }
+      },
+      "paired_contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.0433,
+          "ci_low": -0.06484,
+          "value": -0.01113
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": 0.04061,
+          "ci_low": -0.07735,
+          "value": -0.01817
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": -0.04539,
+          "ci_low": -0.14739,
+          "value": -0.09665
+        }
+      },
+      "pool": "CBIS-DDSM local mirror test, exact-deduplicated"
+    },
+    "pathology": {
+      "best_package": "dinov2_large",
+      "metric": "auroc",
+      "n_items": 2000,
+      "packages": {
+        "dinov2_base": {
+          "fold_mean": 0.93367,
+          "fold_scores": [
+            0.93835,
+            0.92025,
+            0.93432,
+            0.93525,
+            0.9402
+          ],
+          "fold_std": 0.00704,
+          "oof_score": 0.93351,
+          "parameters_millions": 86.6
+        },
+        "dinov2_large": {
+          "fold_mean": 0.95262,
+          "fold_scores": [
+            0.9681,
+            0.9435,
+            0.9537,
+            0.93917,
+            0.95862
+          ],
+          "fold_std": 0.0104,
+          "oof_score": 0.9525,
+          "parameters_millions": 304.4
+        },
+        "imagenet_convnext": {
+          "fold_mean": 0.94676,
+          "fold_scores": [
+            0.9635,
+            0.942,
+            0.94068,
+            0.94503,
+            0.9426
+          ],
+          "fold_std": 0.00849,
+          "oof_score": 0.94672,
+          "parameters_millions": 28.6
+        },
+        "rad_dino": {
+          "fold_mean": 0.90243,
+          "fold_scores": [
+            0.90475,
+            0.88265,
+            0.90637,
+            0.90115,
+            0.91722
+          ],
+          "fold_std": 0.01125,
+          "oof_score": 0.90207,
+          "parameters_millions": 86.6
+        }
+      },
+      "paired_contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.0285,
+          "ci_low": 0.00977,
+          "value": 0.01898
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": -0.0186,
+          "ci_low": -0.04412,
+          "value": -0.03145
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": -0.03395,
+          "ci_low": -0.05568,
+          "value": -0.04466
+        }
+      },
+      "pool": "PatchCamelyon official test, balanced 2000-patch subsample"
+    }
+  },
+  "protocol": "shared seed-42 five-fold logistic probe; only the frozen representation package changes",
+  "provenance": "run",
+  "rad_dino_revision": "110cbc18d5133582e320b43d53bf5c44e410c936",
+  "reference_package": "imagenet_convnext",
+  "runtime_seconds": 938.39
+}

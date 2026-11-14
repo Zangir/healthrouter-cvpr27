@@ -1,0 +1,106 @@
+{
+  "axes": [
+    "independent_experts",
+    "heterogeneous_outputs",
+    "held_out_source_routing",
+    "route_error_cost_measured"
+  ],
+  "evidence_basis": "verified litreview abstracts and method notes for each cited key (litreview/papers/*.json)",
+  "mark_semantics": {
+    "0": "not reported in the cited work",
+    "0.5": "partial",
+    "1": "yes"
+  },
+  "rows": [
+    {
+      "basis": "router trained inside a shared instruction-tuned VLM; all lanes emit text",
+      "bibkey": "jiang2024med",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0,
+      "independent_experts": 0,
+      "route_error_cost_measured": 0,
+      "system": "Med-MoE",
+      "title": "Med-MoE: Mixture of Domain-Specific Experts for Lightweight Medical Vision-Language Models"
+    },
+    {
+      "basis": "connector mixture-of-experts inside one shared model",
+      "bibkey": "zhu2024uni",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0,
+      "independent_experts": 0,
+      "route_error_cost_measured": 0,
+      "system": "Uni-Med",
+      "title": "Uni-Med: A Unified Medical Generalist Foundation Model For Multi-Task Learning"
+    },
+    {
+      "basis": "modality experts initialised separately then co-fine-tuned with the gate; all lanes emit masks",
+      "bibkey": "jiang2024m",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0,
+      "independent_experts": 0,
+      "route_error_cost_measured": 0,
+      "system": "M$^4$oE",
+      "title": "M4oE: A Foundation Model for Medical Multimodal Image Segmentation with Mixture of Experts"
+    },
+    {
+      "basis": "sparse router over low-rank experts inside one frozen backbone; classification only",
+      "bibkey": "doerrich2026mopet",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0,
+      "independent_experts": 0,
+      "route_error_cost_measured": 0,
+      "system": "MoPET",
+      "title": "MoPET: Parameter-Efficient Mixture-of-Experts for Unified Medical Image Classification"
+    },
+    {
+      "basis": "specialist LoRAs trained separately then merged into a single model",
+      "bibkey": "zhu2025med",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0,
+      "independent_experts": 0.5,
+      "route_error_cost_measured": 0,
+      "system": "Med-LEGO",
+      "title": "Med-LEGO: Editing and Adapting toward Generalist Medical Image Diagnosis"
+    },
+    {
+      "basis": "expert-model knowledge folded into a medical instruction-tuning stage",
+      "bibkey": "nath2024vila",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0.5,
+      "independent_experts": 0.5,
+      "route_error_cost_measured": 0,
+      "system": "VILA-M3",
+      "title": "VILA-M3: Enhancing Vision-Language Models with Medical Expert Knowledge"
+    },
+    {
+      "basis": "generalist plus separately constructed lightweight specialists at collaborative inference",
+      "bibkey": "he2024gsco",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0.5,
+      "independent_experts": 1,
+      "route_error_cost_measured": 0,
+      "system": "GSCo",
+      "title": "GSCo: Towards Generalizable AI in Medicine via Generalist-Specialist Collaboration"
+    },
+    {
+      "basis": "MobileNetV3-Small gatekeeper routes to three modality-specific models",
+      "bibkey": "m2026radioai",
+      "held_out_source_routing": 0,
+      "heterogeneous_outputs": 0.5,
+      "independent_experts": 1,
+      "route_error_cost_measured": 0,
+      "system": "RadioAI",
+      "title": "RadioAI: Physics-Grounded, Interpretable Deep Learning for Multi-Modal Medical Imaging"
+    },
+    {
+      "basis": "independent checkpoints behind an external typed gate; executed dispatch scored on held-out institutions under acquisition shift",
+      "bibkey": null,
+      "held_out_source_routing": 1,
+      "heterogeneous_outputs": 1,
+      "independent_experts": 1,
+      "route_error_cost_measured": 1,
+      "system": "HealthRouter (ours)",
+      "title": null
+    }
+  ]
+}

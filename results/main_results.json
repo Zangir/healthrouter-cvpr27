@@ -1,0 +1,307 @@
+{
+  "artifact": "HealthRouter",
+  "headline": {
+    "imagenet_convnext_fold_mean_auroc": 0.90075,
+    "paired_oof_auroc_difference": {
+      "ci_high": 0.10347,
+      "ci_low": 0.05845,
+      "value": 0.08029
+    },
+    "rad_dino_fold_mean_auroc": 0.98159
+  },
+  "provenance": "run",
+  "routing": {
+    "classes": [
+      "chest_xray",
+      "endoscopy",
+      "pathology",
+      "fundus",
+      "mammography"
+    ],
+    "corruption_ablations": {
+      "blur": {
+        "ci_high": 0.99733,
+        "ci_low": 0.98267,
+        "correct": 743,
+        "n": 750,
+        "value": 0.99067
+      },
+      "grayscale": {
+        "ci_high": 0.9,
+        "ci_low": 0.85333,
+        "correct": 658,
+        "n": 750,
+        "value": 0.87733
+      },
+      "low_resolution": {
+        "ci_high": 0.996,
+        "ci_low": 0.98133,
+        "correct": 742,
+        "n": 750,
+        "value": 0.98933
+      }
+    },
+    "data_scale_ablation": {
+      "10": {
+        "mean": 0.98267,
+        "replicates": [
+          0.98667,
+          0.98533,
+          0.98267,
+          0.98667,
+          0.972
+        ],
+        "std": 0.00553
+      },
+      "100": {
+        "mean": 0.992,
+        "replicates": [
+          0.992,
+          0.992,
+          0.99333,
+          0.992,
+          0.99067
+        ],
+        "std": 0.00084
+      },
+      "200": {
+        "mean": 0.99387,
+        "replicates": [
+          0.99333,
+          0.99467,
+          0.99333,
+          0.992,
+          0.996
+        ],
+        "std": 0.00136
+      },
+      "25": {
+        "mean": 0.9912,
+        "replicates": [
+          0.99467,
+          0.99067,
+          0.98933,
+          0.992,
+          0.98933
+        ],
+        "std": 0.002
+      },
+      "400": {
+        "mean": 0.996,
+        "replicates": [
+          0.996,
+          0.996,
+          0.996,
+          0.996,
+          0.996
+        ],
+        "std": 0.0
+      },
+      "50": {
+        "mean": 0.99253,
+        "replicates": [
+          0.99067,
+          0.992,
+          0.99333,
+          0.99333,
+          0.99333
+        ],
+        "std": 0.00107
+      }
+    },
+    "frozen_imagenet_router_external": {
+      "ci_high": 1.0,
+      "ci_low": 0.99067,
+      "correct": 747,
+      "n": 750,
+      "value": 0.996
+    },
+    "frozen_imagenet_router_in_source": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "correct": 500,
+      "n": 500,
+      "value": 1.0
+    },
+    "in_source": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "correct": 500,
+      "n": 500,
+      "value": 1.0
+    },
+    "in_source_after_exact_dedup": {
+      "ci_high": 1.0,
+      "ci_low": 1.0,
+      "correct": 499,
+      "n": 499,
+      "value": 1.0
+    },
+    "in_source_cross_split_duplicates": 1,
+    "provenance": "run",
+    "route_trace": [
+      {
+        "confidence": 0.99924,
+        "file": "MCUCXR_0001_0.png",
+        "predicted_route": "chest_xray",
+        "true_route": "chest_xray"
+      },
+      {
+        "confidence": 0.99761,
+        "file": "481.png",
+        "predicted_route": "endoscopy",
+        "true_route": "endoscopy"
+      },
+      {
+        "confidence": 0.99707,
+        "file": "294.png",
+        "predicted_route": "endoscopy",
+        "true_route": "endoscopy"
+      },
+      {
+        "confidence": 0.99558,
+        "file": "509.png",
+        "predicted_route": "endoscopy",
+        "true_route": "endoscopy"
+      },
+      {
+        "confidence": 0.98488,
+        "file": "80.png",
+        "predicted_route": "endoscopy",
+        "true_route": "endoscopy"
+      }
+    ],
+    "runtime_seconds": 270.83,
+    "seed": 0,
+    "simple_feature_baseline_external": {
+      "ci_high": 0.61867,
+      "ci_low": 0.54667,
+      "correct": 437,
+      "n": 750,
+      "value": 0.58267
+    },
+    "simple_feature_baseline_in_source": {
+      "ci_high": 0.998,
+      "ci_low": 0.984,
+      "correct": 496,
+      "n": 500,
+      "value": 0.992
+    },
+    "simple_feature_data_scale": {
+      "10": {
+        "mean": 0.568,
+        "std": 0.08034
+      },
+      "100": {
+        "mean": 0.59573,
+        "std": 0.0268
+      },
+      "200": {
+        "mean": 0.6216,
+        "std": 0.02409
+      },
+      "25": {
+        "mean": 0.58453,
+        "std": 0.02533
+      },
+      "400": {
+        "mean": 0.58347,
+        "std": 0.00275
+      },
+      "50": {
+        "mean": 0.62267,
+        "std": 0.05503
+      }
+    },
+    "unseen_institution_two_modalities": {
+      "ci_high": 1.0,
+      "ci_low": 0.996,
+      "correct": 749,
+      "n": 750,
+      "value": 0.99867
+    },
+    "unseen_source_counts": {
+      "chest_xray": 138,
+      "endoscopy": 612
+    }
+  },
+  "runtime_seconds_total": 609.25,
+  "specialists": {
+    "aptos_random_holdout": {
+      "clean_accuracy": 0.86299,
+      "clean_qwk": {
+        "ci_high": 0.92755,
+        "ci_low": 0.87239,
+        "value": 0.9013
+      },
+      "cross_split_duplicates": 24,
+      "n_clean": 562,
+      "n_raw": 586,
+      "raw_accuracy": 0.85666,
+      "raw_qwk": {
+        "ci_high": 0.92475,
+        "ci_low": 0.8728,
+        "value": 0.90031
+      }
+    },
+    "cbis_local_mirror_test_auroc": {
+      "clean": {
+        "ci_high": 0.84447,
+        "ci_low": 0.7768,
+        "value": 0.81203
+      },
+      "cross_split_duplicates": 27,
+      "n_clean": 614,
+      "n_raw": 641,
+      "raw": {
+        "ci_high": 0.84586,
+        "ci_low": 0.78161,
+        "value": 0.81462
+      }
+    },
+    "pcam_official_test_auroc": {
+      "clean": {
+        "ci_high": 0.95999,
+        "ci_low": 0.95588,
+        "value": 0.95788
+      },
+      "cross_split_duplicates": 34,
+      "n_clean": 32734,
+      "n_raw": 32768,
+      "raw": {
+        "ci_high": 0.95996,
+        "ci_low": 0.95595,
+        "value": 0.95796
+      }
+    },
+    "provenance": "run",
+    "runtime_seconds": 171.77,
+    "segmentation": {
+      "cvc_external_mean_dice": {
+        "ci_high": 0.82353,
+        "ci_low": 0.77816,
+        "value": 0.80108
+      },
+      "cvc_external_median_dice": 0.92517,
+      "cvc_n": 612,
+      "kvasir_n": 120,
+      "kvasir_validation_mean_dice": {
+        "ci_high": 0.91851,
+        "ci_low": 0.85329,
+        "value": 0.8877
+      },
+      "kvasir_validation_median_dice": 0.95555
+    },
+    "tb_montgomery_auroc": {
+      "ci_high": 0.9625,
+      "ci_low": 0.86616,
+      "value": 0.91961
+    }
+  },
+  "user_provided_prior": {
+    "note": "Preliminary seed results not re-trained in this release.",
+    "pcam_100k_best_test_auroc": 0.9636,
+    "tb_finetune_five_fold_mean_auroc": 0.9545,
+    "tb_finetune_five_fold_std_auroc": 0.012
+  }
+}

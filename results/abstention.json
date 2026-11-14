@@ -1,0 +1,742 @@
+{
+  "alpha": 0.02,
+  "delta": 0.05,
+  "gates": {
+    "probe": {
+      "clean_to_clean": {
+        "no_abstention_macro_retained_skill": 0.99919,
+        "no_abstention_route_accuracy": 0.99847,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 0.98551,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.99594,
+            "served": 0.99663,
+            "utility": 0.78776
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 1.0,
+        "posthoc_tau": 0.0,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.99919,
+        "test_selective_risk": 0.00153
+      },
+      "clean_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.94807,
+        "no_abstention_route_accuracy": 0.96009,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 0.98551,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.84532,
+            "served": 0.84512,
+            "utility": 0.66862
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 0.89502,
+            "served": 0.98062,
+            "utility": 0.65345
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 0.8726,
+        "posthoc_tau": 0.93,
+        "risk_met": false,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.94807,
+        "test_selective_risk": 0.03991
+      },
+      "clean_to_jpeg": {
+        "no_abstention_macro_retained_skill": 0.92439,
+        "no_abstention_route_accuracy": 0.94091,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 0.8234,
+            "served": 0.66667,
+            "utility": 0.82491
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.96601,
+            "served": 0.9596,
+            "utility": 0.76409
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 0.83254,
+            "served": 0.78894,
+            "utility": 0.58978
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 0.78204,
+        "posthoc_tau": 0.72,
+        "risk_met": false,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.92439,
+        "test_selective_risk": 0.05909
+      },
+      "grayscale_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.94807,
+        "no_abstention_route_accuracy": 0.96009,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.02097,
+            "served": 0.94203,
+            "utility": 0.90287
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.58778,
+            "served": 0.57576,
+            "utility": 0.46491
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 0.59232,
+            "served": 0.84884,
+            "utility": 0.43245
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.01818,
+            "served": 0.97487,
+            "utility": 0.6098
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 0.8726,
+        "posthoc_tau": 0.93,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.93,
+        "test_coverage": 0.8726,
+        "test_macro_retained_skill": 0.84385,
+        "test_selective_risk": 0.00704
+      }
+    },
+    "probe_grayaug": {
+      "clean_to_clean": {
+        "no_abstention_macro_retained_skill": 0.99919,
+        "no_abstention_route_accuracy": 0.99847,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 0.98551,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.99594,
+            "served": 0.99663,
+            "utility": 0.78776
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 1.0,
+        "posthoc_tau": 0.0,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.99919,
+        "test_selective_risk": 0.00153
+      },
+      "clean_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.99365,
+        "no_abstention_route_accuracy": 0.99309,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 0.98551,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.96824,
+            "served": 0.97306,
+            "utility": 0.76585
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 1.0,
+        "posthoc_tau": 0.0,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.99365,
+        "test_selective_risk": 0.00691
+      },
+      "clean_to_jpeg": {
+        "no_abstention_macro_retained_skill": 0.8027,
+        "no_abstention_route_accuracy": 0.86876,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 0.56623,
+            "served": 0.44928,
+            "utility": 0.72343
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.96787,
+            "served": 0.95623,
+            "utility": 0.76556
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 0.47943,
+            "served": 0.39698,
+            "utility": 0.5517
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 0.66846,
+        "posthoc_tau": 0.91,
+        "risk_met": false,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.8027,
+        "test_selective_risk": 0.13124
+      },
+      "grayscale_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.99365,
+        "no_abstention_route_accuracy": 0.99309,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 0.98551,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.96824,
+            "served": 0.97306,
+            "utility": 0.76585
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 1.0,
+        "posthoc_tau": 0.0,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.99365,
+        "test_selective_risk": 0.00691
+      }
+    },
+    "supervised": {
+      "clean_to_clean": {
+        "no_abstention_macro_retained_skill": 1.0,
+        "no_abstention_route_accuracy": 1.0,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.79097
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 1.0,
+        "posthoc_tau": 0.0,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 1.0,
+        "test_selective_risk": 0.0
+      },
+      "clean_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.96508,
+        "no_abstention_route_accuracy": 0.967,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.85261,
+            "served": 0.85859,
+            "utility": 0.67439
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 0.9728,
+            "served": 0.99612,
+            "utility": 0.71023
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 0.56332,
+        "posthoc_tau": 0.99,
+        "risk_met": false,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.96508,
+        "test_selective_risk": 0.033
+      },
+      "clean_to_jpeg": {
+        "no_abstention_macro_retained_skill": 0.76707,
+        "no_abstention_route_accuracy": 0.81734,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.00221,
+            "served": 0.94203,
+            "utility": 0.89547
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.87285,
+            "served": 0.85185,
+            "utility": 0.6904
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": -0.03971,
+            "served": 0.04523,
+            "utility": 0.49572
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.99114
+          }
+        },
+        "posthoc_coverage": 0.42134,
+        "posthoc_tau": 0.95,
+        "risk_met": false,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.76707,
+        "test_selective_risk": 0.18266
+      },
+      "grayscale_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.96508,
+        "no_abstention_route_accuracy": 0.967,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 0.98551,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 0.3557,
+            "served": 0.32997,
+            "utility": 0.28135
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 0.12846,
+            "served": 0.50775,
+            "utility": 0.09379
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 0.55742,
+            "served": 0.66834,
+            "utility": 0.56011
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 0.99752,
+            "served": 0.98958,
+            "utility": 0.98992
+          }
+        },
+        "posthoc_coverage": 0.56332,
+        "posthoc_tau": 0.99,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.98,
+        "test_coverage": 0.69916,
+        "test_macro_retained_skill": 0.60782,
+        "test_selective_risk": 0.00659
+      }
+    },
+    "zero_shot_biomedclip": {
+      "clean_to_clean": {
+        "no_abstention_macro_retained_skill": 0.99997,
+        "no_abstention_route_accuracy": 0.99847,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.79097
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 0.99984,
+            "served": 0.99583,
+            "utility": 0.99106
+          }
+        },
+        "posthoc_coverage": 1.0,
+        "posthoc_tau": 0.0,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.99997,
+        "test_selective_risk": 0.00153
+      },
+      "clean_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.99477,
+        "no_abstention_route_accuracy": 0.97237,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.79097
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 0.97387,
+            "served": 0.925,
+            "utility": 0.97831
+          }
+        },
+        "posthoc_coverage": 0.84804,
+        "posthoc_tau": 0.997957,
+        "risk_met": false,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.99477,
+        "test_selective_risk": 0.02763
+      },
+      "clean_to_jpeg": {
+        "no_abstention_macro_retained_skill": 0.99986,
+        "no_abstention_route_accuracy": 0.99923,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.79097
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 0.99929,
+            "served": 0.99792,
+            "utility": 0.99079
+          }
+        },
+        "posthoc_coverage": 1.0,
+        "posthoc_tau": 0.0,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.0,
+        "test_coverage": 1.0,
+        "test_macro_retained_skill": 0.99986,
+        "test_selective_risk": 0.00077
+      },
+      "grayscale_to_grayscale": {
+        "no_abstention_macro_retained_skill": 0.99477,
+        "no_abstention_route_accuracy": 0.97237,
+        "per_lane_test": {
+          "chest_xray": {
+            "reference": 0.8946,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.8946
+          },
+          "endoscopy": {
+            "reference": 0.79097,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.79097
+          },
+          "fundus": {
+            "reference": 0.73009,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.73009
+          },
+          "mammography": {
+            "reference": 0.60784,
+            "retained_skill": 1.0,
+            "served": 1.0,
+            "utility": 0.60784
+          },
+          "pathology": {
+            "reference": 0.99114,
+            "retained_skill": 0.95581,
+            "served": 0.87292,
+            "utility": 0.96944
+          }
+        },
+        "posthoc_coverage": 0.84804,
+        "posthoc_tau": 0.997957,
+        "risk_met": true,
+        "risk_target": 0.02,
+        "tau": 0.94,
+        "test_coverage": 0.96546,
+        "test_macro_retained_skill": 0.99116,
+        "test_selective_risk": 0.01272
+      }
+    }
+  },
+  "grid_size": 100,
+  "method": "grouped 50/50 calibration/test split; Learn-then-Test with Bonferroni correction over the threshold grid and one-sided Clopper-Pearson bounds on the selective misroute rate",
+  "n_calibration": 1359,
+  "n_test": 1303,
+  "provenance": "run",
+  "runtime_seconds": 0.33,
+  "scenarios": {
+    "clean_to_clean": {
+      "calibrate_on": "standard",
+      "deploy_on": "standard"
+    },
+    "clean_to_grayscale": {
+      "calibrate_on": "standard",
+      "deploy_on": "grayscale"
+    },
+    "clean_to_jpeg": {
+      "calibrate_on": "standard",
+      "deploy_on": "jpeg"
+    },
+    "grayscale_to_grayscale": {
+      "calibrate_on": "grayscale",
+      "deploy_on": "grayscale"
+    }
+  }
+}

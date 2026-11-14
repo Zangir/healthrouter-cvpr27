@@ -1,0 +1,1519 @@
+{
+  "packages": {
+    "biomedclip": {
+      "objective": "contrastive",
+      "pretraining_domain": "biomedical figures (PMC)"
+    },
+    "dinov2_base": {
+      "objective": "self-distillation",
+      "pretraining_domain": "natural images"
+    },
+    "dinov2_large": {
+      "objective": "self-distillation",
+      "pretraining_domain": "natural images"
+    },
+    "imagenet_convnext": {
+      "objective": "supervised",
+      "pretraining_domain": "natural images"
+    },
+    "mammo_clip": {
+      "objective": "contrastive",
+      "pretraining_domain": "mammograms"
+    },
+    "phikon": {
+      "objective": "iBOT",
+      "pretraining_domain": "histopathology"
+    },
+    "phikon_v2": {
+      "objective": "self-distillation",
+      "pretraining_domain": "histopathology"
+    },
+    "rad_dino": {
+      "objective": "self-distillation",
+      "pretraining_domain": "chest radiographs"
+    },
+    "retfound": {
+      "objective": "MAE",
+      "pretraining_domain": "retinal photographs"
+    },
+    "siglip2_base": {
+      "objective": "sigmoid contrastive",
+      "pretraining_domain": "web image-text"
+    }
+  },
+  "protocol": "matched square resolution for every package; standardised logistic head, C in {0.001,0.01,0.1,1} by inner 3-fold CV; folds repeated over seeds [42, 43, 44] and probabilities averaged; paired stratified item bootstrap (2000) with Holm correction over all contrasts",
+  "provenance": "run",
+  "runtime_seconds": 272.45,
+  "sizes": {
+    "224": {
+      "best_package_by_domain": {
+        "chest_xray": "rad_dino",
+        "fundus": "dinov2_base",
+        "mammography": "phikon",
+        "pathology": "phikon"
+      },
+      "distinct_winning_packages": 3,
+      "domains": {
+        "chest_xray": {
+          "best_package": "rad_dino",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.01809,
+              "ci_low": -0.02029,
+              "p_boot": 0.9135,
+              "p_holm": 1.0,
+              "value": -0.00106
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.01362,
+              "ci_low": -0.01377,
+              "p_boot": 0.9745,
+              "p_holm": 1.0,
+              "value": 0.00026
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": 0.01103,
+              "ci_low": -0.02324,
+              "p_boot": 0.5255,
+              "p_holm": 1.0,
+              "value": -0.00527
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": 0.01863,
+              "ci_low": -0.00978,
+              "p_boot": 0.6095,
+              "p_holm": 1.0,
+              "value": 0.00415
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": 0.02086,
+              "ci_low": -0.00498,
+              "p_boot": 0.2125,
+              "p_holm": 1.0,
+              "value": 0.00791
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": 0.07092,
+              "ci_low": 0.02975,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": 0.04986
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": 0.02316,
+              "ci_low": -0.00358,
+              "p_boot": 0.1385,
+              "p_holm": 1.0,
+              "value": 0.01024
+            }
+          },
+          "in_domain_package": "rad_dino",
+          "metric": "auroc",
+          "n_items": 662,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.01,
+              "oof_score": 0.92968,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.93001,
+                0.92507,
+                0.9259
+              ],
+              "seed_sd": 0.00216
+            },
+            "dinov2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.91988,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.91503,
+                0.91854,
+                0.92036
+              ],
+              "seed_sd": 0.00221
+            },
+            "dinov2_large": {
+              "median_C": 0.01,
+              "oof_score": 0.92014,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.91862,
+                0.91798,
+                0.91957
+              ],
+              "seed_sd": 0.00065
+            },
+            "imagenet_convnext": {
+              "median_C": 0.01,
+              "oof_score": 0.92234,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.92247,
+                0.92256,
+                0.91427
+              ],
+              "seed_sd": 0.00389
+            },
+            "mammo_clip": {
+              "median_C": 0.01,
+              "oof_score": 0.91707,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                0.91299,
+                0.91647,
+                0.91363
+              ],
+              "seed_sd": 0.00151
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.92403,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.92109,
+                0.9254,
+                0.92071
+              ],
+              "seed_sd": 0.00213
+            },
+            "phikon_v2": {
+              "median_C": 0.01,
+              "oof_score": 0.92805,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.92008,
+                0.93015,
+                0.92459
+              ],
+              "seed_sd": 0.00412
+            },
+            "rad_dino": {
+              "median_C": 0.01,
+              "oof_score": 0.96974,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.96379,
+                0.9709,
+                0.96527
+              ],
+              "seed_sd": 0.00306
+            },
+            "retfound": {
+              "median_C": 0.01,
+              "oof_score": 0.93038,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.92702,
+                0.93008,
+                0.91974
+              ],
+              "seed_sd": 0.00434
+            },
+            "siglip2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.93074,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.92195,
+                0.92502,
+                0.93247
+              ],
+              "seed_sd": 0.00442
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.0,
+            "dinov2_base": 0.0,
+            "dinov2_large": 0.0,
+            "imagenet_convnext": 0.0,
+            "mammo_clip": 0.0,
+            "phikon": 0.0,
+            "phikon_v2": 0.0,
+            "rad_dino": 1.0,
+            "retfound": 0.0,
+            "siglip2_base": 0.0
+          }
+        },
+        "fundus": {
+          "best_package": "dinov2_base",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.01166,
+              "ci_low": -0.06506,
+              "p_boot": 0.1945,
+              "p_holm": 1.0,
+              "value": -0.02557
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.02185,
+              "ci_low": -0.03993,
+              "p_boot": 0.5605,
+              "p_holm": 1.0,
+              "value": -0.0093
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": -0.78516,
+              "ci_low": -0.89638,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.84435
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": -0.0263,
+              "ci_low": -0.10903,
+              "p_boot": 0.0015,
+              "p_holm": 0.0285,
+              "value": -0.06697
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": -0.00567,
+              "ci_low": -0.09358,
+              "p_boot": 0.0285,
+              "p_holm": 0.513,
+              "value": -0.04944
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": -0.04398,
+              "ci_low": -0.13203,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.08734
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": 0.04102,
+              "ci_low": -0.02477,
+              "p_boot": 0.6505,
+              "p_holm": 1.0,
+              "value": 0.00782
+            }
+          },
+          "in_domain_package": "retfound",
+          "metric": "qwk",
+          "n_items": 562,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.01,
+              "oof_score": 0.80063,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.77848,
+                0.79119,
+                0.79283
+              ],
+              "seed_sd": 0.00641
+            },
+            "dinov2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.84634,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.83403,
+                0.8431,
+                0.85534
+              ],
+              "seed_sd": 0.00873
+            },
+            "dinov2_large": {
+              "median_C": 0.1,
+              "oof_score": 0.83704,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.83314,
+                0.80751,
+                0.83919
+              ],
+              "seed_sd": 0.01373
+            },
+            "imagenet_convnext": {
+              "median_C": 0.1,
+              "oof_score": 0.82356,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.80295,
+                0.81774,
+                0.82868
+              ],
+              "seed_sd": 0.01054
+            },
+            "mammo_clip": {
+              "median_C": 0.001,
+              "oof_score": -0.02079,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                -0.02071,
+                -0.00998,
+                -0.04355
+              ],
+              "seed_sd": 0.014
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.77937,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.76063,
+                0.78161,
+                0.78245
+              ],
+              "seed_sd": 0.01009
+            },
+            "phikon_v2": {
+              "median_C": 0.1,
+              "oof_score": 0.7876,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.78102,
+                0.76524,
+                0.7789
+              ],
+              "seed_sd": 0.00699
+            },
+            "rad_dino": {
+              "median_C": 0.1,
+              "oof_score": 0.759,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.71922,
+                0.73815,
+                0.72297
+              ],
+              "seed_sd": 0.00818
+            },
+            "retfound": {
+              "median_C": 0.1,
+              "oof_score": 0.84486,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.81536,
+                0.83723,
+                0.84075
+              ],
+              "seed_sd": 0.01123
+            },
+            "siglip2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.8262,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.81168,
+                0.83198,
+                0.81823
+              ],
+              "seed_sd": 0.00846
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.0015,
+            "dinov2_base": 0.43,
+            "dinov2_large": 0.1225,
+            "imagenet_convnext": 0.036,
+            "mammo_clip": 0.0,
+            "phikon": 0.0,
+            "phikon_v2": 0.0,
+            "rad_dino": 0.0,
+            "retfound": 0.354,
+            "siglip2_base": 0.056
+          }
+        },
+        "mammography": {
+          "best_package": "phikon",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.03789,
+              "ci_low": -0.06068,
+              "p_boot": 0.6665,
+              "p_holm": 1.0,
+              "value": -0.01044
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.06079,
+              "ci_low": -0.03204,
+              "p_boot": 0.4855,
+              "p_holm": 1.0,
+              "value": 0.01505
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": 0.04732,
+              "ci_low": -0.05012,
+              "p_boot": 0.9455,
+              "p_holm": 1.0,
+              "value": -0.00195
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": 0.09624,
+              "ci_low": 0.00126,
+              "p_boot": 0.0415,
+              "p_holm": 0.7055,
+              "value": 0.05124
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": 0.06133,
+              "ci_low": -0.0347,
+              "p_boot": 0.6145,
+              "p_holm": 1.0,
+              "value": 0.0138
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": 0.04114,
+              "ci_low": -0.0696,
+              "p_boot": 0.5895,
+              "p_holm": 1.0,
+              "value": -0.01455
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": 0.05543,
+              "ci_low": -0.05322,
+              "p_boot": 0.9725,
+              "p_holm": 1.0,
+              "value": -0.00047
+            }
+          },
+          "in_domain_package": "mammo_clip",
+          "metric": "auroc",
+          "n_items": 614,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.001,
+              "oof_score": 0.64643,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.65818,
+                0.62474,
+                0.6412
+              ],
+              "seed_sd": 0.01365
+            },
+            "dinov2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.64647,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.639,
+                0.65207,
+                0.61506
+              ],
+              "seed_sd": 0.01532
+            },
+            "dinov2_large": {
+              "median_C": 0.01,
+              "oof_score": 0.66152,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.65061,
+                0.6311,
+                0.65471
+              ],
+              "seed_sd": 0.0103
+            },
+            "imagenet_convnext": {
+              "median_C": 0.01,
+              "oof_score": 0.68708,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.68175,
+                0.64528,
+                0.68797
+              ],
+              "seed_sd": 0.01883
+            },
+            "mammo_clip": {
+              "median_C": 0.001,
+              "oof_score": 0.68513,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                0.67601,
+                0.66504,
+                0.67083
+              ],
+              "seed_sd": 0.00448
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.69771,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.68545,
+                0.6702,
+                0.68903
+              ],
+              "seed_sd": 0.00816
+            },
+            "phikon_v2": {
+              "median_C": 0.01,
+              "oof_score": 0.67532,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.64365,
+                0.67447,
+                0.67267
+              ],
+              "seed_sd": 0.01412
+            },
+            "rad_dino": {
+              "median_C": 0.01,
+              "oof_score": 0.63192,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.64907,
+                0.61973,
+                0.60608
+              ],
+              "seed_sd": 0.01794
+            },
+            "retfound": {
+              "median_C": 0.1,
+              "oof_score": 0.66105,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.65025,
+                0.64994,
+                0.63493
+              ],
+              "seed_sd": 0.00715
+            },
+            "siglip2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.65687,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.65435,
+                0.64582,
+                0.62416
+              ],
+              "seed_sd": 0.01271
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.002,
+            "dinov2_base": 0.0025,
+            "dinov2_large": 0.022,
+            "imagenet_convnext": 0.2145,
+            "mammo_clip": 0.199,
+            "phikon": 0.4755,
+            "phikon_v2": 0.0605,
+            "rad_dino": 0.0,
+            "retfound": 0.0125,
+            "siglip2_base": 0.0115
+          }
+        },
+        "pathology": {
+          "best_package": "phikon",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.01747,
+              "ci_low": -0.00095,
+              "p_boot": 0.0735,
+              "p_holm": 1.0,
+              "value": 0.00808
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.01991,
+              "ci_low": 0.00701,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": 0.0134
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": -0.07637,
+              "ci_low": -0.10386,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.0899
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": 0.04892,
+              "ci_low": 0.03325,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": 0.04086
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": 0.03394,
+              "ci_low": 0.02031,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": 0.02698
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": -0.02198,
+              "ci_low": -0.04099,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.03167
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": -0.01091,
+              "ci_low": -0.02891,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.01968
+            }
+          },
+          "in_domain_package": "phikon_v2",
+          "metric": "auroc",
+          "n_items": 2000,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.01,
+              "oof_score": 0.94491,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.94336,
+                0.94468,
+                0.94426
+              ],
+              "seed_sd": 0.00055
+            },
+            "dinov2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.9472,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.94675,
+                0.94619,
+                0.94429
+              ],
+              "seed_sd": 0.00105
+            },
+            "dinov2_large": {
+              "median_C": 0.1,
+              "oof_score": 0.9606,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.95632,
+                0.95625,
+                0.95779
+              ],
+              "seed_sd": 0.00071
+            },
+            "imagenet_convnext": {
+              "median_C": 0.01,
+              "oof_score": 0.95177,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.94939,
+                0.95097,
+                0.95185
+              ],
+              "seed_sd": 0.00102
+            },
+            "mammo_clip": {
+              "median_C": 1.0,
+              "oof_score": 0.86187,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                0.85606,
+                0.85261,
+                0.85483
+              ],
+              "seed_sd": 0.00143
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.98806,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.98645,
+                0.98588,
+                0.98788
+              ],
+              "seed_sd": 0.00084
+            },
+            "phikon_v2": {
+              "median_C": 0.1,
+              "oof_score": 0.98758,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.98376,
+                0.98743,
+                0.98713
+              ],
+              "seed_sd": 0.00166
+            },
+            "rad_dino": {
+              "median_C": 0.01,
+              "oof_score": 0.91553,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.91318,
+                0.91334,
+                0.91479
+              ],
+              "seed_sd": 0.00072
+            },
+            "retfound": {
+              "median_C": 0.1,
+              "oof_score": 0.94092,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.94016,
+                0.93873,
+                0.9359
+              ],
+              "seed_sd": 0.00177
+            },
+            "siglip2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.93683,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.93532,
+                0.93534,
+                0.93594
+              ],
+              "seed_sd": 0.00029
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.0,
+            "dinov2_base": 0.0,
+            "dinov2_large": 0.0,
+            "imagenet_convnext": 0.0,
+            "mammo_clip": 0.0,
+            "phikon": 0.6055,
+            "phikon_v2": 0.3945,
+            "rad_dino": 0.0,
+            "retfound": 0.0,
+            "siglip2_base": 0.0
+          }
+        }
+      }
+    },
+    "448": {
+      "best_package_by_domain": {
+        "chest_xray": "rad_dino",
+        "fundus": "imagenet_convnext",
+        "mammography": "phikon_v2",
+        "pathology": "phikon"
+      },
+      "distinct_winning_packages": 4,
+      "domains": {
+        "chest_xray": {
+          "best_package": "rad_dino",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.023,
+              "ci_low": -0.01376,
+              "p_boot": 0.6795,
+              "p_holm": 1.0,
+              "value": 0.00423
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.01204,
+              "ci_low": -0.01098,
+              "p_boot": 0.9565,
+              "p_holm": 1.0,
+              "value": 0.00058
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": 0.03183,
+              "ci_low": 0.00089,
+              "p_boot": 0.0365,
+              "p_holm": 0.6205,
+              "value": 0.01663
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": 0.01294,
+              "ci_low": -0.01583,
+              "p_boot": 0.8325,
+              "p_holm": 1.0,
+              "value": -0.00149
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": 0.02293,
+              "ci_low": -0.0072,
+              "p_boot": 0.2975,
+              "p_holm": 1.0,
+              "value": 0.00772
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": 0.06943,
+              "ci_low": 0.03066,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": 0.04971
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": 0.00989,
+              "ci_low": -0.01702,
+              "p_boot": 0.6625,
+              "p_holm": 1.0,
+              "value": -0.003
+            }
+          },
+          "in_domain_package": "rad_dino",
+          "metric": "auroc",
+          "n_items": 662,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.01,
+              "oof_score": 0.93224,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.93205,
+                0.93094,
+                0.93057
+              ],
+              "seed_sd": 0.00063
+            },
+            "dinov2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.92845,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.93185,
+                0.91807,
+                0.92534
+              ],
+              "seed_sd": 0.00563
+            },
+            "dinov2_large": {
+              "median_C": 0.01,
+              "oof_score": 0.92903,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.92409,
+                0.9188,
+                0.92547
+              ],
+              "seed_sd": 0.00287
+            },
+            "imagenet_convnext": {
+              "median_C": 0.01,
+              "oof_score": 0.92287,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.92497,
+                0.92453,
+                0.91153
+              ],
+              "seed_sd": 0.00623
+            },
+            "mammo_clip": {
+              "median_C": 0.01,
+              "oof_score": 0.9395,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                0.93535,
+                0.93869,
+                0.93237
+              ],
+              "seed_sd": 0.00258
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.92696,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.92782,
+                0.93227,
+                0.91447
+              ],
+              "seed_sd": 0.00756
+            },
+            "phikon_v2": {
+              "median_C": 0.01,
+              "oof_score": 0.93675,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.9288,
+                0.93805,
+                0.93405
+              ],
+              "seed_sd": 0.00379
+            },
+            "rad_dino": {
+              "median_C": 0.01,
+              "oof_score": 0.97816,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.97405,
+                0.97682,
+                0.97428
+              ],
+              "seed_sd": 0.00126
+            },
+            "retfound": {
+              "median_C": 0.01,
+              "oof_score": 0.92603,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.92439,
+                0.92481,
+                0.92465
+              ],
+              "seed_sd": 0.00017
+            },
+            "siglip2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.92801,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.93106,
+                0.91937,
+                0.92095
+              ],
+              "seed_sd": 0.00518
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.0,
+            "dinov2_base": 0.0,
+            "dinov2_large": 0.0,
+            "imagenet_convnext": 0.0,
+            "mammo_clip": 0.0,
+            "phikon": 0.0,
+            "phikon_v2": 0.0,
+            "rad_dino": 1.0,
+            "retfound": 0.0,
+            "siglip2_base": 0.0
+          }
+        },
+        "fundus": {
+          "best_package": "imagenet_convnext",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.03149,
+              "ci_low": -0.04339,
+              "p_boot": 0.7775,
+              "p_holm": 1.0,
+              "value": -0.00559
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.03019,
+              "ci_low": -0.02329,
+              "p_boot": 0.7915,
+              "p_holm": 1.0,
+              "value": 0.00335
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": -0.75318,
+              "ci_low": -0.88555,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.82012
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": -0.00292,
+              "ci_low": -0.08849,
+              "p_boot": 0.0385,
+              "p_holm": 0.6205,
+              "value": -0.04329
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": -0.02402,
+              "ci_low": -0.10959,
+              "p_boot": 0.0035,
+              "p_holm": 0.07,
+              "value": -0.0663
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": -0.02832,
+              "ci_low": -0.11803,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.07101
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": 0.0281,
+              "ci_low": -0.05259,
+              "p_boot": 0.5495,
+              "p_holm": 1.0,
+              "value": -0.01151
+            }
+          },
+          "in_domain_package": "retfound",
+          "metric": "qwk",
+          "n_items": 562,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.01,
+              "oof_score": 0.81037,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.80684,
+                0.80142,
+                0.8074
+              ],
+              "seed_sd": 0.0027
+            },
+            "dinov2_base": {
+              "median_C": 0.1,
+              "oof_score": 0.83608,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.8275,
+                0.82376,
+                0.85629
+              ],
+              "seed_sd": 0.01453
+            },
+            "dinov2_large": {
+              "median_C": 0.01,
+              "oof_score": 0.83943,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.84729,
+                0.83796,
+                0.83847
+              ],
+              "seed_sd": 0.00428
+            },
+            "imagenet_convnext": {
+              "median_C": 0.01,
+              "oof_score": 0.85184,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.85589,
+                0.85061,
+                0.85803
+              ],
+              "seed_sd": 0.00312
+            },
+            "mammo_clip": {
+              "median_C": 0.1,
+              "oof_score": 0.03172,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                0.06888,
+                0.01455,
+                0.06778
+              ],
+              "seed_sd": 0.02536
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.79279,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.78847,
+                0.79401,
+                0.79037
+              ],
+              "seed_sd": 0.0023
+            },
+            "phikon_v2": {
+              "median_C": 0.1,
+              "oof_score": 0.77313,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.77328,
+                0.77659,
+                0.78574
+              ],
+              "seed_sd": 0.00527
+            },
+            "rad_dino": {
+              "median_C": 0.1,
+              "oof_score": 0.76507,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.75838,
+                0.76907,
+                0.74756
+              ],
+              "seed_sd": 0.00878
+            },
+            "retfound": {
+              "median_C": 0.1,
+              "oof_score": 0.82792,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.81337,
+                0.83313,
+                0.83188
+              ],
+              "seed_sd": 0.00903
+            },
+            "siglip2_base": {
+              "median_C": 0.1,
+              "oof_score": 0.81596,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.81812,
+                0.79826,
+                0.8241
+              ],
+              "seed_sd": 0.01104
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.002,
+            "dinov2_base": 0.081,
+            "dinov2_large": 0.151,
+            "imagenet_convnext": 0.6835,
+            "mammo_clip": 0.0,
+            "phikon": 0.0005,
+            "phikon_v2": 0.0,
+            "rad_dino": 0.0,
+            "retfound": 0.071,
+            "siglip2_base": 0.011
+          }
+        },
+        "mammography": {
+          "best_package": "phikon_v2",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.00636,
+              "ci_low": -0.09589,
+              "p_boot": 0.0915,
+              "p_holm": 1.0,
+              "value": -0.04497
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.05477,
+              "ci_low": -0.0367,
+              "p_boot": 0.6335,
+              "p_holm": 1.0,
+              "value": 0.01035
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": 0.03411,
+              "ci_low": -0.05369,
+              "p_boot": 0.7075,
+              "p_holm": 1.0,
+              "value": -0.00927
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": 0.08572,
+              "ci_low": -0.01525,
+              "p_boot": 0.1665,
+              "p_holm": 1.0,
+              "value": 0.03448
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": 0.10793,
+              "ci_low": 0.00628,
+              "p_boot": 0.0285,
+              "p_holm": 0.513,
+              "value": 0.05661
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": 0.05661,
+              "ci_low": -0.05278,
+              "p_boot": 0.9795,
+              "p_holm": 1.0,
+              "value": -0.00025
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": 0.08736,
+              "ci_low": -0.02582,
+              "p_boot": 0.3015,
+              "p_holm": 1.0,
+              "value": 0.02907
+            }
+          },
+          "in_domain_package": "mammo_clip",
+          "metric": "auroc",
+          "n_items": 614,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.001,
+              "oof_score": 0.6334,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.61608,
+                0.63847,
+                0.62726
+              ],
+              "seed_sd": 0.00914
+            },
+            "dinov2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.65924,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.64088,
+                0.63775,
+                0.64944
+              ],
+              "seed_sd": 0.00494
+            },
+            "dinov2_large": {
+              "median_C": 0.1,
+              "oof_score": 0.66959,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.67179,
+                0.63212,
+                0.65661
+              ],
+              "seed_sd": 0.01634
+            },
+            "imagenet_convnext": {
+              "median_C": 0.01,
+              "oof_score": 0.70653,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.7215,
+                0.66975,
+                0.69735
+              ],
+              "seed_sd": 0.02114
+            },
+            "mammo_clip": {
+              "median_C": 0.01,
+              "oof_score": 0.69726,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                0.68975,
+                0.66204,
+                0.6775
+              ],
+              "seed_sd": 0.01134
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.69372,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.69024,
+                0.68852,
+                0.67935
+              ],
+              "seed_sd": 0.00478
+            },
+            "phikon_v2": {
+              "median_C": 0.01,
+              "oof_score": 0.7262,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.72393,
+                0.69479,
+                0.71867
+              ],
+              "seed_sd": 0.01268
+            },
+            "rad_dino": {
+              "median_C": 0.01,
+              "oof_score": 0.65899,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.65873,
+                0.64366,
+                0.62866
+              ],
+              "seed_sd": 0.01228
+            },
+            "retfound": {
+              "median_C": 0.1,
+              "oof_score": 0.69866,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.69137,
+                0.68012,
+                0.6763
+              ],
+              "seed_sd": 0.0064
+            },
+            "siglip2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.67837,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.67522,
+                0.66701,
+                0.65169
+              ],
+              "seed_sd": 0.00975
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.0,
+            "dinov2_base": 0.0,
+            "dinov2_large": 0.0065,
+            "imagenet_convnext": 0.118,
+            "mammo_clip": 0.06,
+            "phikon": 0.034,
+            "phikon_v2": 0.6945,
+            "rad_dino": 0.004,
+            "retfound": 0.078,
+            "siglip2_base": 0.005
+          }
+        },
+        "pathology": {
+          "best_package": "phikon",
+          "contrasts": {
+            "biomedclip_minus_siglip2_base": {
+              "ci_high": 0.01063,
+              "ci_low": -0.00921,
+              "p_boot": 0.9015,
+              "p_holm": 1.0,
+              "value": 0.00069
+            },
+            "dinov2_large_minus_dinov2_base": {
+              "ci_high": 0.0144,
+              "ci_low": 0.00268,
+              "p_boot": 0.0065,
+              "p_holm": 0.1235,
+              "value": 0.00864
+            },
+            "mammo_clip_minus_imagenet_convnext": {
+              "ci_high": -0.18402,
+              "ci_low": -0.22427,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.20436
+            },
+            "phikon_minus_dinov2_base": {
+              "ci_high": 0.02996,
+              "ci_low": 0.016,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": 0.02254
+            },
+            "phikon_v2_minus_dinov2_large": {
+              "ci_high": 0.01962,
+              "ci_low": 0.00614,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": 0.01233
+            },
+            "rad_dino_minus_dinov2_base": {
+              "ci_high": -0.03176,
+              "ci_low": -0.05187,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.04196
+            },
+            "retfound_minus_dinov2_large": {
+              "ci_high": -0.01361,
+              "ci_low": -0.03186,
+              "p_boot": 0.0005,
+              "p_holm": 0.014,
+              "value": -0.02258
+            }
+          },
+          "in_domain_package": "phikon_v2",
+          "metric": "auroc",
+          "n_items": 2000,
+          "packages": {
+            "biomedclip": {
+              "median_C": 0.01,
+              "oof_score": 0.91734,
+              "parameters_millions": 86.2,
+              "seed_scores": [
+                0.91459,
+                0.91706,
+                0.91685
+              ],
+              "seed_sd": 0.00112
+            },
+            "dinov2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.95248,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.94722,
+                0.94869,
+                0.95078
+              ],
+              "seed_sd": 0.00146
+            },
+            "dinov2_large": {
+              "median_C": 0.1,
+              "oof_score": 0.96112,
+              "parameters_millions": 304.4,
+              "seed_scores": [
+                0.95606,
+                0.95573,
+                0.95644
+              ],
+              "seed_sd": 0.00029
+            },
+            "imagenet_convnext": {
+              "median_C": 0.01,
+              "oof_score": 0.95633,
+              "parameters_millions": 28.6,
+              "seed_scores": [
+                0.95547,
+                0.95499,
+                0.95291
+              ],
+              "seed_sd": 0.00111
+            },
+            "mammo_clip": {
+              "median_C": 0.1,
+              "oof_score": 0.75197,
+              "parameters_millions": 9.1,
+              "seed_scores": [
+                0.73444,
+                0.75082,
+                0.72791
+              ],
+              "seed_sd": 0.00964
+            },
+            "phikon": {
+              "median_C": 0.01,
+              "oof_score": 0.97502,
+              "parameters_millions": 86.4,
+              "seed_scores": [
+                0.97262,
+                0.97259,
+                0.97413
+              ],
+              "seed_sd": 0.00072
+            },
+            "phikon_v2": {
+              "median_C": 0.01,
+              "oof_score": 0.97345,
+              "parameters_millions": 303.4,
+              "seed_scores": [
+                0.96982,
+                0.96991,
+                0.97018
+              ],
+              "seed_sd": 0.00015
+            },
+            "rad_dino": {
+              "median_C": 0.01,
+              "oof_score": 0.91052,
+              "parameters_millions": 86.6,
+              "seed_scores": [
+                0.90814,
+                0.9074,
+                0.90972
+              ],
+              "seed_sd": 0.00097
+            },
+            "retfound": {
+              "median_C": 0.1,
+              "oof_score": 0.93854,
+              "parameters_millions": 303.3,
+              "seed_scores": [
+                0.93745,
+                0.93709,
+                0.93397
+              ],
+              "seed_sd": 0.00156
+            },
+            "siglip2_base": {
+              "median_C": 0.01,
+              "oof_score": 0.91665,
+              "parameters_millions": 92.9,
+              "seed_scores": [
+                0.9137,
+                0.9099,
+                0.91664
+              ],
+              "seed_sd": 0.00276
+            }
+          },
+          "prob_best": {
+            "biomedclip": 0.0,
+            "dinov2_base": 0.0,
+            "dinov2_large": 0.0,
+            "imagenet_convnext": 0.0,
+            "mammo_clip": 0.0,
+            "phikon": 0.762,
+            "phikon_v2": 0.238,
+            "rad_dino": 0.0,
+            "retfound": 0.0,
+            "siglip2_base": 0.0
+          }
+        }
+      }
+    }
+  }
+}

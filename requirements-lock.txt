@@ -1,0 +1,22 @@
+# Exact direct-dependency snapshot used for the committed 2026-08-23 result refresh.
+# Python 3.13.7, macOS 14.8.9. Transitive packages remain platform-specific.
+certifi==2025.8.3
+h5py==3.16.0
+matplotlib==3.10.8
+numpy==2.3.5
+opencv-python==5.0.0.93
+pillow==12.0.0
+scikit-learn==1.8.0
+torch==2.13.0
+torchvision==0.28.0
+transformers==5.8.0
+ultralytics==8.4.120
+# added for the CVPR 2027 revision (matched grid, five-lane dispatch, abstention)
+timm==1.0.31
+open_clip_torch==4.2.1
+efficientnet_pytorch==0.7.1
+pyarrow==24.0.0
+huggingface_hub==1.33.0
+joblib==1.5.3
+scipy==1.16.3
+deslib==0.3.7

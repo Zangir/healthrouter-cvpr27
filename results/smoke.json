@@ -1,0 +1,11 @@
+{
+  "n_samples": 10,
+  "provenance": "procedural smoke only",
+  "routing_accuracy": {
+    "ci_high": 1.0,
+    "ci_low": 1.0,
+    "value": 1.0
+  },
+  "seed": 0,
+  "smoke_pass": 1
+}

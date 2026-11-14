@@ -1,0 +1,305 @@
+{
+  "conditions": {
+    "grayscale": {
+      "gate_accuracy": 0.87733,
+      "mean_confidence_correct": 0.91459,
+      "mean_confidence_misrouted": 0.77188,
+      "misrouted_items": 92,
+      "misrouted_lanes": [
+        "mammography"
+      ],
+      "selective_dispatch": [
+        {
+          "chest_dispatched": 138,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.9625,
+            "ci_low": 0.86616,
+            "value": 0.91961
+          },
+          "chest_total": 138,
+          "coverage": 1.0,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.70795,
+            "ci_low": 0.64658,
+            "value": 0.67705
+          },
+          "endoscopy_dispatched": 520,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.70795,
+            "ci_low": 0.64658,
+            "value": 0.67705
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 0.87733,
+          "threshold": 0.0,
+          "valid_output_rate": 0.87733
+        },
+        {
+          "chest_dispatched": 138,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.9625,
+            "ci_low": 0.86616,
+            "value": 0.91961
+          },
+          "chest_total": 138,
+          "coverage": 0.97867,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.71016,
+            "ci_low": 0.64818,
+            "value": 0.67968
+          },
+          "endoscopy_dispatched": 510,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.69322,
+            "ci_low": 0.63096,
+            "value": 0.66191
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 0.88283,
+          "threshold": 0.5,
+          "valid_output_rate": 0.864
+        },
+        {
+          "chest_dispatched": 135,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.96182,
+            "ci_low": 0.86341,
+            "value": 0.91727
+          },
+          "chest_total": 138,
+          "coverage": 0.68533,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.78378,
+            "ci_low": 0.71686,
+            "value": 0.75109
+          },
+          "endoscopy_dispatched": 347,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.50032,
+            "ci_low": 0.42984,
+            "value": 0.46514
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 0.93774,
+          "threshold": 0.9,
+          "valid_output_rate": 0.64267
+        },
+        {
+          "chest_dispatched": 134,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.96087,
+            "ci_low": 0.86329,
+            "value": 0.91669
+          },
+          "chest_total": 138,
+          "coverage": 0.268,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.87695,
+            "ci_low": 0.75287,
+            "value": 0.81922
+          },
+          "endoscopy_dispatched": 64,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.11194,
+            "ci_low": 0.06921,
+            "value": 0.08969
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 0.98507,
+          "threshold": 0.99,
+          "valid_output_rate": 0.264
+        },
+        {
+          "chest_dispatched": 57,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.97162,
+            "ci_low": 0.75811,
+            "value": 0.88243
+          },
+          "chest_total": 138,
+          "coverage": 0.076,
+          "endoscopy_covered_mean_dice": null,
+          "endoscopy_dispatched": 0,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.0,
+            "ci_low": 0.0,
+            "value": 0.0
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 1.0,
+          "threshold": 0.999,
+          "valid_output_rate": 0.076
+        }
+      ]
+    },
+    "standard": {
+      "gate_accuracy": 0.99867,
+      "mean_confidence_correct": 0.98967,
+      "mean_confidence_misrouted": 0.49546,
+      "misrouted_items": 1,
+      "misrouted_lanes": [
+        "fundus"
+      ],
+      "selective_dispatch": [
+        {
+          "chest_dispatched": 138,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.9625,
+            "ci_low": 0.86616,
+            "value": 0.91961
+          },
+          "chest_total": 138,
+          "coverage": 1.0,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.82188,
+            "ci_low": 0.77656,
+            "value": 0.79948
+          },
+          "endoscopy_dispatched": 611,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.82188,
+            "ci_low": 0.77656,
+            "value": 0.79948
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 0.99867,
+          "threshold": 0.0,
+          "valid_output_rate": 0.99867
+        },
+        {
+          "chest_dispatched": 138,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.9625,
+            "ci_low": 0.86616,
+            "value": 0.91961
+          },
+          "chest_total": 138,
+          "coverage": 0.99733,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.82275,
+            "ci_low": 0.77783,
+            "value": 0.80053
+          },
+          "endoscopy_dispatched": 610,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.82053,
+            "ci_low": 0.77467,
+            "value": 0.79791
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 1.0,
+          "threshold": 0.5,
+          "valid_output_rate": 0.99733
+        },
+        {
+          "chest_dispatched": 135,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.96182,
+            "ci_low": 0.86341,
+            "value": 0.91727
+          },
+          "chest_total": 138,
+          "coverage": 0.98267,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.8225,
+            "ci_low": 0.77738,
+            "value": 0.80037
+          },
+          "endoscopy_dispatched": 602,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.81055,
+            "ci_low": 0.76328,
+            "value": 0.78729
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 1.0,
+          "threshold": 0.9,
+          "valid_output_rate": 0.98267
+        },
+        {
+          "chest_dispatched": 134,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.96087,
+            "ci_low": 0.86329,
+            "value": 0.91669
+          },
+          "chest_total": 138,
+          "coverage": 0.81867,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.83575,
+            "ci_low": 0.78824,
+            "value": 0.8128
+          },
+          "endoscopy_dispatched": 480,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.66978,
+            "ci_low": 0.60554,
+            "value": 0.63749
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 1.0,
+          "threshold": 0.99,
+          "valid_output_rate": 0.81867
+        },
+        {
+          "chest_dispatched": 57,
+          "chest_dispatched_auroc": {
+            "ci_high": 0.97162,
+            "ci_low": 0.75811,
+            "value": 0.88243
+          },
+          "chest_total": 138,
+          "coverage": 0.11333,
+          "endoscopy_covered_mean_dice": {
+            "ci_high": 0.88828,
+            "ci_low": 0.77176,
+            "value": 0.83701
+          },
+          "endoscopy_dispatched": 28,
+          "endoscopy_served_mean_dice": {
+            "ci_high": 0.05308,
+            "ci_low": 0.02489,
+            "value": 0.03829
+          },
+          "endoscopy_total": 612,
+          "selective_route_accuracy": 1.0,
+          "threshold": 0.999,
+          "valid_output_rate": 0.11333
+        }
+      ]
+    }
+  },
+  "end_to_end_vs_oracle": {
+    "grayscale_endoscopy_dice_loss": 0.12403,
+    "grayscale_valid_output_rate": 0.87733,
+    "standard_endoscopy_dice_loss": 0.0016
+  },
+  "executable_lanes": {
+    "0": "tb_convnext_tiny_full.pt",
+    "1": "kvasir_yolo_seg",
+    "2": "pcam_convnext_tiny_full.pt",
+    "3": "aptos_convnext_tiny.pt",
+    "4": "cbis_convnext_tiny.pt"
+  },
+  "n_items": 750,
+  "oracle_routing": {
+    "chest_auroc": {
+      "ci_high": 0.9625,
+      "ci_low": 0.86616,
+      "value": 0.91961
+    },
+    "definition": "reference routing; every item reaches its correct lane",
+    "endoscopy_mean_dice": {
+      "ci_high": 0.82353,
+      "ci_low": 0.77816,
+      "value": 0.80108
+    }
+  },
+  "protocol": "gate prediction selects a registry lane; the selected lane is executed and only schema-compatible outputs are scored",
+  "provenance": "run",
+  "runtime_seconds": 143.85,
+  "source_counts": {
+    "chest_xray": 138,
+    "endoscopy": 612
+  }
+}

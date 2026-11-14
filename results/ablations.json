@@ -1,0 +1,118 @@
+{
+  "duplicate_exclusion": {
+    "aptos_qwk_clean": 0.9013,
+    "aptos_qwk_raw": 0.90031,
+    "cbis_auroc_clean": 0.81203,
+    "cbis_auroc_raw": 0.81462,
+    "pcam_auroc_clean": 0.95788,
+    "pcam_auroc_raw": 0.95796
+  },
+  "frozen_imagenet_convnext_router_data_scale": {
+    "10": {
+      "mean": 0.98267,
+      "replicates": [
+        0.98667,
+        0.98533,
+        0.98267,
+        0.98667,
+        0.972
+      ],
+      "std": 0.00553
+    },
+    "100": {
+      "mean": 0.992,
+      "replicates": [
+        0.992,
+        0.992,
+        0.99333,
+        0.992,
+        0.99067
+      ],
+      "std": 0.00084
+    },
+    "200": {
+      "mean": 0.99387,
+      "replicates": [
+        0.99333,
+        0.99467,
+        0.99333,
+        0.992,
+        0.996
+      ],
+      "std": 0.00136
+    },
+    "25": {
+      "mean": 0.9912,
+      "replicates": [
+        0.99467,
+        0.99067,
+        0.98933,
+        0.992,
+        0.98933
+      ],
+      "std": 0.002
+    },
+    "400": {
+      "mean": 0.996,
+      "replicates": [
+        0.996,
+        0.996,
+        0.996,
+        0.996,
+        0.996
+      ],
+      "std": 0.0
+    },
+    "50": {
+      "mean": 0.99253,
+      "replicates": [
+        0.99067,
+        0.992,
+        0.99333,
+        0.99333,
+        0.99333
+      ],
+      "std": 0.00107
+    }
+  },
+  "representation_package": {
+    "imagenet_convnext_fold_mean_auroc": 0.90075,
+    "paired_oof_auroc_difference": {
+      "ci_high": 0.10347,
+      "ci_low": 0.05845,
+      "value": 0.08029
+    },
+    "rad_dino_fold_mean_auroc": 0.98159
+  },
+  "routing_corruptions": {
+    "blur": {
+      "ci_high": 0.99733,
+      "ci_low": 0.98267,
+      "correct": 743,
+      "n": 750,
+      "value": 0.99067
+    },
+    "grayscale": {
+      "ci_high": 0.9,
+      "ci_low": 0.85333,
+      "correct": 658,
+      "n": 750,
+      "value": 0.87733
+    },
+    "low_resolution": {
+      "ci_high": 0.996,
+      "ci_low": 0.98133,
+      "correct": 742,
+      "n": 750,
+      "value": 0.98933
+    }
+  },
+  "routing_source_shift": {
+    "frozen_imagenet_convnext_router_external_accuracy": 0.996,
+    "frozen_imagenet_convnext_router_in_source_accuracy": 1.0,
+    "learned_convnext_router_external_accuracy": 0.99867,
+    "learned_convnext_router_in_source_accuracy": 1.0,
+    "rgb_statistics_router_external_accuracy": 0.58267,
+    "rgb_statistics_router_in_source_accuracy": 0.992
+  }
+}

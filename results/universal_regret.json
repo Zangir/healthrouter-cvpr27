@@ -1,0 +1,219 @@
+{
+  "provenance": "derived from results/matched_grid.json",
+  "sizes": {
+    "224": {
+      "best_single_mean_gap": 0.03116,
+      "best_single_package": "retfound",
+      "best_single_worst_gap": 0.04714,
+      "packages": {
+        "biomedclip": {
+          "gaps": {
+            "chest_xray": 0.04006,
+            "fundus": 0.04571,
+            "mammography": 0.05128,
+            "pathology": 0.04315
+          },
+          "mean_gap": 0.04505,
+          "worst_gap": 0.05128
+        },
+        "dinov2_base": {
+          "gaps": {
+            "chest_xray": 0.04986,
+            "fundus": 0.0,
+            "mammography": 0.05124,
+            "pathology": 0.04086
+          },
+          "mean_gap": 0.03549,
+          "worst_gap": 0.05124
+        },
+        "dinov2_large": {
+          "gaps": {
+            "chest_xray": 0.0496,
+            "fundus": 0.0093,
+            "mammography": 0.03619,
+            "pathology": 0.02746
+          },
+          "mean_gap": 0.03064,
+          "worst_gap": 0.0496
+        },
+        "imagenet_convnext": {
+          "gaps": {
+            "chest_xray": 0.0474,
+            "fundus": 0.02278,
+            "mammography": 0.01063,
+            "pathology": 0.03629
+          },
+          "mean_gap": 0.02928,
+          "worst_gap": 0.0474
+        },
+        "mammo_clip": {
+          "gaps": {
+            "chest_xray": 0.05267,
+            "fundus": 0.86713,
+            "mammography": 0.01258,
+            "pathology": 0.12619
+          },
+          "mean_gap": 0.26464,
+          "worst_gap": 0.86713
+        },
+        "phikon": {
+          "gaps": {
+            "chest_xray": 0.04571,
+            "fundus": 0.06697,
+            "mammography": 0.0,
+            "pathology": 0.0
+          },
+          "mean_gap": 0.02817,
+          "worst_gap": 0.06697
+        },
+        "phikon_v2": {
+          "gaps": {
+            "chest_xray": 0.04169,
+            "fundus": 0.05874,
+            "mammography": 0.02239,
+            "pathology": 0.00048
+          },
+          "mean_gap": 0.03082,
+          "worst_gap": 0.05874
+        },
+        "rad_dino": {
+          "gaps": {
+            "chest_xray": 0.0,
+            "fundus": 0.08734,
+            "mammography": 0.06579,
+            "pathology": 0.07253
+          },
+          "mean_gap": 0.05641,
+          "worst_gap": 0.08734
+        },
+        "retfound": {
+          "gaps": {
+            "chest_xray": 0.03936,
+            "fundus": 0.00148,
+            "mammography": 0.03666,
+            "pathology": 0.04714
+          },
+          "mean_gap": 0.03116,
+          "worst_gap": 0.04714
+        },
+        "siglip2_base": {
+          "gaps": {
+            "chest_xray": 0.039,
+            "fundus": 0.02014,
+            "mammography": 0.04084,
+            "pathology": 0.05123
+          },
+          "mean_gap": 0.0378,
+          "worst_gap": 0.05123
+        }
+      }
+    },
+    "448": {
+      "best_single_mean_gap": 0.03502,
+      "best_single_package": "retfound",
+      "best_single_worst_gap": 0.05213,
+      "packages": {
+        "biomedclip": {
+          "gaps": {
+            "chest_xray": 0.04592,
+            "fundus": 0.04147,
+            "mammography": 0.0928,
+            "pathology": 0.05768
+          },
+          "mean_gap": 0.05947,
+          "worst_gap": 0.0928
+        },
+        "dinov2_base": {
+          "gaps": {
+            "chest_xray": 0.04971,
+            "fundus": 0.01576,
+            "mammography": 0.06696,
+            "pathology": 0.02254
+          },
+          "mean_gap": 0.03874,
+          "worst_gap": 0.06696
+        },
+        "dinov2_large": {
+          "gaps": {
+            "chest_xray": 0.04913,
+            "fundus": 0.01241,
+            "mammography": 0.05661,
+            "pathology": 0.0139
+          },
+          "mean_gap": 0.03301,
+          "worst_gap": 0.05661
+        },
+        "imagenet_convnext": {
+          "gaps": {
+            "chest_xray": 0.05529,
+            "fundus": 0.0,
+            "mammography": 0.01967,
+            "pathology": 0.01869
+          },
+          "mean_gap": 0.02341,
+          "worst_gap": 0.05529
+        },
+        "mammo_clip": {
+          "gaps": {
+            "chest_xray": 0.03866,
+            "fundus": 0.82012,
+            "mammography": 0.02894,
+            "pathology": 0.22305
+          },
+          "mean_gap": 0.27769,
+          "worst_gap": 0.82012
+        },
+        "phikon": {
+          "gaps": {
+            "chest_xray": 0.0512,
+            "fundus": 0.05905,
+            "mammography": 0.03248,
+            "pathology": 0.0
+          },
+          "mean_gap": 0.03568,
+          "worst_gap": 0.05905
+        },
+        "phikon_v2": {
+          "gaps": {
+            "chest_xray": 0.04141,
+            "fundus": 0.07871,
+            "mammography": 0.0,
+            "pathology": 0.00157
+          },
+          "mean_gap": 0.03042,
+          "worst_gap": 0.07871
+        },
+        "rad_dino": {
+          "gaps": {
+            "chest_xray": 0.0,
+            "fundus": 0.08677,
+            "mammography": 0.06721,
+            "pathology": 0.0645
+          },
+          "mean_gap": 0.05462,
+          "worst_gap": 0.08677
+        },
+        "retfound": {
+          "gaps": {
+            "chest_xray": 0.05213,
+            "fundus": 0.02392,
+            "mammography": 0.02754,
+            "pathology": 0.03648
+          },
+          "mean_gap": 0.03502,
+          "worst_gap": 0.05213
+        },
+        "siglip2_base": {
+          "gaps": {
+            "chest_xray": 0.05015,
+            "fundus": 0.03588,
+            "mammography": 0.04783,
+            "pathology": 0.05837
+          },
+          "mean_gap": 0.04806,
+          "worst_gap": 0.05837
+        }
+      }
+    }
+  }
+}

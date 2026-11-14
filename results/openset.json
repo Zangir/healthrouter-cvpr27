@@ -1,0 +1,100 @@
+{
+  "gates": {
+    "probe": {
+      "breast_ultrasound": {
+        "dispatched_fraction": 1.0,
+        "lane_counts_when_dispatched": [
+          0,
+          0,
+          2,
+          0,
+          298
+        ],
+        "mean_confidence": 0.90454
+      },
+      "dermoscopy": {
+        "dispatched_fraction": 1.0,
+        "lane_counts_when_dispatched": [
+          0,
+          11,
+          141,
+          143,
+          5
+        ],
+        "mean_confidence": 0.60359
+      },
+      "tau_clean": 0.0
+    },
+    "supervised": {
+      "breast_ultrasound": {
+        "dispatched_fraction": 1.0,
+        "lane_counts_when_dispatched": [
+          1,
+          0,
+          80,
+          0,
+          219
+        ],
+        "mean_confidence": 0.67703
+      },
+      "dermoscopy": {
+        "dispatched_fraction": 1.0,
+        "lane_counts_when_dispatched": [
+          0,
+          25,
+          220,
+          53,
+          2
+        ],
+        "mean_confidence": 0.69895
+      },
+      "tau_clean": 0.0
+    },
+    "zero_shot_biomedclip": {
+      "breast_ultrasound": {
+        "dispatched_fraction": 1.0,
+        "lane_counts_when_dispatched": [
+          16,
+          1,
+          0,
+          0,
+          283
+        ],
+        "mean_confidence": 0.9534
+      },
+      "dermoscopy": {
+        "dispatched_fraction": 1.0,
+        "lane_counts_when_dispatched": [
+          0,
+          109,
+          9,
+          5,
+          177
+        ],
+        "mean_confidence": 0.80056
+      },
+      "tau_clean": 0.0
+    }
+  },
+  "knn": {
+    "breast_ultrasound_rejected": 0.55333,
+    "dermoscopy_rejected": 0.86,
+    "in_scope_test_kept": 0.94705,
+    "k": 10,
+    "keep_target": 0.95,
+    "threshold": 0.388102
+  },
+  "lanes": [
+    "chest_xray",
+    "endoscopy",
+    "pathology",
+    "fundus",
+    "mammography"
+  ],
+  "n_per_modality": {
+    "breast_ultrasound": 300,
+    "dermoscopy": 300
+  },
+  "provenance": "run",
+  "runtime_seconds": 56.0
+}

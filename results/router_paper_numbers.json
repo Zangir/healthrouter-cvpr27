@@ -1,0 +1,6202 @@
+{
+ "hr_macro": {
+  "value": 0.8798,
+  "text": "0.880",
+  "formula": "methods.healthrouter.macro.value",
+  "ci": [
+   0.8687,
+   0.8907
+  ],
+  "ci_text": "[0.869, 0.891]"
+ },
+ "d_soft_moe": {
+  "value": 0.0106,
+  "text": "0.011",
+  "formula": "differences_vs_healthrouter.soft_moe.macro",
+  "ci": [
+   0.0052,
+   0.0162
+  ],
+  "ci_text": "[0.005, 0.016]"
+ },
+ "d_sparse_moe": {
+  "value": 0.0153,
+  "text": "0.015",
+  "formula": "differences_vs_healthrouter.sparse_topk_moe.macro",
+  "ci": [
+   0.0088,
+   0.0219
+  ],
+  "ci_text": "[0.009, 0.022]"
+ },
+ "d_knora_u": {
+  "value": 0.0407,
+  "text": "0.041",
+  "formula": "differences_vs_healthrouter.knora_u.macro",
+  "ci": [
+   0.0301,
+   0.0518
+  ],
+  "ci_text": "[0.030, 0.052]"
+ },
+ "d_meta_des": {
+  "value": 0.062,
+  "text": "0.062",
+  "formula": "differences_vs_healthrouter.meta_des.macro",
+  "ci": [
+   0.0512,
+   0.0739
+  ],
+  "ci_text": "[0.051, 0.074]"
+ },
+ "d_knora_e": {
+  "value": 0.0778,
+  "text": "0.078",
+  "formula": "differences_vs_healthrouter.knora_e.macro",
+  "ci": [
+   0.0652,
+   0.0906
+  ],
+  "ci_text": "[0.065, 0.091]"
+ },
+ "d_stacking": {
+  "value": 0.0056,
+  "text": "0.006",
+  "formula": "differences_vs_healthrouter.stacking.macro",
+  "ci": [
+   -0.0001,
+   0.0116
+  ],
+  "ci_text": "[-0.000, 0.012]"
+ },
+ "d_knn": {
+  "value": 0.0034,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter.knn_router.macro",
+  "ci": [
+   -0.0014,
+   0.0087
+  ],
+  "ci_text": "[-0.001, 0.009]"
+ },
+ "d_uniform": {
+  "value": 0.0125,
+  "text": "0.013",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.macro",
+  "ci": [
+   0.0059,
+   0.0195
+  ],
+  "ci_text": "[0.006, 0.019]"
+ },
+ "d_greedy": {
+  "value": 0.0051,
+  "text": "0.005",
+  "formula": "differences_vs_healthrouter.greedy_ensemble_selection.macro",
+  "ci": [
+   0.0006,
+   0.0104
+  ],
+  "ci_text": "[0.001, 0.010]"
+ },
+ "d_modality": {
+  "value": 0.01,
+  "text": "0.010",
+  "formula": "differences_vs_healthrouter.modality_router_supervised.macro",
+  "ci": [
+   0.0034,
+   0.0167
+  ],
+  "ci_text": "[0.003, 0.017]"
+ },
+ "d_modality_oof": {
+  "value": 0.0069,
+  "text": "0.007",
+  "formula": "differences_vs_healthrouter.modality_router_supervised_oof.macro",
+  "ci": [
+   0.0019,
+   0.012
+  ],
+  "ci_text": "[0.002, 0.012]"
+ },
+ "d_routellm": {
+  "value": 0.0101,
+  "text": "0.010",
+  "formula": "differences_vs_healthrouter.routellm_mf.macro",
+  "ci": [
+   0.0039,
+   0.0172
+  ],
+  "ci_text": "[0.004, 0.017]"
+ },
+ "d_routerbench": {
+  "value": 0.0118,
+  "text": "0.012",
+  "formula": "differences_vs_healthrouter.routerbench_mlp.macro",
+  "ci": [
+   0.0053,
+   0.0186
+  ],
+  "ci_text": "[0.005, 0.019]"
+ },
+ "d_logme": {
+  "value": 0.0134,
+  "text": "0.013",
+  "formula": "differences_vs_healthrouter.logme_selection.macro",
+  "ci": [
+   0.0063,
+   0.0204
+  ],
+  "ci_text": "[0.006, 0.020]"
+ },
+ "bs_task_gap": {
+  "value": 0.0172,
+  "text": "0.017",
+  "formula": "differences_vs_healthrouter.best_single_per_task.macro",
+  "ci": [
+   0.0102,
+   0.0247
+  ],
+  "ci_text": "[0.010, 0.025]"
+ },
+ "d_best_overall": {
+  "value": 0.048,
+  "text": "0.048",
+  "formula": "differences_vs_healthrouter.best_single_overall.macro",
+  "ci": [
+   0.0383,
+   0.058
+  ],
+  "ci_text": "[0.038, 0.058]"
+ },
+ "d_harness": {
+  "value": 0.0025,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter.healthrouter_harness.macro",
+  "ci": [
+   -0.002,
+   0.007
+  ],
+  "ci_text": "[-0.002, 0.007]"
+ },
+ "h_uniform": {
+  "value": 0.01,
+  "text": "0.010",
+  "formula": "differences_vs_healthrouter_harness.uniform_ensemble.macro",
+  "ci": [
+   0.0043,
+   0.016
+  ],
+  "ci_text": "[0.004, 0.016]"
+ },
+ "h_stacking": {
+  "value": 0.0031,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter_harness.stacking.macro",
+  "ci": [
+   -0.0027,
+   0.0088
+  ],
+  "ci_text": "[-0.003, 0.009]"
+ },
+ "h_soft_moe": {
+  "value": 0.0081,
+  "text": "0.008",
+  "formula": "differences_vs_healthrouter_harness.soft_moe.macro",
+  "ci": [
+   0.0025,
+   0.0136
+  ],
+  "ci_text": "[0.003, 0.014]"
+ },
+ "h_greedy": {
+  "value": 0.0026,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter_harness.greedy_ensemble_selection.macro",
+  "ci": [
+   -0.0025,
+   0.0081
+  ],
+  "ci_text": "[-0.003, 0.008]"
+ },
+ "harness_macro": {
+  "value": 0.8773,
+  "text": "0.877",
+  "formula": "methods.healthrouter_harness.macro",
+  "ci": [
+   0.8657,
+   0.8888
+  ],
+  "ci_text": "[0.866, 0.889]"
+ },
+ "harness_calls": {
+  "value": 1.813,
+  "text": "1.81",
+  "formula": "methods.healthrouter_harness.invoked_mean"
+ },
+ "hr_calls": {
+  "value": 2.552,
+  "text": "2.55",
+  "formula": "methods.healthrouter.invoked_mean"
+ },
+ "harness_fewer_calls": {
+  "value": 81.87,
+  "text": "82\\%",
+  "formula": "100*(1 - harness.invoked_mean / uniform_ensemble.invoked_mean)"
+ },
+ "harness_less_time": {
+  "value": 77.52117418065127,
+  "text": "77.5\\%",
+  "formula": "100*(1 - harness.latency_ms_mean / uniform_ensemble.latency_ms_mean)"
+ },
+ "harness_ms": {
+  "value": 42.73,
+  "text": "42.7",
+  "formula": "methods.healthrouter_harness.latency_ms_mean"
+ },
+ "uniform_ms": {
+  "value": 190.09,
+  "text": "190.1",
+  "formula": "methods.uniform_ensemble.latency_ms_mean"
+ },
+ "hr_ms": {
+  "value": 59.93,
+  "text": "59.9",
+  "formula": "methods.healthrouter.latency_ms_mean"
+ },
+ "router_ms": {
+  "value": 6.09,
+  "text": "6.1",
+  "formula": "candidate_cost_ms[imagenet_convnext]"
+ },
+ "costmin": {
+  "value": 6.09,
+  "text": "6.1",
+  "formula": "min(candidate_cost_ms)"
+ },
+ "costmax": {
+  "value": 41.12,
+  "text": "41.1",
+  "formula": "max(candidate_cost_ms)"
+ },
+ "harness_one_model": {
+  "value": 56.084999999999994,
+  "text": "56\\%",
+  "formula": "100*mean_t harness.invoked_hist[t][k=1]"
+ },
+ "oracle_macro": {
+  "value": 0.9796,
+  "text": "0.980",
+  "formula": "methods.oracle_single.macro"
+ },
+ "m_abl_feat_biomedclip": {
+  "value": 0.8777,
+  "text": "0.878",
+  "formula": "methods.abl_feat_biomedclip.macro",
+  "ci": [
+   0.8663,
+   0.8889
+  ],
+  "ci_text": "[0.866, 0.889]"
+ },
+ "calls_abl_feat_biomedclip": {
+  "value": 2.443,
+  "text": "2.44",
+  "formula": "methods.abl_feat_biomedclip.invoked_mean"
+ },
+ "ms_abl_feat_biomedclip": {
+  "value": 59.14,
+  "text": "59",
+  "formula": "methods.abl_feat_biomedclip.latency_ms_mean"
+ },
+ "d_abl_feat_biomedclip": {
+  "value": 0.0021,
+  "text": "0.002",
+  "formula": "differences_vs_healthrouter.abl_feat_biomedclip.macro",
+  "ci": [
+   -0.0032,
+   0.0079
+  ],
+  "ci_text": "[-0.003, 0.008]"
+ },
+ "a_d_abl_feat_biomedclip": {
+  "value": 0.0021,
+  "text": "0.002",
+  "formula": "abs(differences_vs_healthrouter.abl_feat_biomedclip.macro)"
+ },
+ "m_abl_feat_dinov2_large": {
+  "value": 0.871,
+  "text": "0.871",
+  "formula": "methods.abl_feat_dinov2_large.macro",
+  "ci": [
+   0.859,
+   0.8827
+  ],
+  "ci_text": "[0.859, 0.883]"
+ },
+ "calls_abl_feat_dinov2_large": {
+  "value": 2.84,
+  "text": "2.84",
+  "formula": "methods.abl_feat_dinov2_large.invoked_mean"
+ },
+ "ms_abl_feat_dinov2_large": {
+  "value": 66.06,
+  "text": "66",
+  "formula": "methods.abl_feat_dinov2_large.latency_ms_mean"
+ },
+ "d_abl_feat_dinov2_large": {
+  "value": 0.0088,
+  "text": "0.009",
+  "formula": "differences_vs_healthrouter.abl_feat_dinov2_large.macro",
+  "ci": [
+   0.0035,
+   0.014
+  ],
+  "ci_text": "[0.004, 0.014]"
+ },
+ "a_d_abl_feat_dinov2_large": {
+  "value": 0.0088,
+  "text": "0.009",
+  "formula": "abs(differences_vs_healthrouter.abl_feat_dinov2_large.macro)"
+ },
+ "m_abl_feat_task_id": {
+  "value": 0.8752,
+  "text": "0.875",
+  "formula": "methods.abl_feat_task_id.macro",
+  "ci": [
+   0.8634,
+   0.8868
+  ],
+  "ci_text": "[0.863, 0.887]"
+ },
+ "calls_abl_feat_task_id": {
+  "value": 2.621,
+  "text": "2.62",
+  "formula": "methods.abl_feat_task_id.invoked_mean"
+ },
+ "ms_abl_feat_task_id": {
+  "value": 61.27,
+  "text": "61",
+  "formula": "methods.abl_feat_task_id.latency_ms_mean"
+ },
+ "d_abl_feat_task_id": {
+  "value": 0.0046,
+  "text": "0.005",
+  "formula": "differences_vs_healthrouter.abl_feat_task_id.macro",
+  "ci": [
+   -0.0,
+   0.0096
+  ],
+  "ci_text": "[-0.000, 0.010]"
+ },
+ "a_d_abl_feat_task_id": {
+  "value": 0.0046,
+  "text": "0.005",
+  "formula": "abs(differences_vs_healthrouter.abl_feat_task_id.macro)"
+ },
+ "m_abl_geometric_fusion": {
+  "value": 0.8792,
+  "text": "0.879",
+  "formula": "methods.abl_geometric_fusion.macro",
+  "ci": [
+   0.8682,
+   0.8899
+  ],
+  "ci_text": "[0.868, 0.890]"
+ },
+ "calls_abl_geometric_fusion": {
+  "value": 2.44,
+  "text": "2.44",
+  "formula": "methods.abl_geometric_fusion.invoked_mean"
+ },
+ "ms_abl_geometric_fusion": {
+  "value": 57.57,
+  "text": "58",
+  "formula": "methods.abl_geometric_fusion.latency_ms_mean"
+ },
+ "d_abl_geometric_fusion": {
+  "value": 0.0006,
+  "text": "0.001",
+  "formula": "differences_vs_healthrouter.abl_geometric_fusion.macro",
+  "ci": [
+   -0.0011,
+   0.0023
+  ],
+  "ci_text": "[-0.001, 0.002]"
+ },
+ "a_d_abl_geometric_fusion": {
+  "value": 0.0006,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.abl_geometric_fusion.macro)"
+ },
+ "m_abl_picks1": {
+  "value": 0.8753,
+  "text": "0.875",
+  "formula": "methods.abl_picks1.macro",
+  "ci": [
+   0.8646,
+   0.8863
+  ],
+  "ci_text": "[0.865, 0.886]"
+ },
+ "calls_abl_picks1": {
+  "value": 1.609,
+  "text": "1.61",
+  "formula": "methods.abl_picks1.invoked_mean"
+ },
+ "ms_abl_picks1": {
+  "value": 40.36,
+  "text": "40",
+  "formula": "methods.abl_picks1.latency_ms_mean"
+ },
+ "d_abl_picks1": {
+  "value": 0.0045,
+  "text": "0.004",
+  "formula": "differences_vs_healthrouter.abl_picks1.macro",
+  "ci": [
+   0.001,
+   0.0083
+  ],
+  "ci_text": "[0.001, 0.008]"
+ },
+ "a_d_abl_picks1": {
+  "value": 0.0045,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.abl_picks1.macro)"
+ },
+ "m_abl_picks3": {
+  "value": 0.8813,
+  "text": "0.881",
+  "formula": "methods.abl_picks3.macro",
+  "ci": [
+   0.87,
+   0.8922
+  ],
+  "ci_text": "[0.870, 0.892]"
+ },
+ "calls_abl_picks3": {
+  "value": 2.94,
+  "text": "2.94",
+  "formula": "methods.abl_picks3.invoked_mean"
+ },
+ "ms_abl_picks3": {
+  "value": 68.36,
+  "text": "68",
+  "formula": "methods.abl_picks3.latency_ms_mean"
+ },
+ "d_abl_picks3": {
+  "value": -0.0015,
+  "text": "-0.002",
+  "formula": "differences_vs_healthrouter.abl_picks3.macro",
+  "ci": [
+   -0.003,
+   0.0001
+  ],
+  "ci_text": "[-0.003, 0.000]"
+ },
+ "a_d_abl_picks3": {
+  "value": 0.0015,
+  "text": "0.002",
+  "formula": "abs(differences_vs_healthrouter.abl_picks3.macro)"
+ },
+ "m_abl_size1": {
+  "value": 0.8781,
+  "text": "0.878",
+  "formula": "methods.abl_size1.macro",
+  "ci": [
+   0.8666,
+   0.8892
+  ],
+  "ci_text": "[0.867, 0.889]"
+ },
+ "calls_abl_size1": {
+  "value": 3.0,
+  "text": "3.00",
+  "formula": "methods.abl_size1.invoked_mean"
+ },
+ "ms_abl_size1": {
+  "value": 68.85,
+  "text": "69",
+  "formula": "methods.abl_size1.latency_ms_mean"
+ },
+ "d_abl_size1": {
+  "value": 0.0017,
+  "text": "0.002",
+  "formula": "differences_vs_healthrouter.abl_size1.macro",
+  "ci": [
+   -0.0023,
+   0.0056
+  ],
+  "ci_text": "[-0.002, 0.006]"
+ },
+ "a_d_abl_size1": {
+  "value": 0.0017,
+  "text": "0.002",
+  "formula": "abs(differences_vs_healthrouter.abl_size1.macro)"
+ },
+ "m_abl_size2": {
+  "value": 0.8758,
+  "text": "0.876",
+  "formula": "methods.abl_size2.macro",
+  "ci": [
+   0.8649,
+   0.8866
+  ],
+  "ci_text": "[0.865, 0.887]"
+ },
+ "calls_abl_size2": {
+  "value": 2.476,
+  "text": "2.48",
+  "formula": "methods.abl_size2.invoked_mean"
+ },
+ "ms_abl_size2": {
+  "value": 58.03,
+  "text": "58",
+  "formula": "methods.abl_size2.latency_ms_mean"
+ },
+ "d_abl_size2": {
+  "value": 0.004,
+  "text": "0.004",
+  "formula": "differences_vs_healthrouter.abl_size2.macro",
+  "ci": [
+   0.0015,
+   0.0066
+  ],
+  "ci_text": "[0.002, 0.007]"
+ },
+ "a_d_abl_size2": {
+  "value": 0.004,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.abl_size2.macro)"
+ },
+ "m_abl_size3": {
+  "value": 0.8793,
+  "text": "0.879",
+  "formula": "methods.abl_size3.macro",
+  "ci": [
+   0.868,
+   0.8903
+  ],
+  "ci_text": "[0.868, 0.890]"
+ },
+ "calls_abl_size3": {
+  "value": 2.733,
+  "text": "2.73",
+  "formula": "methods.abl_size3.invoked_mean"
+ },
+ "ms_abl_size3": {
+  "value": 63.9,
+  "text": "64",
+  "formula": "methods.abl_size3.latency_ms_mean"
+ },
+ "d_abl_size3": {
+  "value": 0.0005,
+  "text": "0.001",
+  "formula": "differences_vs_healthrouter.abl_size3.macro",
+  "ci": [
+   -0.0017,
+   0.0032
+  ],
+  "ci_text": "[-0.002, 0.003]"
+ },
+ "a_d_abl_size3": {
+  "value": 0.0005,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.abl_size3.macro)"
+ },
+ "m_abl_size4": {
+  "value": 0.8791,
+  "text": "0.879",
+  "formula": "methods.abl_size4.macro",
+  "ci": [
+   0.8679,
+   0.89
+  ],
+  "ci_text": "[0.868, 0.890]"
+ },
+ "calls_abl_size4": {
+  "value": 2.87,
+  "text": "2.87",
+  "formula": "methods.abl_size4.invoked_mean"
+ },
+ "ms_abl_size4": {
+  "value": 66.58,
+  "text": "67",
+  "formula": "methods.abl_size4.latency_ms_mean"
+ },
+ "d_abl_size4": {
+  "value": 0.0007,
+  "text": "0.001",
+  "formula": "differences_vs_healthrouter.abl_size4.macro",
+  "ci": [
+   -0.0025,
+   0.0042
+  ],
+  "ci_text": "[-0.003, 0.004]"
+ },
+ "a_d_abl_size4": {
+  "value": 0.0007,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.abl_size4.macro)"
+ },
+ "m_cost_lam0.05": {
+  "value": 0.8795,
+  "text": "0.879",
+  "formula": "methods.cost_lam0.05.macro",
+  "ci": [
+   0.8682,
+   0.8905
+  ],
+  "ci_text": "[0.868, 0.890]"
+ },
+ "calls_cost_lam0.05": {
+  "value": 2.705,
+  "text": "2.71",
+  "formula": "methods.cost_lam0.05.invoked_mean"
+ },
+ "ms_cost_lam0.05": {
+  "value": 61.69,
+  "text": "62",
+  "formula": "methods.cost_lam0.05.latency_ms_mean"
+ },
+ "d_cost_lam0.05": {
+  "value": 0.0003,
+  "text": "0.000",
+  "formula": "differences_vs_healthrouter.cost_lam0.05.macro",
+  "ci": [
+   -0.002,
+   0.0029
+  ],
+  "ci_text": "[-0.002, 0.003]"
+ },
+ "a_d_cost_lam0.05": {
+  "value": 0.0003,
+  "text": "0.000",
+  "formula": "abs(differences_vs_healthrouter.cost_lam0.05.macro)"
+ },
+ "m_cost_lam0.1": {
+  "value": 0.8789,
+  "text": "0.879",
+  "formula": "methods.cost_lam0.1.macro",
+  "ci": [
+   0.8683,
+   0.8896
+  ],
+  "ci_text": "[0.868, 0.890]"
+ },
+ "calls_cost_lam0.1": {
+  "value": 2.457,
+  "text": "2.46",
+  "formula": "methods.cost_lam0.1.invoked_mean"
+ },
+ "ms_cost_lam0.1": {
+  "value": 55.73,
+  "text": "56",
+  "formula": "methods.cost_lam0.1.latency_ms_mean"
+ },
+ "d_cost_lam0.1": {
+  "value": 0.0009,
+  "text": "0.001",
+  "formula": "differences_vs_healthrouter.cost_lam0.1.macro",
+  "ci": [
+   -0.0012,
+   0.003
+  ],
+  "ci_text": "[-0.001, 0.003]"
+ },
+ "a_d_cost_lam0.1": {
+  "value": 0.0009,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.cost_lam0.1.macro)"
+ },
+ "m_cost_lam0.2": {
+  "value": 0.8785,
+  "text": "0.878",
+  "formula": "methods.cost_lam0.2.macro",
+  "ci": [
+   0.8674,
+   0.8888
+  ],
+  "ci_text": "[0.867, 0.889]"
+ },
+ "calls_cost_lam0.2": {
+  "value": 2.514,
+  "text": "2.51",
+  "formula": "methods.cost_lam0.2.invoked_mean"
+ },
+ "ms_cost_lam0.2": {
+  "value": 54.37,
+  "text": "54",
+  "formula": "methods.cost_lam0.2.latency_ms_mean"
+ },
+ "d_cost_lam0.2": {
+  "value": 0.0013,
+  "text": "0.001",
+  "formula": "differences_vs_healthrouter.cost_lam0.2.macro",
+  "ci": [
+   -0.0015,
+   0.0045
+  ],
+  "ci_text": "[-0.002, 0.004]"
+ },
+ "a_d_cost_lam0.2": {
+  "value": 0.0013,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.cost_lam0.2.macro)"
+ },
+ "m_cost_lam0.5": {
+  "value": 0.8757,
+  "text": "0.876",
+  "formula": "methods.cost_lam0.5.macro",
+  "ci": [
+   0.8646,
+   0.8866
+  ],
+  "ci_text": "[0.865, 0.887]"
+ },
+ "calls_cost_lam0.5": {
+  "value": 2.313,
+  "text": "2.31",
+  "formula": "methods.cost_lam0.5.invoked_mean"
+ },
+ "ms_cost_lam0.5": {
+  "value": 47.33,
+  "text": "47",
+  "formula": "methods.cost_lam0.5.latency_ms_mean"
+ },
+ "d_cost_lam0.5": {
+  "value": 0.0041,
+  "text": "0.004",
+  "formula": "differences_vs_healthrouter.cost_lam0.5.macro",
+  "ci": [
+   0.0003,
+   0.0081
+  ],
+  "ci_text": "[0.000, 0.008]"
+ },
+ "a_d_cost_lam0.5": {
+  "value": 0.0041,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.cost_lam0.5.macro)"
+ },
+ "m_cost_lam1.0": {
+  "value": 0.8731,
+  "text": "0.873",
+  "formula": "methods.cost_lam1.0.macro",
+  "ci": [
+   0.8623,
+   0.884
+  ],
+  "ci_text": "[0.862, 0.884]"
+ },
+ "calls_cost_lam1.0": {
+  "value": 1.945,
+  "text": "1.95",
+  "formula": "methods.cost_lam1.0.invoked_mean"
+ },
+ "ms_cost_lam1.0": {
+  "value": 40.09,
+  "text": "40",
+  "formula": "methods.cost_lam1.0.latency_ms_mean"
+ },
+ "d_cost_lam1.0": {
+  "value": 0.0067,
+  "text": "0.007",
+  "formula": "differences_vs_healthrouter.cost_lam1.0.macro",
+  "ci": [
+   0.0031,
+   0.0107
+  ],
+  "ci_text": "[0.003, 0.011]"
+ },
+ "a_d_cost_lam1.0": {
+  "value": 0.0067,
+  "text": "0.007",
+  "formula": "abs(differences_vs_healthrouter.cost_lam1.0.macro)"
+ },
+ "m_cost_lam2.0": {
+  "value": 0.873,
+  "text": "0.873",
+  "formula": "methods.cost_lam2.0.macro",
+  "ci": [
+   0.8616,
+   0.8838
+  ],
+  "ci_text": "[0.862, 0.884]"
+ },
+ "calls_cost_lam2.0": {
+  "value": 1.958,
+  "text": "1.96",
+  "formula": "methods.cost_lam2.0.invoked_mean"
+ },
+ "ms_cost_lam2.0": {
+  "value": 37.15,
+  "text": "37",
+  "formula": "methods.cost_lam2.0.latency_ms_mean"
+ },
+ "d_cost_lam2.0": {
+  "value": 0.0068,
+  "text": "0.007",
+  "formula": "differences_vs_healthrouter.cost_lam2.0.macro",
+  "ci": [
+   0.0031,
+   0.0106
+  ],
+  "ci_text": "[0.003, 0.011]"
+ },
+ "a_d_cost_lam2.0": {
+  "value": 0.0068,
+  "text": "0.007",
+  "formula": "abs(differences_vs_healthrouter.cost_lam2.0.macro)"
+ },
+ "m_harness_fallback": {
+  "value": 0.8769,
+  "text": "0.877",
+  "formula": "methods.harness_fallback.macro",
+  "ci": [
+   0.8652,
+   0.8884
+  ],
+  "ci_text": "[0.865, 0.888]"
+ },
+ "calls_harness_fallback": {
+  "value": 2.122,
+  "text": "2.12",
+  "formula": "methods.harness_fallback.invoked_mean"
+ },
+ "ms_harness_fallback": {
+  "value": 48.41,
+  "text": "48",
+  "formula": "methods.harness_fallback.latency_ms_mean"
+ },
+ "d_harness_fallback": {
+  "value": 0.0029,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter.harness_fallback.macro",
+  "ci": [
+   -0.0015,
+   0.0073
+  ],
+  "ci_text": "[-0.002, 0.007]"
+ },
+ "a_d_harness_fallback": {
+  "value": 0.0029,
+  "text": "0.003",
+  "formula": "abs(differences_vs_healthrouter.harness_fallback.macro)"
+ },
+ "m_harness_theta0.5": {
+  "value": 0.8705,
+  "text": "0.871",
+  "formula": "methods.harness_theta0.5.macro",
+  "ci": [
+   0.8593,
+   0.8811
+  ],
+  "ci_text": "[0.859, 0.881]"
+ },
+ "calls_harness_theta0.5": {
+  "value": 1.036,
+  "text": "1.04",
+  "formula": "methods.harness_theta0.5.invoked_mean"
+ },
+ "ms_harness_theta0.5": {
+  "value": 27.85,
+  "text": "28",
+  "formula": "methods.harness_theta0.5.latency_ms_mean"
+ },
+ "d_harness_theta0.5": {
+  "value": 0.0093,
+  "text": "0.009",
+  "formula": "differences_vs_healthrouter.harness_theta0.5.macro",
+  "ci": [
+   0.0044,
+   0.0143
+  ],
+  "ci_text": "[0.004, 0.014]"
+ },
+ "a_d_harness_theta0.5": {
+  "value": 0.0093,
+  "text": "0.009",
+  "formula": "abs(differences_vs_healthrouter.harness_theta0.5.macro)"
+ },
+ "m_harness_theta0.6": {
+  "value": 0.8733,
+  "text": "0.873",
+  "formula": "methods.harness_theta0.6.macro",
+  "ci": [
+   0.8623,
+   0.884
+  ],
+  "ci_text": "[0.862, 0.884]"
+ },
+ "calls_harness_theta0.6": {
+  "value": 1.277,
+  "text": "1.28",
+  "formula": "methods.harness_theta0.6.invoked_mean"
+ },
+ "ms_harness_theta0.6": {
+  "value": 32.16,
+  "text": "32",
+  "formula": "methods.harness_theta0.6.latency_ms_mean"
+ },
+ "d_harness_theta0.6": {
+  "value": 0.0065,
+  "text": "0.006",
+  "formula": "differences_vs_healthrouter.harness_theta0.6.macro",
+  "ci": [
+   0.0018,
+   0.0112
+  ],
+  "ci_text": "[0.002, 0.011]"
+ },
+ "a_d_harness_theta0.6": {
+  "value": 0.0065,
+  "text": "0.006",
+  "formula": "abs(differences_vs_healthrouter.harness_theta0.6.macro)"
+ },
+ "m_harness_theta0.7": {
+  "value": 0.874,
+  "text": "0.874",
+  "formula": "methods.harness_theta0.7.macro",
+  "ci": [
+   0.8624,
+   0.8854
+  ],
+  "ci_text": "[0.862, 0.885]"
+ },
+ "calls_harness_theta0.7": {
+  "value": 1.495,
+  "text": "1.50",
+  "formula": "methods.harness_theta0.7.invoked_mean"
+ },
+ "ms_harness_theta0.7": {
+  "value": 36.32,
+  "text": "36",
+  "formula": "methods.harness_theta0.7.latency_ms_mean"
+ },
+ "d_harness_theta0.7": {
+  "value": 0.0058,
+  "text": "0.006",
+  "formula": "differences_vs_healthrouter.harness_theta0.7.macro",
+  "ci": [
+   0.0012,
+   0.0106
+  ],
+  "ci_text": "[0.001, 0.011]"
+ },
+ "a_d_harness_theta0.7": {
+  "value": 0.0058,
+  "text": "0.006",
+  "formula": "abs(differences_vs_healthrouter.harness_theta0.7.macro)"
+ },
+ "m_harness_theta0.8": {
+  "value": 0.8753,
+  "text": "0.875",
+  "formula": "methods.harness_theta0.8.macro",
+  "ci": [
+   0.8636,
+   0.8868
+  ],
+  "ci_text": "[0.864, 0.887]"
+ },
+ "calls_harness_theta0.8": {
+  "value": 1.635,
+  "text": "1.64",
+  "formula": "methods.harness_theta0.8.invoked_mean"
+ },
+ "ms_harness_theta0.8": {
+  "value": 39.2,
+  "text": "39",
+  "formula": "methods.harness_theta0.8.latency_ms_mean"
+ },
+ "d_harness_theta0.8": {
+  "value": 0.0045,
+  "text": "0.004",
+  "formula": "differences_vs_healthrouter.harness_theta0.8.macro",
+  "ci": [
+   -0.0002,
+   0.0092
+  ],
+  "ci_text": "[-0.000, 0.009]"
+ },
+ "a_d_harness_theta0.8": {
+  "value": 0.0045,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.harness_theta0.8.macro)"
+ },
+ "m_harness_theta0.9": {
+  "value": 0.879,
+  "text": "0.879",
+  "formula": "methods.harness_theta0.9.macro",
+  "ci": [
+   0.8673,
+   0.8907
+  ],
+  "ci_text": "[0.867, 0.891]"
+ },
+ "calls_harness_theta0.9": {
+  "value": 1.918,
+  "text": "1.92",
+  "formula": "methods.harness_theta0.9.invoked_mean"
+ },
+ "ms_harness_theta0.9": {
+  "value": 44.74,
+  "text": "45",
+  "formula": "methods.harness_theta0.9.latency_ms_mean"
+ },
+ "d_harness_theta0.9": {
+  "value": 0.0008,
+  "text": "0.001",
+  "formula": "differences_vs_healthrouter.harness_theta0.9.macro",
+  "ci": [
+   -0.004,
+   0.0054
+  ],
+  "ci_text": "[-0.004, 0.005]"
+ },
+ "a_d_harness_theta0.9": {
+  "value": 0.0008,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.harness_theta0.9.macro)"
+ },
+ "m_harness_theta0.95": {
+  "value": 0.8786,
+  "text": "0.879",
+  "formula": "methods.harness_theta0.95.macro",
+  "ci": [
+   0.8667,
+   0.8902
+  ],
+  "ci_text": "[0.867, 0.890]"
+ },
+ "calls_harness_theta0.95": {
+  "value": 2.117,
+  "text": "2.12",
+  "formula": "methods.harness_theta0.95.invoked_mean"
+ },
+ "ms_harness_theta0.95": {
+  "value": 48.88,
+  "text": "49",
+  "formula": "methods.harness_theta0.95.latency_ms_mean"
+ },
+ "d_harness_theta0.95": {
+  "value": 0.0012,
+  "text": "0.001",
+  "formula": "differences_vs_healthrouter.harness_theta0.95.macro",
+  "ci": [
+   -0.0035,
+   0.006
+  ],
+  "ci_text": "[-0.004, 0.006]"
+ },
+ "a_d_harness_theta0.95": {
+  "value": 0.0012,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.harness_theta0.95.macro)"
+ },
+ "m_harness_theta0.99": {
+  "value": 0.877,
+  "text": "0.877",
+  "formula": "methods.harness_theta0.99.macro",
+  "ci": [
+   0.8649,
+   0.8889
+  ],
+  "ci_text": "[0.865, 0.889]"
+ },
+ "calls_harness_theta0.99": {
+  "value": 2.593,
+  "text": "2.59",
+  "formula": "methods.harness_theta0.99.invoked_mean"
+ },
+ "ms_harness_theta0.99": {
+  "value": 58.66,
+  "text": "59",
+  "formula": "methods.harness_theta0.99.latency_ms_mean"
+ },
+ "d_harness_theta0.99": {
+  "value": 0.0028,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter.harness_theta0.99.macro",
+  "ci": [
+   -0.0023,
+   0.0081
+  ],
+  "ci_text": "[-0.002, 0.008]"
+ },
+ "a_d_harness_theta0.99": {
+  "value": 0.0028,
+  "text": "0.003",
+  "formula": "abs(differences_vs_healthrouter.harness_theta0.99.macro)"
+ },
+ "m_harness_theta1.01": {
+  "value": 0.8766,
+  "text": "0.877",
+  "formula": "methods.harness_theta1.01.macro",
+  "ci": [
+   0.8646,
+   0.8884
+  ],
+  "ci_text": "[0.865, 0.888]"
+ },
+ "calls_harness_theta1.01": {
+  "value": 3.133,
+  "text": "3.13",
+  "formula": "methods.harness_theta1.01.invoked_mean"
+ },
+ "ms_harness_theta1.01": {
+  "value": 70.25,
+  "text": "70",
+  "formula": "methods.harness_theta1.01.latency_ms_mean"
+ },
+ "d_harness_theta1.01": {
+  "value": 0.0032,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter.harness_theta1.01.macro",
+  "ci": [
+   -0.0017,
+   0.0085
+  ],
+  "ci_text": "[-0.002, 0.009]"
+ },
+ "a_d_harness_theta1.01": {
+  "value": 0.0032,
+  "text": "0.003",
+  "formula": "abs(differences_vs_healthrouter.harness_theta1.01.macro)"
+ },
+ "m_healthrouter_fallback": {
+  "value": 0.8797,
+  "text": "0.880",
+  "formula": "methods.healthrouter_fallback.macro",
+  "ci": [
+   0.8685,
+   0.8906
+  ],
+  "ci_text": "[0.869, 0.891]"
+ },
+ "calls_healthrouter_fallback": {
+  "value": 2.689,
+  "text": "2.69",
+  "formula": "methods.healthrouter_fallback.invoked_mean"
+ },
+ "ms_healthrouter_fallback": {
+  "value": 62.24,
+  "text": "62",
+  "formula": "methods.healthrouter_fallback.latency_ms_mean"
+ },
+ "d_healthrouter_fallback": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "differences_vs_healthrouter.healthrouter_fallback.macro",
+  "ci": [
+   -0.0001,
+   0.0003
+  ],
+  "ci_text": "[-0.000, 0.000]"
+ },
+ "a_d_healthrouter_fallback": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "abs(differences_vs_healthrouter.healthrouter_fallback.macro)"
+ },
+ "m_hr_candidate_mlp": {
+  "value": 0.8694,
+  "text": "0.869",
+  "formula": "methods.hr_candidate_mlp.macro",
+  "ci": [
+   0.8576,
+   0.8811
+  ],
+  "ci_text": "[0.858, 0.881]"
+ },
+ "calls_hr_candidate_mlp": {
+  "value": 4.598,
+  "text": "4.60",
+  "formula": "methods.hr_candidate_mlp.invoked_mean"
+ },
+ "ms_hr_candidate_mlp": {
+  "value": 96.33,
+  "text": "96",
+  "formula": "methods.hr_candidate_mlp.latency_ms_mean"
+ },
+ "d_hr_candidate_mlp": {
+  "value": 0.0104,
+  "text": "0.010",
+  "formula": "differences_vs_healthrouter.hr_candidate_mlp.macro",
+  "ci": [
+   0.0041,
+   0.017
+  ],
+  "ci_text": "[0.004, 0.017]"
+ },
+ "a_d_hr_candidate_mlp": {
+  "value": 0.0104,
+  "text": "0.010",
+  "formula": "abs(differences_vs_healthrouter.hr_candidate_mlp.macro)"
+ },
+ "m_hr_collection_mlp": {
+  "value": 0.8526,
+  "text": "0.853",
+  "formula": "methods.hr_collection_mlp.macro",
+  "ci": [
+   0.8411,
+   0.8635
+  ],
+  "ci_text": "[0.841, 0.864]"
+ },
+ "calls_hr_collection_mlp": {
+  "value": 2.503,
+  "text": "2.50",
+  "formula": "methods.hr_collection_mlp.invoked_mean"
+ },
+ "ms_hr_collection_mlp": {
+  "value": 55.97,
+  "text": "56",
+  "formula": "methods.hr_collection_mlp.latency_ms_mean"
+ },
+ "d_hr_collection_mlp": {
+  "value": 0.0272,
+  "text": "0.027",
+  "formula": "differences_vs_healthrouter.hr_collection_mlp.macro",
+  "ci": [
+   0.0196,
+   0.0347
+  ],
+  "ci_text": "[0.020, 0.035]"
+ },
+ "a_d_hr_collection_mlp": {
+  "value": 0.0272,
+  "text": "0.027",
+  "formula": "abs(differences_vs_healthrouter.hr_collection_mlp.macro)"
+ },
+ "harness_one_chest_xray": {
+  "value": 68.17999999999999,
+  "text": "68\\%",
+  "formula": "100*harness.invoked_hist.chest_xray[k=1]"
+ },
+ "harness_one_pathology": {
+  "value": 87.28,
+  "text": "87\\%",
+  "formula": "100*harness.invoked_hist.pathology[k=1]"
+ },
+ "harness_one_fundus": {
+  "value": 51.78,
+  "text": "52\\%",
+  "formula": "100*harness.invoked_hist.fundus[k=1]"
+ },
+ "harness_one_mammography": {
+  "value": 17.1,
+  "text": "17\\%",
+  "formula": "100*harness.invoked_hist.mammography[k=1]"
+ },
+ "bs_task_macro": {
+  "value": 0.8626,
+  "text": "0.863",
+  "formula": "methods.best_single_per_task.macro"
+ },
+ "n_collections": {
+  "value": 175,
+  "text": "175",
+  "formula": "sum_{k<=3} C(10,k) = 10+45+120"
+ },
+ "hr_chest_xray": {
+  "value": 0.9719,
+  "text": "0.972",
+  "formula": "healthrouter.per_task.chest_xray",
+  "ci": [
+   0.9613,
+   0.9811
+  ],
+  "ci_text": "[0.961, 0.981]"
+ },
+ "d_greedy_ensemble_selection_chest_xray": {
+  "value": 0.0034,
+  "text": "0.003",
+  "formula": "differences_vs_healthrouter.greedy_ensemble_selection.chest_xray",
+  "ci": [
+   -0.0001,
+   0.0073
+  ],
+  "ci_text": "[-0.000, 0.007]"
+ },
+ "a_d_greedy_ensemble_selection_chest_xray": {
+  "value": 0.0034,
+  "text": "0.003",
+  "formula": "abs(differences_vs_healthrouter.greedy_ensemble_selection.chest_xray)"
+ },
+ "d_stacking_chest_xray": {
+  "value": 0.0041,
+  "text": "0.004",
+  "formula": "differences_vs_healthrouter.stacking.chest_xray",
+  "ci": [
+   -0.0008,
+   0.0091
+  ],
+  "ci_text": "[-0.001, 0.009]"
+ },
+ "a_d_stacking_chest_xray": {
+  "value": 0.0041,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.stacking.chest_xray)"
+ },
+ "d_uniform_ensemble_chest_xray": {
+  "value": 0.0206,
+  "text": "0.021",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.chest_xray",
+  "ci": [
+   0.0114,
+   0.0308
+  ],
+  "ci_text": "[0.011, 0.031]"
+ },
+ "a_d_uniform_ensemble_chest_xray": {
+  "value": 0.0206,
+  "text": "0.021",
+  "formula": "abs(differences_vs_healthrouter.uniform_ensemble.chest_xray)"
+ },
+ "d_soft_moe_chest_xray": {
+  "value": 0.0103,
+  "text": "0.010",
+  "formula": "differences_vs_healthrouter.soft_moe.chest_xray",
+  "ci": [
+   0.0057,
+   0.0158
+  ],
+  "ci_text": "[0.006, 0.016]"
+ },
+ "a_d_soft_moe_chest_xray": {
+  "value": 0.0103,
+  "text": "0.010",
+  "formula": "abs(differences_vs_healthrouter.soft_moe.chest_xray)"
+ },
+ "d_healthrouter_harness_chest_xray": {
+  "value": 0.0099,
+  "text": "0.010",
+  "formula": "differences_vs_healthrouter.healthrouter_harness.chest_xray",
+  "ci": [
+   0.0057,
+   0.0146
+  ],
+  "ci_text": "[0.006, 0.015]"
+ },
+ "a_d_healthrouter_harness_chest_xray": {
+  "value": 0.0099,
+  "text": "0.010",
+  "formula": "abs(differences_vs_healthrouter.healthrouter_harness.chest_xray)"
+ },
+ "d_modality_router_supervised_oof_chest_xray": {
+  "value": 0.0082,
+  "text": "0.008",
+  "formula": "differences_vs_healthrouter.modality_router_supervised_oof.chest_xray",
+  "ci": [
+   0.0026,
+   0.0136
+  ],
+  "ci_text": "[0.003, 0.014]"
+ },
+ "a_d_modality_router_supervised_oof_chest_xray": {
+  "value": 0.0082,
+  "text": "0.008",
+  "formula": "abs(differences_vs_healthrouter.modality_router_supervised_oof.chest_xray)"
+ },
+ "hr_pathology": {
+  "value": 0.988,
+  "text": "0.988",
+  "formula": "healthrouter.per_task.pathology",
+  "ci": [
+   0.9835,
+   0.9918
+  ],
+  "ci_text": "[0.984, 0.992]"
+ },
+ "d_greedy_ensemble_selection_pathology": {
+  "value": -0.0012,
+  "text": "-0.001",
+  "formula": "differences_vs_healthrouter.greedy_ensemble_selection.pathology",
+  "ci": [
+   -0.0022,
+   0.0
+  ],
+  "ci_text": "[-0.002, 0.000]"
+ },
+ "a_d_greedy_ensemble_selection_pathology": {
+  "value": 0.0012,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.greedy_ensemble_selection.pathology)"
+ },
+ "d_stacking_pathology": {
+  "value": -0.0008,
+  "text": "-0.001",
+  "formula": "differences_vs_healthrouter.stacking.pathology",
+  "ci": [
+   -0.0019,
+   0.0004
+  ],
+  "ci_text": "[-0.002, 0.000]"
+ },
+ "a_d_stacking_pathology": {
+  "value": 0.0008,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.stacking.pathology)"
+ },
+ "d_uniform_ensemble_pathology": {
+  "value": 0.0105,
+  "text": "0.011",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.pathology",
+  "ci": [
+   0.0074,
+   0.0141
+  ],
+  "ci_text": "[0.007, 0.014]"
+ },
+ "a_d_uniform_ensemble_pathology": {
+  "value": 0.0105,
+  "text": "0.011",
+  "formula": "abs(differences_vs_healthrouter.uniform_ensemble.pathology)"
+ },
+ "d_soft_moe_pathology": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "differences_vs_healthrouter.soft_moe.pathology",
+  "ci": [
+   -0.0009,
+   0.0013
+  ],
+  "ci_text": "[-0.001, 0.001]"
+ },
+ "a_d_soft_moe_pathology": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "abs(differences_vs_healthrouter.soft_moe.pathology)"
+ },
+ "d_healthrouter_harness_pathology": {
+  "value": 0.0018,
+  "text": "0.002",
+  "formula": "differences_vs_healthrouter.healthrouter_harness.pathology",
+  "ci": [
+   0.0007,
+   0.003
+  ],
+  "ci_text": "[0.001, 0.003]"
+ },
+ "a_d_healthrouter_harness_pathology": {
+  "value": 0.0018,
+  "text": "0.002",
+  "formula": "abs(differences_vs_healthrouter.healthrouter_harness.pathology)"
+ },
+ "d_modality_router_supervised_oof_pathology": {
+  "value": 0.0019,
+  "text": "0.002",
+  "formula": "differences_vs_healthrouter.modality_router_supervised_oof.pathology",
+  "ci": [
+   0.0007,
+   0.0035
+  ],
+  "ci_text": "[0.001, 0.004]"
+ },
+ "a_d_modality_router_supervised_oof_pathology": {
+  "value": 0.0019,
+  "text": "0.002",
+  "formula": "abs(differences_vs_healthrouter.modality_router_supervised_oof.pathology)"
+ },
+ "hr_fundus": {
+  "value": 0.8569,
+  "text": "0.857",
+  "formula": "healthrouter.per_task.fundus",
+  "ci": [
+   0.8322,
+   0.88
+  ],
+  "ci_text": "[0.832, 0.880]"
+ },
+ "d_greedy_ensemble_selection_fundus": {
+  "value": 0.0039,
+  "text": "0.004",
+  "formula": "differences_vs_healthrouter.greedy_ensemble_selection.fundus",
+  "ci": [
+   -0.008,
+   0.0174
+  ],
+  "ci_text": "[-0.008, 0.017]"
+ },
+ "a_d_greedy_ensemble_selection_fundus": {
+  "value": 0.0039,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.greedy_ensemble_selection.fundus)"
+ },
+ "d_stacking_fundus": {
+  "value": 0.0173,
+  "text": "0.017",
+  "formula": "differences_vs_healthrouter.stacking.fundus",
+  "ci": [
+   0.0017,
+   0.0343
+  ],
+  "ci_text": "[0.002, 0.034]"
+ },
+ "a_d_stacking_fundus": {
+  "value": 0.0173,
+  "text": "0.017",
+  "formula": "abs(differences_vs_healthrouter.stacking.fundus)"
+ },
+ "d_uniform_ensemble_fundus": {
+  "value": 0.023,
+  "text": "0.023",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.fundus",
+  "ci": [
+   0.0054,
+   0.042
+  ],
+  "ci_text": "[0.005, 0.042]"
+ },
+ "a_d_uniform_ensemble_fundus": {
+  "value": 0.023,
+  "text": "0.023",
+  "formula": "abs(differences_vs_healthrouter.uniform_ensemble.fundus)"
+ },
+ "d_soft_moe_fundus": {
+  "value": 0.0091,
+  "text": "0.009",
+  "formula": "differences_vs_healthrouter.soft_moe.fundus",
+  "ci": [
+   -0.0036,
+   0.0217
+  ],
+  "ci_text": "[-0.004, 0.022]"
+ },
+ "a_d_soft_moe_fundus": {
+  "value": 0.0091,
+  "text": "0.009",
+  "formula": "abs(differences_vs_healthrouter.soft_moe.fundus)"
+ },
+ "d_healthrouter_harness_fundus": {
+  "value": 0.0035,
+  "text": "0.004",
+  "formula": "differences_vs_healthrouter.healthrouter_harness.fundus",
+  "ci": [
+   -0.0082,
+   0.0159
+  ],
+  "ci_text": "[-0.008, 0.016]"
+ },
+ "a_d_healthrouter_harness_fundus": {
+  "value": 0.0035,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.healthrouter_harness.fundus)"
+ },
+ "d_modality_router_supervised_oof_fundus": {
+  "value": -0.0014,
+  "text": "-0.001",
+  "formula": "differences_vs_healthrouter.modality_router_supervised_oof.fundus",
+  "ci": [
+   -0.0137,
+   0.0118
+  ],
+  "ci_text": "[-0.014, 0.012]"
+ },
+ "a_d_modality_router_supervised_oof_fundus": {
+  "value": 0.0014,
+  "text": "0.001",
+  "formula": "abs(differences_vs_healthrouter.modality_router_supervised_oof.fundus)"
+ },
+ "hr_mammography": {
+  "value": 0.7026,
+  "text": "0.703",
+  "formula": "healthrouter.per_task.mammography",
+  "ci": [
+   0.6667,
+   0.7372
+  ],
+  "ci_text": "[0.667, 0.737]"
+ },
+ "d_greedy_ensemble_selection_mammography": {
+  "value": 0.0145,
+  "text": "0.015",
+  "formula": "differences_vs_healthrouter.greedy_ensemble_selection.mammography",
+  "ci": [
+   0.0002,
+   0.0288
+  ],
+  "ci_text": "[0.000, 0.029]"
+ },
+ "a_d_greedy_ensemble_selection_mammography": {
+  "value": 0.0145,
+  "text": "0.015",
+  "formula": "abs(differences_vs_healthrouter.greedy_ensemble_selection.mammography)"
+ },
+ "d_stacking_mammography": {
+  "value": 0.0021,
+  "text": "0.002",
+  "formula": "differences_vs_healthrouter.stacking.mammography",
+  "ci": [
+   -0.0147,
+   0.018
+  ],
+  "ci_text": "[-0.015, 0.018]"
+ },
+ "a_d_stacking_mammography": {
+  "value": 0.0021,
+  "text": "0.002",
+  "formula": "abs(differences_vs_healthrouter.stacking.mammography)"
+ },
+ "d_uniform_ensemble_mammography": {
+  "value": -0.0039,
+  "text": "-0.004",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.mammography",
+  "ci": [
+   -0.0213,
+   0.0134
+  ],
+  "ci_text": "[-0.021, 0.013]"
+ },
+ "a_d_uniform_ensemble_mammography": {
+  "value": 0.0039,
+  "text": "0.004",
+  "formula": "abs(differences_vs_healthrouter.uniform_ensemble.mammography)"
+ },
+ "d_soft_moe_mammography": {
+  "value": 0.0231,
+  "text": "0.023",
+  "formula": "differences_vs_healthrouter.soft_moe.mammography",
+  "ci": [
+   0.006,
+   0.0391
+  ],
+  "ci_text": "[0.006, 0.039]"
+ },
+ "a_d_soft_moe_mammography": {
+  "value": 0.0231,
+  "text": "0.023",
+  "formula": "abs(differences_vs_healthrouter.soft_moe.mammography)"
+ },
+ "d_healthrouter_harness_mammography": {
+  "value": -0.0049,
+  "text": "-0.005",
+  "formula": "differences_vs_healthrouter.healthrouter_harness.mammography",
+  "ci": [
+   -0.0172,
+   0.0077
+  ],
+  "ci_text": "[-0.017, 0.008]"
+ },
+ "a_d_healthrouter_harness_mammography": {
+  "value": 0.0049,
+  "text": "0.005",
+  "formula": "abs(differences_vs_healthrouter.healthrouter_harness.mammography)"
+ },
+ "d_modality_router_supervised_oof_mammography": {
+  "value": 0.0191,
+  "text": "0.019",
+  "formula": "differences_vs_healthrouter.modality_router_supervised_oof.mammography",
+  "ci": [
+   0.0041,
+   0.0345
+  ],
+  "ci_text": "[0.004, 0.035]"
+ },
+ "a_d_modality_router_supervised_oof_mammography": {
+  "value": 0.0191,
+  "text": "0.019",
+  "formula": "abs(differences_vs_healthrouter.modality_router_supervised_oof.mammography)"
+ },
+ "n_external": {
+  "value": 2050,
+  "text": "2{,}050",
+  "formula": "sum of router_external.n over the four cohorts"
+ },
+ "ext_n_methods_standard": {
+  "value": 20,
+  "text": "20",
+  "formula": "number of the 20 methods present in router_external.results.standard"
+ },
+ "ext_rank_hr_standard": {
+  "value": 6,
+  "text": "6",
+  "formula": "rank of healthrouter among the 20 methods in router_external.results.standard"
+ },
+ "ext_rank_harness_standard": {
+  "value": 11,
+  "text": "11",
+  "formula": "rank of the harness among the 20 methods in router_external.results.standard"
+ },
+ "ext_hr_fundus_standard": {
+  "value": 0.6594,
+  "text": "0.659",
+  "formula": "router_external.results.standard.healthrouter.per_task.fundus"
+ },
+ "ext_healthrouter_harness_standard": {
+  "value": 0.7553,
+  "text": "0.755",
+  "formula": "router_external.results.standard.healthrouter_harness.macro",
+  "ci": [
+   0.7327,
+   0.779
+  ],
+  "ci_text": "[0.733, 0.779]"
+ },
+ "ext_healthrouter_fallback_standard": {
+  "value": 0.7676,
+  "text": "0.768",
+  "formula": "router_external.results.standard.healthrouter_fallback.macro",
+  "ci": [
+   0.7456,
+   0.7888
+  ],
+  "ci_text": "[0.746, 0.789]"
+ },
+ "ext_harness_fallback_standard": {
+  "value": 0.7554,
+  "text": "0.755",
+  "formula": "router_external.results.standard.harness_fallback.macro",
+  "ci": [
+   0.7326,
+   0.7792
+  ],
+  "ci_text": "[0.733, 0.779]"
+ },
+ "ext_uniform_ensemble_standard": {
+  "value": 0.7575,
+  "text": "0.757",
+  "formula": "router_external.results.standard.uniform_ensemble.macro",
+  "ci": [
+   0.7342,
+   0.7788
+  ],
+  "ci_text": "[0.734, 0.779]"
+ },
+ "ext_stacking_standard": {
+  "value": 0.773,
+  "text": "0.773",
+  "formula": "router_external.results.standard.stacking.macro",
+  "ci": [
+   0.7525,
+   0.7926
+  ],
+  "ci_text": "[0.752, 0.793]"
+ },
+ "ext_soft_moe_standard": {
+  "value": 0.7477,
+  "text": "0.748",
+  "formula": "router_external.results.standard.soft_moe.macro",
+  "ci": [
+   0.7248,
+   0.7702
+  ],
+  "ci_text": "[0.725, 0.770]"
+ },
+ "ext_sparse_topk_moe_standard": {
+  "value": 0.7575,
+  "text": "0.757",
+  "formula": "router_external.results.standard.sparse_topk_moe.macro",
+  "ci": [
+   0.7326,
+   0.7805
+  ],
+  "ci_text": "[0.733, 0.780]"
+ },
+ "ext_best_single_per_task_standard": {
+  "value": 0.7799,
+  "text": "0.780",
+  "formula": "router_external.results.standard.best_single_per_task.macro",
+  "ci": [
+   0.7576,
+   0.7998
+  ],
+  "ci_text": "[0.758, 0.800]"
+ },
+ "ext_hr_standard": {
+  "value": 0.7678,
+  "text": "0.768",
+  "formula": "router_external.results.standard.healthrouter.macro"
+ },
+ "ext_d_soft_moe_standard": {
+  "value": 0.02,
+  "text": "0.020",
+  "formula": "router_external.results.standard.soft_moe.diff",
+  "ci": [
+   0.0023,
+   0.0374
+  ],
+  "ci_text": "[0.002, 0.037]"
+ },
+ "a_ext_d_soft_moe_standard": {
+  "value": 0.02,
+  "text": "0.020",
+  "formula": "abs(router_external.results.standard.soft_moe.diff)"
+ },
+ "ext_d_sparse_topk_moe_standard": {
+  "value": 0.0102,
+  "text": "0.010",
+  "formula": "router_external.results.standard.sparse_topk_moe.diff",
+  "ci": [
+   -0.0092,
+   0.0308
+  ],
+  "ci_text": "[-0.009, 0.031]"
+ },
+ "a_ext_d_sparse_topk_moe_standard": {
+  "value": 0.0102,
+  "text": "0.010",
+  "formula": "abs(router_external.results.standard.sparse_topk_moe.diff)"
+ },
+ "ext_d_stacking_standard": {
+  "value": -0.0053,
+  "text": "-0.005",
+  "formula": "router_external.results.standard.stacking.diff",
+  "ci": [
+   -0.0227,
+   0.0138
+  ],
+  "ci_text": "[-0.023, 0.014]"
+ },
+ "a_ext_d_stacking_standard": {
+  "value": 0.0053,
+  "text": "0.005",
+  "formula": "abs(router_external.results.standard.stacking.diff)"
+ },
+ "ext_d_uniform_ensemble_standard": {
+  "value": 0.0102,
+  "text": "0.010",
+  "formula": "router_external.results.standard.uniform_ensemble.diff",
+  "ci": [
+   -0.0077,
+   0.0298
+  ],
+  "ci_text": "[-0.008, 0.030]"
+ },
+ "a_ext_d_uniform_ensemble_standard": {
+  "value": 0.0102,
+  "text": "0.010",
+  "formula": "abs(router_external.results.standard.uniform_ensemble.diff)"
+ },
+ "ext_d_modality_router_zeroshot_biomedclip_standard": {
+  "value": 0.0151,
+  "text": "0.015",
+  "formula": "router_external.results.standard.modality_router_zeroshot_biomedclip.diff",
+  "ci": [
+   -0.0053,
+   0.0363
+  ],
+  "ci_text": "[-0.005, 0.036]"
+ },
+ "a_ext_d_modality_router_zeroshot_biomedclip_standard": {
+  "value": 0.0151,
+  "text": "0.015",
+  "formula": "abs(router_external.results.standard.modality_router_zeroshot_biomedclip.diff)"
+ },
+ "ext_d_knora_u_standard": {
+  "value": 0.0145,
+  "text": "0.015",
+  "formula": "router_external.results.standard.knora_u.diff",
+  "ci": [
+   -0.0064,
+   0.0356
+  ],
+  "ci_text": "[-0.006, 0.036]"
+ },
+ "a_ext_d_knora_u_standard": {
+  "value": 0.0145,
+  "text": "0.015",
+  "formula": "abs(router_external.results.standard.knora_u.diff)"
+ },
+ "ext_d_healthrouter_harness_standard": {
+  "value": 0.0124,
+  "text": "0.012",
+  "formula": "router_external.results.standard.healthrouter_harness.diff",
+  "ci": [
+   -0.0023,
+   0.0261
+  ],
+  "ci_text": "[-0.002, 0.026]"
+ },
+ "a_ext_d_healthrouter_harness_standard": {
+  "value": 0.0124,
+  "text": "0.012",
+  "formula": "abs(router_external.results.standard.healthrouter_harness.diff)"
+ },
+ "ext_d_modality_router_supervised_standard": {
+  "value": 0.0137,
+  "text": "0.014",
+  "formula": "router_external.results.standard.modality_router_supervised.diff",
+  "ci": [
+   -0.0069,
+   0.0355
+  ],
+  "ci_text": "[-0.007, 0.035]"
+ },
+ "a_ext_d_modality_router_supervised_standard": {
+  "value": 0.0137,
+  "text": "0.014",
+  "formula": "abs(router_external.results.standard.modality_router_supervised.diff)"
+ },
+ "ext_d_best_single_per_task_standard": {
+  "value": -0.0122,
+  "text": "-0.012",
+  "formula": "router_external.results.standard.best_single_per_task.diff",
+  "ci": [
+   -0.0349,
+   0.0104
+  ],
+  "ci_text": "[-0.035, 0.010]"
+ },
+ "a_ext_d_best_single_per_task_standard": {
+  "value": 0.0122,
+  "text": "0.012",
+  "formula": "abs(router_external.results.standard.best_single_per_task.diff)"
+ },
+ "ext_d_greedy_ensemble_selection_standard": {
+  "value": -0.0074,
+  "text": "-0.007",
+  "formula": "router_external.results.standard.greedy_ensemble_selection.diff",
+  "ci": [
+   -0.0232,
+   0.0094
+  ],
+  "ci_text": "[-0.023, 0.009]"
+ },
+ "a_ext_d_greedy_ensemble_selection_standard": {
+  "value": 0.0074,
+  "text": "0.007",
+  "formula": "abs(router_external.results.standard.greedy_ensemble_selection.diff)"
+ },
+ "ext_d_modality_router_supervised_oof_standard": {
+  "value": -0.0108,
+  "text": "-0.011",
+  "formula": "router_external.results.standard.modality_router_supervised_oof.diff",
+  "ci": [
+   -0.0282,
+   0.0072
+  ],
+  "ci_text": "[-0.028, 0.007]"
+ },
+ "a_ext_d_modality_router_supervised_oof_standard": {
+  "value": 0.0108,
+  "text": "0.011",
+  "formula": "abs(router_external.results.standard.modality_router_supervised_oof.diff)"
+ },
+ "ext_d_healthrouter_fallback_standard": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "router_external.results.standard.healthrouter_fallback.diff",
+  "ci": [
+   -0.0011,
+   0.0012
+  ],
+  "ci_text": "[-0.001, 0.001]"
+ },
+ "a_ext_d_healthrouter_fallback_standard": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "abs(router_external.results.standard.healthrouter_fallback.diff)"
+ },
+ "ext_d_harness_fallback_standard": {
+  "value": 0.0123,
+  "text": "0.012",
+  "formula": "router_external.results.standard.harness_fallback.diff",
+  "ci": [
+   -0.0024,
+   0.0259
+  ],
+  "ci_text": "[-0.002, 0.026]"
+ },
+ "a_ext_d_harness_fallback_standard": {
+  "value": 0.0123,
+  "text": "0.012",
+  "formula": "abs(router_external.results.standard.harness_fallback.diff)"
+ },
+ "ext_n_methods_grayscale": {
+  "value": 20,
+  "text": "20",
+  "formula": "number of the 20 methods present in router_external.results.grayscale"
+ },
+ "ext_rank_hr_grayscale": {
+  "value": 6,
+  "text": "6",
+  "formula": "rank of healthrouter among the 20 methods in router_external.results.grayscale"
+ },
+ "ext_rank_harness_grayscale": {
+  "value": 3,
+  "text": "3",
+  "formula": "rank of the harness among the 20 methods in router_external.results.grayscale"
+ },
+ "ext_hr_fundus_grayscale": {
+  "value": 0.4881,
+  "text": "0.488",
+  "formula": "router_external.results.grayscale.healthrouter.per_task.fundus"
+ },
+ "ext_healthrouter_harness_grayscale": {
+  "value": 0.7284,
+  "text": "0.728",
+  "formula": "router_external.results.grayscale.healthrouter_harness.macro",
+  "ci": [
+   0.7053,
+   0.7508
+  ],
+  "ci_text": "[0.705, 0.751]"
+ },
+ "ext_healthrouter_fallback_grayscale": {
+  "value": 0.723,
+  "text": "0.723",
+  "formula": "router_external.results.grayscale.healthrouter_fallback.macro",
+  "ci": [
+   0.7003,
+   0.7463
+  ],
+  "ci_text": "[0.700, 0.746]"
+ },
+ "ext_harness_fallback_grayscale": {
+  "value": 0.7271,
+  "text": "0.727",
+  "formula": "router_external.results.grayscale.harness_fallback.macro",
+  "ci": [
+   0.7038,
+   0.7494
+  ],
+  "ci_text": "[0.704, 0.749]"
+ },
+ "ext_uniform_ensemble_grayscale": {
+  "value": 0.6906,
+  "text": "0.691",
+  "formula": "router_external.results.grayscale.uniform_ensemble.macro",
+  "ci": [
+   0.6681,
+   0.7131
+  ],
+  "ci_text": "[0.668, 0.713]"
+ },
+ "ext_stacking_grayscale": {
+  "value": 0.7527,
+  "text": "0.753",
+  "formula": "router_external.results.grayscale.stacking.macro",
+  "ci": [
+   0.7316,
+   0.7734
+  ],
+  "ci_text": "[0.732, 0.773]"
+ },
+ "ext_soft_moe_grayscale": {
+  "value": 0.6988,
+  "text": "0.699",
+  "formula": "router_external.results.grayscale.soft_moe.macro",
+  "ci": [
+   0.6753,
+   0.7217
+  ],
+  "ci_text": "[0.675, 0.722]"
+ },
+ "ext_sparse_topk_moe_grayscale": {
+  "value": 0.6937,
+  "text": "0.694",
+  "formula": "router_external.results.grayscale.sparse_topk_moe.macro",
+  "ci": [
+   0.6687,
+   0.7184
+  ],
+  "ci_text": "[0.669, 0.718]"
+ },
+ "ext_best_single_per_task_grayscale": {
+  "value": 0.7748,
+  "text": "0.775",
+  "formula": "router_external.results.grayscale.best_single_per_task.macro",
+  "ci": [
+   0.7526,
+   0.795
+  ],
+  "ci_text": "[0.753, 0.795]"
+ },
+ "ext_hr_grayscale": {
+  "value": 0.7243,
+  "text": "0.724",
+  "formula": "router_external.results.grayscale.healthrouter.macro"
+ },
+ "ext_d_soft_moe_grayscale": {
+  "value": 0.0255,
+  "text": "0.025",
+  "formula": "router_external.results.grayscale.soft_moe.diff",
+  "ci": [
+   0.0029,
+   0.048
+  ],
+  "ci_text": "[0.003, 0.048]"
+ },
+ "a_ext_d_soft_moe_grayscale": {
+  "value": 0.0255,
+  "text": "0.025",
+  "formula": "abs(router_external.results.grayscale.soft_moe.diff)"
+ },
+ "ext_d_sparse_topk_moe_grayscale": {
+  "value": 0.0306,
+  "text": "0.031",
+  "formula": "router_external.results.grayscale.sparse_topk_moe.diff",
+  "ci": [
+   0.0083,
+   0.0554
+  ],
+  "ci_text": "[0.008, 0.055]"
+ },
+ "a_ext_d_sparse_topk_moe_grayscale": {
+  "value": 0.0306,
+  "text": "0.031",
+  "formula": "abs(router_external.results.grayscale.sparse_topk_moe.diff)"
+ },
+ "ext_d_stacking_grayscale": {
+  "value": -0.0284,
+  "text": "-0.028",
+  "formula": "router_external.results.grayscale.stacking.diff",
+  "ci": [
+   -0.05,
+   -0.0072
+  ],
+  "ci_text": "[-0.050, -0.007]"
+ },
+ "a_ext_d_stacking_grayscale": {
+  "value": 0.0284,
+  "text": "0.028",
+  "formula": "abs(router_external.results.grayscale.stacking.diff)"
+ },
+ "ext_d_uniform_ensemble_grayscale": {
+  "value": 0.0337,
+  "text": "0.034",
+  "formula": "router_external.results.grayscale.uniform_ensemble.diff",
+  "ci": [
+   0.01,
+   0.0571
+  ],
+  "ci_text": "[0.010, 0.057]"
+ },
+ "a_ext_d_uniform_ensemble_grayscale": {
+  "value": 0.0337,
+  "text": "0.034",
+  "formula": "abs(router_external.results.grayscale.uniform_ensemble.diff)"
+ },
+ "ext_d_modality_router_zeroshot_biomedclip_grayscale": {
+  "value": 0.0009,
+  "text": "0.001",
+  "formula": "router_external.results.grayscale.modality_router_zeroshot_biomedclip.diff",
+  "ci": [
+   -0.0232,
+   0.0258
+  ],
+  "ci_text": "[-0.023, 0.026]"
+ },
+ "a_ext_d_modality_router_zeroshot_biomedclip_grayscale": {
+  "value": 0.0009,
+  "text": "0.001",
+  "formula": "abs(router_external.results.grayscale.modality_router_zeroshot_biomedclip.diff)"
+ },
+ "ext_d_knora_u_grayscale": {
+  "value": 0.0279,
+  "text": "0.028",
+  "formula": "router_external.results.grayscale.knora_u.diff",
+  "ci": [
+   0.0037,
+   0.0511
+  ],
+  "ci_text": "[0.004, 0.051]"
+ },
+ "a_ext_d_knora_u_grayscale": {
+  "value": 0.0279,
+  "text": "0.028",
+  "formula": "abs(router_external.results.grayscale.knora_u.diff)"
+ },
+ "ext_d_healthrouter_harness_grayscale": {
+  "value": -0.0041,
+  "text": "-0.004",
+  "formula": "router_external.results.grayscale.healthrouter_harness.diff",
+  "ci": [
+   -0.0206,
+   0.0118
+  ],
+  "ci_text": "[-0.021, 0.012]"
+ },
+ "a_ext_d_healthrouter_harness_grayscale": {
+  "value": 0.0041,
+  "text": "0.004",
+  "formula": "abs(router_external.results.grayscale.healthrouter_harness.diff)"
+ },
+ "ext_d_modality_router_supervised_grayscale": {
+  "value": -0.0015,
+  "text": "-0.002",
+  "formula": "router_external.results.grayscale.modality_router_supervised.diff",
+  "ci": [
+   -0.0262,
+   0.0242
+  ],
+  "ci_text": "[-0.026, 0.024]"
+ },
+ "a_ext_d_modality_router_supervised_grayscale": {
+  "value": 0.0015,
+  "text": "0.002",
+  "formula": "abs(router_external.results.grayscale.modality_router_supervised.diff)"
+ },
+ "ext_d_best_single_per_task_grayscale": {
+  "value": -0.0505,
+  "text": "-0.051",
+  "formula": "router_external.results.grayscale.best_single_per_task.diff",
+  "ci": [
+   -0.0739,
+   -0.0256
+  ],
+  "ci_text": "[-0.074, -0.026]"
+ },
+ "a_ext_d_best_single_per_task_grayscale": {
+  "value": 0.0505,
+  "text": "0.051",
+  "formula": "abs(router_external.results.grayscale.best_single_per_task.diff)"
+ },
+ "ext_d_greedy_ensemble_selection_grayscale": {
+  "value": 0.0761,
+  "text": "0.076",
+  "formula": "router_external.results.grayscale.greedy_ensemble_selection.diff",
+  "ci": [
+   0.0525,
+   0.0998
+  ],
+  "ci_text": "[0.052, 0.100]"
+ },
+ "a_ext_d_greedy_ensemble_selection_grayscale": {
+  "value": 0.0761,
+  "text": "0.076",
+  "formula": "abs(router_external.results.grayscale.greedy_ensemble_selection.diff)"
+ },
+ "ext_d_modality_router_supervised_oof_grayscale": {
+  "value": 0.0354,
+  "text": "0.035",
+  "formula": "router_external.results.grayscale.modality_router_supervised_oof.diff",
+  "ci": [
+   0.0114,
+   0.0584
+  ],
+  "ci_text": "[0.011, 0.058]"
+ },
+ "a_ext_d_modality_router_supervised_oof_grayscale": {
+  "value": 0.0354,
+  "text": "0.035",
+  "formula": "abs(router_external.results.grayscale.modality_router_supervised_oof.diff)"
+ },
+ "ext_d_healthrouter_fallback_grayscale": {
+  "value": 0.0013,
+  "text": "0.001",
+  "formula": "router_external.results.grayscale.healthrouter_fallback.diff",
+  "ci": [
+   -0.0004,
+   0.003
+  ],
+  "ci_text": "[-0.000, 0.003]"
+ },
+ "a_ext_d_healthrouter_fallback_grayscale": {
+  "value": 0.0013,
+  "text": "0.001",
+  "formula": "abs(router_external.results.grayscale.healthrouter_fallback.diff)"
+ },
+ "ext_d_harness_fallback_grayscale": {
+  "value": -0.0028,
+  "text": "-0.003",
+  "formula": "router_external.results.grayscale.harness_fallback.diff",
+  "ci": [
+   -0.0191,
+   0.0135
+  ],
+  "ci_text": "[-0.019, 0.013]"
+ },
+ "a_ext_d_harness_fallback_grayscale": {
+  "value": 0.0028,
+  "text": "0.003",
+  "formula": "abs(router_external.results.grayscale.harness_fallback.diff)"
+ },
+ "ext_n_methods_blur": {
+  "value": 20,
+  "text": "20",
+  "formula": "number of the 20 methods present in router_external.results.blur"
+ },
+ "ext_rank_hr_blur": {
+  "value": 11,
+  "text": "11",
+  "formula": "rank of healthrouter among the 20 methods in router_external.results.blur"
+ },
+ "ext_rank_harness_blur": {
+  "value": 14,
+  "text": "14",
+  "formula": "rank of the harness among the 20 methods in router_external.results.blur"
+ },
+ "ext_hr_fundus_blur": {
+  "value": 0.4633,
+  "text": "0.463",
+  "formula": "router_external.results.blur.healthrouter.per_task.fundus"
+ },
+ "ext_healthrouter_harness_blur": {
+  "value": 0.6802,
+  "text": "0.680",
+  "formula": "router_external.results.blur.healthrouter_harness.macro",
+  "ci": [
+   0.6502,
+   0.7107
+  ],
+  "ci_text": "[0.650, 0.711]"
+ },
+ "ext_healthrouter_fallback_blur": {
+  "value": 0.7017,
+  "text": "0.702",
+  "formula": "router_external.results.blur.healthrouter_fallback.macro",
+  "ci": [
+   0.6744,
+   0.7288
+  ],
+  "ci_text": "[0.674, 0.729]"
+ },
+ "ext_harness_fallback_blur": {
+  "value": 0.692,
+  "text": "0.692",
+  "formula": "router_external.results.blur.harness_fallback.macro",
+  "ci": [
+   0.666,
+   0.7192
+  ],
+  "ci_text": "[0.666, 0.719]"
+ },
+ "ext_uniform_ensemble_blur": {
+  "value": 0.7212,
+  "text": "0.721",
+  "formula": "router_external.results.blur.uniform_ensemble.macro",
+  "ci": [
+   0.6962,
+   0.7457
+  ],
+  "ci_text": "[0.696, 0.746]"
+ },
+ "ext_stacking_blur": {
+  "value": 0.707,
+  "text": "0.707",
+  "formula": "router_external.results.blur.stacking.macro",
+  "ci": [
+   0.6791,
+   0.7341
+  ],
+  "ci_text": "[0.679, 0.734]"
+ },
+ "ext_soft_moe_blur": {
+  "value": 0.6788,
+  "text": "0.679",
+  "formula": "router_external.results.blur.soft_moe.macro",
+  "ci": [
+   0.6497,
+   0.7072
+  ],
+  "ci_text": "[0.650, 0.707]"
+ },
+ "ext_sparse_topk_moe_blur": {
+  "value": 0.6809,
+  "text": "0.681",
+  "formula": "router_external.results.blur.sparse_topk_moe.macro",
+  "ci": [
+   0.6534,
+   0.7101
+  ],
+  "ci_text": "[0.653, 0.710]"
+ },
+ "ext_best_single_per_task_blur": {
+  "value": 0.7312,
+  "text": "0.731",
+  "formula": "router_external.results.blur.best_single_per_task.macro",
+  "ci": [
+   0.7053,
+   0.7559
+  ],
+  "ci_text": "[0.705, 0.756]"
+ },
+ "ext_hr_blur": {
+  "value": 0.691,
+  "text": "0.691",
+  "formula": "router_external.results.blur.healthrouter.macro"
+ },
+ "ext_d_soft_moe_blur": {
+  "value": 0.0122,
+  "text": "0.012",
+  "formula": "router_external.results.blur.soft_moe.diff",
+  "ci": [
+   -0.0126,
+   0.0355
+  ],
+  "ci_text": "[-0.013, 0.035]"
+ },
+ "a_ext_d_soft_moe_blur": {
+  "value": 0.0122,
+  "text": "0.012",
+  "formula": "abs(router_external.results.blur.soft_moe.diff)"
+ },
+ "ext_d_sparse_topk_moe_blur": {
+  "value": 0.0101,
+  "text": "0.010",
+  "formula": "router_external.results.blur.sparse_topk_moe.diff",
+  "ci": [
+   -0.0176,
+   0.0366
+  ],
+  "ci_text": "[-0.018, 0.037]"
+ },
+ "a_ext_d_sparse_topk_moe_blur": {
+  "value": 0.0101,
+  "text": "0.010",
+  "formula": "abs(router_external.results.blur.sparse_topk_moe.diff)"
+ },
+ "ext_d_stacking_blur": {
+  "value": -0.016,
+  "text": "-0.016",
+  "formula": "router_external.results.blur.stacking.diff",
+  "ci": [
+   -0.0407,
+   0.0081
+  ],
+  "ci_text": "[-0.041, 0.008]"
+ },
+ "a_ext_d_stacking_blur": {
+  "value": 0.016,
+  "text": "0.016",
+  "formula": "abs(router_external.results.blur.stacking.diff)"
+ },
+ "ext_d_uniform_ensemble_blur": {
+  "value": -0.0302,
+  "text": "-0.030",
+  "formula": "router_external.results.blur.uniform_ensemble.diff",
+  "ci": [
+   -0.0553,
+   -0.0045
+  ],
+  "ci_text": "[-0.055, -0.004]"
+ },
+ "a_ext_d_uniform_ensemble_blur": {
+  "value": 0.0302,
+  "text": "0.030",
+  "formula": "abs(router_external.results.blur.uniform_ensemble.diff)"
+ },
+ "ext_d_modality_router_zeroshot_biomedclip_blur": {
+  "value": -0.0259,
+  "text": "-0.026",
+  "formula": "router_external.results.blur.modality_router_zeroshot_biomedclip.diff",
+  "ci": [
+   -0.0511,
+   -0.0007
+  ],
+  "ci_text": "[-0.051, -0.001]"
+ },
+ "a_ext_d_modality_router_zeroshot_biomedclip_blur": {
+  "value": 0.0259,
+  "text": "0.026",
+  "formula": "abs(router_external.results.blur.modality_router_zeroshot_biomedclip.diff)"
+ },
+ "ext_d_knora_u_blur": {
+  "value": -0.0204,
+  "text": "-0.020",
+  "formula": "router_external.results.blur.knora_u.diff",
+  "ci": [
+   -0.0467,
+   0.0065
+  ],
+  "ci_text": "[-0.047, 0.006]"
+ },
+ "a_ext_d_knora_u_blur": {
+  "value": 0.0204,
+  "text": "0.020",
+  "formula": "abs(router_external.results.blur.knora_u.diff)"
+ },
+ "ext_d_healthrouter_harness_blur": {
+  "value": 0.0108,
+  "text": "0.011",
+  "formula": "router_external.results.blur.healthrouter_harness.diff",
+  "ci": [
+   -0.0101,
+   0.0311
+  ],
+  "ci_text": "[-0.010, 0.031]"
+ },
+ "a_ext_d_healthrouter_harness_blur": {
+  "value": 0.0108,
+  "text": "0.011",
+  "formula": "abs(router_external.results.blur.healthrouter_harness.diff)"
+ },
+ "ext_d_modality_router_supervised_blur": {
+  "value": -0.024,
+  "text": "-0.024",
+  "formula": "router_external.results.blur.modality_router_supervised.diff",
+  "ci": [
+   -0.0501,
+   0.0038
+  ],
+  "ci_text": "[-0.050, 0.004]"
+ },
+ "a_ext_d_modality_router_supervised_blur": {
+  "value": 0.024,
+  "text": "0.024",
+  "formula": "abs(router_external.results.blur.modality_router_supervised.diff)"
+ },
+ "ext_d_best_single_per_task_blur": {
+  "value": -0.0402,
+  "text": "-0.040",
+  "formula": "router_external.results.blur.best_single_per_task.diff",
+  "ci": [
+   -0.067,
+   -0.0133
+  ],
+  "ci_text": "[-0.067, -0.013]"
+ },
+ "a_ext_d_best_single_per_task_blur": {
+  "value": 0.0402,
+  "text": "0.040",
+  "formula": "abs(router_external.results.blur.best_single_per_task.diff)"
+ },
+ "ext_d_greedy_ensemble_selection_blur": {
+  "value": -0.037,
+  "text": "-0.037",
+  "formula": "router_external.results.blur.greedy_ensemble_selection.diff",
+  "ci": [
+   -0.056,
+   -0.0176
+  ],
+  "ci_text": "[-0.056, -0.018]"
+ },
+ "a_ext_d_greedy_ensemble_selection_blur": {
+  "value": 0.037,
+  "text": "0.037",
+  "formula": "abs(router_external.results.blur.greedy_ensemble_selection.diff)"
+ },
+ "ext_d_modality_router_supervised_oof_blur": {
+  "value": -0.0406,
+  "text": "-0.041",
+  "formula": "router_external.results.blur.modality_router_supervised_oof.diff",
+  "ci": [
+   -0.0626,
+   -0.0175
+  ],
+  "ci_text": "[-0.063, -0.018]"
+ },
+ "a_ext_d_modality_router_supervised_oof_blur": {
+  "value": 0.0406,
+  "text": "0.041",
+  "formula": "abs(router_external.results.blur.modality_router_supervised_oof.diff)"
+ },
+ "ext_d_healthrouter_fallback_blur": {
+  "value": -0.0107,
+  "text": "-0.011",
+  "formula": "router_external.results.blur.healthrouter_fallback.diff",
+  "ci": [
+   -0.029,
+   0.0062
+  ],
+  "ci_text": "[-0.029, 0.006]"
+ },
+ "a_ext_d_healthrouter_fallback_blur": {
+  "value": 0.0107,
+  "text": "0.011",
+  "formula": "abs(router_external.results.blur.healthrouter_fallback.diff)"
+ },
+ "ext_d_harness_fallback_blur": {
+  "value": -0.001,
+  "text": "-0.001",
+  "formula": "router_external.results.blur.harness_fallback.diff",
+  "ci": [
+   -0.0244,
+   0.0222
+  ],
+  "ci_text": "[-0.024, 0.022]"
+ },
+ "a_ext_d_harness_fallback_blur": {
+  "value": 0.001,
+  "text": "0.001",
+  "formula": "abs(router_external.results.blur.harness_fallback.diff)"
+ },
+ "ext_n_methods_low_resolution": {
+  "value": 20,
+  "text": "20",
+  "formula": "number of the 20 methods present in router_external.results.low_resolution"
+ },
+ "ext_rank_hr_low_resolution": {
+  "value": 10,
+  "text": "10",
+  "formula": "rank of healthrouter among the 20 methods in router_external.results.low_resolution"
+ },
+ "ext_rank_harness_low_resolution": {
+  "value": 12,
+  "text": "12",
+  "formula": "rank of the harness among the 20 methods in router_external.results.low_resolution"
+ },
+ "ext_hr_fundus_low_resolution": {
+  "value": 0.4204,
+  "text": "0.420",
+  "formula": "router_external.results.low_resolution.healthrouter.per_task.fundus"
+ },
+ "ext_healthrouter_harness_low_resolution": {
+  "value": 0.6524,
+  "text": "0.652",
+  "formula": "router_external.results.low_resolution.healthrouter_harness.macro",
+  "ci": [
+   0.6196,
+   0.6829
+  ],
+  "ci_text": "[0.620, 0.683]"
+ },
+ "ext_healthrouter_fallback_low_resolution": {
+  "value": 0.6899,
+  "text": "0.690",
+  "formula": "router_external.results.low_resolution.healthrouter_fallback.macro",
+  "ci": [
+   0.664,
+   0.7171
+  ],
+  "ci_text": "[0.664, 0.717]"
+ },
+ "ext_harness_fallback_low_resolution": {
+  "value": 0.6844,
+  "text": "0.684",
+  "formula": "router_external.results.low_resolution.harness_fallback.macro",
+  "ci": [
+   0.6585,
+   0.7113
+  ],
+  "ci_text": "[0.658, 0.711]"
+ },
+ "ext_uniform_ensemble_low_resolution": {
+  "value": 0.7084,
+  "text": "0.708",
+  "formula": "router_external.results.low_resolution.uniform_ensemble.macro",
+  "ci": [
+   0.6824,
+   0.7344
+  ],
+  "ci_text": "[0.682, 0.734]"
+ },
+ "ext_stacking_low_resolution": {
+  "value": 0.6907,
+  "text": "0.691",
+  "formula": "router_external.results.low_resolution.stacking.macro",
+  "ci": [
+   0.6621,
+   0.7185
+  ],
+  "ci_text": "[0.662, 0.719]"
+ },
+ "ext_soft_moe_low_resolution": {
+  "value": 0.657,
+  "text": "0.657",
+  "formula": "router_external.results.low_resolution.soft_moe.macro",
+  "ci": [
+   0.626,
+   0.6891
+  ],
+  "ci_text": "[0.626, 0.689]"
+ },
+ "ext_sparse_topk_moe_low_resolution": {
+  "value": 0.6511,
+  "text": "0.651",
+  "formula": "router_external.results.low_resolution.sparse_topk_moe.macro",
+  "ci": [
+   0.6198,
+   0.6844
+  ],
+  "ci_text": "[0.620, 0.684]"
+ },
+ "ext_best_single_per_task_low_resolution": {
+  "value": 0.6723,
+  "text": "0.672",
+  "formula": "router_external.results.low_resolution.best_single_per_task.macro",
+  "ci": [
+   0.6411,
+   0.7029
+  ],
+  "ci_text": "[0.641, 0.703]"
+ },
+ "ext_hr_low_resolution": {
+  "value": 0.6598,
+  "text": "0.660",
+  "formula": "router_external.results.low_resolution.healthrouter.macro"
+ },
+ "ext_d_soft_moe_low_resolution": {
+  "value": 0.0028,
+  "text": "0.003",
+  "formula": "router_external.results.low_resolution.soft_moe.diff",
+  "ci": [
+   -0.0228,
+   0.0284
+  ],
+  "ci_text": "[-0.023, 0.028]"
+ },
+ "a_ext_d_soft_moe_low_resolution": {
+  "value": 0.0028,
+  "text": "0.003",
+  "formula": "abs(router_external.results.low_resolution.soft_moe.diff)"
+ },
+ "ext_d_sparse_topk_moe_low_resolution": {
+  "value": 0.0087,
+  "text": "0.009",
+  "formula": "router_external.results.low_resolution.sparse_topk_moe.diff",
+  "ci": [
+   -0.0185,
+   0.0361
+  ],
+  "ci_text": "[-0.018, 0.036]"
+ },
+ "a_ext_d_sparse_topk_moe_low_resolution": {
+  "value": 0.0087,
+  "text": "0.009",
+  "formula": "abs(router_external.results.low_resolution.sparse_topk_moe.diff)"
+ },
+ "ext_d_stacking_low_resolution": {
+  "value": -0.0309,
+  "text": "-0.031",
+  "formula": "router_external.results.low_resolution.stacking.diff",
+  "ci": [
+   -0.0591,
+   -0.0011
+  ],
+  "ci_text": "[-0.059, -0.001]"
+ },
+ "a_ext_d_stacking_low_resolution": {
+  "value": 0.0309,
+  "text": "0.031",
+  "formula": "abs(router_external.results.low_resolution.stacking.diff)"
+ },
+ "ext_d_uniform_ensemble_low_resolution": {
+  "value": -0.0486,
+  "text": "-0.049",
+  "formula": "router_external.results.low_resolution.uniform_ensemble.diff",
+  "ci": [
+   -0.0769,
+   -0.0209
+  ],
+  "ci_text": "[-0.077, -0.021]"
+ },
+ "a_ext_d_uniform_ensemble_low_resolution": {
+  "value": 0.0486,
+  "text": "0.049",
+  "formula": "abs(router_external.results.low_resolution.uniform_ensemble.diff)"
+ },
+ "ext_d_modality_router_zeroshot_biomedclip_low_resolution": {
+  "value": -0.0248,
+  "text": "-0.025",
+  "formula": "router_external.results.low_resolution.modality_router_zeroshot_biomedclip.diff",
+  "ci": [
+   -0.0517,
+   0.0021
+  ],
+  "ci_text": "[-0.052, 0.002]"
+ },
+ "a_ext_d_modality_router_zeroshot_biomedclip_low_resolution": {
+  "value": 0.0248,
+  "text": "0.025",
+  "formula": "abs(router_external.results.low_resolution.modality_router_zeroshot_biomedclip.diff)"
+ },
+ "ext_d_knora_u_low_resolution": {
+  "value": -0.0372,
+  "text": "-0.037",
+  "formula": "router_external.results.low_resolution.knora_u.diff",
+  "ci": [
+   -0.0687,
+   -0.0056
+  ],
+  "ci_text": "[-0.069, -0.006]"
+ },
+ "a_ext_d_knora_u_low_resolution": {
+  "value": 0.0372,
+  "text": "0.037",
+  "formula": "abs(router_external.results.low_resolution.knora_u.diff)"
+ },
+ "ext_d_healthrouter_harness_low_resolution": {
+  "value": 0.0074,
+  "text": "0.007",
+  "formula": "router_external.results.low_resolution.healthrouter_harness.diff",
+  "ci": [
+   -0.0175,
+   0.0332
+  ],
+  "ci_text": "[-0.018, 0.033]"
+ },
+ "a_ext_d_healthrouter_harness_low_resolution": {
+  "value": 0.0074,
+  "text": "0.007",
+  "formula": "abs(router_external.results.low_resolution.healthrouter_harness.diff)"
+ },
+ "ext_d_modality_router_supervised_low_resolution": {
+  "value": -0.0321,
+  "text": "-0.032",
+  "formula": "router_external.results.low_resolution.modality_router_supervised.diff",
+  "ci": [
+   -0.0638,
+   -0.0
+  ],
+  "ci_text": "[-0.064, -0.000]"
+ },
+ "a_ext_d_modality_router_supervised_low_resolution": {
+  "value": 0.0321,
+  "text": "0.032",
+  "formula": "abs(router_external.results.low_resolution.modality_router_supervised.diff)"
+ },
+ "ext_d_best_single_per_task_low_resolution": {
+  "value": -0.0125,
+  "text": "-0.013",
+  "formula": "router_external.results.low_resolution.best_single_per_task.diff",
+  "ci": [
+   -0.0414,
+   0.0164
+  ],
+  "ci_text": "[-0.041, 0.016]"
+ },
+ "a_ext_d_best_single_per_task_low_resolution": {
+  "value": 0.0125,
+  "text": "0.013",
+  "formula": "abs(router_external.results.low_resolution.best_single_per_task.diff)"
+ },
+ "ext_d_greedy_ensemble_selection_low_resolution": {
+  "value": -0.0085,
+  "text": "-0.009",
+  "formula": "router_external.results.low_resolution.greedy_ensemble_selection.diff",
+  "ci": [
+   -0.0305,
+   0.0135
+  ],
+  "ci_text": "[-0.030, 0.013]"
+ },
+ "a_ext_d_greedy_ensemble_selection_low_resolution": {
+  "value": 0.0085,
+  "text": "0.009",
+  "formula": "abs(router_external.results.low_resolution.greedy_ensemble_selection.diff)"
+ },
+ "ext_d_modality_router_supervised_oof_low_resolution": {
+  "value": -0.0311,
+  "text": "-0.031",
+  "formula": "router_external.results.low_resolution.modality_router_supervised_oof.diff",
+  "ci": [
+   -0.0569,
+   -0.0056
+  ],
+  "ci_text": "[-0.057, -0.006]"
+ },
+ "a_ext_d_modality_router_supervised_oof_low_resolution": {
+  "value": 0.0311,
+  "text": "0.031",
+  "formula": "abs(router_external.results.low_resolution.modality_router_supervised_oof.diff)"
+ },
+ "ext_d_healthrouter_fallback_low_resolution": {
+  "value": -0.0301,
+  "text": "-0.030",
+  "formula": "router_external.results.low_resolution.healthrouter_fallback.diff",
+  "ci": [
+   -0.0534,
+   -0.0088
+  ],
+  "ci_text": "[-0.053, -0.009]"
+ },
+ "a_ext_d_healthrouter_fallback_low_resolution": {
+  "value": 0.0301,
+  "text": "0.030",
+  "formula": "abs(router_external.results.low_resolution.healthrouter_fallback.diff)"
+ },
+ "ext_d_harness_fallback_low_resolution": {
+  "value": -0.0246,
+  "text": "-0.025",
+  "formula": "router_external.results.low_resolution.harness_fallback.diff",
+  "ci": [
+   -0.0527,
+   0.0017
+  ],
+  "ci_text": "[-0.053, 0.002]"
+ },
+ "a_ext_d_harness_fallback_low_resolution": {
+  "value": 0.0246,
+  "text": "0.025",
+  "formula": "abs(router_external.results.low_resolution.harness_fallback.diff)"
+ },
+ "ext_n_methods_jpeg": {
+  "value": 20,
+  "text": "20",
+  "formula": "number of the 20 methods present in router_external.results.jpeg"
+ },
+ "ext_rank_hr_jpeg": {
+  "value": 11,
+  "text": "11",
+  "formula": "rank of healthrouter among the 20 methods in router_external.results.jpeg"
+ },
+ "ext_rank_harness_jpeg": {
+  "value": 17,
+  "text": "17",
+  "formula": "rank of the harness among the 20 methods in router_external.results.jpeg"
+ },
+ "ext_hr_fundus_jpeg": {
+  "value": 0.2051,
+  "text": "0.205",
+  "formula": "router_external.results.jpeg.healthrouter.per_task.fundus"
+ },
+ "ext_healthrouter_harness_jpeg": {
+  "value": 0.5351,
+  "text": "0.535",
+  "formula": "router_external.results.jpeg.healthrouter_harness.macro",
+  "ci": [
+   0.4986,
+   0.5719
+  ],
+  "ci_text": "[0.499, 0.572]"
+ },
+ "ext_healthrouter_fallback_jpeg": {
+  "value": 0.6156,
+  "text": "0.616",
+  "formula": "router_external.results.jpeg.healthrouter_fallback.macro",
+  "ci": [
+   0.5839,
+   0.6466
+  ],
+  "ci_text": "[0.584, 0.647]"
+ },
+ "ext_harness_fallback_jpeg": {
+  "value": 0.5819,
+  "text": "0.582",
+  "formula": "router_external.results.jpeg.harness_fallback.macro",
+  "ci": [
+   0.5511,
+   0.6152
+  ],
+  "ci_text": "[0.551, 0.615]"
+ },
+ "ext_uniform_ensemble_jpeg": {
+  "value": 0.6726,
+  "text": "0.673",
+  "formula": "router_external.results.jpeg.uniform_ensemble.macro",
+  "ci": [
+   0.6424,
+   0.7022
+  ],
+  "ci_text": "[0.642, 0.702]"
+ },
+ "ext_stacking_jpeg": {
+  "value": 0.5771,
+  "text": "0.577",
+  "formula": "router_external.results.jpeg.stacking.macro",
+  "ci": [
+   0.5461,
+   0.6072
+  ],
+  "ci_text": "[0.546, 0.607]"
+ },
+ "ext_soft_moe_jpeg": {
+  "value": 0.5306,
+  "text": "0.531",
+  "formula": "router_external.results.jpeg.soft_moe.macro",
+  "ci": [
+   0.4965,
+   0.5628
+  ],
+  "ci_text": "[0.496, 0.563]"
+ },
+ "ext_sparse_topk_moe_jpeg": {
+  "value": 0.5671,
+  "text": "0.567",
+  "formula": "router_external.results.jpeg.sparse_topk_moe.macro",
+  "ci": [
+   0.5396,
+   0.5945
+  ],
+  "ci_text": "[0.540, 0.595]"
+ },
+ "ext_best_single_per_task_jpeg": {
+  "value": 0.6328,
+  "text": "0.633",
+  "formula": "router_external.results.jpeg.best_single_per_task.macro",
+  "ci": [
+   0.5996,
+   0.6653
+  ],
+  "ci_text": "[0.600, 0.665]"
+ },
+ "ext_hr_jpeg": {
+  "value": 0.5794,
+  "text": "0.579",
+  "formula": "router_external.results.jpeg.healthrouter.macro"
+ },
+ "ext_d_soft_moe_jpeg": {
+  "value": 0.0488,
+  "text": "0.049",
+  "formula": "router_external.results.jpeg.soft_moe.diff",
+  "ci": [
+   0.0133,
+   0.0843
+  ],
+  "ci_text": "[0.013, 0.084]"
+ },
+ "a_ext_d_soft_moe_jpeg": {
+  "value": 0.0488,
+  "text": "0.049",
+  "formula": "abs(router_external.results.jpeg.soft_moe.diff)"
+ },
+ "ext_d_sparse_topk_moe_jpeg": {
+  "value": 0.0123,
+  "text": "0.012",
+  "formula": "router_external.results.jpeg.sparse_topk_moe.diff",
+  "ci": [
+   -0.0244,
+   0.0485
+  ],
+  "ci_text": "[-0.024, 0.049]"
+ },
+ "a_ext_d_sparse_topk_moe_jpeg": {
+  "value": 0.0123,
+  "text": "0.012",
+  "formula": "abs(router_external.results.jpeg.sparse_topk_moe.diff)"
+ },
+ "ext_d_stacking_jpeg": {
+  "value": 0.0023,
+  "text": "0.002",
+  "formula": "router_external.results.jpeg.stacking.diff",
+  "ci": [
+   -0.0299,
+   0.0366
+  ],
+  "ci_text": "[-0.030, 0.037]"
+ },
+ "a_ext_d_stacking_jpeg": {
+  "value": 0.0023,
+  "text": "0.002",
+  "formula": "abs(router_external.results.jpeg.stacking.diff)"
+ },
+ "ext_d_uniform_ensemble_jpeg": {
+  "value": -0.0932,
+  "text": "-0.093",
+  "formula": "router_external.results.jpeg.uniform_ensemble.diff",
+  "ci": [
+   -0.1276,
+   -0.0581
+  ],
+  "ci_text": "[-0.128, -0.058]"
+ },
+ "a_ext_d_uniform_ensemble_jpeg": {
+  "value": 0.0932,
+  "text": "0.093",
+  "formula": "abs(router_external.results.jpeg.uniform_ensemble.diff)"
+ },
+ "ext_d_modality_router_zeroshot_biomedclip_jpeg": {
+  "value": -0.0643,
+  "text": "-0.064",
+  "formula": "router_external.results.jpeg.modality_router_zeroshot_biomedclip.diff",
+  "ci": [
+   -0.1,
+   -0.0279
+  ],
+  "ci_text": "[-0.100, -0.028]"
+ },
+ "a_ext_d_modality_router_zeroshot_biomedclip_jpeg": {
+  "value": 0.0643,
+  "text": "0.064",
+  "formula": "abs(router_external.results.jpeg.modality_router_zeroshot_biomedclip.diff)"
+ },
+ "ext_d_knora_u_jpeg": {
+  "value": -0.0587,
+  "text": "-0.059",
+  "formula": "router_external.results.jpeg.knora_u.diff",
+  "ci": [
+   -0.0975,
+   -0.0202
+  ],
+  "ci_text": "[-0.098, -0.020]"
+ },
+ "a_ext_d_knora_u_jpeg": {
+  "value": 0.0587,
+  "text": "0.059",
+  "formula": "abs(router_external.results.jpeg.knora_u.diff)"
+ },
+ "ext_d_healthrouter_harness_jpeg": {
+  "value": 0.0443,
+  "text": "0.044",
+  "formula": "router_external.results.jpeg.healthrouter_harness.diff",
+  "ci": [
+   0.016,
+   0.0726
+  ],
+  "ci_text": "[0.016, 0.073]"
+ },
+ "a_ext_d_healthrouter_harness_jpeg": {
+  "value": 0.0443,
+  "text": "0.044",
+  "formula": "abs(router_external.results.jpeg.healthrouter_harness.diff)"
+ },
+ "ext_d_modality_router_supervised_jpeg": {
+  "value": -0.0476,
+  "text": "-0.048",
+  "formula": "router_external.results.jpeg.modality_router_supervised.diff",
+  "ci": [
+   -0.0946,
+   -0.002
+  ],
+  "ci_text": "[-0.095, -0.002]"
+ },
+ "a_ext_d_modality_router_supervised_jpeg": {
+  "value": 0.0476,
+  "text": "0.048",
+  "formula": "abs(router_external.results.jpeg.modality_router_supervised.diff)"
+ },
+ "ext_d_best_single_per_task_jpeg": {
+  "value": -0.0534,
+  "text": "-0.053",
+  "formula": "router_external.results.jpeg.best_single_per_task.diff",
+  "ci": [
+   -0.0897,
+   -0.0165
+  ],
+  "ci_text": "[-0.090, -0.017]"
+ },
+ "a_ext_d_best_single_per_task_jpeg": {
+  "value": 0.0534,
+  "text": "0.053",
+  "formula": "abs(router_external.results.jpeg.best_single_per_task.diff)"
+ },
+ "ext_d_greedy_ensemble_selection_jpeg": {
+  "value": -0.0768,
+  "text": "-0.077",
+  "formula": "router_external.results.jpeg.greedy_ensemble_selection.diff",
+  "ci": [
+   -0.1081,
+   -0.0448
+  ],
+  "ci_text": "[-0.108, -0.045]"
+ },
+ "a_ext_d_greedy_ensemble_selection_jpeg": {
+  "value": 0.0768,
+  "text": "0.077",
+  "formula": "abs(router_external.results.jpeg.greedy_ensemble_selection.diff)"
+ },
+ "ext_d_modality_router_supervised_oof_jpeg": {
+  "value": -0.059,
+  "text": "-0.059",
+  "formula": "router_external.results.jpeg.modality_router_supervised_oof.diff",
+  "ci": [
+   -0.0984,
+   -0.0194
+  ],
+  "ci_text": "[-0.098, -0.019]"
+ },
+ "a_ext_d_modality_router_supervised_oof_jpeg": {
+  "value": 0.059,
+  "text": "0.059",
+  "formula": "abs(router_external.results.jpeg.modality_router_supervised_oof.diff)"
+ },
+ "ext_d_healthrouter_fallback_jpeg": {
+  "value": -0.0362,
+  "text": "-0.036",
+  "formula": "router_external.results.jpeg.healthrouter_fallback.diff",
+  "ci": [
+   -0.0638,
+   -0.0082
+  ],
+  "ci_text": "[-0.064, -0.008]"
+ },
+ "a_ext_d_healthrouter_fallback_jpeg": {
+  "value": 0.0362,
+  "text": "0.036",
+  "formula": "abs(router_external.results.jpeg.healthrouter_fallback.diff)"
+ },
+ "ext_d_harness_fallback_jpeg": {
+  "value": -0.0025,
+  "text": "-0.003",
+  "formula": "router_external.results.jpeg.harness_fallback.diff",
+  "ci": [
+   -0.0401,
+   0.0315
+  ],
+  "ci_text": "[-0.040, 0.032]"
+ },
+ "a_ext_d_harness_fallback_jpeg": {
+  "value": 0.0025,
+  "text": "0.003",
+  "formula": "abs(router_external.results.jpeg.harness_fallback.diff)"
+ },
+ "flag_standard_chest_xray": {
+  "value": 0.0,
+  "text": "0\\%",
+  "formula": "100*router_ood_flag.flag_rate.standard.chest_xray"
+ },
+ "flag_standard_pathology": {
+  "value": 10.5,
+  "text": "10\\%",
+  "formula": "100*router_ood_flag.flag_rate.standard.pathology"
+ },
+ "flag_standard_fundus": {
+  "value": 0.0,
+  "text": "0\\%",
+  "formula": "100*router_ood_flag.flag_rate.standard.fundus"
+ },
+ "flag_standard_mammography": {
+  "value": 5.3,
+  "text": "5\\%",
+  "formula": "100*router_ood_flag.flag_rate.standard.mammography"
+ },
+ "flag_standard_all": {
+  "value": 6.15,
+  "text": "6\\%",
+  "formula": "100*router_ood_flag.flag_rate.standard.all"
+ },
+ "flag_grayscale_chest_xray": {
+  "value": 0.0,
+  "text": "0\\%",
+  "formula": "100*router_ood_flag.flag_rate.grayscale.chest_xray"
+ },
+ "flag_grayscale_pathology": {
+  "value": 75.7,
+  "text": "76\\%",
+  "formula": "100*router_ood_flag.flag_rate.grayscale.pathology"
+ },
+ "flag_grayscale_fundus": {
+  "value": 0.7799999999999999,
+  "text": "1\\%",
+  "formula": "100*router_ood_flag.flag_rate.grayscale.fundus"
+ },
+ "flag_grayscale_mammography": {
+  "value": 5.3,
+  "text": "5\\%",
+  "formula": "100*router_ood_flag.flag_rate.grayscale.mammography"
+ },
+ "flag_grayscale_all": {
+  "value": 38.15,
+  "text": "38\\%",
+  "formula": "100*router_ood_flag.flag_rate.grayscale.all"
+ },
+ "flag_blur_chest_xray": {
+  "value": 98.55000000000001,
+  "text": "99\\%",
+  "formula": "100*router_ood_flag.flag_rate.blur.chest_xray"
+ },
+ "flag_blur_pathology": {
+  "value": 13.4,
+  "text": "13\\%",
+  "formula": "100*router_ood_flag.flag_rate.blur.pathology"
+ },
+ "flag_blur_fundus": {
+  "value": 2.13,
+  "text": "2\\%",
+  "formula": "100*router_ood_flag.flag_rate.blur.fundus"
+ },
+ "flag_blur_mammography": {
+  "value": 77.02,
+  "text": "77\\%",
+  "formula": "100*router_ood_flag.flag_rate.blur.mammography"
+ },
+ "flag_blur_all": {
+  "value": 28.59,
+  "text": "29\\%",
+  "formula": "100*router_ood_flag.flag_rate.blur.all"
+ },
+ "flag_low_resolution_chest_xray": {
+  "value": 100.0,
+  "text": "100\\%",
+  "formula": "100*router_ood_flag.flag_rate.low_resolution.chest_xray"
+ },
+ "flag_low_resolution_pathology": {
+  "value": 14.000000000000002,
+  "text": "14\\%",
+  "formula": "100*router_ood_flag.flag_rate.low_resolution.pathology"
+ },
+ "flag_low_resolution_fundus": {
+  "value": 2.52,
+  "text": "3\\%",
+  "formula": "100*router_ood_flag.flag_rate.low_resolution.fundus"
+ },
+ "flag_low_resolution_mammography": {
+  "value": 95.45,
+  "text": "95\\%",
+  "formula": "100*router_ood_flag.flag_rate.low_resolution.mammography"
+ },
+ "flag_low_resolution_all": {
+  "value": 32.629999999999995,
+  "text": "33\\%",
+  "formula": "100*router_ood_flag.flag_rate.low_resolution.all"
+ },
+ "flag_jpeg_chest_xray": {
+  "value": 100.0,
+  "text": "100\\%",
+  "formula": "100*router_ood_flag.flag_rate.jpeg.chest_xray"
+ },
+ "flag_jpeg_pathology": {
+  "value": 28.1,
+  "text": "28\\%",
+  "formula": "100*router_ood_flag.flag_rate.jpeg.pathology"
+ },
+ "flag_jpeg_fundus": {
+  "value": 8.33,
+  "text": "8\\%",
+  "formula": "100*router_ood_flag.flag_rate.jpeg.fundus"
+ },
+ "flag_jpeg_mammography": {
+  "value": 98.74000000000001,
+  "text": "99\\%",
+  "formula": "100*router_ood_flag.flag_rate.jpeg.mammography"
+ },
+ "flag_jpeg_all": {
+  "value": 41.61,
+  "text": "42\\%",
+  "formula": "100*router_ood_flag.flag_rate.jpeg.all"
+ },
+ "gen_best_single_overall": {
+  "value": 0.8434,
+  "text": "0.843",
+  "formula": "router_general.methods.best_single_overall.macro",
+  "ci": [
+   0.834,
+   0.8524
+  ],
+  "ci_text": "[0.834, 0.852]"
+ },
+ "gen_best_single_per_task": {
+  "value": 0.8654,
+  "text": "0.865",
+  "formula": "router_general.methods.best_single_per_task.macro",
+  "ci": [
+   0.8575,
+   0.8732
+  ],
+  "ci_text": "[0.858, 0.873]"
+ },
+ "gen_best_single_per_task_oof": {
+  "value": 0.8642,
+  "text": "0.864",
+  "formula": "router_general.methods.best_single_per_task_oof.macro",
+  "ci": [
+   0.8559,
+   0.8719
+  ],
+  "ci_text": "[0.856, 0.872]"
+ },
+ "gen_greedy_ensemble_selection": {
+  "value": 0.8814,
+  "text": "0.881",
+  "formula": "router_general.methods.greedy_ensemble_selection.macro",
+  "ci": [
+   0.8729,
+   0.8895
+  ],
+  "ci_text": "[0.873, 0.889]"
+ },
+ "gen_healthrouter": {
+  "value": 0.8845,
+  "text": "0.884",
+  "formula": "router_general.methods.healthrouter.macro",
+  "ci": [
+   0.8763,
+   0.8922
+  ],
+  "ci_text": "[0.876, 0.892]"
+ },
+ "gen_healthrouter_harness": {
+  "value": 0.8801,
+  "text": "0.880",
+  "formula": "router_general.methods.healthrouter_harness.macro",
+  "ci": [
+   0.8714,
+   0.8882
+  ],
+  "ci_text": "[0.871, 0.888]"
+ },
+ "gen_knn_router": {
+  "value": 0.8813,
+  "text": "0.881",
+  "formula": "router_general.methods.knn_router.macro",
+  "ci": [
+   0.8729,
+   0.8894
+  ],
+  "ci_text": "[0.873, 0.889]"
+ },
+ "gen_knora_e": {
+  "value": 0.8214,
+  "text": "0.821",
+  "formula": "router_general.methods.knora_e.macro",
+  "ci": [
+   0.8126,
+   0.8298
+  ],
+  "ci_text": "[0.813, 0.830]"
+ },
+ "gen_knora_u": {
+  "value": 0.854,
+  "text": "0.854",
+  "formula": "router_general.methods.knora_u.macro",
+  "ci": [
+   0.8453,
+   0.8622
+  ],
+  "ci_text": "[0.845, 0.862]"
+ },
+ "gen_logme_selection": {
+  "value": 0.8777,
+  "text": "0.878",
+  "formula": "router_general.methods.logme_selection.macro",
+  "ci": [
+   0.8695,
+   0.8862
+  ],
+  "ci_text": "[0.870, 0.886]"
+ },
+ "gen_meta_des": {
+  "value": 0.8347,
+  "text": "0.835",
+  "formula": "router_general.methods.meta_des.macro",
+  "ci": [
+   0.8263,
+   0.8434
+  ],
+  "ci_text": "[0.826, 0.843]"
+ },
+ "gen_modality_router_supervised": {
+  "value": 0.8784,
+  "text": "0.878",
+  "formula": "router_general.methods.modality_router_supervised.macro",
+  "ci": [
+   0.8699,
+   0.8868
+  ],
+  "ci_text": "[0.870, 0.887]"
+ },
+ "gen_modality_router_supervised_oof": {
+  "value": 0.8806,
+  "text": "0.881",
+  "formula": "router_general.methods.modality_router_supervised_oof.macro",
+  "ci": [
+   0.8725,
+   0.8887
+  ],
+  "ci_text": "[0.873, 0.889]"
+ },
+ "gen_modality_router_zeroshot_biomedclip": {
+  "value": 0.8774,
+  "text": "0.877",
+  "formula": "router_general.methods.modality_router_zeroshot_biomedclip.macro",
+  "ci": [
+   0.869,
+   0.8857
+  ],
+  "ci_text": "[0.869, 0.886]"
+ },
+ "gen_oracle_single": {
+  "value": 0.9731,
+  "text": "0.973",
+  "formula": "router_general.methods.oracle_single.macro",
+  "ci": [
+   0.9688,
+   0.977
+  ],
+  "ci_text": "[0.969, 0.977]"
+ },
+ "gen_routellm_mf": {
+  "value": 0.878,
+  "text": "0.878",
+  "formula": "router_general.methods.routellm_mf.macro",
+  "ci": [
+   0.8692,
+   0.8867
+  ],
+  "ci_text": "[0.869, 0.887]"
+ },
+ "gen_routerbench_mlp": {
+  "value": 0.8768,
+  "text": "0.877",
+  "formula": "router_general.methods.routerbench_mlp.macro",
+  "ci": [
+   0.8683,
+   0.885
+  ],
+  "ci_text": "[0.868, 0.885]"
+ },
+ "gen_soft_moe": {
+  "value": 0.8747,
+  "text": "0.875",
+  "formula": "router_general.methods.soft_moe.macro",
+  "ci": [
+   0.8669,
+   0.8821
+  ],
+  "ci_text": "[0.867, 0.882]"
+ },
+ "gen_sparse_topk_moe": {
+  "value": 0.8693,
+  "text": "0.869",
+  "formula": "router_general.methods.sparse_topk_moe.macro",
+  "ci": [
+   0.8614,
+   0.8766
+  ],
+  "ci_text": "[0.861, 0.877]"
+ },
+ "gen_stacking": {
+  "value": 0.879,
+  "text": "0.879",
+  "formula": "router_general.methods.stacking.macro",
+  "ci": [
+   0.8708,
+   0.8869
+  ],
+  "ci_text": "[0.871, 0.887]"
+ },
+ "gen_uniform_ensemble": {
+  "value": 0.8754,
+  "text": "0.875",
+  "formula": "router_general.methods.uniform_ensemble.macro",
+  "ci": [
+   0.8667,
+   0.884
+  ],
+  "ci_text": "[0.867, 0.884]"
+ },
+ "gen_d_best_single_overall": {
+  "value": 0.0411,
+  "text": "0.041",
+  "formula": "router_general.differences.best_single_overall.macro",
+  "ci": [
+   0.0342,
+   0.0479
+  ],
+  "ci_text": "[0.034, 0.048]"
+ },
+ "a_gen_d_best_single_overall": {
+  "value": 0.0411,
+  "text": "0.041",
+  "formula": "abs(router_general.differences.best_single_overall.macro)"
+ },
+ "gen_d_best_single_overall_eurosat": {
+  "value": 0.0225,
+  "text": "0.022",
+  "formula": "router_general.differences.best_single_overall.eurosat",
+  "ci": [
+   0.0157,
+   0.0293
+  ],
+  "ci_text": "[0.016, 0.029]"
+ },
+ "a_gen_d_best_single_overall_eurosat": {
+  "value": 0.0225,
+  "text": "0.022",
+  "formula": "abs(router_general.differences.best_single_overall.eurosat)"
+ },
+ "gen_d_best_single_overall_dtd": {
+  "value": 0.0308,
+  "text": "0.031",
+  "formula": "router_general.differences.best_single_overall.dtd",
+  "ci": [
+   0.0224,
+   0.0394
+  ],
+  "ci_text": "[0.022, 0.039]"
+ },
+ "a_gen_d_best_single_overall_dtd": {
+  "value": 0.0308,
+  "text": "0.031",
+  "formula": "abs(router_general.differences.best_single_overall.dtd)"
+ },
+ "gen_d_best_single_per_task": {
+  "value": 0.0191,
+  "text": "0.019",
+  "formula": "router_general.differences.best_single_per_task.macro",
+  "ci": [
+   0.0143,
+   0.0242
+  ],
+  "ci_text": "[0.014, 0.024]"
+ },
+ "a_gen_d_best_single_per_task": {
+  "value": 0.0191,
+  "text": "0.019",
+  "formula": "abs(router_general.differences.best_single_per_task.macro)"
+ },
+ "gen_d_best_single_per_task_eurosat": {
+  "value": 0.024,
+  "text": "0.024",
+  "formula": "router_general.differences.best_single_per_task.eurosat",
+  "ci": [
+   0.0178,
+   0.03
+  ],
+  "ci_text": "[0.018, 0.030]"
+ },
+ "a_gen_d_best_single_per_task_eurosat": {
+  "value": 0.024,
+  "text": "0.024",
+  "formula": "abs(router_general.differences.best_single_per_task.eurosat)"
+ },
+ "gen_d_best_single_per_task_dtd": {
+  "value": 0.0208,
+  "text": "0.021",
+  "formula": "router_general.differences.best_single_per_task.dtd",
+  "ci": [
+   0.014,
+   0.0279
+  ],
+  "ci_text": "[0.014, 0.028]"
+ },
+ "a_gen_d_best_single_per_task_dtd": {
+  "value": 0.0208,
+  "text": "0.021",
+  "formula": "abs(router_general.differences.best_single_per_task.dtd)"
+ },
+ "gen_d_best_single_per_task_oof": {
+  "value": 0.0203,
+  "text": "0.020",
+  "formula": "router_general.differences.best_single_per_task_oof.macro",
+  "ci": [
+   0.0159,
+   0.0251
+  ],
+  "ci_text": "[0.016, 0.025]"
+ },
+ "a_gen_d_best_single_per_task_oof": {
+  "value": 0.0203,
+  "text": "0.020",
+  "formula": "abs(router_general.differences.best_single_per_task_oof.macro)"
+ },
+ "gen_d_best_single_per_task_oof_eurosat": {
+  "value": 0.02,
+  "text": "0.020",
+  "formula": "router_general.differences.best_single_per_task_oof.eurosat",
+  "ci": [
+   0.0138,
+   0.0265
+  ],
+  "ci_text": "[0.014, 0.026]"
+ },
+ "a_gen_d_best_single_per_task_oof_eurosat": {
+  "value": 0.02,
+  "text": "0.020",
+  "formula": "abs(router_general.differences.best_single_per_task_oof.eurosat)"
+ },
+ "gen_d_best_single_per_task_oof_dtd": {
+  "value": 0.0141,
+  "text": "0.014",
+  "formula": "router_general.differences.best_single_per_task_oof.dtd",
+  "ci": [
+   0.0067,
+   0.0213
+  ],
+  "ci_text": "[0.007, 0.021]"
+ },
+ "a_gen_d_best_single_per_task_oof_dtd": {
+  "value": 0.0141,
+  "text": "0.014",
+  "formula": "abs(router_general.differences.best_single_per_task_oof.dtd)"
+ },
+ "gen_d_greedy_ensemble_selection": {
+  "value": 0.0031,
+  "text": "0.003",
+  "formula": "router_general.differences.greedy_ensemble_selection.macro",
+  "ci": [
+   0.0001,
+   0.0063
+  ],
+  "ci_text": "[0.000, 0.006]"
+ },
+ "a_gen_d_greedy_ensemble_selection": {
+  "value": 0.0031,
+  "text": "0.003",
+  "formula": "abs(router_general.differences.greedy_ensemble_selection.macro)"
+ },
+ "gen_d_greedy_ensemble_selection_eurosat": {
+  "value": 0.0,
+  "text": "0.000",
+  "formula": "router_general.differences.greedy_ensemble_selection.eurosat",
+  "ci": [
+   -0.0047,
+   0.0047
+  ],
+  "ci_text": "[-0.005, 0.005]"
+ },
+ "a_gen_d_greedy_ensemble_selection_eurosat": {
+  "value": 0.0,
+  "text": "0.000",
+  "formula": "abs(router_general.differences.greedy_ensemble_selection.eurosat)"
+ },
+ "gen_d_greedy_ensemble_selection_dtd": {
+  "value": -0.0029,
+  "text": "-0.003",
+  "formula": "router_general.differences.greedy_ensemble_selection.dtd",
+  "ci": [
+   -0.0079,
+   0.0018
+  ],
+  "ci_text": "[-0.008, 0.002]"
+ },
+ "a_gen_d_greedy_ensemble_selection_dtd": {
+  "value": 0.0029,
+  "text": "0.003",
+  "formula": "abs(router_general.differences.greedy_ensemble_selection.dtd)"
+ },
+ "gen_d_healthrouter_harness": {
+  "value": 0.0044,
+  "text": "0.004",
+  "formula": "router_general.differences.healthrouter_harness.macro",
+  "ci": [
+   0.0011,
+   0.0078
+  ],
+  "ci_text": "[0.001, 0.008]"
+ },
+ "a_gen_d_healthrouter_harness": {
+  "value": 0.0044,
+  "text": "0.004",
+  "formula": "abs(router_general.differences.healthrouter_harness.macro)"
+ },
+ "gen_d_healthrouter_harness_eurosat": {
+  "value": 0.0018,
+  "text": "0.002",
+  "formula": "router_general.differences.healthrouter_harness.eurosat",
+  "ci": [
+   -0.0018,
+   0.0057
+  ],
+  "ci_text": "[-0.002, 0.006]"
+ },
+ "a_gen_d_healthrouter_harness_eurosat": {
+  "value": 0.0018,
+  "text": "0.002",
+  "formula": "abs(router_general.differences.healthrouter_harness.eurosat)"
+ },
+ "gen_d_healthrouter_harness_dtd": {
+  "value": -0.0017,
+  "text": "-0.002",
+  "formula": "router_general.differences.healthrouter_harness.dtd",
+  "ci": [
+   -0.0068,
+   0.0034
+  ],
+  "ci_text": "[-0.007, 0.003]"
+ },
+ "a_gen_d_healthrouter_harness_dtd": {
+  "value": 0.0017,
+  "text": "0.002",
+  "formula": "abs(router_general.differences.healthrouter_harness.dtd)"
+ },
+ "gen_d_knn_router": {
+  "value": 0.0032,
+  "text": "0.003",
+  "formula": "router_general.differences.knn_router.macro",
+  "ci": [
+   -0.0004,
+   0.0064
+  ],
+  "ci_text": "[-0.000, 0.006]"
+ },
+ "a_gen_d_knn_router": {
+  "value": 0.0032,
+  "text": "0.003",
+  "formula": "abs(router_general.differences.knn_router.macro)"
+ },
+ "gen_d_knn_router_eurosat": {
+  "value": 0.001,
+  "text": "0.001",
+  "formula": "router_general.differences.knn_router.eurosat",
+  "ci": [
+   -0.0032,
+   0.0053
+  ],
+  "ci_text": "[-0.003, 0.005]"
+ },
+ "a_gen_d_knn_router_eurosat": {
+  "value": 0.001,
+  "text": "0.001",
+  "formula": "abs(router_general.differences.knn_router.eurosat)"
+ },
+ "gen_d_knn_router_dtd": {
+  "value": -0.0015,
+  "text": "-0.002",
+  "formula": "router_general.differences.knn_router.dtd",
+  "ci": [
+   -0.0067,
+   0.0035
+  ],
+  "ci_text": "[-0.007, 0.004]"
+ },
+ "a_gen_d_knn_router_dtd": {
+  "value": 0.0015,
+  "text": "0.002",
+  "formula": "abs(router_general.differences.knn_router.dtd)"
+ },
+ "gen_d_knora_e": {
+  "value": 0.0631,
+  "text": "0.063",
+  "formula": "router_general.differences.knora_e.macro",
+  "ci": [
+   0.0545,
+   0.0717
+  ],
+  "ci_text": "[0.054, 0.072]"
+ },
+ "a_gen_d_knora_e": {
+  "value": 0.0631,
+  "text": "0.063",
+  "formula": "abs(router_general.differences.knora_e.macro)"
+ },
+ "gen_d_knora_e_eurosat": {
+  "value": 0.0168,
+  "text": "0.017",
+  "formula": "router_general.differences.knora_e.eurosat",
+  "ci": [
+   0.0107,
+   0.023
+  ],
+  "ci_text": "[0.011, 0.023]"
+ },
+ "a_gen_d_knora_e_eurosat": {
+  "value": 0.0168,
+  "text": "0.017",
+  "formula": "abs(router_general.differences.knora_e.eurosat)"
+ },
+ "gen_d_knora_e_dtd": {
+  "value": 0.0501,
+  "text": "0.050",
+  "formula": "router_general.differences.knora_e.dtd",
+  "ci": [
+   0.0416,
+   0.0582
+  ],
+  "ci_text": "[0.042, 0.058]"
+ },
+ "a_gen_d_knora_e_dtd": {
+  "value": 0.0501,
+  "text": "0.050",
+  "formula": "abs(router_general.differences.knora_e.dtd)"
+ },
+ "gen_d_knora_u": {
+  "value": 0.0305,
+  "text": "0.030",
+  "formula": "router_general.differences.knora_u.macro",
+  "ci": [
+   0.0233,
+   0.0378
+  ],
+  "ci_text": "[0.023, 0.038]"
+ },
+ "a_gen_d_knora_u": {
+  "value": 0.0305,
+  "text": "0.030",
+  "formula": "abs(router_general.differences.knora_u.macro)"
+ },
+ "gen_d_knora_u_eurosat": {
+  "value": 0.0026,
+  "text": "0.003",
+  "formula": "router_general.differences.knora_u.eurosat",
+  "ci": [
+   -0.0027,
+   0.0082
+  ],
+  "ci_text": "[-0.003, 0.008]"
+ },
+ "a_gen_d_knora_u_eurosat": {
+  "value": 0.0026,
+  "text": "0.003",
+  "formula": "abs(router_general.differences.knora_u.eurosat)"
+ },
+ "gen_d_knora_u_dtd": {
+  "value": 0.0154,
+  "text": "0.015",
+  "formula": "router_general.differences.knora_u.dtd",
+  "ci": [
+   0.0075,
+   0.0231
+  ],
+  "ci_text": "[0.007, 0.023]"
+ },
+ "a_gen_d_knora_u_dtd": {
+  "value": 0.0154,
+  "text": "0.015",
+  "formula": "abs(router_general.differences.knora_u.dtd)"
+ },
+ "gen_d_logme_selection": {
+  "value": 0.0068,
+  "text": "0.007",
+  "formula": "router_general.differences.logme_selection.macro",
+  "ci": [
+   0.0022,
+   0.0112
+  ],
+  "ci_text": "[0.002, 0.011]"
+ },
+ "a_gen_d_logme_selection": {
+  "value": 0.0068,
+  "text": "0.007",
+  "formula": "abs(router_general.differences.logme_selection.macro)"
+ },
+ "gen_d_logme_selection_eurosat": {
+  "value": 0.0035,
+  "text": "0.004",
+  "formula": "router_general.differences.logme_selection.eurosat",
+  "ci": [
+   -0.0025,
+   0.0093
+  ],
+  "ci_text": "[-0.003, 0.009]"
+ },
+ "a_gen_d_logme_selection_eurosat": {
+  "value": 0.0035,
+  "text": "0.004",
+  "formula": "abs(router_general.differences.logme_selection.eurosat)"
+ },
+ "gen_d_logme_selection_dtd": {
+  "value": -0.0035,
+  "text": "-0.004",
+  "formula": "router_general.differences.logme_selection.dtd",
+  "ci": [
+   -0.0091,
+   0.0018
+  ],
+  "ci_text": "[-0.009, 0.002]"
+ },
+ "a_gen_d_logme_selection_dtd": {
+  "value": 0.0035,
+  "text": "0.004",
+  "formula": "abs(router_general.differences.logme_selection.dtd)"
+ },
+ "gen_d_meta_des": {
+  "value": 0.0498,
+  "text": "0.050",
+  "formula": "router_general.differences.meta_des.macro",
+  "ci": [
+   0.0421,
+   0.0575
+  ],
+  "ci_text": "[0.042, 0.058]"
+ },
+ "a_gen_d_meta_des": {
+  "value": 0.0498,
+  "text": "0.050",
+  "formula": "abs(router_general.differences.meta_des.macro)"
+ },
+ "gen_d_meta_des_eurosat": {
+  "value": 0.0006,
+  "text": "0.001",
+  "formula": "router_general.differences.meta_des.eurosat",
+  "ci": [
+   -0.0045,
+   0.0058
+  ],
+  "ci_text": "[-0.004, 0.006]"
+ },
+ "a_gen_d_meta_des_eurosat": {
+  "value": 0.0006,
+  "text": "0.001",
+  "formula": "abs(router_general.differences.meta_des.eurosat)"
+ },
+ "gen_d_meta_des_dtd": {
+  "value": 0.0605,
+  "text": "0.060",
+  "formula": "router_general.differences.meta_des.dtd",
+  "ci": [
+   0.0512,
+   0.0698
+  ],
+  "ci_text": "[0.051, 0.070]"
+ },
+ "a_gen_d_meta_des_dtd": {
+  "value": 0.0605,
+  "text": "0.060",
+  "formula": "abs(router_general.differences.meta_des.dtd)"
+ },
+ "gen_d_modality_router_supervised": {
+  "value": 0.0061,
+  "text": "0.006",
+  "formula": "router_general.differences.modality_router_supervised.macro",
+  "ci": [
+   0.0018,
+   0.0104
+  ],
+  "ci_text": "[0.002, 0.010]"
+ },
+ "a_gen_d_modality_router_supervised": {
+  "value": 0.0061,
+  "text": "0.006",
+  "formula": "abs(router_general.differences.modality_router_supervised.macro)"
+ },
+ "gen_d_modality_router_supervised_eurosat": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "router_general.differences.modality_router_supervised.eurosat",
+  "ci": [
+   -0.0048,
+   0.005
+  ],
+  "ci_text": "[-0.005, 0.005]"
+ },
+ "a_gen_d_modality_router_supervised_eurosat": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "abs(router_general.differences.modality_router_supervised.eurosat)"
+ },
+ "gen_d_modality_router_supervised_dtd": {
+  "value": -0.0032,
+  "text": "-0.003",
+  "formula": "router_general.differences.modality_router_supervised.dtd",
+  "ci": [
+   -0.0085,
+   0.0018
+  ],
+  "ci_text": "[-0.009, 0.002]"
+ },
+ "a_gen_d_modality_router_supervised_dtd": {
+  "value": 0.0032,
+  "text": "0.003",
+  "formula": "abs(router_general.differences.modality_router_supervised.dtd)"
+ },
+ "gen_d_modality_router_supervised_oof": {
+  "value": 0.0039,
+  "text": "0.004",
+  "formula": "router_general.differences.modality_router_supervised_oof.macro",
+  "ci": [
+   0.0005,
+   0.0072
+  ],
+  "ci_text": "[0.001, 0.007]"
+ },
+ "a_gen_d_modality_router_supervised_oof": {
+  "value": 0.0039,
+  "text": "0.004",
+  "formula": "abs(router_general.differences.modality_router_supervised_oof.macro)"
+ },
+ "gen_d_modality_router_supervised_oof_eurosat": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "router_general.differences.modality_router_supervised_oof.eurosat",
+  "ci": [
+   -0.0045,
+   0.005
+  ],
+  "ci_text": "[-0.004, 0.005]"
+ },
+ "a_gen_d_modality_router_supervised_oof_eurosat": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "abs(router_general.differences.modality_router_supervised_oof.eurosat)"
+ },
+ "gen_d_modality_router_supervised_oof_dtd": {
+  "value": -0.0055,
+  "text": "-0.005",
+  "formula": "router_general.differences.modality_router_supervised_oof.dtd",
+  "ci": [
+   -0.0109,
+   -0.0004
+  ],
+  "ci_text": "[-0.011, -0.000]"
+ },
+ "a_gen_d_modality_router_supervised_oof_dtd": {
+  "value": 0.0055,
+  "text": "0.005",
+  "formula": "abs(router_general.differences.modality_router_supervised_oof.dtd)"
+ },
+ "gen_d_modality_router_zeroshot_biomedclip": {
+  "value": 0.0071,
+  "text": "0.007",
+  "formula": "router_general.differences.modality_router_zeroshot_biomedclip.macro",
+  "ci": [
+   0.0028,
+   0.0116
+  ],
+  "ci_text": "[0.003, 0.012]"
+ },
+ "a_gen_d_modality_router_zeroshot_biomedclip": {
+  "value": 0.0071,
+  "text": "0.007",
+  "formula": "abs(router_general.differences.modality_router_zeroshot_biomedclip.macro)"
+ },
+ "gen_d_modality_router_zeroshot_biomedclip_eurosat": {
+  "value": 0.0021,
+  "text": "0.002",
+  "formula": "router_general.differences.modality_router_zeroshot_biomedclip.eurosat",
+  "ci": [
+   -0.0033,
+   0.0073
+  ],
+  "ci_text": "[-0.003, 0.007]"
+ },
+ "a_gen_d_modality_router_zeroshot_biomedclip_eurosat": {
+  "value": 0.0021,
+  "text": "0.002",
+  "formula": "abs(router_general.differences.modality_router_zeroshot_biomedclip.eurosat)"
+ },
+ "gen_d_modality_router_zeroshot_biomedclip_dtd": {
+  "value": -0.0001,
+  "text": "-0.000",
+  "formula": "router_general.differences.modality_router_zeroshot_biomedclip.dtd",
+  "ci": [
+   -0.0061,
+   0.0055
+  ],
+  "ci_text": "[-0.006, 0.005]"
+ },
+ "a_gen_d_modality_router_zeroshot_biomedclip_dtd": {
+  "value": 0.0001,
+  "text": "0.000",
+  "formula": "abs(router_general.differences.modality_router_zeroshot_biomedclip.dtd)"
+ },
+ "gen_d_oracle_single": {
+  "value": -0.0886,
+  "text": "-0.089",
+  "formula": "router_general.differences.oracle_single.macro",
+  "ci": [
+   -0.0957,
+   -0.0819
+  ],
+  "ci_text": "[-0.096, -0.082]"
+ },
+ "a_gen_d_oracle_single": {
+  "value": 0.0886,
+  "text": "0.089",
+  "formula": "abs(router_general.differences.oracle_single.macro)"
+ },
+ "gen_d_oracle_single_eurosat": {
+  "value": -0.0355,
+  "text": "-0.035",
+  "formula": "router_general.differences.oracle_single.eurosat",
+  "ci": [
+   -0.0423,
+   -0.029
+  ],
+  "ci_text": "[-0.042, -0.029]"
+ },
+ "a_gen_d_oracle_single_eurosat": {
+  "value": 0.0355,
+  "text": "0.035",
+  "formula": "abs(router_general.differences.oracle_single.eurosat)"
+ },
+ "gen_d_oracle_single_dtd": {
+  "value": -0.0982,
+  "text": "-0.098",
+  "formula": "router_general.differences.oracle_single.dtd",
+  "ci": [
+   -0.1075,
+   -0.0894
+  ],
+  "ci_text": "[-0.107, -0.089]"
+ },
+ "a_gen_d_oracle_single_dtd": {
+  "value": 0.0982,
+  "text": "0.098",
+  "formula": "abs(router_general.differences.oracle_single.dtd)"
+ },
+ "gen_d_routellm_mf": {
+  "value": 0.0065,
+  "text": "0.006",
+  "formula": "router_general.differences.routellm_mf.macro",
+  "ci": [
+   0.0018,
+   0.0122
+  ],
+  "ci_text": "[0.002, 0.012]"
+ },
+ "a_gen_d_routellm_mf": {
+  "value": 0.0065,
+  "text": "0.006",
+  "formula": "abs(router_general.differences.routellm_mf.macro)"
+ },
+ "gen_d_routellm_mf_eurosat": {
+  "value": 0.0023,
+  "text": "0.002",
+  "formula": "router_general.differences.routellm_mf.eurosat",
+  "ci": [
+   -0.0027,
+   0.0077
+  ],
+  "ci_text": "[-0.003, 0.008]"
+ },
+ "a_gen_d_routellm_mf_eurosat": {
+  "value": 0.0023,
+  "text": "0.002",
+  "formula": "abs(router_general.differences.routellm_mf.eurosat)"
+ },
+ "gen_d_routellm_mf_dtd": {
+  "value": 0.0044,
+  "text": "0.004",
+  "formula": "router_general.differences.routellm_mf.dtd",
+  "ci": [
+   -0.0018,
+   0.0111
+  ],
+  "ci_text": "[-0.002, 0.011]"
+ },
+ "a_gen_d_routellm_mf_dtd": {
+  "value": 0.0044,
+  "text": "0.004",
+  "formula": "abs(router_general.differences.routellm_mf.dtd)"
+ },
+ "gen_d_routerbench_mlp": {
+  "value": 0.0077,
+  "text": "0.008",
+  "formula": "router_general.differences.routerbench_mlp.macro",
+  "ci": [
+   0.0032,
+   0.0123
+  ],
+  "ci_text": "[0.003, 0.012]"
+ },
+ "a_gen_d_routerbench_mlp": {
+  "value": 0.0077,
+  "text": "0.008",
+  "formula": "abs(router_general.differences.routerbench_mlp.macro)"
+ },
+ "gen_d_routerbench_mlp_eurosat": {
+  "value": -0.0007,
+  "text": "-0.001",
+  "formula": "router_general.differences.routerbench_mlp.eurosat",
+  "ci": [
+   -0.0057,
+   0.0042
+  ],
+  "ci_text": "[-0.006, 0.004]"
+ },
+ "a_gen_d_routerbench_mlp_eurosat": {
+  "value": 0.0007,
+  "text": "0.001",
+  "formula": "abs(router_general.differences.routerbench_mlp.eurosat)"
+ },
+ "gen_d_routerbench_mlp_dtd": {
+  "value": 0.0035,
+  "text": "0.004",
+  "formula": "router_general.differences.routerbench_mlp.dtd",
+  "ci": [
+   -0.0026,
+   0.0098
+  ],
+  "ci_text": "[-0.003, 0.010]"
+ },
+ "a_gen_d_routerbench_mlp_dtd": {
+  "value": 0.0035,
+  "text": "0.004",
+  "formula": "abs(router_general.differences.routerbench_mlp.dtd)"
+ },
+ "gen_d_soft_moe": {
+  "value": 0.0098,
+  "text": "0.010",
+  "formula": "router_general.differences.soft_moe.macro",
+  "ci": [
+   0.0062,
+   0.0134
+  ],
+  "ci_text": "[0.006, 0.013]"
+ },
+ "a_gen_d_soft_moe": {
+  "value": 0.0098,
+  "text": "0.010",
+  "formula": "abs(router_general.differences.soft_moe.macro)"
+ },
+ "gen_d_soft_moe_eurosat": {
+  "value": 0.0086,
+  "text": "0.009",
+  "formula": "router_general.differences.soft_moe.eurosat",
+  "ci": [
+   0.0038,
+   0.0137
+  ],
+  "ci_text": "[0.004, 0.014]"
+ },
+ "a_gen_d_soft_moe_eurosat": {
+  "value": 0.0086,
+  "text": "0.009",
+  "formula": "abs(router_general.differences.soft_moe.eurosat)"
+ },
+ "gen_d_soft_moe_dtd": {
+  "value": 0.0142,
+  "text": "0.014",
+  "formula": "router_general.differences.soft_moe.dtd",
+  "ci": [
+   0.0082,
+   0.0199
+  ],
+  "ci_text": "[0.008, 0.020]"
+ },
+ "a_gen_d_soft_moe_dtd": {
+  "value": 0.0142,
+  "text": "0.014",
+  "formula": "abs(router_general.differences.soft_moe.dtd)"
+ },
+ "gen_d_sparse_topk_moe": {
+  "value": 0.0152,
+  "text": "0.015",
+  "formula": "router_general.differences.sparse_topk_moe.macro",
+  "ci": [
+   0.0108,
+   0.0194
+  ],
+  "ci_text": "[0.011, 0.019]"
+ },
+ "a_gen_d_sparse_topk_moe": {
+  "value": 0.0152,
+  "text": "0.015",
+  "formula": "abs(router_general.differences.sparse_topk_moe.macro)"
+ },
+ "gen_d_sparse_topk_moe_eurosat": {
+  "value": 0.0126,
+  "text": "0.013",
+  "formula": "router_general.differences.sparse_topk_moe.eurosat",
+  "ci": [
+   0.0078,
+   0.0178
+  ],
+  "ci_text": "[0.008, 0.018]"
+ },
+ "a_gen_d_sparse_topk_moe_eurosat": {
+  "value": 0.0126,
+  "text": "0.013",
+  "formula": "abs(router_general.differences.sparse_topk_moe.eurosat)"
+ },
+ "gen_d_sparse_topk_moe_dtd": {
+  "value": 0.0208,
+  "text": "0.021",
+  "formula": "router_general.differences.sparse_topk_moe.dtd",
+  "ci": [
+   0.0142,
+   0.0271
+  ],
+  "ci_text": "[0.014, 0.027]"
+ },
+ "a_gen_d_sparse_topk_moe_dtd": {
+  "value": 0.0208,
+  "text": "0.021",
+  "formula": "abs(router_general.differences.sparse_topk_moe.dtd)"
+ },
+ "gen_d_stacking": {
+  "value": 0.0055,
+  "text": "0.005",
+  "formula": "router_general.differences.stacking.macro",
+  "ci": [
+   0.0013,
+   0.0097
+  ],
+  "ci_text": "[0.001, 0.010]"
+ },
+ "a_gen_d_stacking": {
+  "value": 0.0055,
+  "text": "0.005",
+  "formula": "abs(router_general.differences.stacking.macro)"
+ },
+ "gen_d_stacking_eurosat": {
+  "value": -0.006,
+  "text": "-0.006",
+  "formula": "router_general.differences.stacking.eurosat",
+  "ci": [
+   -0.0118,
+   -0.0003
+  ],
+  "ci_text": "[-0.012, -0.000]"
+ },
+ "a_gen_d_stacking_eurosat": {
+  "value": 0.006,
+  "text": "0.006",
+  "formula": "abs(router_general.differences.stacking.eurosat)"
+ },
+ "gen_d_stacking_dtd": {
+  "value": 0.0247,
+  "text": "0.025",
+  "formula": "router_general.differences.stacking.dtd",
+  "ci": [
+   0.0149,
+   0.0345
+  ],
+  "ci_text": "[0.015, 0.035]"
+ },
+ "a_gen_d_stacking_dtd": {
+  "value": 0.0247,
+  "text": "0.025",
+  "formula": "abs(router_general.differences.stacking.dtd)"
+ },
+ "gen_d_uniform_ensemble": {
+  "value": 0.0091,
+  "text": "0.009",
+  "formula": "router_general.differences.uniform_ensemble.macro",
+  "ci": [
+   0.0047,
+   0.0137
+  ],
+  "ci_text": "[0.005, 0.014]"
+ },
+ "a_gen_d_uniform_ensemble": {
+  "value": 0.0091,
+  "text": "0.009",
+  "formula": "abs(router_general.differences.uniform_ensemble.macro)"
+ },
+ "gen_d_uniform_ensemble_eurosat": {
+  "value": -0.0025,
+  "text": "-0.003",
+  "formula": "router_general.differences.uniform_ensemble.eurosat",
+  "ci": [
+   -0.0077,
+   0.0025
+  ],
+  "ci_text": "[-0.008, 0.003]"
+ },
+ "a_gen_d_uniform_ensemble_eurosat": {
+  "value": 0.0025,
+  "text": "0.003",
+  "formula": "abs(router_general.differences.uniform_ensemble.eurosat)"
+ },
+ "gen_d_uniform_ensemble_dtd": {
+  "value": 0.0059,
+  "text": "0.006",
+  "formula": "router_general.differences.uniform_ensemble.dtd",
+  "ci": [
+   -0.0023,
+   0.0138
+  ],
+  "ci_text": "[-0.002, 0.014]"
+ },
+ "a_gen_d_uniform_ensemble_dtd": {
+  "value": 0.0059,
+  "text": "0.006",
+  "formula": "abs(router_general.differences.uniform_ensemble.dtd)"
+ },
+ "gen_best_single_overall_eurosat": {
+  "value": 0.9373,
+  "text": "0.937",
+  "formula": "router_general.methods.best_single_overall.per_task.eurosat",
+  "ci": [
+   0.9285,
+   0.9453
+  ],
+  "ci_text": "[0.928, 0.945]"
+ },
+ "gen_best_single_overall_dtd": {
+  "value": 0.7962,
+  "text": "0.796",
+  "formula": "router_general.methods.best_single_overall.per_task.dtd",
+  "ci": [
+   0.7824,
+   0.8084
+  ],
+  "ci_text": "[0.782, 0.808]"
+ },
+ "gen_best_single_per_task_eurosat": {
+  "value": 0.9358,
+  "text": "0.936",
+  "formula": "router_general.methods.best_single_per_task.per_task.eurosat",
+  "ci": [
+   0.9273,
+   0.944
+  ],
+  "ci_text": "[0.927, 0.944]"
+ },
+ "gen_best_single_per_task_dtd": {
+  "value": 0.8062,
+  "text": "0.806",
+  "formula": "router_general.methods.best_single_per_task.per_task.dtd",
+  "ci": [
+   0.7929,
+   0.8179
+  ],
+  "ci_text": "[0.793, 0.818]"
+ },
+ "gen_best_single_per_task_oof_eurosat": {
+  "value": 0.9398,
+  "text": "0.940",
+  "formula": "router_general.methods.best_single_per_task_oof.per_task.eurosat",
+  "ci": [
+   0.9302,
+   0.9485
+  ],
+  "ci_text": "[0.930, 0.949]"
+ },
+ "gen_best_single_per_task_oof_dtd": {
+  "value": 0.8129,
+  "text": "0.813",
+  "formula": "router_general.methods.best_single_per_task_oof.per_task.dtd",
+  "ci": [
+   0.7991,
+   0.8251
+  ],
+  "ci_text": "[0.799, 0.825]"
+ },
+ "gen_greedy_ensemble_selection_eurosat": {
+  "value": 0.9598,
+  "text": "0.960",
+  "formula": "router_general.methods.greedy_ensemble_selection.per_task.eurosat",
+  "ci": [
+   0.9518,
+   0.9672
+  ],
+  "ci_text": "[0.952, 0.967]"
+ },
+ "gen_greedy_ensemble_selection_dtd": {
+  "value": 0.8299,
+  "text": "0.830",
+  "formula": "router_general.methods.greedy_ensemble_selection.per_task.dtd",
+  "ci": [
+   0.8169,
+   0.8424
+  ],
+  "ci_text": "[0.817, 0.842]"
+ },
+ "gen_healthrouter_eurosat": {
+  "value": 0.9598,
+  "text": "0.960",
+  "formula": "router_general.methods.healthrouter.per_task.eurosat",
+  "ci": [
+   0.9525,
+   0.9668
+  ],
+  "ci_text": "[0.953, 0.967]"
+ },
+ "gen_healthrouter_dtd": {
+  "value": 0.827,
+  "text": "0.827",
+  "formula": "router_general.methods.healthrouter.per_task.dtd",
+  "ci": [
+   0.8133,
+   0.839
+  ],
+  "ci_text": "[0.813, 0.839]"
+ },
+ "gen_healthrouter_harness_eurosat": {
+  "value": 0.958,
+  "text": "0.958",
+  "formula": "router_general.methods.healthrouter_harness.per_task.eurosat",
+  "ci": [
+   0.951,
+   0.9653
+  ],
+  "ci_text": "[0.951, 0.965]"
+ },
+ "gen_healthrouter_harness_dtd": {
+  "value": 0.8287,
+  "text": "0.829",
+  "formula": "router_general.methods.healthrouter_harness.per_task.dtd",
+  "ci": [
+   0.8156,
+   0.8406
+  ],
+  "ci_text": "[0.816, 0.841]"
+ },
+ "gen_knn_router_eurosat": {
+  "value": 0.9588,
+  "text": "0.959",
+  "formula": "router_general.methods.knn_router.per_task.eurosat",
+  "ci": [
+   0.9517,
+   0.9662
+  ],
+  "ci_text": "[0.952, 0.966]"
+ },
+ "gen_knn_router_dtd": {
+  "value": 0.8285,
+  "text": "0.829",
+  "formula": "router_general.methods.knn_router.per_task.dtd",
+  "ci": [
+   0.8155,
+   0.8404
+  ],
+  "ci_text": "[0.816, 0.840]"
+ },
+ "gen_knora_e_eurosat": {
+  "value": 0.943,
+  "text": "0.943",
+  "formula": "router_general.methods.knora_e.per_task.eurosat",
+  "ci": [
+   0.935,
+   0.9507
+  ],
+  "ci_text": "[0.935, 0.951]"
+ },
+ "gen_knora_e_dtd": {
+  "value": 0.7769,
+  "text": "0.777",
+  "formula": "router_general.methods.knora_e.per_task.dtd",
+  "ci": [
+   0.7631,
+   0.7895
+  ],
+  "ci_text": "[0.763, 0.789]"
+ },
+ "gen_knora_u_eurosat": {
+  "value": 0.9572,
+  "text": "0.957",
+  "formula": "router_general.methods.knora_u.per_task.eurosat",
+  "ci": [
+   0.9492,
+   0.9647
+  ],
+  "ci_text": "[0.949, 0.965]"
+ },
+ "gen_knora_u_dtd": {
+  "value": 0.8116,
+  "text": "0.812",
+  "formula": "router_general.methods.knora_u.per_task.dtd",
+  "ci": [
+   0.7977,
+   0.8244
+  ],
+  "ci_text": "[0.798, 0.824]"
+ },
+ "gen_logme_selection_eurosat": {
+  "value": 0.9563,
+  "text": "0.956",
+  "formula": "router_general.methods.logme_selection.per_task.eurosat",
+  "ci": [
+   0.9482,
+   0.964
+  ],
+  "ci_text": "[0.948, 0.964]"
+ },
+ "gen_logme_selection_dtd": {
+  "value": 0.8305,
+  "text": "0.831",
+  "formula": "router_general.methods.logme_selection.per_task.dtd",
+  "ci": [
+   0.8167,
+   0.8424
+  ],
+  "ci_text": "[0.817, 0.842]"
+ },
+ "gen_meta_des_eurosat": {
+  "value": 0.9592,
+  "text": "0.959",
+  "formula": "router_general.methods.meta_des.per_task.eurosat",
+  "ci": [
+   0.9512,
+   0.9662
+  ],
+  "ci_text": "[0.951, 0.966]"
+ },
+ "gen_meta_des_dtd": {
+  "value": 0.7665,
+  "text": "0.766",
+  "formula": "router_general.methods.meta_des.per_task.dtd",
+  "ci": [
+   0.7521,
+   0.7791
+  ],
+  "ci_text": "[0.752, 0.779]"
+ },
+ "gen_modality_router_supervised_eurosat": {
+  "value": 0.9597,
+  "text": "0.960",
+  "formula": "router_general.methods.modality_router_supervised.per_task.eurosat",
+  "ci": [
+   0.9518,
+   0.9672
+  ],
+  "ci_text": "[0.952, 0.967]"
+ },
+ "gen_modality_router_supervised_dtd": {
+  "value": 0.8302,
+  "text": "0.830",
+  "formula": "router_general.methods.modality_router_supervised.per_task.dtd",
+  "ci": [
+   0.8169,
+   0.8421
+  ],
+  "ci_text": "[0.817, 0.842]"
+ },
+ "gen_modality_router_supervised_oof_eurosat": {
+  "value": 0.9597,
+  "text": "0.960",
+  "formula": "router_general.methods.modality_router_supervised_oof.per_task.eurosat",
+  "ci": [
+   0.9515,
+   0.967
+  ],
+  "ci_text": "[0.952, 0.967]"
+ },
+ "gen_modality_router_supervised_oof_dtd": {
+  "value": 0.8325,
+  "text": "0.833",
+  "formula": "router_general.methods.modality_router_supervised_oof.per_task.dtd",
+  "ci": [
+   0.8194,
+   0.8444
+  ],
+  "ci_text": "[0.819, 0.844]"
+ },
+ "gen_modality_router_zeroshot_biomedclip_eurosat": {
+  "value": 0.9577,
+  "text": "0.958",
+  "formula": "router_general.methods.modality_router_zeroshot_biomedclip.per_task.eurosat",
+  "ci": [
+   0.9495,
+   0.9655
+  ],
+  "ci_text": "[0.950, 0.966]"
+ },
+ "gen_modality_router_zeroshot_biomedclip_dtd": {
+  "value": 0.8271,
+  "text": "0.827",
+  "formula": "router_general.methods.modality_router_zeroshot_biomedclip.per_task.dtd",
+  "ci": [
+   0.8136,
+   0.8387
+  ],
+  "ci_text": "[0.814, 0.839]"
+ },
+ "gen_oracle_single_eurosat": {
+  "value": 0.9953,
+  "text": "0.995",
+  "formula": "router_general.methods.oracle_single.per_task.eurosat",
+  "ci": [
+   0.9927,
+   0.9977
+  ],
+  "ci_text": "[0.993, 0.998]"
+ },
+ "gen_oracle_single_dtd": {
+  "value": 0.9252,
+  "text": "0.925",
+  "formula": "router_general.methods.oracle_single.per_task.dtd",
+  "ci": [
+   0.916,
+   0.934
+  ],
+  "ci_text": "[0.916, 0.934]"
+ },
+ "gen_routellm_mf_eurosat": {
+  "value": 0.9575,
+  "text": "0.958",
+  "formula": "router_general.methods.routellm_mf.per_task.eurosat",
+  "ci": [
+   0.9497,
+   0.9648
+  ],
+  "ci_text": "[0.950, 0.965]"
+ },
+ "gen_routellm_mf_dtd": {
+  "value": 0.8226,
+  "text": "0.823",
+  "formula": "router_general.methods.routellm_mf.per_task.dtd",
+  "ci": [
+   0.8089,
+   0.835
+  ],
+  "ci_text": "[0.809, 0.835]"
+ },
+ "gen_routerbench_mlp_eurosat": {
+  "value": 0.9605,
+  "text": "0.961",
+  "formula": "router_general.methods.routerbench_mlp.per_task.eurosat",
+  "ci": [
+   0.953,
+   0.9675
+  ],
+  "ci_text": "[0.953, 0.968]"
+ },
+ "gen_routerbench_mlp_dtd": {
+  "value": 0.8235,
+  "text": "0.824",
+  "formula": "router_general.methods.routerbench_mlp.per_task.dtd",
+  "ci": [
+   0.8098,
+   0.8359
+  ],
+  "ci_text": "[0.810, 0.836]"
+ },
+ "gen_soft_moe_eurosat": {
+  "value": 0.9512,
+  "text": "0.951",
+  "formula": "router_general.methods.soft_moe.per_task.eurosat",
+  "ci": [
+   0.9432,
+   0.9592
+  ],
+  "ci_text": "[0.943, 0.959]"
+ },
+ "gen_soft_moe_dtd": {
+  "value": 0.8128,
+  "text": "0.813",
+  "formula": "router_general.methods.soft_moe.per_task.dtd",
+  "ci": [
+   0.7996,
+   0.825
+  ],
+  "ci_text": "[0.800, 0.825]"
+ },
+ "gen_sparse_topk_moe_eurosat": {
+  "value": 0.9472,
+  "text": "0.947",
+  "formula": "router_general.methods.sparse_topk_moe.per_task.eurosat",
+  "ci": [
+   0.9387,
+   0.9548
+  ],
+  "ci_text": "[0.939, 0.955]"
+ },
+ "gen_sparse_topk_moe_dtd": {
+  "value": 0.8062,
+  "text": "0.806",
+  "formula": "router_general.methods.sparse_topk_moe.per_task.dtd",
+  "ci": [
+   0.793,
+   0.818
+  ],
+  "ci_text": "[0.793, 0.818]"
+ },
+ "gen_stacking_eurosat": {
+  "value": 0.9658,
+  "text": "0.966",
+  "formula": "router_general.methods.stacking.per_task.eurosat",
+  "ci": [
+   0.9588,
+   0.9727
+  ],
+  "ci_text": "[0.959, 0.973]"
+ },
+ "gen_stacking_dtd": {
+  "value": 0.8023,
+  "text": "0.802",
+  "formula": "router_general.methods.stacking.per_task.dtd",
+  "ci": [
+   0.7882,
+   0.815
+  ],
+  "ci_text": "[0.788, 0.815]"
+ },
+ "gen_uniform_ensemble_eurosat": {
+  "value": 0.9623,
+  "text": "0.962",
+  "formula": "router_general.methods.uniform_ensemble.per_task.eurosat",
+  "ci": [
+   0.9548,
+   0.9693
+  ],
+  "ci_text": "[0.955, 0.969]"
+ },
+ "gen_uniform_ensemble_dtd": {
+  "value": 0.8211,
+  "text": "0.821",
+  "formula": "router_general.methods.uniform_ensemble.per_task.dtd",
+  "ci": [
+   0.8071,
+   0.834
+  ],
+  "ci_text": "[0.807, 0.834]"
+ },
+ "gen_rank_hr": {
+  "value": 1,
+  "text": "1",
+  "formula": "rank of healthrouter by 6-task macro in router_general"
+ },
+ "d_uniform_chest_xray": {
+  "value": 0.0206,
+  "text": "+0.021",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.chest_xray",
+  "ci": [
+   0.0114,
+   0.0308
+  ],
+  "ci_text": "[0.011, 0.031]"
+ },
+ "d_uniform_pathology": {
+  "value": 0.0105,
+  "text": "+0.011",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.pathology",
+  "ci": [
+   0.0074,
+   0.0141
+  ],
+  "ci_text": "[0.007, 0.014]"
+ },
+ "d_uniform_fundus": {
+  "value": 0.023,
+  "text": "+0.023",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.fundus",
+  "ci": [
+   0.0054,
+   0.042
+  ],
+  "ci_text": "[0.005, 0.042]"
+ },
+ "d_uniform_mammography": {
+  "value": -0.0039,
+  "text": "-0.004",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.mammography",
+  "ci": [
+   -0.0213,
+   0.0134
+  ],
+  "ci_text": "[-0.021, 0.013]"
+ },
+ "d_uniform_macro": {
+  "value": 0.0125,
+  "text": "+0.013",
+  "formula": "differences_vs_healthrouter.uniform_ensemble.macro",
+  "ci": [
+   0.0059,
+   0.0195
+  ],
+  "ci_text": "[0.006, 0.019]"
+ },
+ "sel_imagenet_convnext": {
+  "value": 14.79235018238666,
+  "text": "15\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_phikon": {
+  "value": 56.76837415320479,
+  "text": "57\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_mammo_clip": {
+  "value": 10.15871287128713,
+  "text": "10\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_siglip2_base": {
+  "value": 18.32442417926003,
+  "text": "18\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_rad_dino": {
+  "value": 18.93470036477332,
+  "text": "19\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_dinov2_base": {
+  "value": 16.053439291297554,
+  "text": "16\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_biomedclip": {
+  "value": 15.718718082334549,
+  "text": "16\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_retfound": {
+  "value": 22.70499739447629,
+  "text": "23\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_phikon_v2": {
+  "value": 58.63557582073997,
+  "text": "59\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "sel_dinov2_large": {
+  "value": 23.11275664408546,
+  "text": "23\\%",
+  "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "lf_in_distribution_healthrouter_labelfree": {
+  "value": 0.8798,
+  "text": "0.880",
+  "formula": "router_descriptive.label_free.in_distribution.methods.healthrouter_labelfree.macro",
+  "ci": [
+   0.8687,
+   0.8907
+  ],
+  "ci_text": "[0.869, 0.891]"
+ },
+ "lf_in_distribution_harness_labelfree": {
+  "value": 0.8773,
+  "text": "0.877",
+  "formula": "router_descriptive.label_free.in_distribution.methods.harness_labelfree.macro",
+  "ci": [
+   0.8657,
+   0.8888
+  ],
+  "ci_text": "[0.866, 0.889]"
+ },
+ "lf_six_task_healthrouter_labelfree": {
+  "value": 0.8795,
+  "text": "0.879",
+  "formula": "router_descriptive.label_free.six_task.methods.healthrouter_labelfree.macro",
+  "ci": [
+   0.8714,
+   0.8872
+  ],
+  "ci_text": "[0.871, 0.887]"
+ },
+ "lf_six_task_harness_labelfree": {
+  "value": 0.8758,
+  "text": "0.876",
+  "formula": "router_descriptive.label_free.six_task.methods.harness_labelfree.macro",
+  "ci": [
+   0.8672,
+   0.8838
+  ],
+  "ci_text": "[0.867, 0.884]"
+ },
+ "n_insource": {
+  "value": 3838,
+  "text": "3{,}838",
+  "formula": "sum_t router_main.methods.healthrouter.per_task[t].n"
+ },
+ "n_collections_eleven": {
+  "value": 231,
+  "text": "231",
+  "formula": "sum_{k<=3} C(11,k) = 11+55+165"
+ },
+ "headroom_captured": {
+  "value": 14.700854700854697,
+  "text": "15\\%",
+  "formula": "100*(healthrouter.macro - best_single_per_task.macro)/(oracle_single.macro - best_single_per_task.macro)"
+ },
+ "oracle_chest_xray": {
+  "value": 0.9989,
+  "text": "0.999",
+  "formula": "methods.oracle_single.per_task.chest_xray"
+ },
+ "bs_chest_xray": {
+  "value": 0.9591,
+  "text": "0.959",
+  "formula": "methods.best_single_per_task.per_task.chest_xray"
+ },
+ "oracle_pathology": {
+  "value": 0.9997,
+  "text": "1.000",
+  "formula": "methods.oracle_single.per_task.pathology"
+ },
+ "bs_pathology": {
+  "value": 0.9872,
+  "text": "0.987",
+  "formula": "methods.best_single_per_task.per_task.pathology"
+ },
+ "oracle_fundus": {
+  "value": 0.9251,
+  "text": "0.925",
+  "formula": "methods.oracle_single.per_task.fundus"
+ },
+ "bs_fundus": {
+  "value": 0.8408,
+  "text": "0.841",
+  "formula": "methods.best_single_per_task.per_task.fundus"
+ },
+ "oracle_mammography": {
+  "value": 0.9946,
+  "text": "0.995",
+  "formula": "methods.oracle_single.per_task.mammography"
+ },
+ "bs_mammography": {
+  "value": 0.6633,
+  "text": "0.663",
+  "formula": "methods.best_single_per_task.per_task.mammography"
+ },
+ "sf_chest_xray_imagenet_convnext": {
+  "value": 10.07,
+  "text": "10\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[imagenet_convnext]"
+ },
+ "sf_chest_xray_dinov2_base": {
+  "value": 5.29,
+  "text": "5\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[dinov2_base]"
+ },
+ "sf_chest_xray_dinov2_large": {
+  "value": 9.47,
+  "text": "9\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[dinov2_large]"
+ },
+ "sf_chest_xray_siglip2_base": {
+  "value": 44.66,
+  "text": "45\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[siglip2_base]"
+ },
+ "sf_chest_xray_biomedclip": {
+  "value": 25.679999999999996,
+  "text": "26\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[biomedclip]"
+ },
+ "sf_chest_xray_rad_dino": {
+  "value": 96.37,
+  "text": "96\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[rad_dino]"
+ },
+ "sf_chest_xray_phikon": {
+  "value": 12.690000000000001,
+  "text": "13\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[phikon]"
+ },
+ "sf_chest_xray_phikon_v2": {
+  "value": 29.709999999999997,
+  "text": "30\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[phikon_v2]"
+ },
+ "sf_chest_xray_retfound": {
+  "value": 26.640000000000004,
+  "text": "27\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[retfound]"
+ },
+ "sf_chest_xray_mammo_clip": {
+  "value": 13.389999999999999,
+  "text": "13\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.chest_xray[mammo_clip]"
+ },
+ "sf_pathology_imagenet_convnext": {
+  "value": 7.32,
+  "text": "7\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[imagenet_convnext]"
+ },
+ "sf_pathology_dinov2_base": {
+  "value": 3.27,
+  "text": "3\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[dinov2_base]"
+ },
+ "sf_pathology_dinov2_large": {
+  "value": 19.75,
+  "text": "20\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[dinov2_large]"
+ },
+ "sf_pathology_siglip2_base": {
+  "value": 2.4,
+  "text": "2\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[siglip2_base]"
+ },
+ "sf_pathology_biomedclip": {
+  "value": 5.53,
+  "text": "6\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[biomedclip]"
+ },
+ "sf_pathology_rad_dino": {
+  "value": 0.22,
+  "text": "0\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[rad_dino]"
+ },
+ "sf_pathology_phikon": {
+  "value": 88.32,
+  "text": "88\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[phikon]"
+ },
+ "sf_pathology_phikon_v2": {
+  "value": 87.67,
+  "text": "88\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[phikon_v2]"
+ },
+ "sf_pathology_retfound": {
+  "value": 13.87,
+  "text": "14\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[retfound]"
+ },
+ "sf_pathology_mammo_clip": {
+  "value": 0.13,
+  "text": "0\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.pathology[mammo_clip]"
+ },
+ "sf_fundus_imagenet_convnext": {
+  "value": 30.070000000000004,
+  "text": "30\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[imagenet_convnext]"
+ },
+ "sf_fundus_dinov2_base": {
+  "value": 70.94,
+  "text": "71\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[dinov2_base]"
+ },
+ "sf_fundus_dinov2_large": {
+  "value": 60.68,
+  "text": "61\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[dinov2_large]"
+ },
+ "sf_fundus_siglip2_base": {
+  "value": 29.24,
+  "text": "29\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[siglip2_base]"
+ },
+ "sf_fundus_biomedclip": {
+  "value": 14.71,
+  "text": "15\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[biomedclip]"
+ },
+ "sf_fundus_rad_dino": {
+  "value": 7.829999999999999,
+  "text": "8\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[rad_dino]"
+ },
+ "sf_fundus_phikon": {
+  "value": 1.1900000000000002,
+  "text": "1\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[phikon]"
+ },
+ "sf_fundus_phikon_v2": {
+  "value": 18.45,
+  "text": "18\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[phikon_v2]"
+ },
+ "sf_fundus_retfound": {
+  "value": 56.76,
+  "text": "57\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[retfound]"
+ },
+ "sf_fundus_mammo_clip": {
+  "value": 0.0,
+  "text": "0\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.fundus[mammo_clip]"
+ },
+ "sf_mammography_imagenet_convnext": {
+  "value": 30.240000000000002,
+  "text": "30\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[imagenet_convnext]"
+ },
+ "sf_mammography_dinov2_base": {
+  "value": 19.06,
+  "text": "19\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[dinov2_base]"
+ },
+ "sf_mammography_dinov2_large": {
+  "value": 14.39,
+  "text": "14\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[dinov2_large]"
+ },
+ "sf_mammography_siglip2_base": {
+  "value": 31.81,
+  "text": "32\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[siglip2_base]"
+ },
+ "sf_mammography_biomedclip": {
+  "value": 39.09,
+  "text": "39\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[biomedclip]"
+ },
+ "sf_mammography_rad_dino": {
+  "value": 6.569999999999999,
+  "text": "7\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[rad_dino]"
+ },
+ "sf_mammography_phikon": {
+  "value": 52.39,
+  "text": "52\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[phikon]"
+ },
+ "sf_mammography_phikon_v2": {
+  "value": 32.029999999999994,
+  "text": "32\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[phikon_v2]"
+ },
+ "sf_mammography_retfound": {
+  "value": 16.07,
+  "text": "16\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[retfound]"
+ },
+ "sf_mammography_mammo_clip": {
+  "value": 48.64,
+  "text": "49\\%",
+  "formula": "100*router_main.methods.healthrouter.selection_frequency.mammography[mammo_clip]"
+ },
+ "single_imagenet_convnext": {
+  "value": 0.8354,
+  "text": "0.835",
+  "formula": "router_descriptive.single_candidates.candidates.imagenet_convnext.macro",
+  "ci": [
+   0.8217,
+   0.8491
+  ],
+  "ci_text": "[0.822, 0.849]"
+ },
+ "single_imagenet_convnext_chest_xray": {
+  "value": 0.9114,
+  "text": "0.911",
+  "formula": "router_descriptive.single_candidates.candidates.imagenet_convnext.per_task.chest_xray",
+  "ci": [
+   0.8887,
+   0.9323
+  ],
+  "ci_text": "[0.889, 0.932]"
+ },
+ "single_imagenet_convnext_pathology": {
+  "value": 0.9487,
+  "text": "0.949",
+  "formula": "router_descriptive.single_candidates.candidates.imagenet_convnext.per_task.pathology",
+  "ci": [
+   0.9394,
+   0.9574
+  ],
+  "ci_text": "[0.939, 0.957]"
+ },
+ "single_imagenet_convnext_fundus": {
+  "value": 0.8205,
+  "text": "0.821",
+  "formula": "router_descriptive.single_candidates.candidates.imagenet_convnext.per_task.fundus",
+  "ci": [
+   0.7902,
+   0.8488
+  ],
+  "ci_text": "[0.790, 0.849]"
+ },
+ "single_imagenet_convnext_mammography": {
+  "value": 0.6608,
+  "text": "0.661",
+  "formula": "router_descriptive.single_candidates.candidates.imagenet_convnext.per_task.mammography",
+  "ci": [
+   0.6213,
+   0.7009
+  ],
+  "ci_text": "[0.621, 0.701]"
+ },
+ "single_dinov2_base": {
+  "value": 0.8345,
+  "text": "0.835",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_base.macro",
+  "ci": [
+   0.8203,
+   0.8485
+  ],
+  "ci_text": "[0.820, 0.849]"
+ },
+ "single_dinov2_base_chest_xray": {
+  "value": 0.9151,
+  "text": "0.915",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_base.per_task.chest_xray",
+  "ci": [
+   0.8936,
+   0.9358
+  ],
+  "ci_text": "[0.894, 0.936]"
+ },
+ "single_dinov2_base_pathology": {
+  "value": 0.9423,
+  "text": "0.942",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_base.per_task.pathology",
+  "ci": [
+   0.9322,
+   0.9517
+  ],
+  "ci_text": "[0.932, 0.952]"
+ },
+ "single_dinov2_base_fundus": {
+  "value": 0.8461,
+  "text": "0.846",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_base.per_task.fundus",
+  "ci": [
+   0.816,
+   0.8747
+  ],
+  "ci_text": "[0.816, 0.875]"
+ },
+ "single_dinov2_base_mammography": {
+  "value": 0.6343,
+  "text": "0.634",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_base.per_task.mammography",
+  "ci": [
+   0.5911,
+   0.676
+  ],
+  "ci_text": "[0.591, 0.676]"
+ },
+ "single_dinov2_large": {
+  "value": 0.8327,
+  "text": "0.833",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_large.macro",
+  "ci": [
+   0.8186,
+   0.8467
+  ],
+  "ci_text": "[0.819, 0.847]"
+ },
+ "single_dinov2_large_chest_xray": {
+  "value": 0.9069,
+  "text": "0.907",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_large.per_task.chest_xray",
+  "ci": [
+   0.8841,
+   0.929
+  ],
+  "ci_text": "[0.884, 0.929]"
+ },
+ "single_dinov2_large_pathology": {
+  "value": 0.9506,
+  "text": "0.951",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_large.per_task.pathology",
+  "ci": [
+   0.9421,
+   0.9591
+  ],
+  "ci_text": "[0.942, 0.959]"
+ },
+ "single_dinov2_large_fundus": {
+  "value": 0.8371,
+  "text": "0.837",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_large.per_task.fundus",
+  "ci": [
+   0.8084,
+   0.8646
+  ],
+  "ci_text": "[0.808, 0.865]"
+ },
+ "single_dinov2_large_mammography": {
+  "value": 0.6364,
+  "text": "0.636",
+  "formula": "router_descriptive.single_candidates.candidates.dinov2_large.per_task.mammography",
+  "ci": [
+   0.5937,
+   0.6775
+  ],
+  "ci_text": "[0.594, 0.677]"
+ },
+ "single_siglip2_base": {
+  "value": 0.8243,
+  "text": "0.824",
+  "formula": "router_descriptive.single_candidates.candidates.siglip2_base.macro",
+  "ci": [
+   0.8108,
+   0.8376
+  ],
+  "ci_text": "[0.811, 0.838]"
+ },
+ "single_siglip2_base_chest_xray": {
+  "value": 0.922,
+  "text": "0.922",
+  "formula": "router_descriptive.single_candidates.candidates.siglip2_base.per_task.chest_xray",
+  "ci": [
+   0.9009,
+   0.9419
+  ],
+  "ci_text": "[0.901, 0.942]"
+ },
+ "single_siglip2_base_pathology": {
+  "value": 0.9319,
+  "text": "0.932",
+  "formula": "router_descriptive.single_candidates.candidates.siglip2_base.per_task.pathology",
+  "ci": [
+   0.9213,
+   0.9423
+  ],
+  "ci_text": "[0.921, 0.942]"
+ },
+ "single_siglip2_base_fundus": {
+  "value": 0.7936,
+  "text": "0.794",
+  "formula": "router_descriptive.single_candidates.candidates.siglip2_base.per_task.fundus",
+  "ci": [
+   0.762,
+   0.8243
+  ],
+  "ci_text": "[0.762, 0.824]"
+ },
+ "single_siglip2_base_mammography": {
+  "value": 0.6497,
+  "text": "0.650",
+  "formula": "router_descriptive.single_candidates.candidates.siglip2_base.per_task.mammography",
+  "ci": [
+   0.6096,
+   0.6902
+  ],
+  "ci_text": "[0.610, 0.690]"
+ },
+ "single_biomedclip": {
+  "value": 0.8262,
+  "text": "0.826",
+  "formula": "router_descriptive.single_candidates.candidates.biomedclip.macro",
+  "ci": [
+   0.8114,
+   0.8406
+  ],
+  "ci_text": "[0.811, 0.841]"
+ },
+ "single_biomedclip_chest_xray": {
+  "value": 0.9229,
+  "text": "0.923",
+  "formula": "router_descriptive.single_candidates.candidates.biomedclip.per_task.chest_xray",
+  "ci": [
+   0.9027,
+   0.9419
+  ],
+  "ci_text": "[0.903, 0.942]"
+ },
+ "single_biomedclip_pathology": {
+  "value": 0.9437,
+  "text": "0.944",
+  "formula": "router_descriptive.single_candidates.candidates.biomedclip.per_task.pathology",
+  "ci": [
+   0.9338,
+   0.9529
+  ],
+  "ci_text": "[0.934, 0.953]"
+ },
+ "single_biomedclip_fundus": {
+  "value": 0.7807,
+  "text": "0.781",
+  "formula": "router_descriptive.single_candidates.candidates.biomedclip.per_task.fundus",
+  "ci": [
+   0.7495,
+   0.8109
+  ],
+  "ci_text": "[0.750, 0.811]"
+ },
+ "single_biomedclip_mammography": {
+  "value": 0.6575,
+  "text": "0.657",
+  "formula": "router_descriptive.single_candidates.candidates.biomedclip.per_task.mammography",
+  "ci": [
+   0.6156,
+   0.6981
+  ],
+  "ci_text": "[0.616, 0.698]"
+ },
+ "single_rad_dino": {
+  "value": 0.7983,
+  "text": "0.798",
+  "formula": "router_descriptive.single_candidates.candidates.rad_dino.macro",
+  "ci": [
+   0.7835,
+   0.8123
+  ],
+  "ci_text": "[0.783, 0.812]"
+ },
+ "single_rad_dino_chest_xray": {
+  "value": 0.9643,
+  "text": "0.964",
+  "formula": "router_descriptive.single_candidates.candidates.rad_dino.per_task.chest_xray",
+  "ci": [
+   0.9521,
+   0.9745
+  ],
+  "ci_text": "[0.952, 0.975]"
+ },
+ "single_rad_dino_pathology": {
+  "value": 0.9096,
+  "text": "0.910",
+  "formula": "router_descriptive.single_candidates.candidates.rad_dino.per_task.pathology",
+  "ci": [
+   0.8971,
+   0.9214
+  ],
+  "ci_text": "[0.897, 0.921]"
+ },
+ "single_rad_dino_fundus": {
+  "value": 0.7248,
+  "text": "0.725",
+  "formula": "router_descriptive.single_candidates.candidates.rad_dino.per_task.fundus",
+  "ci": [
+   0.6823,
+   0.7625
+  ],
+  "ci_text": "[0.682, 0.762]"
+ },
+ "single_rad_dino_mammography": {
+  "value": 0.5944,
+  "text": "0.594",
+  "formula": "router_descriptive.single_candidates.candidates.rad_dino.per_task.mammography",
+  "ci": [
+   0.5539,
+   0.6348
+  ],
+  "ci_text": "[0.554, 0.635]"
+ },
+ "single_phikon": {
+  "value": 0.8378,
+  "text": "0.838",
+  "formula": "router_descriptive.single_candidates.candidates.phikon.macro",
+  "ci": [
+   0.8237,
+   0.852
+  ],
+  "ci_text": "[0.824, 0.852]"
+ },
+ "single_phikon_chest_xray": {
+  "value": 0.9198,
+  "text": "0.920",
+  "formula": "router_descriptive.single_candidates.candidates.phikon.per_task.chest_xray",
+  "ci": [
+   0.899,
+   0.939
+  ],
+  "ci_text": "[0.899, 0.939]"
+ },
+ "single_phikon_pathology": {
+  "value": 0.9861,
+  "text": "0.986",
+  "formula": "router_descriptive.single_candidates.candidates.phikon.per_task.pathology",
+  "ci": [
+   0.9815,
+   0.99
+  ],
+  "ci_text": "[0.982, 0.990]"
+ },
+ "single_phikon_fundus": {
+  "value": 0.777,
+  "text": "0.777",
+  "formula": "router_descriptive.single_candidates.candidates.phikon.per_task.fundus",
+  "ci": [
+   0.7371,
+   0.8124
+  ],
+  "ci_text": "[0.737, 0.812]"
+ },
+ "single_phikon_mammography": {
+  "value": 0.6682,
+  "text": "0.668",
+  "formula": "router_descriptive.single_candidates.candidates.phikon.per_task.mammography",
+  "ci": [
+   0.6294,
+   0.7052
+  ],
+  "ci_text": "[0.629, 0.705]"
+ },
+ "single_phikon_v2": {
+  "value": 0.8353,
+  "text": "0.835",
+  "formula": "router_descriptive.single_candidates.candidates.phikon_v2.macro",
+  "ci": [
+   0.821,
+   0.85
+  ],
+  "ci_text": "[0.821, 0.850]"
+ },
+ "single_phikon_v2_chest_xray": {
+  "value": 0.9213,
+  "text": "0.921",
+  "formula": "router_descriptive.single_candidates.candidates.phikon_v2.per_task.chest_xray",
+  "ci": [
+   0.9005,
+   0.9409
+  ],
+  "ci_text": "[0.900, 0.941]"
+ },
+ "single_phikon_v2_pathology": {
+  "value": 0.9881,
+  "text": "0.988",
+  "formula": "router_descriptive.single_candidates.candidates.phikon_v2.per_task.pathology",
+  "ci": [
+   0.9837,
+   0.9917
+  ],
+  "ci_text": "[0.984, 0.992]"
+ },
+ "single_phikon_v2_fundus": {
+  "value": 0.7706,
+  "text": "0.771",
+  "formula": "router_descriptive.single_candidates.candidates.phikon_v2.per_task.fundus",
+  "ci": [
+   0.7335,
+   0.8055
+  ],
+  "ci_text": "[0.734, 0.805]"
+ },
+ "single_phikon_v2_mammography": {
+  "value": 0.6613,
+  "text": "0.661",
+  "formula": "router_descriptive.single_candidates.candidates.phikon_v2.per_task.mammography",
+  "ci": [
+   0.6205,
+   0.7026
+  ],
+  "ci_text": "[0.621, 0.703]"
+ },
+ "single_retfound": {
+  "value": 0.8307,
+  "text": "0.831",
+  "formula": "router_descriptive.single_candidates.candidates.retfound.macro",
+  "ci": [
+   0.8174,
+   0.8441
+  ],
+  "ci_text": "[0.817, 0.844]"
+ },
+ "single_retfound_chest_xray": {
+  "value": 0.9216,
+  "text": "0.922",
+  "formula": "router_descriptive.single_candidates.candidates.retfound.per_task.chest_xray",
+  "ci": [
+   0.9011,
+   0.9408
+  ],
+  "ci_text": "[0.901, 0.941]"
+ },
+ "single_retfound_pathology": {
+  "value": 0.9341,
+  "text": "0.934",
+  "formula": "router_descriptive.single_candidates.candidates.retfound.per_task.pathology",
+  "ci": [
+   0.9237,
+   0.944
+  ],
+  "ci_text": "[0.924, 0.944]"
+ },
+ "single_retfound_fundus": {
+  "value": 0.8411,
+  "text": "0.841",
+  "formula": "router_descriptive.single_candidates.candidates.retfound.per_task.fundus",
+  "ci": [
+   0.814,
+   0.8666
+  ],
+  "ci_text": "[0.814, 0.867]"
+ },
+ "single_retfound_mammography": {
+  "value": 0.6261,
+  "text": "0.626",
+  "formula": "router_descriptive.single_candidates.candidates.retfound.per_task.mammography",
+  "ci": [
+   0.5862,
+   0.6663
+  ],
+  "ci_text": "[0.586, 0.666]"
+ },
+ "single_mammo_clip": {
+  "value": 0.606,
+  "text": "0.606",
+  "formula": "router_descriptive.single_candidates.candidates.mammo_clip.macro",
+  "ci": [
+   0.5939,
+   0.618
+  ],
+  "ci_text": "[0.594, 0.618]"
+ },
+ "single_mammo_clip_chest_xray": {
+  "value": 0.9089,
+  "text": "0.909",
+  "formula": "router_descriptive.single_candidates.candidates.mammo_clip.per_task.chest_xray",
+  "ci": [
+   0.8858,
+   0.9311
+  ],
+  "ci_text": "[0.886, 0.931]"
+ },
+ "single_mammo_clip_pathology": {
+  "value": 0.8401,
+  "text": "0.840",
+  "formula": "router_descriptive.single_candidates.candidates.mammo_clip.per_task.pathology",
+  "ci": [
+   0.8239,
+   0.8563
+  ],
+  "ci_text": "[0.824, 0.856]"
+ },
+ "single_mammo_clip_fundus": {
+  "value": -0.0013,
+  "text": "-0.001",
+  "formula": "router_descriptive.single_candidates.candidates.mammo_clip.per_task.fundus",
+  "ci": [
+   -0.0035,
+   0.0
+  ],
+  "ci_text": "[-0.004, 0.000]"
+ },
+ "single_mammo_clip_mammography": {
+  "value": 0.6762,
+  "text": "0.676",
+  "formula": "router_descriptive.single_candidates.candidates.mammo_clip.per_task.mammography",
+  "ci": [
+   0.6359,
+   0.7144
+  ],
+  "ci_text": "[0.636, 0.714]"
+ },
+ "n_distinct_best": {
+  "value": 4,
+  "text": "four",
+  "formula": "router_descriptive.single_candidates.n_distinct_best"
+ },
+ "other_better_chest_xray": {
+  "value": 64.75,
+  "text": "65\\%",
+  "formula": "100*router_descriptive.single_candidates.per_image_other_candidate_better.chest_xray"
+ },
+ "other_better_pathology": {
+  "value": 62.470000000000006,
+  "text": "62\\%",
+  "formula": "100*router_descriptive.single_candidates.per_image_other_candidate_better.pathology"
+ },
+ "other_better_fundus": {
+  "value": 86.95,
+  "text": "87\\%",
+  "formula": "100*router_descriptive.single_candidates.per_image_other_candidate_better.fundus"
+ },
+ "other_better_mammography": {
+  "value": 89.74,
+  "text": "90\\%",
+  "formula": "100*router_descriptive.single_candidates.per_image_other_candidate_better.mammography"
+ },
+ "other_better_all": {
+  "value": 70.81,
+  "text": "71\\%",
+  "formula": "100*router_descriptive.single_candidates.per_image_other_candidate_better.all"
+ },
+ "lf_mis_six": {
+  "value": 313,
+  "text": "313",
+  "formula": "sum router_descriptive.label_free.six_task.misinferred_images"
+ },
+ "lf_eval_six": {
+  "value": 24564,
+  "text": "24{,}564",
+  "formula": "sum router_descriptive.label_free.six_task.image_evaluations"
+ },
+ "lf_mis_in": {
+  "value": 2,
+  "text": "2",
+  "formula": "sum router_descriptive.label_free.in_distribution.misinferred_images"
+ },
+ "lf_eval_in": {
+  "value": 11514,
+  "text": "11{,}514",
+  "formula": "sum router_descriptive.label_free.in_distribution.image_evaluations"
+ },
+ "lf_acc_in_distribution": {
+  "value": 99.983,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.in_distribution.task_inference_accuracy.all"
+ },
+ "lf_acc_in_distribution_chest_xray": {
+  "value": 100.0,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.in_distribution.task_inference_accuracy.chest_xray"
+ },
+ "lf_acc_in_distribution_pathology": {
+  "value": 99.967,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.in_distribution.task_inference_accuracy.pathology"
+ },
+ "lf_acc_in_distribution_fundus": {
+  "value": 100.0,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.in_distribution.task_inference_accuracy.fundus"
+ },
+ "lf_acc_in_distribution_mammography": {
+  "value": 100.0,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.in_distribution.task_inference_accuracy.mammography"
+ },
+ "lf_acc_in_distribution_all": {
+  "value": 99.983,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.in_distribution.task_inference_accuracy.all"
+ },
+ "lf_d_in_distribution_healthrouter_labelfree": {
+  "value": 0.0,
+  "text": "0.000",
+  "formula": "router_descriptive.label_free.in_distribution.differences_vs_healthrouter.healthrouter_labelfree.macro",
+  "ci": [
+   0.0,
+   0.0
+  ],
+  "ci_text": "[0.000, 0.000]"
+ },
+ "lf_d_in_distribution_harness_labelfree": {
+  "value": 0.0025,
+  "text": "0.003",
+  "formula": "router_descriptive.label_free.in_distribution.differences_vs_healthrouter.harness_labelfree.macro",
+  "ci": [
+   -0.002,
+   0.007
+  ],
+  "ci_text": "[-0.002, 0.007]"
+ },
+ "lf_acc_six_task": {
+  "value": 98.726,
+  "text": "98.7\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.all"
+ },
+ "lf_acc_six_task_chest_xray": {
+  "value": 100.0,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.chest_xray"
+ },
+ "lf_acc_six_task_pathology": {
+  "value": 99.383,
+  "text": "99.4\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.pathology"
+ },
+ "lf_acc_six_task_fundus": {
+  "value": 100.0,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.fundus"
+ },
+ "lf_acc_six_task_mammography": {
+  "value": 100.0,
+  "text": "100.0\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.mammography"
+ },
+ "lf_acc_six_task_eurosat": {
+  "value": 99.68299999999999,
+  "text": "99.7\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.eurosat"
+ },
+ "lf_acc_six_task_dtd": {
+  "value": 96.355,
+  "text": "96.4\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.dtd"
+ },
+ "lf_acc_six_task_all": {
+  "value": 98.726,
+  "text": "98.7\\%",
+  "formula": "100*router_descriptive.label_free.six_task.task_inference_accuracy.all"
+ },
+ "lf_d_six_task_healthrouter_labelfree": {
+  "value": 0.005,
+  "text": "0.005",
+  "formula": "router_descriptive.label_free.six_task.differences_vs_healthrouter.healthrouter_labelfree.macro",
+  "ci": [
+   0.004,
+   0.006
+  ],
+  "ci_text": "[0.004, 0.006]"
+ },
+ "lf_d_six_task_harness_labelfree": {
+  "value": 0.0087,
+  "text": "0.009",
+  "formula": "router_descriptive.label_free.six_task.differences_vs_healthrouter.harness_labelfree.macro",
+  "ci": [
+   0.0052,
+   0.0123
+  ],
+  "ci_text": "[0.005, 0.012]"
+ },
+ "lf_acc_ext_standard": {
+  "value": 99.854,
+  "text": "99.9\\%",
+  "formula": "100*router_descriptive.label_free.external.standard.task_inference_accuracy.all"
+ },
+ "lf_acc_ext_standard_chest": {
+  "value": 97.82600000000001,
+  "text": "98\\%",
+  "formula": "100*router_descriptive.label_free.external.standard.task_inference_accuracy.chest_xray"
+ },
+ "lf_ext_standard": {
+  "value": 0.7681,
+  "text": "0.768",
+  "formula": "router_descriptive.label_free.external.standard.methods.healthrouter_labelfree.macro",
+  "ci": [
+   0.7462,
+   0.7894
+  ],
+  "ci_text": "[0.746, 0.789]"
+ },
+ "lf_acc_ext_grayscale": {
+  "value": 99.61,
+  "text": "99.6\\%",
+  "formula": "100*router_descriptive.label_free.external.grayscale.task_inference_accuracy.all"
+ },
+ "lf_acc_ext_grayscale_chest": {
+  "value": 97.82600000000001,
+  "text": "98\\%",
+  "formula": "100*router_descriptive.label_free.external.grayscale.task_inference_accuracy.chest_xray"
+ },
+ "lf_ext_grayscale": {
+  "value": 0.7221,
+  "text": "0.722",
+  "formula": "router_descriptive.label_free.external.grayscale.methods.healthrouter_labelfree.macro",
+  "ci": [
+   0.7002,
+   0.7449
+  ],
+  "ci_text": "[0.700, 0.745]"
+ },
+ "lf_acc_ext_blur": {
+  "value": 99.122,
+  "text": "99.1\\%",
+  "formula": "100*router_descriptive.label_free.external.blur.task_inference_accuracy.all"
+ },
+ "lf_acc_ext_blur_chest": {
+  "value": 86.957,
+  "text": "87\\%",
+  "formula": "100*router_descriptive.label_free.external.blur.task_inference_accuracy.chest_xray"
+ },
+ "lf_ext_blur": {
+  "value": 0.6894,
+  "text": "0.689",
+  "formula": "router_descriptive.label_free.external.blur.methods.healthrouter_labelfree.macro",
+  "ci": [
+   0.661,
+   0.7186
+  ],
+  "ci_text": "[0.661, 0.719]"
+ },
+ "lf_acc_ext_low_resolution": {
+  "value": 98.829,
+  "text": "98.8\\%",
+  "formula": "100*router_descriptive.label_free.external.low_resolution.task_inference_accuracy.all"
+ },
+ "lf_acc_ext_low_resolution_chest": {
+  "value": 82.609,
+  "text": "83\\%",
+  "formula": "100*router_descriptive.label_free.external.low_resolution.task_inference_accuracy.chest_xray"
+ },
+ "lf_ext_low_resolution": {
+  "value": 0.659,
+  "text": "0.659",
+  "formula": "router_descriptive.label_free.external.low_resolution.methods.healthrouter_labelfree.macro",
+  "ci": [
+   0.6294,
+   0.6884
+  ],
+  "ci_text": "[0.629, 0.688]"
+ },
+ "lf_acc_ext_jpeg": {
+  "value": 97.22,
+  "text": "97.2\\%",
+  "formula": "100*router_descriptive.label_free.external.jpeg.task_inference_accuracy.all"
+ },
+ "lf_acc_ext_jpeg_chest": {
+  "value": 60.145,
+  "text": "60\\%",
+  "formula": "100*router_descriptive.label_free.external.jpeg.task_inference_accuracy.chest_xray"
+ },
+ "lf_ext_jpeg": {
+  "value": 0.5823,
+  "text": "0.582",
+  "formula": "router_descriptive.label_free.external.jpeg.methods.healthrouter_labelfree.macro",
+  "ci": [
+   0.5491,
+   0.615
+  ],
+  "ci_text": "[0.549, 0.615]"
+ },
+ "lf_ext_maxdiff": {
+  "value": 0.0029,
+  "text": "0.003",
+  "formula": "max_c |router_descriptive.label_free.external[c].methods.healthrouter_labelfree.diff_base_minus_this|"
+ },
+ "lf_acc_ext_min": {
+  "value": 97.22,
+  "text": "97.2\\%",
+  "formula": "100*min_c router_descriptive.label_free.external[c].task_inference_accuracy.all"
+ },
+ "rho_chest_xray": {
+  "value": 0.0347,
+  "text": "0.035",
+  "formula": "router_descriptive.gain_calibration.chest_xray.spearman",
+  "ci": [
+   -0.0189,
+   0.0875
+  ],
+  "ci_text": "[$-$0.019, 0.087]"
+ },
+ "gain_chest_xray": {
+  "value": 0.0222,
+  "text": "0.022",
+  "formula": "router_descriptive.gain_calibration.chest_xray.mean_realised_gain",
+  "ci": [
+   0.0104,
+   0.0352
+  ],
+  "ci_text": "[0.010, 0.035]"
+ },
+ "rho_pathology": {
+  "value": -0.0617,
+  "text": "$-$0.062",
+  "formula": "router_descriptive.gain_calibration.pathology.spearman",
+  "ci": [
+   -0.0907,
+   -0.0332
+  ],
+  "ci_text": "[$-$0.091, $-$0.033]"
+ },
+ "gain_pathology": {
+  "value": 0.0061,
+  "text": "0.006",
+  "formula": "router_descriptive.gain_calibration.pathology.mean_realised_gain",
+  "ci": [
+   0.0001,
+   0.0124
+  ],
+  "ci_text": "[0.000, 0.012]"
+ },
+ "rho_fundus": {
+  "value": -0.0085,
+  "text": "$-$0.009",
+  "formula": "router_descriptive.gain_calibration.fundus.spearman",
+  "ci": [
+   -0.0563,
+   0.0404
+  ],
+  "ci_text": "[$-$0.056, 0.040]"
+ },
+ "gain_fundus": {
+  "value": 0.0488,
+  "text": "0.049",
+  "formula": "router_descriptive.gain_calibration.fundus.mean_realised_gain",
+  "ci": [
+   0.0281,
+   0.0707
+  ],
+  "ci_text": "[0.028, 0.071]"
+ },
+ "rho_mammography": {
+  "value": 0.0535,
+  "text": "0.053",
+  "formula": "router_descriptive.gain_calibration.mammography.spearman",
+  "ci": [
+   -0.0022,
+   0.0975
+  ],
+  "ci_text": "[$-$0.002, 0.098]"
+ },
+ "gain_mammography": {
+  "value": 0.019,
+  "text": "0.019",
+  "formula": "router_descriptive.gain_calibration.mammography.mean_realised_gain",
+  "ci": [
+   0.0079,
+   0.03
+  ],
+  "ci_text": "[0.008, 0.030]"
+ },
+ "rho_pooled": {
+  "value": 0.0179,
+  "text": "0.018",
+  "formula": "router_descriptive.gain_calibration.pooled.spearman",
+  "ci": [
+   -0.0029,
+   0.0395
+  ],
+  "ci_text": "[$-$0.003, 0.040]"
+ },
+ "error_one_call_chest_xray": {
+  "value": 6.0600000000000005,
+  "text": "6.1\\%",
+  "formula": "100*router_descriptive.harness_difficulty.chest_xray.error_one_call"
+ },
+ "error_multi_call_chest_xray": {
+  "value": 19.939999999999998,
+  "text": "19.9\\%",
+  "formula": "100*router_descriptive.harness_difficulty.chest_xray.error_multi_call"
+ },
+ "rho_calls_chest_xray": {
+  "value": 0.4692,
+  "text": "0.47",
+  "formula": "router_descriptive.harness_difficulty.chest_xray.spearman_calls_logloss",
+  "ci": [
+   0.4306,
+   0.506
+  ],
+  "ci_text": "[0.431, 0.506]"
+ },
+ "error_one_call_pathology": {
+  "value": 2.54,
+  "text": "2.5\\%",
+  "formula": "100*router_descriptive.harness_difficulty.pathology.error_one_call"
+ },
+ "error_multi_call_pathology": {
+  "value": 17.96,
+  "text": "18.0\\%",
+  "formula": "100*router_descriptive.harness_difficulty.pathology.error_multi_call"
+ },
+ "rho_calls_pathology": {
+  "value": 0.363,
+  "text": "0.36",
+  "formula": "router_descriptive.harness_difficulty.pathology.spearman_calls_logloss",
+  "ci": [
+   0.3408,
+   0.3891
+  ],
+  "ci_text": "[0.341, 0.389]"
+ },
+ "error_one_call_fundus": {
+  "value": 7.449999999999999,
+  "text": "7.4\\%",
+  "formula": "100*router_descriptive.harness_difficulty.fundus.error_one_call"
+ },
+ "error_multi_call_fundus": {
+  "value": 38.62,
+  "text": "38.6\\%",
+  "formula": "100*router_descriptive.harness_difficulty.fundus.error_multi_call"
+ },
+ "rho_calls_fundus": {
+  "value": 0.5944,
+  "text": "0.59",
+  "formula": "router_descriptive.harness_difficulty.fundus.spearman_calls_logloss",
+  "ci": [
+   0.5537,
+   0.6337
+  ],
+  "ci_text": "[0.554, 0.634]"
+ },
+ "error_one_call_mammography": {
+  "value": 24.759999999999998,
+  "text": "24.8\\%",
+  "formula": "100*router_descriptive.harness_difficulty.mammography.error_one_call"
+ },
+ "error_multi_call_mammography": {
+  "value": 39.03,
+  "text": "39.0\\%",
+  "formula": "100*router_descriptive.harness_difficulty.mammography.error_multi_call"
+ },
+ "rho_calls_mammography": {
+  "value": 0.1359,
+  "text": "0.14",
+  "formula": "router_descriptive.harness_difficulty.mammography.spearman_calls_logloss",
+  "ci": [
+   0.0884,
+   0.1863
+  ],
+  "ci_text": "[0.088, 0.186]"
+ }
+}

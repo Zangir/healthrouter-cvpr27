@@ -1,0 +1,112 @@
+{
+  "provenance": "run_configuration_and_local_index_counts",
+  "compute": {
+    "cpu": "Apple M2 Pro",
+    "memory_bytes": 17179869184,
+    "memory_gib": 16,
+    "os": "macOS 14.8.9",
+    "architecture": "arm64",
+    "python": "3.13.7",
+    "llm_queries_in_experiment_suite": 0,
+    "main_suite_runtime_seconds": 609.25
+  },
+  "dependency_versions": {
+    "certifi": "2025.8.3",
+    "h5py": "3.16.0",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "opencv-python": "5.0.0.93",
+    "pillow": "12.0.0",
+    "scikit-learn": "1.8.0",
+    "torch": "2.13.0",
+    "torchvision": "0.28.0",
+    "transformers": "5.8.0",
+    "ultralytics": "8.4.120"
+  },
+  "seeds": {
+    "data_splits": 42,
+    "experiment_cli": 0,
+    "bootstrap": 2026,
+    "router_subset_sampling": 2026
+  },
+  "random_split_percentages": {
+    "aptos_local_mirror": {"train": 80, "holdout": 20},
+    "router": {"train": 80, "test": 20}
+  },
+  "bootstrap_resamples": {
+    "default": 10000,
+    "router_corruptions": 2000,
+    "patchcamelyon": 1000
+  },
+  "bootstrap_percentiles": [2.5, 97.5],
+  "local_index_counts": {
+    "shenzhen": {
+      "n": 662,
+      "positive": 336,
+      "negative": 326,
+      "folds": 5,
+      "test_sizes": [134, 132, 132, 132, 132],
+      "train_sizes": [528, 530, 530, 530, 530]
+    },
+    "montgomery": {"n": 138},
+    "kvasir_seg": {"n": 1000, "train": 880, "validation": 120},
+    "cvc_clinicdb": {"n": 612},
+    "patchcamelyon": {"train": 262144, "test_raw": 32768, "test_clean": 32734},
+    "aptos_local_mirror": {"n": 2929, "train": 2343, "holdout_raw": 586, "holdout_clean": 562},
+    "cbis_ddsm_local_mirror": {"train": 2445, "test_raw": 641, "test_clean": 614},
+    "router": {
+      "classes": 5,
+      "images_per_class": 500,
+      "pool": 2500,
+      "train": 2000,
+      "test_raw": 500,
+      "test_clean": 499,
+      "external": 750,
+      "external_modalities": 2,
+      "train_class_counts": {
+        "chest_xray": 408,
+        "endoscopy": 387,
+        "pathology": 384,
+        "fundus": 411,
+        "mammography": 410
+      },
+      "actual_counts_at_400_cap": {
+        "chest_xray": 400,
+        "endoscopy": 387,
+        "pathology": 384,
+        "fundus": 400,
+        "mammography": 400
+      },
+      "reconstruction_note": "Counts are from the evaluated local filesystem ordering; source globs were not sorted before the seeded shuffle, so item membership is not claimed cross-filesystem invariant."
+    }
+  },
+  "inference_and_probe_configuration": {
+    "learned_router_input_side_pixels": 224,
+    "frozen_router_input_side_pixels": 224,
+    "imagenet_tb_probe_input_side_pixels": 384,
+    "chest_specialist_input_side_pixels": 384,
+    "patchcamelyon_input_side_pixels": 96,
+    "aptos_input_side_pixels": 384,
+    "cbis_ddsm_input_side_pixels": 512,
+    "logistic_max_iterations": 2000,
+    "frozen_router_logistic_c": 0.1,
+    "router_scale_cap_per_modality": [10, 25, 50, 100, 200, 400],
+    "router_scale_repeats": 5,
+    "segmentation_confidence_threshold": 0.25,
+    "segmentation_mask_threshold": 0.5,
+    "reference_mask_threshold": 127,
+    "convnext_feature_dimension": 768,
+    "imagenet_normalization_mean": [0.485, 0.456, 0.406],
+    "imagenet_normalization_std": [0.229, 0.224, 0.225],
+    "rad_dino_revision": "110cbc18d5133582e320b43d53bf5c44e410c936"
+  },
+  "audit_configuration": {
+    "ordinary_file_hash": "SHA-256",
+    "patch_hash": "BLAKE2b-128",
+    "patch_hash_digest_bytes": 16,
+    "patch_stream_block_size": 4096,
+    "classification_interval": "class-stratified fixed-item bootstrap",
+    "segmentation_interval": "image-level fixed-item bootstrap",
+    "paired_probe_interval": "class-stratified paired fixed-item bootstrap"
+  }
+}

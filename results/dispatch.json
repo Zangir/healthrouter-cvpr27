@@ -1,0 +1,1662 @@
+{
+  "cohorts": {
+    "chest_xray": {
+      "n": 138,
+      "name": "Montgomery County (USA)",
+      "positives_or_grades": [
+        80,
+        58
+      ],
+      "reference_metric": {
+        "ci_high": 0.9625,
+        "ci_low": 0.86422,
+        "value": 0.91961
+      }
+    },
+    "endoscopy": {
+      "n": 612,
+      "name": "CVC-ClinicDB (Spain)",
+      "positives_or_grades": [
+        612
+      ],
+      "reference_metric": {
+        "ci_high": 0.8232,
+        "ci_low": 0.77729,
+        "value": 0.80108
+      }
+    },
+    "fundus": {
+      "n": 516,
+      "name": "IDRiD (India)",
+      "positives_or_grades": [
+        168,
+        25,
+        168,
+        93,
+        62
+      ],
+      "reference_metric": {
+        "ci_high": 0.77645,
+        "ci_low": 0.70086,
+        "value": 0.74117
+      }
+    },
+    "mammography": {
+      "n": 396,
+      "name": "CMMD (China), MLO views",
+      "positives_or_grades": [
+        167,
+        229
+      ],
+      "reference_metric": {
+        "ci_high": 0.65657,
+        "ci_low": 0.54656,
+        "value": 0.60134
+      }
+    },
+    "pathology": {
+      "n": 1000,
+      "name": "Camelyon17-WILDS OOD test hospital",
+      "positives_or_grades": [
+        500,
+        500
+      ],
+      "reference_metric": {
+        "ci_high": 0.99463,
+        "ci_low": 0.98576,
+        "value": 0.99056
+      }
+    }
+  },
+  "conditions": [
+    "standard",
+    "grayscale",
+    "blur",
+    "low_resolution",
+    "jpeg"
+  ],
+  "gates": {
+    "probe": {
+      "external:blur": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.98896,
+          "served": 0.97101,
+          "utility": 0.91498
+        },
+        "confusion": [
+          [
+            134,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            601,
+            0,
+            0,
+            11
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            515,
+            1
+          ],
+          [
+            0,
+            0,
+            4,
+            0,
+            392
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.98359,
+          "served": 0.98203,
+          "utility": 0.78794
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 0.98686,
+          "served": 0.99806,
+          "utility": 0.73143
+        },
+        "macro_retained_skill": 0.99405,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.01084,
+          "served": 0.9899,
+          "utility": 0.60244
+        },
+        "mean_conf_correct": 0.94187,
+        "mean_conf_wrong": 0.51973,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.99249,
+        "selective_route_accuracy": 0.99249
+      },
+      "external:grayscale": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.99743,
+          "served": 0.98551,
+          "utility": 0.91853
+        },
+        "confusion": [
+          [
+            136,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            511,
+            0,
+            0,
+            101
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            501,
+            15
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.83041,
+          "served": 0.83497,
+          "utility": 0.66523
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 0.87537,
+          "served": 0.97093,
+          "utility": 0.6488
+        },
+        "macro_retained_skill": 0.94064,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.96355,
+        "mean_conf_wrong": 0.74042,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.95567,
+        "selective_route_accuracy": 0.95567
+      },
+      "external:jpeg": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.80996,
+          "served": 0.67391,
+          "utility": 0.83987
+        },
+        "confusion": [
+          [
+            93,
+            0,
+            31,
+            0,
+            14
+          ],
+          [
+            0,
+            592,
+            12,
+            1,
+            7
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            80,
+            0,
+            316
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.97163,
+          "served": 0.96732,
+          "utility": 0.77836
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.94842,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 0.96052,
+          "served": 0.79798,
+          "utility": 0.59734
+        },
+        "mean_conf_correct": 0.88379,
+        "mean_conf_wrong": 0.53412,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.94553,
+        "selective_route_accuracy": 0.94553
+      },
+      "external:low_resolution": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.95583,
+          "served": 0.92029,
+          "utility": 0.90108
+        },
+        "confusion": [
+          [
+            127,
+            0,
+            8,
+            0,
+            3
+          ],
+          [
+            0,
+            608,
+            0,
+            1,
+            3
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            28,
+            0,
+            368
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99406,
+          "served": 0.99346,
+          "utility": 0.79633
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.98327,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 0.96646,
+          "served": 0.92929,
+          "utility": 0.59794
+        },
+        "mean_conf_correct": 0.92382,
+        "mean_conf_wrong": 0.49749,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.98385,
+        "selective_route_accuracy": 0.98385
+      },
+      "external:standard": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.99743,
+          "served": 0.98551,
+          "utility": 0.91853
+        },
+        "confusion": [
+          [
+            136,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            611,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99805,
+          "served": 0.99837,
+          "utility": 0.79953
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.9991,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99268,
+        "mean_conf_wrong": 0.57379,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.99887,
+        "selective_route_accuracy": 0.99887
+      },
+      "insource:blur": {
+        "route_accuracy": 1.0
+      },
+      "insource:grayscale": {
+        "route_accuracy": 0.996
+      },
+      "insource:jpeg": {
+        "route_accuracy": 0.994
+      },
+      "insource:low_resolution": {
+        "route_accuracy": 1.0
+      },
+      "insource:standard": {
+        "route_accuracy": 1.0
+      }
+    },
+    "probe_grayaug": {
+      "external:blur": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.93426,
+          "served": 0.8913,
+          "utility": 0.89203
+        },
+        "confusion": [
+          [
+            123,
+            0,
+            12,
+            0,
+            3
+          ],
+          [
+            0,
+            608,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            515,
+            1
+          ],
+          [
+            0,
+            0,
+            15,
+            0,
+            381
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99605,
+          "served": 0.99346,
+          "utility": 0.79792
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 0.98686,
+          "served": 0.99806,
+          "utility": 0.73143
+        },
+        "macro_retained_skill": 0.96609,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 0.9133,
+          "served": 0.96212,
+          "utility": 0.59255
+        },
+        "mean_conf_correct": 0.94172,
+        "mean_conf_wrong": 0.52576,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.98685,
+        "selective_route_accuracy": 0.98685
+      },
+      "external:grayscale": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.99743,
+          "served": 0.98551,
+          "utility": 0.91853
+        },
+        "confusion": [
+          [
+            136,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            601,
+            0,
+            0,
+            11
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.97958,
+          "served": 0.98203,
+          "utility": 0.78473
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.9954,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.98852,
+        "mean_conf_wrong": 0.72654,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.99512,
+        "selective_route_accuracy": 0.99512
+      },
+      "external:jpeg": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.45917,
+          "served": 0.38406,
+          "utility": 0.69267
+        },
+        "confusion": [
+          [
+            53,
+            0,
+            78,
+            0,
+            7
+          ],
+          [
+            0,
+            588,
+            22,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            250,
+            0,
+            146
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.9646,
+          "served": 0.96078,
+          "utility": 0.77273
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.70354,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 0.09392,
+          "served": 0.36869,
+          "utility": 0.50952
+        },
+        "mean_conf_correct": 0.91833,
+        "mean_conf_wrong": 0.622,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.86514,
+        "selective_route_accuracy": 0.86514
+      },
+      "external:low_resolution": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.86261,
+          "served": 0.78261,
+          "utility": 0.86196
+        },
+        "confusion": [
+          [
+            108,
+            0,
+            27,
+            0,
+            3
+          ],
+          [
+            0,
+            607,
+            1,
+            2,
+            2
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            101,
+            0,
+            295
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99412,
+          "served": 0.99183,
+          "utility": 0.79637
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.96025,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 0.94452,
+          "served": 0.74495,
+          "utility": 0.59572
+        },
+        "mean_conf_correct": 0.92845,
+        "mean_conf_wrong": 0.57985,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.94891,
+        "selective_route_accuracy": 0.94891
+      },
+      "external:standard": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.99743,
+          "served": 0.98551,
+          "utility": 0.91853
+        },
+        "confusion": [
+          [
+            136,
+            0,
+            0,
+            0,
+            2
+          ],
+          [
+            0,
+            611,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99805,
+          "served": 0.99837,
+          "utility": 0.79953
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.9991,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99389,
+        "mean_conf_wrong": 0.57932,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.99887,
+        "selective_route_accuracy": 0.99887
+      },
+      "insource:blur": {
+        "route_accuracy": 0.998
+      },
+      "insource:grayscale": {
+        "route_accuracy": 1.0
+      },
+      "insource:jpeg": {
+        "route_accuracy": 0.986
+      },
+      "insource:low_resolution": {
+        "route_accuracy": 0.996
+      },
+      "insource:standard": {
+        "route_accuracy": 1.0
+      }
+    },
+    "supervised": {
+      "external:blur": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.98896,
+          "served": 0.97101,
+          "utility": 0.91498
+        },
+        "confusion": [
+          [
+            134,
+            0,
+            0,
+            0,
+            4
+          ],
+          [
+            0,
+            607,
+            0,
+            5,
+            0
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            111,
+            0,
+            285
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99258,
+          "served": 0.99183,
+          "utility": 0.79514
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.9446,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 0.74145,
+          "served": 0.7197,
+          "utility": 0.57514
+        },
+        "mean_conf_correct": 0.93227,
+        "mean_conf_wrong": 0.57929,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.95492,
+        "selective_route_accuracy": 0.95492
+      },
+      "external:grayscale": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.91961
+        },
+        "confusion": [
+          [
+            138,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            520,
+            0,
+            0,
+            92
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            512,
+            4
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.84517,
+          "served": 0.84967,
+          "utility": 0.67705
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 0.95795,
+          "served": 0.99225,
+          "utility": 0.71
+        },
+        "macro_retained_skill": 0.96062,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.96476,
+        "mean_conf_wrong": 0.76505,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.96394,
+        "selective_route_accuracy": 0.96394
+      },
+      "external:jpeg": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.99101,
+          "served": 0.94203,
+          "utility": 0.91584
+        },
+        "confusion": [
+          [
+            130,
+            0,
+            5,
+            0,
+            3
+          ],
+          [
+            0,
+            515,
+            86,
+            11,
+            0
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            383,
+            0,
+            13
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.85108,
+          "served": 0.8415,
+          "utility": 0.68178
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.75735,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": -0.05535,
+          "served": 0.03283,
+          "utility": 0.49439
+        },
+        "mean_conf_correct": 0.89892,
+        "mean_conf_wrong": 0.6916,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.81668,
+        "selective_route_accuracy": 0.81668
+      },
+      "external:low_resolution": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 0.98896,
+          "served": 0.97101,
+          "utility": 0.91498
+        },
+        "confusion": [
+          [
+            134,
+            0,
+            1,
+            0,
+            3
+          ],
+          [
+            0,
+            608,
+            0,
+            4,
+            0
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            204,
+            0,
+            192
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99258,
+          "served": 0.99346,
+          "utility": 0.79514
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.94047,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 0.72081,
+          "served": 0.48485,
+          "utility": 0.57305
+        },
+        "mean_conf_correct": 0.94099,
+        "mean_conf_wrong": 0.61142,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.92036,
+        "selective_route_accuracy": 0.92036
+      },
+      "external:standard": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.91961
+        },
+        "confusion": [
+          [
+            138,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            611,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1000,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99799,
+          "served": 0.99837,
+          "utility": 0.79948
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.9996,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99314,
+        "mean_conf_wrong": 0.49546,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.99056
+        },
+        "route_accuracy": 0.99962,
+        "selective_route_accuracy": 0.99962
+      },
+      "insource:blur": {
+        "route_accuracy": 1.0
+      },
+      "insource:grayscale": {
+        "route_accuracy": 0.996
+      },
+      "insource:jpeg": {
+        "route_accuracy": 0.976
+      },
+      "insource:low_resolution": {
+        "route_accuracy": 1.0
+      },
+      "insource:standard": {
+        "route_accuracy": 1.0
+      }
+    },
+    "zero_shot_biomedclip": {
+      "external:blur": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.91961
+        },
+        "confusion": [
+          [
+            138,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            601,
+            0,
+            11,
+            0
+          ],
+          [
+            1,
+            0,
+            998,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.9824,
+          "served": 0.98203,
+          "utility": 0.78699
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.99635,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99571,
+        "mean_conf_wrong": 0.78368,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 0.99935,
+          "served": 0.998,
+          "utility": 0.99024
+        },
+        "route_accuracy": 0.99512,
+        "selective_route_accuracy": 0.99512
+      },
+      "external:grayscale": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.91961
+        },
+        "confusion": [
+          [
+            138,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            612,
+            0,
+            0,
+            0
+          ],
+          [
+            11,
+            1,
+            931,
+            1,
+            56
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.80108
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.99553,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99358,
+        "mean_conf_wrong": 0.80645,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 0.97767,
+          "served": 0.931,
+          "utility": 0.9796
+        },
+        "route_accuracy": 0.97408,
+        "selective_route_accuracy": 0.97408
+      },
+      "external:jpeg": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.91961
+        },
+        "confusion": [
+          [
+            138,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            611,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            996,
+            2,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            514,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.998,
+          "served": 0.99837,
+          "utility": 0.79949
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 0.9843,
+          "served": 0.99612,
+          "utility": 0.72954
+        },
+        "macro_retained_skill": 0.99625,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99445,
+        "mean_conf_wrong": 0.6336,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 0.99894,
+          "served": 0.996,
+          "utility": 0.99004
+        },
+        "route_accuracy": 0.99737,
+        "selective_route_accuracy": 0.99737
+      },
+      "external:low_resolution": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.91961
+        },
+        "confusion": [
+          [
+            138,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            607,
+            0,
+            5,
+            0
+          ],
+          [
+            1,
+            0,
+            998,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 0.99019,
+          "served": 0.99183,
+          "utility": 0.79323
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.99791,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99598,
+        "mean_conf_wrong": 0.89417,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 0.99935,
+          "served": 0.998,
+          "utility": 0.99024
+        },
+        "route_accuracy": 0.99737,
+        "selective_route_accuracy": 0.99737
+      },
+      "external:standard": {
+        "chest_xray": {
+          "reference": 0.91961,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.91961
+        },
+        "confusion": [
+          [
+            138,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            612,
+            0,
+            0,
+            0
+          ],
+          [
+            3,
+            1,
+            995,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            516,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            396
+          ]
+        ],
+        "coverage": 1.0,
+        "endoscopy": {
+          "reference": 0.80108,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.80108
+        },
+        "fundus": {
+          "reference": 0.74117,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.74117
+        },
+        "macro_retained_skill": 0.9998,
+        "mammography": {
+          "reference": 0.60134,
+          "retained_skill": 1.0,
+          "served": 1.0,
+          "utility": 0.60134
+        },
+        "mean_conf_correct": 0.99746,
+        "mean_conf_wrong": 0.78146,
+        "pathology": {
+          "reference": 0.99056,
+          "retained_skill": 0.99902,
+          "served": 0.995,
+          "utility": 0.99008
+        },
+        "route_accuracy": 0.99812,
+        "selective_route_accuracy": 0.99812
+      },
+      "insource:blur": {
+        "route_accuracy": 1.0
+      },
+      "insource:grayscale": {
+        "route_accuracy": 0.984
+      },
+      "insource:jpeg": {
+        "route_accuracy": 0.998
+      },
+      "insource:low_resolution": {
+        "route_accuracy": 1.0
+      },
+      "insource:standard": {
+        "route_accuracy": 1.0
+      }
+    }
+  },
+  "lanes": [
+    "chest_xray",
+    "endoscopy",
+    "pathology",
+    "fundus",
+    "mammography"
+  ],
+  "null_outputs": {
+    "grade": 0,
+    "mask": 0.0,
+    "score": 0.5
+  },
+  "provenance": "run",
+  "runtime_seconds": 631.68
+}

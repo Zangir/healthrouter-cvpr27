@@ -1,0 +1,139 @@
+{
+  "pool": "Shenzhen, 662 images",
+  "protocol": "Is the chest gain of RAD-DINO a pretraining effect or an input-resolution effect?\n\nShenzhen pool, fixed folds and tuned head (grid2.cross_validate). Four packages are scored\n(a) under each package's released processor (RAD-DINO 518 px, DINOv2 224 px centre crop,\nConvNeXt 384 px), exactly as in the released-preprocessing grid, and (b) at matched square\nresolutions 224, 336, 448 and 518 px.",
+  "provenance": "run",
+  "runtime_seconds": 1068.11,
+  "variants": {
+    "matched_224": {
+      "contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.01362,
+          "ci_low": -0.01377,
+          "value": 0.00026
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": 0.07092,
+          "ci_low": 0.02975,
+          "value": 0.04986
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": 0.06617,
+          "ci_low": 0.02899,
+          "value": 0.0474
+        }
+      },
+      "oof_auroc": {
+        "dinov2_base": 0.91988,
+        "dinov2_large": 0.92014,
+        "imagenet_convnext": 0.92234,
+        "rad_dino": 0.96974
+      }
+    },
+    "matched_336": {
+      "contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.0119,
+          "ci_low": -0.01296,
+          "value": -0.00024
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": 0.06435,
+          "ci_low": 0.02584,
+          "value": 0.04443
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": 0.07701,
+          "ci_low": 0.03689,
+          "value": 0.05654
+        }
+      },
+      "oof_auroc": {
+        "dinov2_base": 0.92711,
+        "dinov2_large": 0.92687,
+        "imagenet_convnext": 0.91501,
+        "rad_dino": 0.97154
+      }
+    },
+    "matched_448": {
+      "contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.01204,
+          "ci_low": -0.01098,
+          "value": 0.00058
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": 0.06943,
+          "ci_low": 0.03066,
+          "value": 0.04971
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": 0.07449,
+          "ci_low": 0.03635,
+          "value": 0.0553
+        }
+      },
+      "oof_auroc": {
+        "dinov2_base": 0.92845,
+        "dinov2_large": 0.92903,
+        "imagenet_convnext": 0.92287,
+        "rad_dino": 0.97816
+      }
+    },
+    "matched_518": {
+      "contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.00795,
+          "ci_low": -0.01542,
+          "value": -0.00386
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": 0.07128,
+          "ci_low": 0.03398,
+          "value": 0.05155
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": 0.07907,
+          "ci_low": 0.04116,
+          "value": 0.06032
+        }
+      },
+      "oof_auroc": {
+        "dinov2_base": 0.92963,
+        "dinov2_large": 0.92577,
+        "imagenet_convnext": 0.92087,
+        "rad_dino": 0.98118
+      }
+    },
+    "released_processor": {
+      "contrasts": {
+        "dinov2_large_minus_dinov2_base": {
+          "ci_high": 0.00404,
+          "ci_low": -0.0232,
+          "value": -0.00972
+        },
+        "rad_dino_minus_dinov2_base": {
+          "ci_high": 0.07752,
+          "ci_low": 0.04003,
+          "value": 0.05798
+        },
+        "rad_dino_minus_imagenet_convnext": {
+          "ci_high": 0.07168,
+          "ci_low": 0.03641,
+          "value": 0.0541
+        }
+      },
+      "input_px": {
+        "dinov2_base": 224,
+        "dinov2_large": 224,
+        "imagenet_convnext": 384,
+        "rad_dino": 518
+      },
+      "oof_auroc": {
+        "dinov2_base": 0.92211,
+        "dinov2_large": 0.91238,
+        "imagenet_convnext": 0.92599,
+        "rad_dino": 0.98009
+      }
+    }
+  }
+}

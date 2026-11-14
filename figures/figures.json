@@ -1,0 +1,44 @@
+[
+  {
+    "file": "figures/earlier_two_lane_teaser.pdf",
+    "png": "figures/earlier_two_lane_teaser.png",
+    "pattern": "Earlier-protocol two-lane teaser",
+    "caption_draft": "The case for routing, its cost, and its mitigation. (a) Under one shared five-fold logistic protocol the best frozen encoder changes by modality: RAD-DINO gains +0.080 AUROC on chest radiographs yet loses on all three non-radiology domains, and a 304M-parameter generic encoder does not close the gap. (b) Executing the dispatch: reference routing gives 0.801 mean Dice on 612 unseen-institution frames, the gate's own decisions cost 0.002, and under grayscale shift 92 frames reach the mammography lane and end-to-end Dice falls 0.124 with the segmentation checkpoint unchanged. (c) Abstaining below $\\tau$ raises route accuracy among dispatched items from 0.877 to 0.985 under shift.",
+    "shows": "No frozen encoder wins every modality, a routing error propagates into the task metric, and confidence-based abstention recovers most of that loss."
+  },
+  {
+    "file": "figures/pipeline_schematic.pdf",
+    "png": "figures/pipeline_schematic.png",
+    "pattern": "Compact color-typed executed pipeline",
+    "caption_draft": "The executed path. The gate reads decoded pixels, abstains below $\\tau$, and otherwise resolves the predicted route to one independently trained checkpoint with its own preprocessing, output type $\\mathcal{Y}$, and metric $\\mu$. Because lanes emit incompatible types, a wrong route yields no valid output rather than a degraded one: on held-out sources 0.9987 of items are served, and the shortfall is charged to the task metric.",
+    "shows": "Routing, dispatch, and scoring are one executed path, so a route error reaches the task metric instead of stopping at the gate."
+  },
+  {
+    "file": "figures/encoder_attribution.pdf",
+    "png": "figures/encoder_attribution.png",
+    "pattern": "Forest plot of paired encoder contrasts",
+    "caption_draft": "Attributing the chest gain. Each row is a paired item-bootstrap difference on one domain's fixed pool, holding folds and head constant. Against an architecture- and objective-matched generic encoder, RAD-DINO still gains 0.0769 AUROC on chest (95\\% CI 0.0568--0.0990), so the effect is attributable to the pretraining corpus rather than backbone, objective, or capacity; tripling generic encoder size moves chest AUROC by -0.0050. The same contrast is negative or interval-crossing on every non-radiology domain.",
+    "shows": "The chest advantage comes from radiology pretraining data, not architecture, objective, or scale, and it does not transfer to other modalities."
+  },
+  {
+    "file": "figures/routing_dispatch.pdf",
+    "png": "figures/routing_dispatch.png",
+    "pattern": "Gate variants, acquisition stress, risk-coverage",
+    "caption_draft": "Routing behaviour and the abstention trade-off. (a) The five-way in-source split is a diagnostic, not evidence: an RGB-moment control also solves it (0.992) yet collapses to 0.583 on held-out sources, where the learned gate keeps 0.9987 (749/750). (b) Blur and low-resolution resampling barely move held-out routing; grayscale lowers it to 0.8773 (95\\% CI 0.8533--0.9000). (c) Restricting dispatch to confident items trades coverage for end-to-end quality; above the reference line the gain is a subset-selection effect, not repair.",
+    "shows": "A pooled-source split rewards dataset recognition, grayscale conversion breaks the gate, and abstention buys back end-to-end quality."
+  },
+  {
+    "file": "figures/diagnostic_scorecard.pdf",
+    "png": "figures/diagnostic_scorecard.png",
+    "pattern": "Domain small multiples with metric-separated axes",
+    "caption_draft": "Five-domain diagnostic scorecard. Every panel uses its own task metric and fixed-set uncertainty axis; values should be read within panels rather than ranked across domains. Exact cross-split duplicate exclusion leaves the APTOS, CBIS-DDSM, and PatchCamelyon conclusions nearly unchanged. Diamonds denote evaluation on a distinct dataset: the Shenzhen-trained chest specialist reaches 0.9196 AUROC on Montgomery, and the Kvasir-trained segmenter reaches 0.8011 mean Dice on CVC-ClinicDB. Evaluation sizes are 138 Montgomery images, 32,734 deduplicated PCam patches, 562 deduplicated APTOS images, 614 deduplicated CBIS-DDSM images, 120 Kvasir validation images, and 612 CVC images. These are public benchmark stress tests, not prospective clinical validation.",
+    "shows": "All five image domains have checkpoint re-evaluations, duplicate removal is not driving the classification results, and external transfer remains imperfect."
+  },
+  {
+    "file": "figures/chest_folds.pdf",
+    "png": "figures/chest_folds.png",
+    "pattern": "DeepSeek-style paired method dynamics",
+    "caption_draft": "HealthRouter dynamics. (a) Identical folds and logistic heads compare frozen representation packages: the RAD-DINO probe reaches 0.9816 mean AUROC versus 0.9008 with ImageNet ConvNeXt; the paired out-of-fold gain is 0.0803 (95\\% item-bootstrap CI 0.0585--0.1035). The dashed Ark+ line is its reported 0.9907 Shenzhen result \\citep{d2025fully} under a different protocol and is context, not a matched comparison. (b) Five repeated logistic heads on frozen ImageNet features show external routing as the per-modality training cap varies; points are repeats and the band is one standard deviation.",
+    "shows": "Radiology-aligned frozen features improve every TB fold, while frozen-router external performance is variable and does not improve monotonically with more examples."
+  }
+]

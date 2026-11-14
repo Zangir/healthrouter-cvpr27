@@ -1,0 +1,116 @@
+{
+  "ark_plus_shenzhen": {
+    "display_name": "Ark+ (reported)",
+    "metric": "AUROC",
+    "protocol_note": "Reported by the Ark+ authors for Shenzhen under their own multi-dataset pretraining and evaluation protocol. Shenzhen is one of the Ark+ pretraining tasks, so this is public same-task context, not a matched baseline for HealthRouter's five-fold out-of-fold probes.",
+    "provenance": "reported",
+    "reported_spread": 0.0006,
+    "source_id": "t58e16cf6f4",
+    "source_location": "Supplementary Table 4, page 2",
+    "source_spread_percent": 0.06,
+    "source_value_percent": 99.07,
+    "task": "Shenzhen tuberculosis classification",
+    "value": 0.9907,
+    "year": 2025
+  },
+  "imagenet_finetune_shenzhen": {
+    "display_name": "ImageNet fine-tuning (reported by Ark+ authors)",
+    "metric": "AUROC",
+    "protocol_note": "Reported only to document the seed draft's attribution error; this is the ImageNet fine-tuning baseline in Ark+ Supplementary Table 4, not Ark+'s result.",
+    "provenance": "reported",
+    "reported_spread": 0.0072,
+    "source_id": "t58e16cf6f4",
+    "source_location": "Supplementary Table 4, page 2",
+    "source_spread_percent": 0.72,
+    "source_value_percent": 96.43,
+    "task": "Shenzhen tuberculosis classification",
+    "value": 0.9643,
+    "year": 2025
+  },
+  "pcam_ensemble": {
+    "display_name": "Ensemble deep learning (reported)",
+    "metric": "AUC",
+    "protocol_note": "Reported same-task context only; training budget, ensemble construction, checkpoint selection, and duplicate policy are not matched to the released HealthRouter audit.",
+    "provenance": "reported",
+    "source_id": "t6566155d73",
+    "source_location": "Abstract and results summary",
+    "task": "PatchCamelyon metastasis classification",
+    "value": 0.9565,
+    "year": 2023
+  },
+  "bar_unet_kvasir": {
+    "display_name": "BAR-UNet (reported)",
+    "metric": "Dice",
+    "protocol_note": "Reported same-dataset context under a different split, multi-seed training protocol, architecture, and evaluator.",
+    "provenance": "reported",
+    "reported_spread": 0.0024,
+    "source_id": "t6fdb56f8dd",
+    "source_location": "Abstract results",
+    "task": "Kvasir-SEG polyp segmentation",
+    "value": 0.8798,
+    "year": 2026
+  },
+  "sam2_rfanet_kvasir": {
+    "display_name": "SAM2-RFANet (reported)",
+    "metric": "mean Dice",
+    "protocol_note": "Reported same-dataset context under a different split, training protocol, architecture, and evaluator.",
+    "provenance": "reported",
+    "source_id": "t8e8f6beafd",
+    "source_location": "Abstract results",
+    "task": "Kvasir-SEG polyp segmentation",
+    "value": 0.923,
+    "year": 2026
+  },
+  "li_segpnet_cvc": {
+    "display_name": "Li-SegPNet (reported)",
+    "metric": "Dice",
+    "protocol_note": "Reported dataset-specific training and evaluation context, not an unretrained Kvasir-to-CVC transfer result.",
+    "provenance": "reported",
+    "source_id": "tf9b5891beb",
+    "source_location": "Abstract results",
+    "task": "CVC-ClinicDB polyp segmentation",
+    "value": 0.9372,
+    "year": 2022
+  },
+  "order_dr_aptos": {
+    "display_name": "ORDER-DR (reported)",
+    "metric": "quadratic weighted kappa",
+    "protocol_note": "Reported same-dataset context with locked validation-selected splits, unlike HealthRouter's incomplete local mirror and random split.",
+    "provenance": "reported",
+    "reported_spread": 0.0049,
+    "source_id": "t9e61d3c0e6",
+    "source_location": "Abstract results",
+    "task": "APTOS diabetic-retinopathy grading",
+    "value": 0.896,
+    "year": 2026
+  },
+  "mammo_clustering_cbis": {
+    "display_name": "Mammo-Clustering (reported)",
+    "metric": "AUC",
+    "protocol_note": "Reported same-dataset context under a different multiview protocol and data lineage.",
+    "provenance": "reported",
+    "source_id": "2409.14876",
+    "source_location": "Abstract results",
+    "task": "CBIS-DDSM mammography classification",
+    "value": 0.805,
+    "year": 2024
+  },
+  "transparent_pipeline_cbis": {
+    "display_name": "Transparent CBIS-DDSM pipeline (reported)",
+    "metric": "AUROC",
+    "protocol_note": "Reported same-dataset context on selected images under a different subset, conversion lineage, and model target.",
+    "provenance": "reported",
+    "source_id": "t21072a53c4",
+    "source_location": "Abstract results",
+    "task": "CBIS-DDSM mammography classification",
+    "value": 0.863,
+    "year": 2024
+  },
+  "primary_source": {
+    "doi": "10.1038/s41586-025-09079-8",
+    "paper_title": "A fully open AI foundation model applied to chest radiography",
+    "paper_url": "https://doi.org/10.1038/s41586-025-09079-8",
+    "supplementary_url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-025-09079-8/MediaObjects/41586_2025_9079_MOESM1_ESM.pdf"
+  },
+  "provenance": "reported_primary_source"
+}
