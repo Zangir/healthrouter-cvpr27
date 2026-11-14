@@ -27,7 +27,7 @@ def load(name: str) -> dict:
 
 def panel_label(ax, text: str) -> None:
     ax.text(-0.12, 1.04, text, transform=ax.transAxes, fontweight="bold",
-            fontsize=12, va="bottom")
+            fontsize=9.5, va="bottom")
 
 
 def emit(fig, stem: str, pattern: str, caption: str, shows: str,
@@ -43,7 +43,10 @@ def emit(fig, stem: str, pattern: str, caption: str, shows: str,
 
 def chest_folds(probes: dict, router: dict, reported: dict, colors: dict,
                 metadata: list[dict]) -> None:
-    fig, axes = plt.subplots(1, 2, figsize=(10.8, 3.75), constrained_layout=True)
+    # Sized for 0.8 text width in print so that no label prints below 7 pt (review 2026-11-14).
+    plt.rcParams.update({"font.size": 8.5, "axes.labelsize": 8.5, "xtick.labelsize": 8, "ytick.labelsize": 8,
+                         "legend.fontsize": 7.8})
+    fig, axes = plt.subplots(1, 2, figsize=(5.6, 2.6), constrained_layout=True)
     ax = axes[0]
     generic = np.asarray(probes["imagenet_convnext_probe"]["fold_aurocs"])
     radiology = np.asarray(probes["rad_dino_probe"]["fold_aurocs"])
@@ -52,24 +55,18 @@ def chest_folds(probes: dict, router: dict, reported: dict, colors: dict,
     for x, lo, hi in zip(folds, generic, radiology):
         ax.plot([x, x], [lo, hi], color="#CBD2D9", linewidth=1.4, zorder=1)
     ax.plot(folds, generic, "o-", color=colors["generic"], linewidth=1.8,
-            markersize=5.5, label="ImageNet ConvNeXt probe", zorder=2)
+            markersize=4, label="ImageNet ConvNeXt probe", zorder=2)
     ax.plot(folds, radiology, "o-", color=colors["radiology"], linewidth=2.2,
-            markersize=6, label="RAD-DINO probe", zorder=3)
+            markersize=4.5, label="RAD-DINO probe", zorder=3)
     ark = reported["ark_plus_shenzhen"]
     ax.axhline(ark["value"], color=colors["reported"], linestyle=(0, (4, 3)),
                linewidth=1.5, label="Ark+ (reported; different protocol)")
     ax.set_xticks(folds)
     ax.set_xlabel("Paired cross-validation fold")
     ax.set_ylabel("Shenzhen TB AUROC")
-    ax.set_ylim(max(0, min(generic.min(), radiology.min()) - 0.025), 1.005)
-    ax.legend(loc="lower left", fontsize=8.6)
-    ax.text(0.97, 0.055,
-            f"Paired OOF gain  +{delta['value']:.4f}\n"
-            f"95% CI  [{delta['ci_low']:.4f}, {delta['ci_high']:.4f}]",
-            transform=ax.transAxes, ha="right", va="bottom", fontsize=8.2,
-            color="#243B53",
-            bbox={"boxstyle": "round,pad=0.28", "facecolor": "white",
-                  "edgecolor": "#CBD2D9", "alpha": 0.94})
+    ax.set_ylim(max(0, min(generic.min(), radiology.min()) - 0.065), 1.005)
+    ax.legend(loc="lower left", fontsize=7.6)
+    # the paired gain and its interval are given in the caption (a text box here hid the legend)
     panel_label(ax, "(a)")
 
     ax = axes[1]
@@ -85,11 +82,11 @@ def chest_folds(probes: dict, router: dict, reported: dict, colors: dict,
     ax.fill_between(sizes, means - stds, means + stds,
                     color=colors["frozen_router"], alpha=0.17, linewidth=0)
     ax.plot(sizes, means, "o-", color=colors["frozen_router"], linewidth=2.2,
-            markersize=6, label="Frozen ImageNet router")
+            markersize=4.5, label="Frozen ImageNet router")
     ax.set_xscale("log")
     ax.set_xticks(sizes, [str(x) for x in sizes])
     ax.set_xlabel("Per-modality training cap")
-    ax.set_ylabel("External two-modality route accuracy")
+    ax.set_ylabel("External route accuracy")
     observed = np.concatenate([np.asarray(scale[str(x)]["replicates"]) for x in sizes])
     ax.set_ylim(max(0, observed.min() - 0.04), min(1, observed.max() + 0.06))
     ax.legend(loc="lower right")

@@ -37,6 +37,7 @@ PRETTY = {"imagenet_convnext": "ConvNeXt-T", "dinov2_base": "DINOv2-B", "dinov2_
           "siglip2_base": "SigLIP~2-B", "biomedclip": "BiomedCLIP", "rad_dino": "RAD-DINO", "phikon": "Phikon",
           "phikon_v2": "Phikon-v2", "retfound": "RETFound", "mammo_clip": "Mammo-CLIP"}
 PLAIN = {k: v.replace("~", " ") for k, v in PRETTY.items()}
+SHORT = {"chest_xray": "Chest", "pathology": "Path.", "fundus": "Fundus", "mammography": "Mammo."}
 KIND = {"imagenet_convnext": "G", "dinov2_base": "G", "dinov2_large": "G", "siglip2_base": "G",
         "biomedclip": "B", "rad_dino": "D", "phikon": "D", "phikon_v2": "D", "retfound": "D", "mammo_clip": "D"}
 FAMILY = [  # (label, colour, marker, members) -- one colour per family in every figure
@@ -69,13 +70,15 @@ def save(fig, stem):
 
 # ----------------------------------------------------------------------------- F1 teaser
 def teaser(main, desc):
+    # Drawn at the printed column width (3.28 in) so that no label prints below 7 pt (review 2026-11-14).
     style()
-    plt.rcParams.update({"font.size": 7.5, "axes.labelsize": 8, "xtick.labelsize": 7, "ytick.labelsize": 7})
+    FS = 7.4
+    plt.rcParams.update({"font.size": FS, "axes.labelsize": FS, "xtick.labelsize": FS, "ytick.labelsize": FS})
     M = main["methods"]
     S = desc["single_candidates"]["candidates"]
     cost = dict(zip(ENC, main["candidate_cost_ms"]))
-    fig, ax = plt.subplots(figsize=(3.45, 2.75))
-    lo_y, hi_y = 0.79, 0.893
+    fig, ax = plt.subplots(figsize=(2.98, 2.25))
+    lo_y, hi_y = 0.789, 0.893
     # single candidates (gray) and their Pareto frontier
     pts = sorted((cost[e], S[e]["macro"]["value"], e) for e in ENC)
     for x, y, e in pts:
@@ -89,20 +92,21 @@ def teaser(main, desc):
     ax.plot(*zip(*front), ls="--", color="#b0b0b0", lw=1.0, zorder=1)
     off = [e for _, y, e in pts if y < lo_y]
     for e in off:
-        ax.annotate(f"{PLAIN[e]} alone: {F3(S[e]['macro']['value'])}↓", (cost[e], lo_y + 0.0015),
-                    fontsize=6, color="#999999", ha="left")
+        ax.annotate(f"{PLAIN[e]} alone: {F3(S[e]['macro']['value'])}↓", (cost[e] * 0.93, lo_y + 0.001),
+                    fontsize=FS, color="#8a8a8a", ha="left")
     ch = min(ENC, key=lambda e: cost[e])
     ax.annotate("Cheapest", (cost[ch], S[ch]["macro"]["value"]), textcoords="offset points", xytext=(-4, -9),
-                fontsize=6.5, color="#777777", ha="left")
+                fontsize=FS, color="#666666", ha="left")
     so = M["best_single_overall"]
     ax.annotate("Strongest", (so["latency_ms_mean"], so["macro"]["value"]), textcoords="offset points",
-                xytext=(4, -6), fontsize=6.5, color="#777777")
+                xytext=(-14, -10), fontsize=FS, color="#666666")
     handles = []
     for lab, col, mk, ns in FAMILY:
         for n in ns:
             h = ax.scatter(M[n]["latency_ms_mean"], M[n]["macro"]["value"], s=22, marker=mk, color=col,
                            edgecolor="#333333" if col == YELLOW else "none", linewidth=0.5, zorder=3)
-        handles.append((h, "Single-model baselines" if lab == "Single models" else lab))
+        short = {"Single models": "Single models", "Task-level ensembles": "Task ensembles"}.get(lab, lab)
+        handles.append((h, short))
     # cost dial (lambda) and harness dial (theta)
     lam = [(M["healthrouter"]["latency_ms_mean"], M["healthrouter"]["macro"]["value"])]
     lam += [(M[k]["latency_ms_mean"], M[k]["macro"]["value"]) for k in M if k.startswith("cost_lam")]
@@ -114,35 +118,37 @@ def teaser(main, desc):
     h1 = ax.scatter(hm["latency_ms_mean"], hm["macro"]["value"], s=40, marker="D", color=GREEN, edgecolor="white", zorder=6)
     hr = M["healthrouter"]
     h2 = ax.scatter(hr["latency_ms_mean"], hr["macro"]["value"], s=110, marker="*", color=BLUE, edgecolor="white", zorder=7)
-    ax.annotate("HealthRouter", (hr["latency_ms_mean"], hr["macro"]["value"]), textcoords="offset points",
-                xytext=(5, 3), fontsize=7.5, color=BLUE, fontweight="bold")
-    ax.annotate("Harness", (hm["latency_ms_mean"], hm["macro"]["value"]), textcoords="offset points",
-                xytext=(-44, 4), fontsize=7.5, color=GREEN, fontweight="bold")
-    for n, txt, off_ in [("stacking", "Stacking (tied)", (5, 1)), 
-                         ("uniform_ensemble", "Uniform", (5, -8)), ("soft_moe", "Soft MoE", (5, -2.5)),
-                         ("knora_u", "KNORA-U", (5, -2.5)), ("meta_des", "META-DES", (5, -2.5)), ("knora_e", "KNORA-E", (5, -2.5))]:
+    ax.text(hr["latency_ms_mean"] * 1.40, hr["macro"]["value"] + 0.0010, "HealthRouter", fontsize=FS + 0.6,
+            color=BLUE, fontweight="bold", ha="left", va="bottom")
+    ax.text(th[0][0] * 0.92, th[0][1], "Harness", fontsize=FS + 0.6, color=GREEN, fontweight="bold",
+            ha="right", va="center")
+    for n, txt, dy in [("stacking", "Stacking (tied)", 1), ("soft_moe", "Soft MoE", -2.5),
+                       ("uniform_ensemble", "Uniform", -10), ("knora_u", "KNORA-U", -2.5),
+                       ("meta_des", "META-DES", -2.5), ("knora_e", "KNORA-E", -2.5)]:
         ax.annotate(txt, (M[n]["latency_ms_mean"], M[n]["macro"]["value"]), textcoords="offset points",
-                    xytext=off_, fontsize=6.2, color="#444444")
+                    xytext=(5, dy), fontsize=FS, color="#333333")
     kn = M["knn_router"]
-    ax.annotate("Neighbourhood router (tied)", (kn["latency_ms_mean"], kn["macro"]["value"]), xytext=(30, 0.857),
-                fontsize=6.2, color="#444444", arrowprops=dict(arrowstyle="-", color="#888888", lw=0.5))
+    ax.annotate("Neighbourhood router (tied)", (kn["latency_ms_mean"], kn["macro"]["value"]), xytext=(6.2, 0.8475),
+                fontsize=FS, color="#333333", arrowprops=dict(arrowstyle="-", color="#888888", lw=0.5,
+                                                              shrinkA=0, shrinkB=3))
     o = M["oracle_single"]["macro"]["value"]
-    ax.annotate(f"Oracle {F3(o)} (off scale)", xy=(5.6, hi_y), xytext=(5.8, hi_y - 0.021), fontsize=6.5,
-                color="black", arrowprops=dict(arrowstyle="-|>", color="black", lw=0.8), ha="left")
-    ax.annotate("", xy=(250, 0.857), xytext=(430, 0.847),
+    ax.annotate(f"Oracle {F3(o)} (off scale)", xy=(5.3, hi_y), xytext=(6.0, hi_y - 0.0085), fontsize=FS,
+                color="black", arrowprops=dict(arrowstyle="-|>", color="black", lw=0.8), ha="left", va="bottom")
+    ax.annotate("", xy=(520, 0.833), xytext=(950, 0.818),
                 arrowprops=dict(arrowstyle="-|>", color="#555555", lw=0.8))
-    ax.text(265, 0.8435, "better", fontsize=6.5, color="#555555")
+    ax.text(480, 0.808, "better", fontsize=FS, color="#555555")
     ax.set_xscale("log")
-    ax.set_xticks([6, 10, 20, 50, 100, 200])
-    ax.set_xticklabels(["6", "10", "20", "50", "100", "200"])
-    ax.set_xlim(5, 480)
+    ax.set_xticks([6, 10, 20, 50, 100, 200, 500])
+    ax.set_xticklabels(["6", "10", "20", "50", "100", "200", "500"])
+    ax.set_xlim(5, 1100)
     ax.set_ylim(lo_y, hi_y)
-    ax.set_xlabel("encoder time per image (ms, router encoder included)")
+    ax.set_xlabel("encoder time per image (ms)")
     ax.set_ylabel("macro score, 4 medical tasks")
     sc = ax.scatter([], [], s=16, color="#c4c4c4")
-    leg = [(sc, "Single encoders"), *handles, (h2, "HealthRouter"), (h1, "Harness")]
-    fig.legend([h for h, _ in leg], [l for _, l in leg], loc="upper center", ncol=3, fontsize=6.2,
-               bbox_to_anchor=(0.54, 1.10), frameon=True, columnspacing=0.8, handletextpad=0.3)
+    leg = [(sc, "Encoders alone"), *handles, (h2, "HealthRouter"), (h1, "Harness")]
+    ax.legend([h for h, _ in leg], [l for _, l in leg], loc="lower center", ncol=3, fontsize=FS,
+              bbox_to_anchor=(0.43, 1.01), frameon=True, columnspacing=0.5, handletextpad=0.15,
+              borderpad=0.3, labelspacing=0.2, handlelength=1.0, borderaxespad=0.2)
     save(fig, "router_teaser")
     plt.rcdefaults()
 
@@ -150,24 +156,29 @@ def teaser(main, desc):
 # ----------------------------------------------------------------------------- F3 selection analysis
 def selection_figure(main, desc):
     style()
-    plt.rcParams.update({"font.size": 7.5, "axes.labelsize": 7.5, "xtick.labelsize": 6.8, "ytick.labelsize": 6.8,
-                         "axes.titlesize": 8})
+    FS = 7.4  # no printed label below 7 pt at text width (review 2026-11-14)
+    plt.rcParams.update({"font.size": FS, "axes.labelsize": FS, "xtick.labelsize": FS, "ytick.labelsize": FS,
+                         "axes.titlesize": FS + 0.3})
     M = main["methods"]
     n = {t: M["healthrouter"]["per_task"][t]["n"] for t in TASKS}
     F = np.array([M["healthrouter"]["selection_frequency"][t] for t in TASKS])
     pooled = (F * np.array([n[t] for t in TASKS])[:, None]).sum(0) / sum(n.values())
-    fig = plt.figure(figsize=(7.0, 2.05))
-    gs = fig.add_gridspec(2, 3, width_ratios=[2.25, 1.0, 1.25], height_ratios=[0.55, 2.0], wspace=0.42, hspace=0.06)
+    fig = plt.figure(figsize=(7.0, 2.2))
+    gs = fig.add_gridspec(2, 3, width_ratios=[2.55, 1.05, 1.2], height_ratios=[0.55, 2.0], wspace=0.45, hspace=0.06)
     axb = fig.add_subplot(gs[0, 0])
     axh = fig.add_subplot(gs[1, 0])
-    axb.bar(range(len(ENC)), pooled, color="#6baed6", width=0.75)
+    axb.bar(range(len(ENC)), 100 * pooled, color="#6baed6", width=0.75)
     axb.set_xlim(-0.5, len(ENC) - 0.5)
     axb.set_xticks([])
-    axb.set_yticks([0, 0.5])
-    axb.set_ylabel("pooled", fontsize=6.5)
+    axb.set_yticks([0, 50])
+    axb.set_ylim(0, 65)
+    axb.set_ylabel("pooled", fontsize=FS)
     axb.grid(False)
-    axb.set_title("(a) share of test images on which each model runs", fontsize=7.5, loc="left")
-    axh.imshow(F, cmap="Blues", vmin=0, vmax=1, aspect="auto")
+    axb.set_title("(a) share of images (%) that run each model", fontsize=FS + 0.3, loc="left")
+    axh.pcolormesh(np.arange(F.shape[1] + 1) - 0.5, np.arange(F.shape[0] + 1) - 0.5, F, cmap="Blues",
+                   vmin=0, vmax=1)  # vector cells, no embedded raster
+    axh.set_xlim(-0.5, F.shape[1] - 0.5)
+    axh.set_ylim(F.shape[0] - 0.5, -0.5)
     axh.set_xticks(range(len(ENC)))
     axh.set_xticklabels([PLAIN[e] for e in ENC], rotation=32, ha="right")
     axh.set_yticks(range(len(TASKS)))
@@ -176,7 +187,7 @@ def selection_figure(main, desc):
     for i in range(F.shape[0]):
         for j in range(F.shape[1]):
             if F[i, j] >= 0.05:
-                axh.text(j, i, f"{F[i, j]:.2f}", ha="center", va="center", fontsize=6,
+                axh.text(j, i, f"{100 * F[i, j]:.0f}", ha="center", va="center", fontsize=7.4,
                          color="white" if F[i, j] > 0.55 else "black")
     # (b) harness calls vs difficulty
     D = desc["harness_difficulty"]
@@ -189,13 +200,13 @@ def selection_figure(main, desc):
     ax.bar(x - 0.19, one, 0.38, yerr=e1, color="#9ecae1", label="1 call", error_kw=dict(lw=0.6, capsize=1.5))
     ax.bar(x + 0.19, mul, 0.38, yerr=e2, color=GREEN, label="$\\geq$2 calls", error_kw=dict(lw=0.6, capsize=1.5))
     for i, t in enumerate(TASKS):
-        ax.text(i, max(one[i], mul[i]) + 0.045, f"{100 * D[t]['share_one_call']:.0f}%", ha="center", fontsize=5.8, color="#555555")
+        ax.text(i, max(one[i], mul[i]) + 0.045, f"{100 * D[t]['share_one_call']:.0f}", ha="center", fontsize=FS, color="#444444")
     ax.set_xticks(x)
-    ax.set_xticklabels(["Chest", "Path.", "Fundus", "Mammo."], rotation=20)
+    ax.set_xticklabels(["Chest", "Path.", "Fundus", "Mammo."], rotation=35, ha="right", rotation_mode="anchor")
     ax.set_ylabel("error of best single model")
-    ax.set_ylim(0, 0.66)
-    ax.legend(fontsize=5.8, loc="upper left", ncol=2, columnspacing=0.6, handlelength=1.0)
-    ax.set_title("(b) calls vs difficulty", fontsize=7.5, loc="left")
+    ax.set_ylim(0, 0.72)
+    ax.legend(fontsize=FS, loc="upper left", ncol=1, handlelength=1.0, borderaxespad=0.2, labelspacing=0.2)
+    ax.set_title("(b) calls vs difficulty", fontsize=FS + 0.3, loc="left")
     # (c) gain calibration
     G = desc["gain_calibration"]
     ax = fig.add_subplot(gs[:, 2])
@@ -205,7 +216,7 @@ def selection_figure(main, desc):
         ys = [v["y_mean"] for v in b]
         lo = [v["y_ci"][0] for v in b]
         hi = [v["y_ci"][1] for v in b]
-        ax.plot(xs, ys, "-o", color=TASK_COL[t], ms=2.2, lw=0.9, label=f"{TNAME[t].split()[0]} $\\rho$={G[t]['spearman']:+.2f}")
+        ax.plot(xs, ys, "-o", color=TASK_COL[t], ms=2.2, lw=0.9, label=f"{SHORT[t]} $\\rho$={G[t]['spearman']:+.2f}")
         band(ax, xs, lo, hi, TASK_COL[t])
     ax.axhline(0, color="#777777", lw=0.6, ls="--")
     ax.set_xscale("symlog", linthresh=0.01)
@@ -214,15 +225,15 @@ def selection_figure(main, desc):
     ax.set_xticklabels(["0", "0.01", "0.1"])
     ax.set_xlabel("estimated advantage (nats)")
     ax.set_ylabel("realised advantage (nats)")
-    ax.legend(fontsize=5.6, loc="upper left", handlelength=1.2)
-    ax.set_title("(c) estimated vs realised gain", fontsize=7.5, loc="left")
+    ax.legend(fontsize=FS, loc="upper left", handlelength=1.0, borderaxespad=0.2, labelspacing=0.15)
+    ax.set_title("(c) estimated vs realised gain", fontsize=FS + 0.3, loc="left")
     save(fig, "router_selection")
     plt.rcdefaults()
 
 
 def gain_tasks_figure(desc):
     style()
-    plt.rcParams.update({"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 7, "ytick.labelsize": 7})
+    plt.rcParams.update({"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 7.5, "ytick.labelsize": 7.5})
     G = desc["gain_calibration"]
     fig, axes = plt.subplots(1, 4, figsize=(7.0, 2.1), sharey=False)
     for ax, t in zip(axes, TASKS):
@@ -235,10 +246,10 @@ def gain_tasks_figure(desc):
         ax.plot(xx, G[t]["slope"] * xx + G[t]["intercept"], "--", color="#555555", lw=0.8)
         ax.axhline(0, color="#999999", lw=0.5)
         lo, hi = G[t]["spearman_ci"]
-        ax.set_title(f"{TNAME[t]}\n$\\rho$={G[t]['spearman']:+.3f} [{lo:+.3f}, {hi:+.3f}]", fontsize=6.8)
-        ax.set_xlabel("estimated advantage (nats)")
+        ax.set_title(f"{TNAME[t]}\n$\\rho$={G[t]['spearman']:+.3f} [{lo:+.3f}, {hi:+.3f}]", fontsize=7.5)
     axes[0].set_ylabel("realised advantage (nats)")
-    fig.tight_layout()
+    fig.tight_layout(rect=(0, 0.06, 1, 1))
+    fig.supxlabel("estimated advantage (nats)", fontsize=8, y=0.02)
     save(fig, "router_gain_tasks")
     plt.rcdefaults()
 
@@ -358,7 +369,7 @@ def ablation_table(main, desc):
                 v = f"\\textbf{{{v}}}" if n in b else (f"\\underline{{{v}}}" if n in s else v)
             else:
                 continue
-            d = "--" if dd is None else f"{-dd['value']:+.3f}{{\\tiny\\,[{-dd['ci'][1]:+.3f},\\,{-dd['ci'][0]:+.3f}]}}"
+            d = "--" if dd is None else f"{0.0 - dd['value']:+.3f}{{\\tiny\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}"
             lines.append(f"{label} & {v} & {d} & {calls:.2f} & {ms:.0f}\\\\")
         lines.append("\\midrule")
     lines[-1] = "\\bottomrule"
@@ -441,7 +452,7 @@ def supp_tables(main, gen, desc):
             l_ = v["methods"][lf]["macro"]
             if lf == "healthrouter_labelfree":
                 dd = v["differences_vs_healthrouter"][lf]["macro"]
-                dtxt = f"{-dd['value']:+.3f}{{\\tiny\\,[{-dd['ci'][1]:+.3f},\\,{-dd['ci'][0]:+.3f}]}}"
+                dtxt = f"{0.0 - dd['value']:+.3f}{{\\tiny\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}"
             else:
                 dtxt = f"{l_['value'] - b_['value']:+.3f}"
             lines.append(f"{lab} & {nm} & {100 * acc:.2f} ({mis}/{ev}) & {F3(b_['value'])} & {F3(l_['value'])} & {dtxt}\\\\")
@@ -454,7 +465,7 @@ def supp_tables(main, gen, desc):
         l_ = v["methods"]["healthrouter_labelfree"]["macro"]
         dd = l_ if False else v["methods"]["healthrouter_labelfree"]["diff_base_minus_this"]
         lines.append(f"External, {cname[c]} & HealthRouter & {100 * v['task_inference_accuracy']['all']:.2f} & {F3(b_)} & "
-                     f"{F3(l_['value'])} & {-dd['value']:+.3f}{{\\tiny\\,[{-dd['ci'][1]:+.3f},\\,{-dd['ci'][0]:+.3f}]}}\\\\")
+                     f"{F3(l_['value'])} & {0.0 - dd['value']:+.3f}{{\\tiny\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}\\\\")
     (A.PAPER / "tables" / "supp_labelfree_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
     # S-T6b: external task-inference accuracy per cohort
     lines = []

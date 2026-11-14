@@ -97,7 +97,8 @@ def retained_bars(ax, dispatch: dict, gate="supervised", conds=("standard", "gra
     ax.set_ylim(-0.1, 1.05)
     ax.axhline(0, color="#1b2a38", linewidth=0.6)
     ax.set_ylabel("retained skill $R_m$")
-    ax.legend(fontsize=6.6, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, handlelength=1.0)
+    ax.legend(fontsize=7.8, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2, handlelength=1.0,
+              columnspacing=0.8, labelspacing=0.25)
 
 
 def gate_bars(ax, dispatch: dict):
@@ -159,14 +160,15 @@ def main():
     abstention_bars(ax, abstention)
     ax.set_title("(c) Calibrated abstention", fontsize=10, loc="left")
     emit(fig, "figure_1_teaser", meta, "teaser")
-    fig, ax = plt.subplots(figsize=(3.45, 2.5), constrained_layout=True)
+    fig, ax = plt.subplots(figsize=(3.3, 2.5), constrained_layout=True)
     retained_bars(ax, dispatch, conds=("standard", "grayscale", "low_resolution", "jpeg"))
-    ax.tick_params(labelsize=7.5)
-    ax.yaxis.label.set_size(7.5)
+    ax.tick_params(labelsize=8.0)
+    ax.yaxis.label.set_size(8.0)
+    plt.setp(ax.get_xticklabels(), rotation=25, ha="right", rotation_mode="anchor")
     emit(fig, "lane_skill_supervised", meta, "per-lane retained skill, supervised gate")
     for size in grid["sizes"]:
         fig, ax = plt.subplots(figsize=(7.0, 2.6), constrained_layout=True)
-        grid_heatmap(ax, grid, size)
+        grid_heatmap(ax, grid, size, fontsize=8.2)  # >= 7 pt printed at 0.9 textwidth
         emit(fig, f"matched_grid_{size}", meta, f"matched grid at {size}px")
     (FIGURES / "cvpr_figures.json").write_text(json.dumps(meta, indent=2) + "\n")
 

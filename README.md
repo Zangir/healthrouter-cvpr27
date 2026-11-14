@@ -8,7 +8,7 @@ HealthRouter decides, for each image, which **collection** of frozen models to r
 
 This research artifact is not a medical device. It evaluates public benchmarks. It does not establish prospective clinical performance or regulatory clearance.
 
-![Accuracy against models called per image](figures/router_teaser.png)
+![Accuracy against encoder time per image](figures/router_teaser.png)
 
 ## 📰 News
 
@@ -183,7 +183,7 @@ python scripts/router_extract.py --what nonmedical                    # EuroSAT 
 python scripts/router_jepa.py                                         # I-JEPA router-feature ablation
 python scripts/router_descriptive.py                                  # amendment 4: label-free inference, encoders alone, gain, difficulty
 python scripts/router_schematic.py                                    # method figure (drawing only)
-python scripts/router_paper_assets.py <paper_dir>                     # tables, figures, derived numbers (calls router_exemplar_assets.py)
+python scripts/router_paper_assets.py path/to/paper                   # tables, figures, derived numbers (calls router_exemplar_assets.py)
 ```
 
 Every step caches and resumes. On a 16 GB laptop, run one step at a time.
@@ -226,7 +226,7 @@ python run_experiment.py --method finetune         --data-root "$HEALTHROUTER_DA
 python scripts/cvpr_figures.py
 ```
 
-Every step caches its intermediate arrays on disk and resumes after an interruption. On a 16 GB laptop, run one step at a time.
+Every step caches its intermediate arrays on disk and resumes after an interruption. The same one-step-at-a-time advice applies.
 
 The whole suite takes 1691.49 s on one Apple M2 Pro laptop (938.39 s of that is the four-encoder grid, 143.85 s the executed dispatch). The probe and grid pin RAD-DINO revision `110cbc18d5133582e320b43d53bf5c44e410c936` and download `facebook/dinov2-base` and `facebook/dinov2-large` from the Hugging Face Hub. `--seed` controls process seeding and router-baseline fitting. The committed bootstrap and router-subset paths use the recorded seed 2026. Supplied neural checkpoints are evaluated frozen, and intervals resample fixed evaluation items rather than repeated training seeds.
 

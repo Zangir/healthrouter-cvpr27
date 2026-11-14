@@ -452,7 +452,7 @@ def robustness_figure(ext):
     style()
     plt.rcParams.update({"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 7.5, "ytick.labelsize": 7.5})
     R = ext["results"]
-    fig, ax = plt.subplots(figsize=(3.4, 2.3))
+    fig, ax = plt.subplots(figsize=(3.3, 2.4))
     # family colours as in the main-paper figures (router_exemplar_assets.FAMILY)
     show = [("healthrouter", BLUE, "-o", "HealthRouter", 2.0), ("soft_moe", RED, "-^", "Soft MoE", 1.1),
             ("stacking", ORANGE, "-s", "Stacking", 1.1), ("uniform_ensemble", ORANGE, "--s", "Uniform ens.", 1.1),
@@ -464,7 +464,7 @@ def robustness_figure(ext):
     ax.set_xticks(range(5))
     ax.set_xticklabels(lab)
     ax.set_ylabel("external macro score")
-    ax.legend(fontsize=6.3, ncol=2)
+    ax.legend(fontsize=7.4, ncol=2, columnspacing=0.6, handlelength=1.6, labelspacing=0.25)
     fig.savefig(FIG / "router_robustness.pdf")
     fig.savefig(FIG / "router_robustness.png", dpi=300)
     plt.close(fig)

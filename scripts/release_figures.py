@@ -68,38 +68,44 @@ def _score_panel(ax, label: str, metric: str, rows: list[tuple[str, dict, str]],
         color = colors[kind]
         marker = "D" if kind == "external" else ("s" if kind == "raw" else "o")
         ax.errorbar(value, y, xerr=[[value - low], [high - value]], fmt=marker,
-                    color=color, markersize=6.5, capsize=3, linewidth=1.4)
-        ax.annotate(f"{value:.3f}", (value, y), xytext=(6, 0), textcoords="offset points",
-                    va="center", fontsize=8.3, color="#243B53")
+                    color=color, markersize=4.5, capsize=2, linewidth=1.1)
+        ax.annotate(f"{value:.3f}", (value, y), xytext=(0, 4.5), textcoords="offset points",
+                    ha="center", va="bottom", fontsize=7.6, color="#243B53")
         lows.append(low)
         highs.append(high)
     margin = max(0.008, (max(highs) - min(lows)) * 0.22)
     ax.set_xlim(max(0, min(lows) - margin), min(1.001, max(highs) + 3.2 * margin))
     ax.set_yticks(ys, [name for name, _, _ in rows])
+    ax.set_ylim(-0.45, ys.max() + 0.8)  # room for the value label above the top row
+    ax.xaxis.set_major_locator(plt.MaxNLocator(nbins=2))
+    ax.xaxis.set_major_formatter(plt.FormatStrFormatter("%.2f"))
     ax.set_xlabel(metric)
-    ax.text(-0.08, 1.08, label, transform=ax.transAxes, fontweight="bold", fontsize=10)
+    ax.text(-0.08, 1.08, label, transform=ax.transAxes, fontweight="bold", fontsize=8.2)
     ax.grid(axis="x", alpha=0.25)
     ax.grid(axis="y", visible=False)
 
 
 def scorecard_figure(specialists: dict, router: dict):
-    fig, axes = plt.subplots(2, 3, figsize=(12.6, 6.1), constrained_layout=True)
+    # Sized for the printed text width so that no label prints below 7 pt (review 2026-11-14).
+    plt.rcParams.update({"font.size": 8, "axes.labelsize": 8, "xtick.labelsize": 7.8, "ytick.labelsize": 7.8})
+    fig, axes = plt.subplots(2, 3, figsize=(6.4, 3.4))
+    fig.subplots_adjust(left=0.15, right=0.985, bottom=0.13, top=0.91, wspace=0.95, hspace=0.85)
     colors = {"audited": "#0072B2", "raw": "#8A8A8A", "external": "#D55E00"}
-    _score_panel(axes[0, 0], "(a) Chest · unseen institution", "AUROC",
+    _score_panel(axes[0, 0], "(a) Chest, external", "AUROC",
                  [("Montgomery", specialists["tb_montgomery_auroc"], "external")], colors)
     pcam = specialists["pcam_official_test_auroc"]
-    _score_panel(axes[0, 1], "(b) Pathology · official test", "AUROC",
+    _score_panel(axes[0, 1], "(b) Pathology, official test", "AUROC",
                  [("Raw", pcam["raw"], "raw"), ("Exact-dedup", pcam["clean"], "audited")], colors)
     aptos = specialists["aptos_random_holdout"]
-    _score_panel(axes[0, 2], "(c) Fundus · random holdout", "Quadratic weighted kappa",
+    _score_panel(axes[0, 2], "(c) Fundus, random holdout", "Quadratic weighted kappa",
                  [("Raw", aptos["raw_qwk"], "raw"),
                   ("Exact-dedup", aptos["clean_qwk"], "audited")], colors)
     cbis = specialists["cbis_local_mirror_test_auroc"]
-    _score_panel(axes[1, 0], "(d) Mammography · local mirror test", "AUROC",
+    _score_panel(axes[1, 0], "(d) Mammo., local mirror", "AUROC",
                  [("Raw", cbis["raw"], "raw"), ("Exact-dedup", cbis["clean"], "audited")], colors)
     seg = specialists["segmentation"]
-    _score_panel(axes[1, 1], "(e) Endoscopy · mask segmentation", "Mean Dice",
-                 [("Kvasir validation", seg["kvasir_validation_mean_dice"], "audited"),
+    _score_panel(axes[1, 1], "(e) Endoscopy, masks", "Mean Dice",
+                 [("Kvasir val.", seg["kvasir_validation_mean_dice"], "audited"),
                   ("CVC external", seg["cvc_external_mean_dice"], "external")], colors)
     ax = axes[1, 2]
     ax.axis("off")
@@ -109,12 +115,11 @@ def scorecard_figure(specialists: dict, router: dict):
                      markeredgecolor=colors["audited"], label="Exact-deduplicated / internal"),
               Line2D([0], [0], marker="D", color="none", markerfacecolor=colors["external"],
                      markeredgecolor=colors["external"], label="External dataset")]
-    ax.legend(handles=legend, loc="upper left", frameon=False, fontsize=9)
-    ax.text(0, 0.48, "Read each panel on its own metric axis.\n"
-            "Different tasks and metrics are not ranked.\n\n"
-            "Intervals resample fixed evaluation items;\n"
-            "they do not capture training-seed variance.", transform=ax.transAxes,
-            fontsize=9.5, color="#52616B", linespacing=1.45, va="top")
+    ax.legend(handles=legend, loc="upper left", frameon=False, fontsize=7.8)
+    ax.text(0, 0.12, "Each panel has its own metric axis;\n"
+            "panels are not ranked. Intervals resample\n"
+            "fixed items, not training seeds.", transform=ax.transAxes,
+            fontsize=7.8, color="#52616B", linespacing=1.35, va="top")
     caption = (
         "Five-domain diagnostic scorecard. Every panel uses its own task metric and fixed-set "
         "uncertainty axis; values should be read within panels rather than ranked across domains. "
