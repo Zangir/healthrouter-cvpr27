@@ -1,0 +1,202 @@
+{
+ "title": "Frozen evaluation plan: per-sample routing to model collections",
+ "frozen_at": "2026-11-11, before 12:09:33 +04:00 (local machine clock; the first candidate-building job in the guard log)",
+ "status": "frozen before any method or baseline result was computed; amendments are appended under 'amendments' with a timestamp and must precede any test-split scoring",
+ "test_policy": "Development and hyper-parameter selection use only inner validation splits. Test predictions are scored exactly once, by the 'final' phase, after the method grid below is fixed.",
+ "tasks": {
+  "in_source": {
+   "chest_xray": {
+    "pool": "Shenzhen TB, all 662 images",
+    "type": "binary",
+    "metric": "auroc"
+   },
+   "pathology": {
+    "pool": "PatchCamelyon official test, balanced 2,000-patch subsample",
+    "type": "binary",
+    "metric": "auroc"
+   },
+   "fundus": {
+    "pool": "APTOS holdout, exact-deduplicated, 562 images, grades 0-4",
+    "type": "ordinal",
+    "metric": "qwk (argmax grade)"
+   },
+   "mammography": {
+    "pool": "CBIS-DDSM test mirror, exact-deduplicated, 614 images",
+    "type": "binary",
+    "metric": "auroc"
+   }
+  },
+  "non_medical_conditional": {
+   "eurosat": {
+    "pool": "EuroSAT RGB, class-balanced 2,000-image subsample (200 per class), seed 0",
+    "type": "multiclass (10)",
+    "metric": "accuracy"
+   },
+   "dtd": {
+    "pool": "DTD, class-balanced 2,350-image subsample (50 per class), seed 0",
+    "type": "multiclass (47)",
+    "metric": "accuracy"
+   },
+   "rule": "Included only if the public dataset can be downloaded and the ten encoders extracted through the heavy-job guard; otherwise reported as not run. Features use the same square 224 px resize and the same encoders."
+  },
+  "external_transfer": {
+   "cohorts": {
+    "chest_xray": "Montgomery (138)",
+    "pathology": "Camelyon17-WILDS OOD hospital (1,000)",
+    "fundus": "IDRiD (516, grades 0-4)",
+    "mammography": "CMMD (396)"
+   },
+   "conditions": [
+    "standard",
+    "grayscale",
+    "blur",
+    "low_resolution",
+    "jpeg"
+   ],
+   "protocol": "Candidate probes and every router/combiner are trained on the full in-source pools (meta-training data = 5-fold out-of-fold predictions on 80% of each pool, validation = the remaining 20%, seed 0), hyper-parameters chosen on that in-source validation split, then applied unchanged to the external cohorts under each acquisition condition. Shifts are applied to the external images only."
+  }
+ },
+ "splits": {
+  "outer": "5-fold class-stratified cross-fitting per task, repeated for split seeds {0, 1, 2}; every sample is a test sample exactly once per seed",
+  "inner": "within each outer training part: 20% class-stratified validation, 80% inner-train",
+  "meta_training_data": "5-fold class-stratified out-of-fold candidate predictions on the inner-train part",
+  "validation_and_test_predictions": "candidate probes refit on the whole inner-train part"
+ },
+ "candidates": {
+  "main_pool": "10 frozen encoders at 224 px (imagenet_convnext, dinov2_base, dinov2_large, siglip2_base, biomedclip, rad_dino, phikon, phikon_v2, retfound, mammo_clip), each with a task-specific standardised logistic-regression head",
+  "extended_pool": "the same 10 encoders at 224 and 448 px (20 candidates); in-source ablation only",
+  "head": "StandardScaler + LogisticRegression; C in {0.001, 0.01, 0.1, 1} chosen per candidate by inner-train out-of-fold log-loss",
+  "cost": "measured per-image feature-extraction time of each encoder (mean over the four in-source pools, from the cached extraction logs); router features are always computed and charged"
+ },
+ "router_features": "ImageNet ConvNeXt-T 224 px pooled embedding (the cheapest candidate). No task or modality identifier is given to any per-sample router.",
+ "method": {
+  "name": "HealthRouter (per-sample collection router)",
+  "utility_targets": "u_ic = log p_c(y_i | x_i) from out-of-fold candidate predictions, clipped at log(1e-4)",
+  "router": "MLP on router features -> one score per candidate",
+  "loss": "fused negative log-likelihood of the softmax-weighted mixture + alpha * KL(softmax(u_i / tau_u) || softmax(s_i))",
+  "selection": "per sample, candidates sorted by router weight minus lambda * normalised cost; smallest prefix whose renormalised mass reaches rho, capped at k_max (adaptive k)",
+  "fusion": "router weights renormalised over the selected set; probability averaging",
+  "grid": {
+   "alpha": [
+    0,
+    1,
+    4
+   ],
+   "tau_u": [
+    0.25,
+    1.0
+   ],
+   "T": [
+    0.5,
+    1.0,
+    2.0
+   ],
+   "rho": [
+    0.5,
+    0.7,
+    0.8,
+    0.9,
+    0.95,
+    1.0
+   ],
+   "k_max": [
+    1,
+    2,
+    3,
+    5,
+    10
+   ],
+   "lambda": [
+    0.0
+   ],
+   "hidden": 256,
+   "epochs": 300,
+   "lr": 0.001,
+   "weight_decay": 0.0001,
+   "dropout": 0.1
+  },
+  "cost_sweep": "lambda in {0, 0.05, 0.1, 0.2, 0.5, 1, 2} reported as an accuracy-compute curve, not used for the main table"
+ },
+ "baselines": {
+  "best_single_per_task": "candidate with the best validation metric for each task",
+  "best_single_overall": "one encoder for all tasks, best mean validation metric",
+  "uniform_ensemble": "average of all candidates' probabilities",
+  "stacking": "per-task multinomial logistic regression on candidate log-probabilities, C in {0.01, 0.1, 1, 10}",
+  "greedy_ensemble_selection": "Caruana et al. forward selection with replacement on meta-training log-loss, per task, up to 20 steps",
+  "modality_router_supervised": "logistic gate on router features predicts the task/modality; the predicted task's top-k validation candidates are averaged, k in {1, 2, 3, 5}",
+  "modality_router_zeroshot_biomedclip": "zero-shot BiomedCLIP prompt gate (the previous paper's prompts) predicts the modality; same top-k lane",
+  "soft_moe": "softmax gate (MLP on router features) trained end to end on the fused log-likelihood of the candidates' outputs, dense at test time",
+  "sparse_topk_moe": "the same gate with top-k masking (k in {1, 2, 3}) during training and test",
+  "knn_router": "k nearest meta-training neighbours in router-feature space (cosine), mean neighbour utility per candidate, top-k uniform average; neighbours in {5, 10, 25, 50}, k in {1, 2, 3, 5}",
+  "knora_u": "deslib KNORAU, region of competence in router-feature space over the meta-training set, k in {7}",
+  "knora_e": "deslib KNORAE, same region of competence",
+  "meta_des": "deslib METADES, same region of competence",
+  "routerbench_mlp": "per-candidate utility regressor (MLP, MSE on u_ic) in the style of predictive LLM routers; top-k uniform average, k in {1, 2, 3, 5}",
+  "routellm_mf": "RouteLLM-style matrix-factorisation router trained with a pairwise Bradley-Terry loss on candidate utilities; top-k uniform average, k in {1, 2, 3, 5}",
+  "logme_selection": "task-level model selection by LogME transferability on inner-train features (model-selection baseline); top-k uniform average, k in {1, 2, 3}",
+  "oracle_single": "per-sample best candidate under the true label (upper bound, not a method)"
+ },
+ "hyper_parameter_selection": "per method and outer fold, maximise the macro validation primary metric across tasks; ties broken by fewer invoked candidates, then grid order",
+ "statistics": {
+  "point_estimate": "metric on the pooled cross-fitted test predictions, averaged over the three split seeds",
+  "ci": "95% paired stratified bootstrap over test samples (2,000 replicates); each replicate resamples sample indices within task and averages the metric over the three seeds on the same indices",
+  "comparison": "method minus baseline on the same replicates; 'better than X' is claimed only when the 95% CI of the difference excludes 0",
+  "seed_variability": "standard deviation over the three split seeds reported alongside"
+ },
+ "compute_budget": "all jobs above ~2 CPU-minutes or using MPS go through run_heavy.sh with timeout <= 600 s and memory <= 5 GB, in checkpointed chunks",
+ "amendments": [
+  {
+   "at": "2026-11-11, between 12:54:35 and 12:59:31 +04:00 (local machine clock; bounded by the guard log and a shell timestamp); before any test-split scoring",
+   "basis": "validation only (15 inner validation splits; 'honest' half-split selection estimate). No test prediction has been scored.",
+   "changes": [
+    "Main method = collection-level HealthRouter: for every collection S of up to max_size candidates, per-sample utility u_S(x)=log mean_{c in S} p_c(y|x) from out-of-fold predictions; estimated for a new input by the mean over its cosine nearest neighbours (router features) in the meta-training set; the top-scoring collection (picks=1) or the softmax(score/0.05)-weighted top-3 collections (picks=3) are averaged. Grid: max_size {2,3}, neighbours {25,50,100}, picks {1,3}, lambda 0. Cost sweep: score - lambda * summed member cost (normalised to the most expensive candidate) for lambda in {0, 0.05, 0.1, 0.2, 0.5, 1, 2}.",
+    "The candidate-level MLP gate described under 'method' is kept as an ablation ('hr_candidate_mlp'), as is a collection-level MLP estimator ('hr_collection_mlp').",
+    "Added baselines (variants of frozen ones, reported in addition): best single per task and the supervised modality lane with candidates ranked on the meta-training out-of-fold metric instead of validation ('_oof').",
+    "Development finding recorded before test: on validation all routers and task-level ensembles lie within about 0.01 macro of each other; no superiority is expected or claimed unless the paired test CIs show it."
+   ]
+  },
+  {
+   "at": "2026-11-11T13:09:53+04:00 (local machine clock; file modification time); before any test-split scoring (first test scoring job started 13:11:44 per the guard log)",
+   "basis": "requested design addition; post-hoc on cached candidate predictions; no test prediction scored before this entry",
+   "changes": [
+    "Added method variant 'healthrouter_harness' (smart harness): candidates ranked per sample by HealthRouter's neighbourhood estimate of single-candidate out-of-fold utility; the top-ranked model is called first, and the next-ranked model is added (uniform re-fusion) while the fused max-probability is below theta, up to k_max. Grid: neighbours {25,50,100}, k_max {2,3,5,10}, theta {0.5,0.6,0.7,0.8,0.9,0.95,0.99,1.01}; theta=1.01 always calls k_max models. Configuration chosen on validation with the same rule as every method (macro validation metric, ties to fewer invoked models).",
+    "Accuracy-compute curve: one family per fixed theta ('harness_theta<theta>'), each choosing neighbours and k_max on validation; compared with the uniform ensemble, stacking, greedy ensemble selection, soft and sparse MoE, KNORA-U/E, META-DES and the best single model.",
+    "Efficiency claims ('same accuracy at lower compute') require the paired 95% CI of the metric difference to include 0 within a pre-stated margin of 0.01 macro (non-inferiority), together with fewer models invoked; superiority claims require the CI to exclude 0.",
+    "Optional out-of-scope flag: router-feature distance to the k-th meta-training neighbour above the 95th percentile of validation distances; reported only as a flag rate if run.",
+    "Router-feature ablation: I-JEPA (facebook/ijepa_vith14_1k) pooled embeddings replace ConvNeXt-T in-source, if extraction completes within about 45 minutes of guarded compute; otherwise reported as not run."
+   ]
+  },
+  {
+   "at": "2026-11-11T14:18:40+04:00 (local machine clock)",
+   "basis": "ADDED AFTER OBSERVING THE EXTERNAL-COHORT TEST RESULTS (router_external.json), in which HealthRouter fell behind task-level ensembles under acquisition shift. The in-source test folds were already scored for the main methods; this variant is scored on them for the first time here.",
+   "changes": [
+    "New variants 'healthrouter_fallback' and 'harness_fallback': an input whose mean cosine distance (standardised ConvNeXt-T router features) to its 50 nearest meta-training neighbours exceeds the q-th percentile of the same distance on the in-source validation split is sent to the uniform ten-model ensemble; otherwise the base method's output is kept. q in {90, 95, 99}, chosen with every other setting on in-source validation by the usual rule. No external data is used to set the threshold.",
+    "Reported for in-source test and for all five external conditions, as a post-hoc robustness variant; it is not the main method and is labelled as added after the external results."
+   ]
+  },
+  {
+   "at": "2026-11-14T18:02:18+04:00 (local machine clock, written by script; file mtime records the same moment)",
+   "basis": "Abstract-claim audit during the exemplar rewrite (paper/EXEMPLAR_PLAN.md rev. 2, approved 2026-11-14). ALL TEST FOLDS (in-source, six-task and external) WERE ALREADY SCORED before this entry. The analyses below are descriptive and are added after test scoring. No method, hyper-parameter, selection rule or main-table number depends on them; their configurations are the validation-chosen ones already stored in cache/router/final_*.pkl. Every outcome is reported in the paper whatever it shows.",
+   "changes": [
+    "N0a task-inferred heads (label-free end-to-end inference): for each test image, HealthRouter infers the task as the majority task among its K cosine nearest meta-training neighbours in standardised router-feature space (K = the fold's validation-chosen K; ties broken by the nearest neighbour's task). The selected collection's outputs are taken from the heads of the inferred task. An image whose inferred task is wrong is scored with the null output (the true task's meta-training class prior, i.e. no information), the convention already used for misrouted items in the Part B dispatch protocol. Reported: task-inference accuracy per task and condition; label-free HealthRouter and harness scores with 95% paired bootstrap CIs and paired differences against the task-head versions; in distribution (3 seeds x 5 folds), six-task pooled (EuroSAT, DTD added), and the four external cohorts under all five conditions.",
+    "N0b (optional, run only if time allows): union-label heads, one standardised logistic head per encoder over the union of the four medical label spaces (2+2+5+2 = 11 classes) on the same cached features, folds and C grid. Decoding without a task label: AUROC tasks scored with the joint probability of the task's positive class; fundus grade = joint argmax, scored as the training majority grade if the argmax falls outside the fundus block. Reported: leakage rate and label-free router scores.",
+    "N1: test score of every candidate used alone (one candidate for all tasks), per task and macro, pooled over folds within seed and averaged over seeds, with the same paired bootstrap; plus the share of test images whose label-aware best candidate differs from the task's validation-best candidate.",
+    "N2: for each test image, the neighbourhood-estimated utility advantage of HealthRouter's selected collection(s) over the task's validation-best single candidate (x), against the realised log-likelihood advantage on that image (y); decile bins per task with bootstrap bands, Spearman rho per task and pooled with bootstrap CI.",
+    "N6: per-image difficulty (log-loss and 0/1 error of the task's validation-best single candidate) against the number of models the validation-chosen harness calls; mean difficulty for 1 call vs >=2 calls and Spearman rho per task, with bootstrap CIs."
+   ]
+  },
+  {
+   "at": "2026-11-14T19:13:38+04:00 (local machine clock)",
+   "basis": "Data audit found byte-identical images within evaluation pools while building the anonymous data release (IDRiD 6 duplicated hashes, CBIS-DDSM 4, PatchCamelyon subsample 33). ALL TEST SCORING WAS ALREADY DONE. Descriptive only; no configuration or reported main number changes; reported whatever it shows.",
+   "changes": [
+    "Duplicate audit (scripts/router_duplicates.py -> results/router_duplicates.json): count duplicated hashes and conflicting labels per pool; for the in-source pools, count (seed, fold) cases where copies of one image fall in both the training part (train_oof or validation) and the test fold; recompute HealthRouter's and every method's per-task score with all duplicated rows removed and report the difference; for IDRiD (external, test-only) recompute external per-task scores with duplicated rows removed."
+   ]
+  }
+ ],
+ "timestamp_correction": "2026-11-11T13:45+04:00: the two amendment timestamps were originally typed by hand as 13:05 and 13:25. They are corrected here to the actual write times (amendment 2: file mtime 13:09:53; amendment 1: between 12:54:35 and 12:59:31 from the guard log and a shell timestamp). The content of both amendments is unchanged, and both precede the first test-scoring job (hr-final, started 13:11:44). The original frozen_at value (typed as 12:05) is likewise replaced by the guard-log bound: the plan was written before the first candidate-building job started at 12:09:33.",
+ "not_run": {
+  "ijepa_router_features": "not run: heavy-compute slot shared with another project; dropped after the external, fallback and EuroSAT/DTD runs took priority (amendment 2 allowed 'not run').",
+  "non_medical": "run: EuroSAT and DTD extracted and evaluated (results/router_general.json).",
+  "union_label_heads_N0b": "not run (amendment 4 listed it as optional; N0a, label-free inference by neighbour task vote, was run and is reported)."
+ }
+}

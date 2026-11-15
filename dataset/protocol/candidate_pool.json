@@ -1,0 +1,79 @@
+{
+ "candidates": [
+  "imagenet_convnext",
+  "dinov2_base",
+  "dinov2_large",
+  "siglip2_base",
+  "biomedclip",
+  "rad_dino",
+  "phikon",
+  "phikon_v2",
+  "retfound",
+  "mammo_clip"
+ ],
+ "cost_ms_per_image": [
+  6.09,
+  14.43,
+  41.12,
+  10.08,
+  15.78,
+  12.14,
+  9.34,
+  35.91,
+  35.44,
+  9.77
+ ],
+ "router_encoder": "imagenet_convnext",
+ "input": "square bicubic resize to 224 px, RGB",
+ "head": "standardised logistic regression per (encoder, task); C chosen by inner 5-fold OOF log-loss",
+ "model_sources": {
+  "dinov2_base": {
+   "hub": "facebook/dinov2-base",
+   "revision": "f9e44c814b77203eaa57a6bdbbd535f21ede1415",
+   "card_license": "apache-2.0"
+  },
+  "dinov2_large": {
+   "hub": "facebook/dinov2-large",
+   "revision": "47b73eefe95e8d44ec3623f8890bd894b6ea2d6c",
+   "card_license": "apache-2.0"
+  },
+  "rad_dino": {
+   "hub": "microsoft/rad-dino",
+   "revision": "110cbc18d5133582e320b43d53bf5c44e410c936",
+   "card_license": "mit (license_name field)"
+  },
+  "siglip2_base": {
+   "hub": "google/siglip2-base-patch16-224",
+   "revision": "75de2d55ec2d0b4efc50b3e9ad70dba96a7b2fa2",
+   "card_license": "apache-2.0"
+  },
+  "biomedclip": {
+   "hub": "microsoft/BiomedCLIP-PubMedBERT_256-vit_base_patch16_224",
+   "revision": "9f341de24bfb00180f1b847274256e9b65a3a32e",
+   "card_license": "mit"
+  },
+  "phikon": {
+   "hub": "owkin/phikon",
+   "revision": "057cc0295895c2df3dd7681a89680da6015cbefe",
+   "card_license": "other (see model card)"
+  },
+  "phikon_v2": {
+   "hub": "owkin/phikon-v2",
+   "revision": "2ae989a9c40cffaa27f0a6cb29cc94d1d6f9a5fd",
+   "card_license": "other (see model card)"
+  },
+  "retfound": {
+   "hub": "bitfount/RETFound_MAE",
+   "revision": "0f81b6df4222edacc026f9fab2aa81bc71ebb1cf",
+   "card_license": "cc-by-nc-4.0"
+  },
+  "mammo_clip": {
+   "hub": "shawn24/Mammo-CLIP",
+   "revision": "2f356926a00fc3f0d9fdad1193c1464fd9adf564",
+   "card_license": "CC BY-NC-SA 4.0 (stated in README)"
+  }
+ },
+ "other_sources": {
+  "imagenet_convnext": "timm convnext_tiny ImageNet-1k weights"
+ }
+}

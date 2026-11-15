@@ -1,0 +1,12 @@
+{
+ "order_checks": {
+  "pathology": 200,
+  "mammography": 614,
+  "eurosat": 2000,
+  "external": {
+   "pathology": 1000,
+   "fundus": 516,
+   "mammography": 396
+  }
+ }
+}

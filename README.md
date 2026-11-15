@@ -154,7 +154,7 @@ Commercial imaging products and closed multimodal services are capability contex
 
 ### Reproduce the paper's numbers from the released benchmark files
 
-HealthRouter-Bench (the companion data repository) holds split definitions, cross-fitted encoder predictions, router features and every method's test outputs for the sources whose terms allow it (PatchCamelyon, CBIS-DDSM, EuroSAT, Camelyon17-WILDS, IDRiD, CMMD). No images and no cache are needed:
+HealthRouter-Bench (the companion data release in [`dataset/`](dataset/), CC BY-NC 4.0) holds split definitions, cross-fitted encoder predictions, router features and every method's test outputs for the sources whose terms allow it (PatchCamelyon, CBIS-DDSM, EuroSAT, Camelyon17-WILDS, IDRiD, CMMD). No images and no cache are needed:
 
 ```bash
 pip install -r requirements.txt

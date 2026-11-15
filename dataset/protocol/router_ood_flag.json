@@ -1,0 +1,43 @@
+{
+ "k": 50,
+ "threshold_quantile": 0.95,
+ "threshold": 0.61482,
+ "provenance": "scripts/router_ood_flag.py",
+ "flag_rate": {
+  "standard": {
+   "chest_xray": 0.0,
+   "pathology": 0.105,
+   "fundus": 0.0,
+   "mammography": 0.053,
+   "all": 0.0615
+  },
+  "grayscale": {
+   "chest_xray": 0.0,
+   "pathology": 0.757,
+   "fundus": 0.0078,
+   "mammography": 0.053,
+   "all": 0.3815
+  },
+  "blur": {
+   "chest_xray": 0.9855,
+   "pathology": 0.134,
+   "fundus": 0.0213,
+   "mammography": 0.7702,
+   "all": 0.2859
+  },
+  "low_resolution": {
+   "chest_xray": 1.0,
+   "pathology": 0.14,
+   "fundus": 0.0252,
+   "mammography": 0.9545,
+   "all": 0.3263
+  },
+  "jpeg": {
+   "chest_xray": 1.0,
+   "pathology": 0.281,
+   "fundus": 0.0833,
+   "mammography": 0.9874,
+   "all": 0.4161
+  }
+ }
+}
