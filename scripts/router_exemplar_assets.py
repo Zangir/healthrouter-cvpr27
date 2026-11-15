@@ -78,7 +78,7 @@ def teaser(main, desc):
     S = desc["single_candidates"]["candidates"]
     cost = dict(zip(ENC, main["candidate_cost_ms"]))
     fig, ax = plt.subplots(figsize=(2.98, 2.25))
-    lo_y, hi_y = 0.789, 0.893
+    lo_y, hi_y = 0.789, 0.898
     # single candidates (gray) and their Pareto frontier
     pts = sorted((cost[e], S[e]["macro"]["value"], e) for e in ENC)
     for x, y, e in pts:
@@ -132,8 +132,8 @@ def teaser(main, desc):
                 fontsize=FS, color="#333333", arrowprops=dict(arrowstyle="-", color="#888888", lw=0.5,
                                                               shrinkA=0, shrinkB=3))
     o = M["oracle_single"]["macro"]["value"]
-    ax.annotate(f"Oracle {F3(o)} (off scale)", xy=(5.3, hi_y), xytext=(6.0, hi_y - 0.0085), fontsize=FS,
-                color="black", arrowprops=dict(arrowstyle="-|>", color="black", lw=0.8), ha="left", va="bottom")
+    ax.text(5.6, hi_y - 0.0008, f"Oracle {F3(o)} \u2191 (off scale)", fontsize=FS, color="black",
+            ha="left", va="top")
     ax.annotate("", xy=(520, 0.833), xytext=(950, 0.818),
                 arrowprops=dict(arrowstyle="-|>", color="#555555", lw=0.8))
     ax.text(480, 0.808, "better", fontsize=FS, color="#555555")
@@ -289,7 +289,7 @@ def main_table(main):
                     v = f"\\textbf{{{v}}}"
                 elif n in hl[c][1]:
                     v = f"\\underline{{{v}}}"
-                cells.append(f"{v}{{\\tiny\\,[{F3(e['ci'][0])},\\,{F3(e['ci'][1])}]}}")
+                cells.append(v)  # means only (user 2026-11-15); paired intervals are in the supplement
             for k, fmt in (("calls", "{:.2f}"), ("ms", "{:.0f}")):
                 v = fmt.format(calls_ms(n)[k])
                 v = f"\\textbf{{{v}}}" if n in low[k][0] else (f"\\underline{{{v}}}" if n in low[k][1] else v)
@@ -369,7 +369,11 @@ def ablation_table(main, desc):
                 v = f"\\textbf{{{v}}}" if n in b else (f"\\underline{{{v}}}" if n in s else v)
             else:
                 continue
-            d = "--" if dd is None else f"{0.0 - dd['value']:+.3f}{{\\tiny\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}"
+            if dd is None:
+                d = "--"
+            else:  # variant minus HealthRouter, with the Table 1 significance marks (user 2026-11-15)
+                mark = "$\\blacktriangledown$" if dd['ci'][0] > 0 else ("$\\blacktriangle$" if dd['ci'][1] < 0 else "$\\approx$")
+                d = f"{0.0 - dd['value']:+.3f}\\,{mark}"
             lines.append(f"{label} & {v} & {d} & {calls:.2f} & {ms:.0f}\\\\")
         lines.append("\\midrule")
     lines[-1] = "\\bottomrule"
