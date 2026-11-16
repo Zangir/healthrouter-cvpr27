@@ -164,21 +164,38 @@ def main():
 
     # (3) run ----------------------------------------------------------------------------------
     p3l, p3r = panel(ax, 10.19, 4.15, "(3) Run collection or harness")
-    bh = box(ax, 10.34, 2.12, 3.85, 0.74, "HealthRouter:\nrun and average\nthe collection",
+    bh = box(ax, 10.34, 2.35, 3.85, 0.55, "HealthRouter: run and\naverage the collection",
              fc="#eaf2fa", ec=BLUE, bold=True)
-    bg = box(ax, 10.34, 0.3, 3.85, 1.58, "", fc="#eaf7f2", ec=GREEN)
-    label(ax, 12.265, 1.68, "Harness: stop when confident", ha="center", va="center", fontsize=FS,
+    bg = box(ax, 10.34, 0.3, 3.85, 1.85, "", fc="#eaf7f2", ec=GREEN)
+    label(ax, 12.265, 2.03, "Harness: stop when confident", ha="center", va="center", fontsize=FS,
           fontweight="bold")
-    for row, (lab, conf) in enumerate([("easy image", [0.93]), ("hard image", [0.58, 0.66, 0.81])]):
-        y0 = 1.06 - row * 0.6
-        label(ax, 10.46, y0 + 0.12, lab, fontsize=FS, va="center")
-        for k, c in enumerate(conf):
-            ax.add_patch(Rectangle((11.98 + k * 0.6, y0), 0.5, 0.26 * c / 0.93 + 0.02,
-                                   fc=GREEN if c >= 0.8 else "#9ecae1", ec="white"))
-        TEXTS.append(ax.plot([11.9, 13.72], [y0 + 0.26 * 0.8 / 0.93 + 0.02] * 2, ls=":", color="black", lw=0.7)[0])
-    label(ax, 13.82, 0.78, "$\\theta$", fontsize=6.8, va="center")
+    # Two mini charts (user round 4): bars = fused confidence after calls 1-3; dashed line = threshold theta.
+    # Schematic heights, not data. The easy image crosses theta at call 1; the hard image needs 3 calls.
+    base, scale, theta = 0.68, 0.78, 0.8
+    label(ax, 10.5, 1.02, "confidence", rotation=90, ha="center", va="center", fontsize=FS - 0.4)
+    for x0, name, conf in [(10.66, "easy image", [0.93]), (12.5, "hard image", [0.58, 0.66, 0.88])]:
+        label(ax, x0 + 0.72, 1.8, name, ha="center", va="center", fontsize=FS)
+        for k in range(3):
+            bx = x0 + 0.1 + k * 0.5
+            label(ax, bx + 0.16, 0.53, str(k + 1), ha="center", va="center", fontsize=FS - 0.4)
+            if k < len(conf):
+                ax.add_patch(Rectangle((bx, base), 0.32, conf[k] * scale,
+                                       fc=GREEN if conf[k] >= theta else "#9ecae1", ec="white", lw=0.4))
+            else:   # call not made
+                ax.add_patch(Rectangle((bx, base), 0.32, 0.2, fc="none", ec="#9a9a9a", lw=0.5, ls=(0, (1.5, 1.5))))
+        ax.plot([x0, x0 + 1.5], [base, base], color="#555555", lw=0.6)
+        yt = base + theta * scale
+        TEXTS.append(ax.plot([x0, x0 + 1.42], [yt, yt], ls=(0, (3, 1.6)), color="black", lw=0.8)[0])
+        label(ax, x0 + 1.47, yt, "$\\theta$", fontsize=FS + 0.4, va="center", ha="left")
+        k_stop = len(conf) - 1
+        label(ax, x0 + 0.1 + k_stop * 0.5 + 0.16, 1.58, "stop", ha="center", va="center", fontsize=FS - 0.4,
+              color=GREEN, fontweight="bold")
+        if k_stop > 0:
+            label(ax, x0 + 0.1 + 0.41, 1.58, "continue", ha="center", va="center", fontsize=FS - 0.4,
+                  color="#3d7fb5")
+    label(ax, 12.33, 0.53, "call", ha="center", va="center", fontsize=FS - 0.4, color="#555555")
     # retrieval -> run, both inside the white gap between panels (2) and (3)
-    harrow(ax, p2r, p3l, 2.24, color=BLUE)     # pick the best -> HealthRouter
+    harrow(ax, p2r, p3l, 2.62, color=BLUE)     # pick the best -> HealthRouter
     harrow(ax, p2r, p3l, 1.5, color=GREEN)     # pick the best -> harness
 
     bad = check_layout(fig)

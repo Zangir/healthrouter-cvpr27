@@ -289,7 +289,12 @@ def main_table(main):
             for c in cols:
                 e = M[n]["macro"] if c == "macro" else M[n]["per_task"][c]
                 v = F3(e["value"])
-                cells.append(f"\\textbf{{{v}}}" if n in bold[c] else v)  # means only (user 2026-11-15)
+                v = f"\\textbf{{{v}}}" if n in bold[c] else v  # means only (user 2026-11-15)
+                if n == "healthrouter" and c != "macro":  # double dagger: tied with the column's best (user round 4)
+                    T = A.load("router_ties.json")["main"][c]
+                    if T["best"] != n and T["pairs"][n]["tied"]:
+                        v += "$^{\\ddagger}$"
+                cells.append(v)
             cells += [f"{calls_ms(n)['calls']:.2f}", f"{calls_ms(n)['ms']:.0f}"]
             if n == "healthrouter":
                 sig = "--"
