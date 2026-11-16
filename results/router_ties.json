@@ -1,0 +1,1626 @@
+{
+ "rule": "best or statistically tied with the column's best: paired 95% bootstrap interval of (best minus method) includes 0",
+ "provenance": "scripts/router_tie_pairs.py (stored test outputs of final_main.pkl / final_external.pkl; bootstrap as router_aggregate.py / router_external.py)",
+ "main": {
+  "chest_xray": {
+   "best": "healthrouter",
+   "best_value": 0.9719,
+   "pairs": {
+    "best_single_overall": {
+     "value": 0.0552,
+     "ci": [
+      0.0396,
+      0.0717
+     ],
+     "tied": false
+    },
+    "best_single_per_task": {
+     "value": 0.0128,
+     "ci": [
+      0.0072,
+      0.0189
+     ],
+     "tied": false
+    },
+    "best_single_per_task_oof": {
+     "value": 0.0076,
+     "ci": [
+      0.0025,
+      0.0133
+     ],
+     "tied": false
+    },
+    "uniform_ensemble": {
+     "value": 0.0206,
+     "ci": [
+      0.0114,
+      0.0308
+     ],
+     "tied": false
+    },
+    "stacking": {
+     "value": 0.0041,
+     "ci": [
+      -0.0008,
+      0.0091
+     ],
+     "tied": true
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0034,
+     "ci": [
+      -0.0001,
+      0.0073
+     ],
+     "tied": true
+    },
+    "logme_selection": {
+     "value": 0.0101,
+     "ci": [
+      0.0053,
+      0.0152
+     ],
+     "tied": false
+    },
+    "modality_router_supervised": {
+     "value": 0.0079,
+     "ci": [
+      0.0026,
+      0.0132
+     ],
+     "tied": false
+    },
+    "modality_router_supervised_oof": {
+     "value": 0.0082,
+     "ci": [
+      0.0026,
+      0.0136
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0079,
+     "ci": [
+      0.0026,
+      0.0132
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.0103,
+     "ci": [
+      0.0057,
+      0.0158
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0096,
+     "ci": [
+      0.0055,
+      0.0142
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0355,
+     "ci": [
+      0.0233,
+      0.0486
+     ],
+     "tied": false
+    },
+    "knora_e": {
+     "value": 0.0865,
+     "ci": [
+      0.068,
+      0.106
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.064,
+     "ci": [
+      0.0471,
+      0.0823
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0076,
+     "ci": [
+      0.0028,
+      0.0121
+     ],
+     "tied": false
+    },
+    "routerbench_mlp": {
+     "value": 0.0205,
+     "ci": [
+      0.0119,
+      0.0299
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0162,
+     "ci": [
+      0.0083,
+      0.0251
+     ],
+     "tied": false
+    },
+    "healthrouter_harness": {
+     "value": 0.0099,
+     "ci": [
+      0.0057,
+      0.0146
+     ],
+     "tied": false
+    }
+   }
+  },
+  "pathology": {
+   "best": "greedy_ensemble_selection",
+   "best_value": 0.9892,
+   "pairs": {
+    "best_single_overall": {
+     "value": 0.0191,
+     "ci": [
+      0.0157,
+      0.0228
+     ],
+     "tied": false
+    },
+    "best_single_per_task": {
+     "value": 0.002,
+     "ci": [
+      0.0008,
+      0.0033
+     ],
+     "tied": false
+    },
+    "best_single_per_task_oof": {
+     "value": 0.0021,
+     "ci": [
+      0.001,
+      0.0032
+     ],
+     "tied": false
+    },
+    "uniform_ensemble": {
+     "value": 0.0117,
+     "ci": [
+      0.0083,
+      0.0154
+     ],
+     "tied": false
+    },
+    "stacking": {
+     "value": 0.0004,
+     "ci": [
+      -0.0007,
+      0.0014
+     ],
+     "tied": true
+    },
+    "logme_selection": {
+     "value": 0.002,
+     "ci": [
+      0.0008,
+      0.0032
+     ],
+     "tied": false
+    },
+    "modality_router_supervised": {
+     "value": 0.0017,
+     "ci": [
+      0.0002,
+      0.0032
+     ],
+     "tied": false
+    },
+    "modality_router_supervised_oof": {
+     "value": 0.0031,
+     "ci": [
+      0.0015,
+      0.0048
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0016,
+     "ci": [
+      0.0001,
+      0.0031
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.0013,
+     "ci": [
+      0.0003,
+      0.0023
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0019,
+     "ci": [
+      0.0008,
+      0.0031
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0141,
+     "ci": [
+      0.0103,
+      0.018
+     ],
+     "tied": false
+    },
+    "knora_e": {
+     "value": 0.0352,
+     "ci": [
+      0.0279,
+      0.042
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.0304,
+     "ci": [
+      0.0229,
+      0.0377
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0021,
+     "ci": [
+      0.0006,
+      0.0037
+     ],
+     "tied": false
+    },
+    "routerbench_mlp": {
+     "value": 0.0078,
+     "ci": [
+      0.0048,
+      0.0111
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0093,
+     "ci": [
+      0.006,
+      0.0128
+     ],
+     "tied": false
+    },
+    "healthrouter": {
+     "value": 0.0012,
+     "ci": [
+      -0.0,
+      0.0022
+     ],
+     "tied": true
+    },
+    "healthrouter_harness": {
+     "value": 0.003,
+     "ci": [
+      0.0017,
+      0.0044
+     ],
+     "tied": false
+    }
+   }
+  },
+  "fundus": {
+   "best": "modality_router_supervised_oof",
+   "best_value": 0.8583,
+   "pairs": {
+    "best_single_overall": {
+     "value": 0.0619,
+     "ci": [
+      0.0387,
+      0.0872
+     ],
+     "tied": false
+    },
+    "best_single_per_task": {
+     "value": 0.0175,
+     "ci": [
+      0.002,
+      0.0331
+     ],
+     "tied": false
+    },
+    "best_single_per_task_oof": {
+     "value": 0.0217,
+     "ci": [
+      0.0071,
+      0.0374
+     ],
+     "tied": false
+    },
+    "uniform_ensemble": {
+     "value": 0.0244,
+     "ci": [
+      0.0092,
+      0.0421
+     ],
+     "tied": false
+    },
+    "stacking": {
+     "value": 0.0187,
+     "ci": [
+      0.0022,
+      0.0352
+     ],
+     "tied": false
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0053,
+     "ci": [
+      -0.0051,
+      0.0162
+     ],
+     "tied": true
+    },
+    "logme_selection": {
+     "value": 0.0113,
+     "ci": [
+      -0.0031,
+      0.0265
+     ],
+     "tied": true
+    },
+    "modality_router_supervised": {
+     "value": 0.0144,
+     "ci": [
+      0.0022,
+      0.0272
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0144,
+     "ci": [
+      0.0022,
+      0.0272
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.0105,
+     "ci": [
+      -0.0065,
+      0.0261
+     ],
+     "tied": true
+    },
+    "sparse_topk_moe": {
+     "value": 0.0195,
+     "ci": [
+      0.0039,
+      0.0347
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0238,
+     "ci": [
+      0.0077,
+      0.0412
+     ],
+     "tied": false
+    },
+    "knora_e": {
+     "value": 0.047,
+     "ci": [
+      0.0259,
+      0.0691
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.0685,
+     "ci": [
+      0.0466,
+      0.0907
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0066,
+     "ci": [
+      -0.0055,
+      0.0186
+     ],
+     "tied": true
+    },
+    "routerbench_mlp": {
+     "value": 0.0173,
+     "ci": [
+      0.0035,
+      0.033
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0146,
+     "ci": [
+      -0.0005,
+      0.0312
+     ],
+     "tied": true
+    },
+    "healthrouter": {
+     "value": 0.0014,
+     "ci": [
+      -0.0118,
+      0.0137
+     ],
+     "tied": true
+    },
+    "healthrouter_harness": {
+     "value": 0.0049,
+     "ci": [
+      -0.0079,
+      0.0174
+     ],
+     "tied": true
+    }
+   }
+  },
+  "mammography": {
+   "best": "healthrouter_harness",
+   "best_value": 0.7075,
+   "pairs": {
+    "best_single_overall": {
+     "value": 0.0636,
+     "ci": [
+      0.0403,
+      0.0876
+     ],
+     "tied": false
+    },
+    "best_single_per_task": {
+     "value": 0.0442,
+     "ci": [
+      0.022,
+      0.0672
+     ],
+     "tied": false
+    },
+    "best_single_per_task_oof": {
+     "value": 0.0628,
+     "ci": [
+      0.0417,
+      0.084
+     ],
+     "tied": false
+    },
+    "uniform_ensemble": {
+     "value": 0.001,
+     "ci": [
+      -0.0128,
+      0.0145
+     ],
+     "tied": true
+    },
+    "stacking": {
+     "value": 0.007,
+     "ci": [
+      -0.0087,
+      0.0225
+     ],
+     "tied": true
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0194,
+     "ci": [
+      0.0039,
+      0.0358
+     ],
+     "tied": false
+    },
+    "logme_selection": {
+     "value": 0.0377,
+     "ci": [
+      0.0181,
+      0.0573
+     ],
+     "tied": false
+    },
+    "modality_router_supervised": {
+     "value": 0.0238,
+     "ci": [
+      0.0069,
+      0.0408
+     ],
+     "tied": false
+    },
+    "modality_router_supervised_oof": {
+     "value": 0.024,
+     "ci": [
+      0.0088,
+      0.0391
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0238,
+     "ci": [
+      0.0069,
+      0.0408
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.028,
+     "ci": [
+      0.0089,
+      0.0465
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0378,
+     "ci": [
+      0.0174,
+      0.0586
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0971,
+     "ci": [
+      0.062,
+      0.1337
+     ],
+     "tied": false
+    },
+    "knora_e": {
+     "value": 0.1503,
+     "ci": [
+      0.1088,
+      0.1909
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.0928,
+     "ci": [
+      0.0593,
+      0.1265
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0049,
+     "ci": [
+      -0.0054,
+      0.0149
+     ],
+     "tied": true
+    },
+    "routerbench_mlp": {
+     "value": 0.0091,
+     "ci": [
+      -0.006,
+      0.0245
+     ],
+     "tied": true
+    },
+    "routellm_mf": {
+     "value": 0.0082,
+     "ci": [
+      -0.009,
+      0.0249
+     ],
+     "tied": true
+    },
+    "healthrouter": {
+     "value": 0.0049,
+     "ci": [
+      -0.0077,
+      0.0172
+     ],
+     "tied": true
+    }
+   }
+  },
+  "macro": {
+   "best": "healthrouter",
+   "best_value": 0.8798,
+   "pairs": {
+    "best_single_overall": {
+     "value": 0.048,
+     "ci": [
+      0.0383,
+      0.058
+     ],
+     "tied": false
+    },
+    "best_single_per_task": {
+     "value": 0.0172,
+     "ci": [
+      0.0102,
+      0.0247
+     ],
+     "tied": false
+    },
+    "best_single_per_task_oof": {
+     "value": 0.0216,
+     "ci": [
+      0.0155,
+      0.0287
+     ],
+     "tied": false
+    },
+    "uniform_ensemble": {
+     "value": 0.0125,
+     "ci": [
+      0.0059,
+      0.0195
+     ],
+     "tied": false
+    },
+    "stacking": {
+     "value": 0.0056,
+     "ci": [
+      -0.0001,
+      0.0116
+     ],
+     "tied": true
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0051,
+     "ci": [
+      0.0006,
+      0.0104
+     ],
+     "tied": false
+    },
+    "logme_selection": {
+     "value": 0.0134,
+     "ci": [
+      0.0063,
+      0.0204
+     ],
+     "tied": false
+    },
+    "modality_router_supervised": {
+     "value": 0.01,
+     "ci": [
+      0.0034,
+      0.0167
+     ],
+     "tied": false
+    },
+    "modality_router_supervised_oof": {
+     "value": 0.0069,
+     "ci": [
+      0.0019,
+      0.012
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.01,
+     "ci": [
+      0.0033,
+      0.0167
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.0106,
+     "ci": [
+      0.0052,
+      0.0162
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0153,
+     "ci": [
+      0.0088,
+      0.0219
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0407,
+     "ci": [
+      0.0301,
+      0.0518
+     ],
+     "tied": false
+    },
+    "knora_e": {
+     "value": 0.0778,
+     "ci": [
+      0.0652,
+      0.0906
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.062,
+     "ci": [
+      0.0512,
+      0.0739
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0034,
+     "ci": [
+      -0.0014,
+      0.0087
+     ],
+     "tied": true
+    },
+    "routerbench_mlp": {
+     "value": 0.0118,
+     "ci": [
+      0.0053,
+      0.0186
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0101,
+     "ci": [
+      0.0039,
+      0.0172
+     ],
+     "tied": false
+    },
+    "healthrouter_harness": {
+     "value": 0.0025,
+     "ci": [
+      -0.002,
+      0.007
+     ],
+     "tied": true
+    }
+   }
+  }
+ },
+ "ablation": {
+  "macro": {
+   "best": "abl_picks3",
+   "best_value": 0.8813,
+   "pairs": {
+    "healthrouter": {
+     "value": 0.0015,
+     "ci": [
+      -0.0001,
+      0.003
+     ],
+     "tied": true
+    },
+    "abl_size1": {
+     "value": 0.0032,
+     "ci": [
+      -0.0005,
+      0.0069
+     ],
+     "tied": true
+    },
+    "abl_size2": {
+     "value": 0.0055,
+     "ci": [
+      0.0026,
+      0.0084
+     ],
+     "tied": false
+    },
+    "abl_size3": {
+     "value": 0.002,
+     "ci": [
+      -0.0005,
+      0.0048
+     ],
+     "tied": true
+    },
+    "abl_size4": {
+     "value": 0.0022,
+     "ci": [
+      -0.0006,
+      0.0052
+     ],
+     "tied": true
+    },
+    "abl_picks1": {
+     "value": 0.006,
+     "ci": [
+      0.0023,
+      0.01
+     ],
+     "tied": false
+    },
+    "abl_geometric_fusion": {
+     "value": 0.0021,
+     "ci": [
+      -0.0002,
+      0.0045
+     ],
+     "tied": true
+    },
+    "abl_feat_biomedclip": {
+     "value": 0.0036,
+     "ci": [
+      -0.002,
+      0.0091
+     ],
+     "tied": true
+    },
+    "abl_feat_dinov2_large": {
+     "value": 0.0103,
+     "ci": [
+      0.0052,
+      0.0153
+     ],
+     "tied": false
+    },
+    "abl_feat_task_id": {
+     "value": 0.0061,
+     "ci": [
+      0.0015,
+      0.0108
+     ],
+     "tied": false
+    },
+    "healthrouter_labelfree": {
+     "value": 0.0015,
+     "ci": [
+      -0.0001,
+      0.003
+     ],
+     "tied": true
+    },
+    "hr_collection_mlp": {
+     "value": 0.0287,
+     "ci": [
+      0.0211,
+      0.036
+     ],
+     "tied": false
+    },
+    "hr_candidate_mlp": {
+     "value": 0.0119,
+     "ci": [
+      0.0058,
+      0.0186
+     ],
+     "tied": false
+    },
+    "healthrouter_fallback": {
+     "value": 0.0016,
+     "ci": [
+      -0.0001,
+      0.0031
+     ],
+     "tied": true
+    }
+   }
+  }
+ },
+ "external": {
+  "standard": {
+   "best": "best_single_per_task",
+   "best_value": 0.7799,
+   "pairs": {
+    "uniform_ensemble": {
+     "value": 0.0224,
+     "ci": [
+      -0.0005,
+      0.0445
+     ],
+     "tied": true
+    },
+    "stacking": {
+     "value": 0.0069,
+     "ci": [
+      -0.0169,
+      0.0301
+     ],
+     "tied": true
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0048,
+     "ci": [
+      -0.0168,
+      0.0258
+     ],
+     "tied": true
+    },
+    "modality_router_supervised": {
+     "value": 0.0259,
+     "ci": [
+      0.0085,
+      0.0448
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0273,
+     "ci": [
+      0.0102,
+      0.0463
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.0322,
+     "ci": [
+      0.0096,
+      0.0551
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0224,
+     "ci": [
+      -0.0014,
+      0.0459
+     ],
+     "tied": true
+    },
+    "knora_u": {
+     "value": 0.0267,
+     "ci": [
+      0.0022,
+      0.0503
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.0592,
+     "ci": [
+      0.0322,
+      0.0875
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0289,
+     "ci": [
+      0.0025,
+      0.054
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0198,
+     "ci": [
+      -0.0034,
+      0.0431
+     ],
+     "tied": true
+    },
+    "healthrouter": {
+     "value": 0.0121,
+     "ci": [
+      -0.0104,
+      0.0349
+     ],
+     "tied": true
+    },
+    "healthrouter_harness": {
+     "value": 0.0246,
+     "ci": [
+      -0.001,
+      0.0493
+     ],
+     "tied": true
+    },
+    "healthrouter_labelfree": {
+     "value": 0.0117,
+     "ci": [
+      -0.0108,
+      0.0347
+     ],
+     "tied": true
+    }
+   }
+  },
+  "grayscale": {
+   "best": "best_single_per_task",
+   "best_value": 0.7748,
+   "pairs": {
+    "uniform_ensemble": {
+     "value": 0.0842,
+     "ci": [
+      0.0619,
+      0.1067
+     ],
+     "tied": false
+    },
+    "stacking": {
+     "value": 0.0221,
+     "ci": [
+      -0.0009,
+      0.0452
+     ],
+     "tied": true
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.1266,
+     "ci": [
+      0.1013,
+      0.1507
+     ],
+     "tied": false
+    },
+    "modality_router_supervised": {
+     "value": 0.049,
+     "ci": [
+      0.0295,
+      0.0677
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0514,
+     "ci": [
+      0.0325,
+      0.0702
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.076,
+     "ci": [
+      0.0508,
+      0.1018
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0811,
+     "ci": [
+      0.0566,
+      0.1062
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0784,
+     "ci": [
+      0.0544,
+      0.1019
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.0975,
+     "ci": [
+      0.0693,
+      0.1272
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0499,
+     "ci": [
+      0.0251,
+      0.0738
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.076,
+     "ci": [
+      0.0515,
+      0.1
+     ],
+     "tied": false
+    },
+    "healthrouter": {
+     "value": 0.0505,
+     "ci": [
+      0.0256,
+      0.0739
+     ],
+     "tied": false
+    },
+    "healthrouter_harness": {
+     "value": 0.0464,
+     "ci": [
+      0.0221,
+      0.0701
+     ],
+     "tied": false
+    },
+    "healthrouter_labelfree": {
+     "value": 0.0526,
+     "ci": [
+      0.0282,
+      0.0764
+     ],
+     "tied": false
+    }
+   }
+  },
+  "blur": {
+   "best": "best_single_per_task",
+   "best_value": 0.7312,
+   "pairs": {
+    "uniform_ensemble": {
+     "value": 0.01,
+     "ci": [
+      -0.0129,
+      0.0325
+     ],
+     "tied": true
+    },
+    "stacking": {
+     "value": 0.0242,
+     "ci": [
+      -0.0024,
+      0.052
+     ],
+     "tied": true
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0032,
+     "ci": [
+      -0.0188,
+      0.0255
+     ],
+     "tied": true
+    },
+    "modality_router_supervised": {
+     "value": 0.0162,
+     "ci": [
+      -0.003,
+      0.0352
+     ],
+     "tied": true
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0143,
+     "ci": [
+      -0.0021,
+      0.0301
+     ],
+     "tied": true
+    },
+    "soft_moe": {
+     "value": 0.0524,
+     "ci": [
+      0.0263,
+      0.0777
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0503,
+     "ci": [
+      0.0239,
+      0.0753
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0198,
+     "ci": [
+      -0.005,
+      0.0445
+     ],
+     "tied": true
+    },
+    "meta_des": {
+     "value": 0.0701,
+     "ci": [
+      0.0429,
+      0.0975
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0587,
+     "ci": [
+      0.0272,
+      0.0895
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0364,
+     "ci": [
+      0.0081,
+      0.0649
+     ],
+     "tied": false
+    },
+    "healthrouter": {
+     "value": 0.0402,
+     "ci": [
+      0.0133,
+      0.067
+     ],
+     "tied": false
+    },
+    "healthrouter_harness": {
+     "value": 0.051,
+     "ci": [
+      0.0193,
+      0.0827
+     ],
+     "tied": false
+    },
+    "healthrouter_labelfree": {
+     "value": 0.0418,
+     "ci": [
+      0.0144,
+      0.0688
+     ],
+     "tied": false
+    }
+   }
+  },
+  "low_resolution": {
+   "best": "uniform_ensemble",
+   "best_value": 0.7084,
+   "pairs": {
+    "best_single_per_task": {
+     "value": 0.0361,
+     "ci": [
+      0.0071,
+      0.0648
+     ],
+     "tied": false
+    },
+    "stacking": {
+     "value": 0.0177,
+     "ci": [
+      -0.0067,
+      0.043
+     ],
+     "tied": true
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0401,
+     "ci": [
+      0.0119,
+      0.0674
+     ],
+     "tied": false
+    },
+    "modality_router_supervised": {
+     "value": 0.0165,
+     "ci": [
+      -0.0111,
+      0.0434
+     ],
+     "tied": true
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0238,
+     "ci": [
+      -0.0007,
+      0.0501
+     ],
+     "tied": true
+    },
+    "soft_moe": {
+     "value": 0.0514,
+     "ci": [
+      0.0213,
+      0.0806
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0573,
+     "ci": [
+      0.0252,
+      0.0874
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0114,
+     "ci": [
+      -0.0053,
+      0.028
+     ],
+     "tied": true
+    },
+    "meta_des": {
+     "value": 0.0778,
+     "ci": [
+      0.0477,
+      0.1095
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.058,
+     "ci": [
+      0.0295,
+      0.0887
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0598,
+     "ci": [
+      0.035,
+      0.0841
+     ],
+     "tied": false
+    },
+    "healthrouter": {
+     "value": 0.0486,
+     "ci": [
+      0.0209,
+      0.0769
+     ],
+     "tied": false
+    },
+    "healthrouter_harness": {
+     "value": 0.056,
+     "ci": [
+      0.026,
+      0.0884
+     ],
+     "tied": false
+    },
+    "healthrouter_labelfree": {
+     "value": 0.0494,
+     "ci": [
+      0.0223,
+      0.0787
+     ],
+     "tied": false
+    }
+   }
+  },
+  "jpeg": {
+   "best": "uniform_ensemble",
+   "best_value": 0.6726,
+   "pairs": {
+    "best_single_per_task": {
+     "value": 0.0398,
+     "ci": [
+      0.009,
+      0.0737
+     ],
+     "tied": false
+    },
+    "stacking": {
+     "value": 0.0955,
+     "ci": [
+      0.0663,
+      0.1249
+     ],
+     "tied": false
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.0164,
+     "ci": [
+      -0.0141,
+      0.047
+     ],
+     "tied": true
+    },
+    "modality_router_supervised": {
+     "value": 0.0456,
+     "ci": [
+      0.0105,
+      0.0803
+     ],
+     "tied": false
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.0289,
+     "ci": [
+      0.0004,
+      0.0586
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.142,
+     "ci": [
+      0.1044,
+      0.1815
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.1055,
+     "ci": [
+      0.0734,
+      0.1398
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.0345,
+     "ci": [
+      0.0107,
+      0.0595
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.1092,
+     "ci": [
+      0.0758,
+      0.1448
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.1336,
+     "ci": [
+      0.0964,
+      0.1726
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0414,
+     "ci": [
+      0.0131,
+      0.07
+     ],
+     "tied": false
+    },
+    "healthrouter": {
+     "value": 0.0932,
+     "ci": [
+      0.0581,
+      0.1276
+     ],
+     "tied": false
+    },
+    "healthrouter_harness": {
+     "value": 0.1375,
+     "ci": [
+      0.0993,
+      0.1747
+     ],
+     "tied": false
+    },
+    "healthrouter_labelfree": {
+     "value": 0.0903,
+     "ci": [
+      0.0543,
+      0.1257
+     ],
+     "tied": false
+    }
+   }
+  },
+  "mean": {
+   "best": "best_single_per_task",
+   "best_value": 0.7182,
+   "pairs": {
+    "uniform_ensemble": {
+     "value": 0.0081,
+     "ci": [
+      -0.01,
+      0.0261
+     ],
+     "tied": true
+    },
+    "stacking": {
+     "value": 0.0181,
+     "ci": [
+      0.0005,
+      0.0353
+     ],
+     "tied": false
+    },
+    "greedy_ensemble_selection": {
+     "value": 0.023,
+     "ci": [
+      0.0073,
+      0.0383
+     ],
+     "tied": false
+    },
+    "modality_router_supervised": {
+     "value": 0.0155,
+     "ci": [
+      -0.0005,
+      0.0312
+     ],
+     "tied": true
+    },
+    "modality_router_zeroshot_biomedclip": {
+     "value": 0.014,
+     "ci": [
+      0.003,
+      0.0248
+     ],
+     "tied": false
+    },
+    "soft_moe": {
+     "value": 0.0556,
+     "ci": [
+      0.0406,
+      0.0707
+     ],
+     "tied": false
+    },
+    "sparse_topk_moe": {
+     "value": 0.0481,
+     "ci": [
+      0.0325,
+      0.0635
+     ],
+     "tied": false
+    },
+    "knora_u": {
+     "value": 0.019,
+     "ci": [
+      0.0006,
+      0.0367
+     ],
+     "tied": false
+    },
+    "meta_des": {
+     "value": 0.0676,
+     "ci": [
+      0.0509,
+      0.0857
+     ],
+     "tied": false
+    },
+    "knn_router": {
+     "value": 0.0506,
+     "ci": [
+      0.0315,
+      0.0691
+     ],
+     "tied": false
+    },
+    "routellm_mf": {
+     "value": 0.0315,
+     "ci": [
+      0.0129,
+      0.0497
+     ],
+     "tied": false
+    },
+    "healthrouter": {
+     "value": 0.0337,
+     "ci": [
+      0.0168,
+      0.0499
+     ],
+     "tied": false
+    },
+    "healthrouter_harness": {
+     "value": 0.0479,
+     "ci": [
+      0.0293,
+      0.0666
+     ],
+     "tied": false
+    },
+    "healthrouter_labelfree": {
+     "value": 0.034,
+     "ci": [
+      0.0163,
+      0.051
+     ],
+     "tied": false
+    }
+   }
+  }
+ }
+}

@@ -255,6 +255,16 @@ def gain_tasks_figure(desc):
 
 
 # ----------------------------------------------------------------------------- T1 leaderboard
+SHADE = "\\rowcolor{hrshade}"
+
+
+def _ties(table, col):
+    """Bold set under the tie rule (user 2026-11-16): the column's best and every method whose paired
+    95% bootstrap interval of (best minus method) includes 0 (results/router_ties.json)."""
+    T = A.load("router_ties.json")[table][col]
+    return {T["best"]} | {n for n, p in T["pairs"].items() if p["tied"]}
+
+
 def _best_second(vals):
     u = sorted({round(v, 3) for v in vals.values()}, reverse=True)
     b = u[0]
@@ -264,20 +274,11 @@ def _best_second(vals):
 
 def main_table(main):
     M, D = main["methods"], main["differences_vs_healthrouter"]
-    rows = [n for _, ns in GROUPS_T1 for n in ns]
     cols = TASKS + ["macro"]
-    hl = {}
-    for c in cols:
-        vals = {n: (M[n]["macro"]["value"] if c == "macro" else M[n]["per_task"][c]["value"]) for n in rows}
-        hl[c] = _best_second(vals)
+    bold = {c: _ties("main", c) for c in cols}
     def calls_ms(n):
         return {"calls": M[n]["invoked_mean"], "ms": M[n]["latency_ms_mean"]}
-    low = {k: _best_second({n: -calls_ms(n)[k] for n in rows}) for k in ("calls", "ms")}
-    o = M["oracle_single"]
-    lines = ["\\textit{Upper bound (uses the label)} &&&&&&&&\\\\",
-             f"{A.NAMES['oracle_single']} & " + " & ".join(f"\\textcolor{{gray}}{{{F3(o['per_task'][t]['value'])}}}" for t in TASKS) +
-             f" & \\textcolor{{gray}}{{{F3(o['macro']['value'])}}} & \\textcolor{{gray}}{{1.00}} & \\textcolor{{gray}}{{{o['latency_ms_mean']:.0f}}} & --\\\\",
-             "\\midrule"]
+    lines = []  # the label-aware Oracle is reported in the supplement (tab:supp_candidates), not here
     for g, ns in GROUPS_T1:
         lines.append(f"\\multicolumn{{9}}{{c}}{{\\textit{{{g}}}}}\\\\")
         for n in ns:
@@ -285,20 +286,13 @@ def main_table(main):
             for c in cols:
                 e = M[n]["macro"] if c == "macro" else M[n]["per_task"][c]
                 v = F3(e["value"])
-                if n in hl[c][0]:
-                    v = f"\\textbf{{{v}}}"
-                elif n in hl[c][1]:
-                    v = f"\\underline{{{v}}}"
-                cells.append(v)  # means only (user 2026-11-15); paired intervals are in the supplement
-            for k, fmt in (("calls", "{:.2f}"), ("ms", "{:.0f}")):
-                v = fmt.format(calls_ms(n)[k])
-                v = f"\\textbf{{{v}}}" if n in low[k][0] else (f"\\underline{{{v}}}" if n in low[k][1] else v)
-                cells.append(v)
+                cells.append(f"\\textbf{{{v}}}" if n in bold[c] else v)  # means only (user 2026-11-15)
+            cells += [f"{calls_ms(n)['calls']:.2f}", f"{calls_ms(n)['ms']:.0f}"]
             if n == "healthrouter":
                 sig = "--"
             else:
                 sig = "$\\blacktriangledown$" if D[n]["macro"]["ci"][0] > 0 else "$\\approx$"
-            lines.append(f"{A.NAMES[n]} & " + " & ".join(cells) + f" & {sig}\\\\")
+            lines.append((SHADE if g == "Ours" else "") + f"{A.NAMES[n]} & " + " & ".join(cells) + f" & {sig}\\\\")
             if n == "healthrouter":
                 du = D["uniform_ensemble"]
                 cells = []
@@ -306,13 +300,23 @@ def main_table(main):
                     v = du[c]["value"]
                     col = "dgreen" if v > 0 else ("dred" if v < 0 else "black")
                     cells.append(f"\\textcolor{{{col}}}{{{v:+.3f}}}".replace("{-", "{$-$"))
-                lines.append("\\quad{\\footnotesize $\\Delta$ vs.\\ uniform ensemble} & " + " & ".join(cells) + " &&&\\\\")
+                lines.append(SHADE + "\\quad{\\footnotesize $\\Delta$ vs.\\ uniform ensemble} & " + " & ".join(cells) + " &&&\\\\")
         lines.append("\\midrule")
     lines[-1] = "\\bottomrule"
     (A.PAPER / "tables" / "router_main_body.tex").write_text("\n".join(lines) + "\n")
     for c in cols:
         A.put(f"d_uniform_{c}", D["uniform_ensemble"][c]["value"], f"{D['uniform_ensemble'][c]['value']:+.3f}",
               f"differences_vs_healthrouter.uniform_ensemble.{c}", D["uniform_ensemble"][c]["ci"])
+    # per-task rank of HealthRouter among the 20 rows of Table 1 (1 + number of rows strictly higher)
+    rows = [n for _, ns in GROUPS_T1 for n in ns]
+    for t in TASKS:
+        hr = M["healthrouter"]["per_task"][t]["value"]
+        rk = 1 + sum(M[n]["per_task"][t]["value"] > hr for n in rows)
+        A.put(f"hr_rank_{t}", rk, str(rk), f"1 + #(Table 1 rows with per_task.{t}.value > healthrouter) (router_main.json)")
+    worst = max(A.NUM[f"hr_rank_{t}"]["value"] for t in TASKS)
+    A.put("hr_rank_worst_task", worst, str(worst), "max_t hr_rank_t")
+    for n in rows:
+        A.put(f"m_macro_{n}", M[n]["macro"]["value"], F3(M[n]["macro"]["value"]), f"router_main.json methods.{n}.macro.value")
 
 
 # ----------------------------------------------------------------------------- T2 candidate pool
@@ -351,8 +355,7 @@ def ablation_table(main, desc):
         [("hr_collection_mlp", "MLP gate, collections"), ("hr_candidate_mlp", "MLP gate, single models")],
         [("healthrouter_fallback", "Distance fallback$^\\dagger$")],
     ]
-    rows = {n: M[n]["macro"]["value"] for g in groups for n, _ in g if n in M}
-    b, s = _best_second(rows)
+    bold = _ties("ablation", "macro")  # tie rule, results/router_ties.json (label-free row included)
     lines = []
     for g in groups:
         for n, label in g:
@@ -366,15 +369,16 @@ def ablation_table(main, desc):
                 dd = None if n == "healthrouter" else D[n]["macro"]
                 calls, ms = m["invoked_mean"], m["latency_ms_mean"]
                 v = F3(m["macro"]["value"])
-                v = f"\\textbf{{{v}}}" if n in b else (f"\\underline{{{v}}}" if n in s else v)
             else:
                 continue
+            v = f"\\textbf{{{v}}}" if n in bold else v
             if dd is None:
                 d = "--"
             else:  # variant minus HealthRouter, with the Table 1 significance marks (user 2026-11-15)
                 mark = "$\\blacktriangledown$" if dd['ci'][0] > 0 else ("$\\blacktriangle$" if dd['ci'][1] < 0 else "$\\approx$")
                 d = f"{0.0 - dd['value']:+.3f}\\,{mark}"
-            lines.append(f"{label} & {v} & {d} & {calls:.2f} & {ms:.0f}\\\\")
+            shade = SHADE if n in ("healthrouter", "healthrouter_labelfree") else ""
+            lines.append(f"{shade}{label} & {v} & {d} & {calls:.2f} & {ms:.0f}\\\\")
         lines.append("\\midrule")
     lines[-1] = "\\bottomrule"
     (A.PAPER / "tables" / "router_ablation_body.tex").write_text("\n".join(lines) + "\n")
@@ -386,28 +390,29 @@ def external_table(ext, desc):
     LFE = desc["label_free"]["external"]
     CONDS = A.CONDS
     rows = [n for n in A.EXT_ROWS if all(n in R[c] for c in CONDS)]
-    vals = {c: {n: R[c][n]["macro"]["value"] for n in rows if "fallback" not in n} for c in CONDS}
-    hl = {c: _best_second(vals[c]) for c in CONDS}
+    bold = {c: _ties("external", c) for c in CONDS + ["mean"]}  # fallback rows are not ranked
     lines = []
     for n in rows:
         cells = []
         for c in CONDS:
             v = R[c][n]["macro"]["value"]
             sv = F3(v)
-            if n in hl[c][0]:
-                sv = f"\\textbf{{{sv}}}"
-            elif n in hl[c][1]:
-                sv = f"\\underline{{{sv}}}"
-            cells.append(sv)
+            cells.append(f"\\textbf{{{sv}}}" if n in bold[c] else sv)
         nm = A.EXT_SHORT.get(n, A.SHORT.get(n, n))
-        lines.append(f"{nm} & " + " & ".join(cells) + f" & {np.mean([R[c][n]['macro']['value'] for c in CONDS]):.3f}\\\\")
+        mv = f"{np.mean([R[c][n]['macro']['value'] for c in CONDS]):.3f}"
+        mv = f"\\textbf{{{mv}}}" if n in bold["mean"] else mv
+        shade = SHADE if n in ("healthrouter", "healthrouter_harness") else ""
+        lines.append(f"{shade}{nm} & " + " & ".join(cells) + f" & {mv}\\\\")
         if n == "routellm_mf":
             lines.append("\\midrule")
         if n == "healthrouter_harness":
             lf = [LFE[c]["methods"]["healthrouter_labelfree"]["macro"]["value"] for c in CONDS]
-            lines.append("HealthRouter, task inferred$^\\ddagger$ & " + " & ".join(F3(v) for v in lf) + f" & {np.mean(lf):.3f}\\\\")
+            lfc = [f"\\textbf{{{F3(v)}}}" if "healthrouter_labelfree" in bold[c] else F3(v) for v, c in zip(lf, CONDS)]
+            mv = f"{np.mean(lf):.3f}"
+            mv = f"\\textbf{{{mv}}}" if "healthrouter_labelfree" in bold["mean"] else mv
+            lines.append(SHADE + "HealthRouter, task inferred$^\\ddagger$ & " + " & ".join(lfc) + f" & {mv}\\\\")
             ranks = [int(A.NUM[f"ext_rank_hr_{c}"]["value"]) for c in CONDS]
-            lines.append("\\quad{\\footnotesize rank of HealthRouter (of 20)} & " + " & ".join(str(r) for r in ranks) + " & \\\\")
+            lines.append(SHADE + "\\quad{\\footnotesize rank of HealthRouter (of 20)} & " + " & ".join(str(r) for r in ranks) + " & \\\\")
             lines.append("\\midrule")
     (A.PAPER / "tables" / "router_external_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
 
@@ -428,6 +433,11 @@ def supp_tables(main, gen, desc):
     lines.append("\\midrule")
     lines.append("\\multicolumn{2}{@{}l}{Another candidate better on the image (\\%)} & " +
                  " & ".join(f"{100 * pb[t]:.1f}" for t in TASKS) + f" & {100 * pb['all']:.1f}\\\\")
+    o = M["oracle_single"]  # label-aware upper bound (moved here from the main leaderboard, user 2026-11-16)
+    oc = [f"{F3(o['per_task'][t]['value'])}{{\\tiny\\,[{F3(o['per_task'][t]['ci'][0])},\\,{F3(o['per_task'][t]['ci'][1])}]}}" for t in TASKS]
+    oc.append(f"{F3(o['macro']['value'])}{{\\tiny\\,[{F3(o['macro']['ci'][0])},\\,{F3(o['macro']['ci'][1])}]}}")
+    lines.append("\\midrule")
+    lines.append(f"Oracle (uses the label) & {o['latency_ms_mean']:.0f} & " + " & ".join(oc) + "\\\\")
     (A.PAPER / "tables" / "supp_candidates_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
     # S-T5: cost and threshold sweeps
     lines = []
@@ -604,7 +614,35 @@ def close_tabular(names):
             p.write_text(body + "\n\\end{tabular}\n")
 
 
+# ----------------------------------------------------------------------------- benchmark comparison (user 2026-11-16)
+def bench_table():
+    """tab:bench: properties of existing routing and medical foundation-model benchmarks, each verified
+    from its paper (results/benchmark_comparison.json holds the evidence). Layout follows the check-mark
+    table of VL-RouterBench (Tab. 4: one cited row per method, check/cross property columns)."""
+    B = A.load("benchmark_comparison.json")
+    mark = {"yes": "\\yes", "no": "\\no", "partial": "\\partialmark"}
+    cost = {"price": "price", "time": "time", "no": "\\no"}
+    med = {"no": "\\no", "pathology": "path.", "mammography": "mammo.", "10 modalities": "10 mod.", "4 modalities": "4 mod."}
+    def row(name, models, tasks, r):
+        return (f"{name} & {models} & {tasks} & {mark[r['per_sample']]} & {mark[r['collections']]} & {cost[r['cost']]} & "
+                f"{med[r['medical']]} & {mark[r['external_shift']]} & {mark[r['released']]}\\\\")
+    lines = []
+    for i, r in enumerate(B["rows"]):
+        if i == 4:
+            lines.append("\\midrule")
+        lines.append(row(f"{r['name']} \\citep{{{r['key']}}}", f"{r['models']:,}".replace(",", "{,}"), r["tasks"], r))
+    o = B["ours"]
+    lines.append("\\midrule")
+    lines.append(SHADE + row("\\textbf{Ours}", o["models"], f"{o['tasks_medical']}+{o['tasks_nonmedical']}", o))
+    lines.append("\\bottomrule")
+    (A.PAPER / "tables" / "router_bench_body.tex").write_text("\n".join(lines) + "\n")
+    A.put("bench_released_sources", o["released_sources"], str(o["released_sources"]), "benchmark_comparison.json ours.released_sources")
+    A.put("bench_sources_total", o["sources_total"], str(o["sources_total"]), "benchmark_comparison.json ours.sources_total")
+    A.put("bench_n_compared", len(B["rows"]) + 1, str(len(B["rows"]) + 1), "len(benchmark_comparison.json rows) + ours")
+
+
 def run(main_res, ext, gen, desc):
+    bench_table()
     main_table(main_res)
     pool_table(main_res, desc)
     ablation_table(main_res, desc)
