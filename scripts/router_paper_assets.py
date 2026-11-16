@@ -460,7 +460,24 @@ def write_numbers():
         out.append(f"\\expandafter\\def\\csname hrnum@{k}\\endcsname{{{v['text']}}}")
         if "ci_text" in v:
             out.append(f"\\expandafter\\def\\csname hrci@{k}\\endcsname{{{v['ci_text']}}}")
+        two = two_decimal_text(v)
+        if two is not None:  # main-text variant (user round 7): scores and differences at two decimals
+            out.append(f"\\expandafter\\def\\csname hrtwo@{k}\\endcsname{{{two}}}")
     (PAPER / "numbers.tex").write_text("\n".join(out) + "\n")
+
+
+def two_decimal_text(v):
+    """Two-decimal text for a three-decimal score or difference macro, rounded half up from the stored
+    result value; None for percentages, counts, ms, calls and anything not printed at three decimals."""
+    import re
+    from decimal import Decimal, ROUND_HALF_UP
+    m = re.fullmatch(r"(\$-\$|-|\+)?(\d+)\.(\d{3})", str(v["text"]).strip())
+    if m is None or not isinstance(v.get("value"), (int, float)):
+        return None
+    q = Decimal(str(abs(v["value"]))).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP)
+    neg = v["value"] < 0 and q != 0
+    sign = "-" if neg else ("+" if m.group(1) == "+" and q != 0 else "")
+    return f"{sign}{q}"
 
 
 def robustness_figure(ext):

@@ -92,7 +92,7 @@ def teaser(main, desc):
     ax.plot(*zip(*front), ls="--", color="#b0b0b0", lw=1.0, zorder=1)
     off = [e for _, y, e in pts if y < lo_y]
     for e in off:
-        ax.annotate(f"{PLAIN[e]} alone: {F3(S[e]['macro']['value'])}↓", (cost[e] * 0.93, lo_y + 0.001),
+        ax.annotate(f"{PLAIN[e]} alone: {F2(S[e]['macro']['value'])}↓", (cost[e] * 0.93, lo_y + 0.001),
                     fontsize=FS, color="#8a8a8a", ha="left")
     ch = min(ENC, key=lambda e: cost[e])
     ax.annotate("Cheapest", (cost[ch], S[ch]["macro"]["value"]), textcoords="offset points", xytext=(-3, 6),
@@ -134,7 +134,7 @@ def teaser(main, desc):
                 fontsize=FS, color="#333333", arrowprops=dict(arrowstyle="-", color="#555555", lw=0.6,
                                                               shrinkA=0, shrinkB=3.6))
     o = M["oracle_single"]["macro"]["value"]
-    ax.text(5.6, hi_y - 0.0008, f"Oracle {F3(o)} \u2191 (off scale)", fontsize=FS, color="black",
+    ax.text(5.6, hi_y - 0.0008, f"Oracle {F2(o)} \u2191 (off scale)", fontsize=FS, color="black",
             ha="left", va="top")
     ax.annotate("", xy=(520, 0.833), xytext=(950, 0.818),
                 arrowprops=dict(arrowstyle="-|>", color="#555555", lw=0.8))
