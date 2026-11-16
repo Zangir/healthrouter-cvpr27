@@ -274,11 +274,19 @@ def _best_second(vals):
     return ({k for k, v in vals.items() if round(v, 3) == b}, {k for k, v in vals.items() if s is not None and round(v, 3) == s})
 
 
+def F2(x):
+    """Two decimals, round half up from the stored value (user round 6: Table 1 at two decimals)."""
+    from decimal import Decimal, ROUND_HALF_UP
+    return str(Decimal(str(x)).quantize(Decimal("0.01"), rounding=ROUND_HALF_UP))
+
+
 def main_table(main):
     M, D = main["methods"], main["differences_vs_healthrouter"]
     cols = TASKS + ["macro"]
-    bold = {c: _best_second({n: (M[n]["macro"]["value"] if c == "macro" else M[n]["per_task"][c]["value"])
-                             for _, ns in GROUPS_T1 for n in ns})[0] for c in cols}  # highest per column (user 2026-11-16, round 2)
+    rows = [n for _, ns in GROUPS_T1 for n in ns]
+    def val(n, c):
+        return M[n]["macro"]["value"] if c == "macro" else M[n]["per_task"][c]["value"]
+    top = {c: max(float(F2(val(n, c))) for n in rows) for c in cols}  # column maximum at two decimals
     def calls_ms(n):
         return {"calls": M[n]["invoked_mean"], "ms": M[n]["latency_ms_mean"]}
     lines = []  # the label-aware Oracle is reported in the supplement (tab:supp_candidates), not here
@@ -287,14 +295,8 @@ def main_table(main):
         for n in ns:
             cells = []
             for c in cols:
-                e = M[n]["macro"] if c == "macro" else M[n]["per_task"][c]
-                v = F3(e["value"])
-                v = f"\\textbf{{{v}}}" if n in bold[c] else v  # means only (user 2026-11-15)
-                if n == "healthrouter" and c != "macro":  # double dagger: tied with the column's best (user round 4)
-                    T = A.load("router_ties.json")["main"][c]
-                    if T["best"] != n and T["pairs"][n]["tied"]:
-                        v = f"\\textbf{{{F3(e['value'])}}}$^{{\\ddagger}}$"  # bold where tied (user round 5)
-                cells.append(v)
+                v = F2(val(n, c))
+                cells.append(f"\\textbf{{{v}}}" if float(v) == top[c] else v)  # ties all bold (user round 6)
             cells += [f"{calls_ms(n)['calls']:.2f}", f"{calls_ms(n)['ms']:.0f}"]
             if n == "healthrouter":
                 sig = "--"
@@ -306,12 +308,25 @@ def main_table(main):
                 cells = []
                 for c in cols:
                     v = du[c]["value"]
-                    col = "dgreen" if v > 0 else ("dred" if v < 0 else "black")
-                    cells.append(f"\\textcolor{{{col}}}{{{v:+.3f}}}".replace("{-", "{$-$"))
+                    t = F2(abs(v))
+                    sgn = "+" if v > 0 and t != "0.00" else ("$-$" if v < 0 and t != "0.00" else "")
+                    col = "black" if t == "0.00" else ("dgreen" if v > 0 else "dred")
+                    cells.append(f"\\textcolor{{{col}}}{{{sgn}{t}}}")
                 lines.append(SHADE + "\\quad{\\footnotesize $\\Delta$ vs.\\ uniform ensemble} & " + " & ".join(cells) + " &&&\\\\")
         lines.append("\\midrule")
     lines[-1] = "\\bottomrule"
     (A.PAPER / "tables" / "router_main_body.tex").write_text("\n".join(lines) + "\n")
+    # supplement: the same methods at three decimals with paired 95% intervals (user round 6)
+    sl = []
+    for g, ns in GROUPS_T1:
+        sl.append(f"\\multicolumn{{6}}{{@{{}}l}}{{\\textit{{{g}}}}}\\\\")
+        for n in ns:
+            cs = []
+            for c in cols:
+                e = M[n]["macro"] if c == "macro" else M[n]["per_task"][c]
+                cs.append(f"{F3(e['value'])}{{\\ivsize\\,[{F3(e['ci'][0])},\\,{F3(e['ci'][1])}]}}")
+            sl.append(f"{A.NAMES[n]} & " + " & ".join(cs) + "\\\\")
+    (A.PAPER / "tables" / "supp_main3_body.tex").write_text("\n".join(sl + ["\\bottomrule"]) + "\n")
     for c in cols:
         A.put(f"d_uniform_{c}", D["uniform_ensemble"][c]["value"], f"{D['uniform_ensemble'][c]['value']:+.3f}",
               f"differences_vs_healthrouter.uniform_ensemble.{c}", D["uniform_ensemble"][c]["ci"])

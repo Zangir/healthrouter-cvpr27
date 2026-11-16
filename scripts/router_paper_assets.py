@@ -504,7 +504,7 @@ def typeset_minus(text: str, math: bool = False) -> str:
 
 def finalize_minus():
     for f in sorted((PAPER / "tables").glob("*.tex")):
-        if f.name.startswith(("router_", "supp_candidates", "supp_sweeps", "supp_labelfree", "supp_taskinf",
+        if f.name.startswith(("router_", "supp_main3", "supp_candidates", "supp_sweeps", "supp_labelfree", "supp_taskinf",
                               "supp_difficulty", "supp_gain")):
             f.write_text(typeset_minus(f.read_text()))
     nt = PAPER / "numbers.tex"
