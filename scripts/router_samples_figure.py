@@ -87,7 +87,7 @@ def tiles():
         if key in expect:
             assert int(y[key][idx]) == expect[key], (key, idx)
         out.append(np.asarray(src[key](idx)))
-    shifts = [np.asarray(ext[c][ext_rows("fundus")[FUNDUS_SHIFT_ROW]]) for c, _, _ in CONDS]
+    shifts = [np.asarray(ext[c][ext_rows("fundus")[FUNDUS_SHIFT_ROW]]) for c, _, _ in CONDS[1:]]  # clean tile is in (a)
     return out, shifts
 
 
@@ -118,12 +118,12 @@ def main():
     plt.rcParams["font.family"] = "Arial"
     imgs, shifts = tiles()
     n = counts()
-    FS = 7.0
-    W, T, G, GG = 6.85, 0.58, 0.03, 0.18            # width, tile, gap, gap between panels (inches)
-    H = 1.42
+    FS = 7.6  # >= 7.5 pt printed (user QA 2026-11-16)
+    W, T, G, GG = 6.85, 0.643, 0.03, 0.18           # width, tile, gap, gap between panels (inches)
+    H = 1.55
     fig = plt.figure(figsize=(W, H))
-    y0 = 0.47                                        # bottom of the tiles
-    band_h = 0.13
+    y0 = 0.52                                        # bottom of the tiles
+    band_h = 0.14
     def ax_at(x, img):
         a = fig.add_axes([x / W, y0 / H, T / W, T / H])
         a.imshow(img, interpolation="lanczos")
@@ -141,9 +141,9 @@ def main():
     for (key, name, task, col, role, lab, _), img in zip(PICK, imgs):
         ax_at(x, img)
         fig.text((x + T / 2) / W, (y0 - 0.05) / H, name, ha="center", va="top", fontsize=FS, fontweight="bold")
-        fig.text((x + T / 2) / W, (y0 - 0.155) / H, role, ha="center", va="top", fontsize=FS)
-        fig.text((x + T / 2) / W, (y0 - 0.26) / H, f"n = {n[key]:,}", ha="center", va="top", fontsize=FS)
-        fig.text((x + T / 2) / W, (y0 - 0.365) / H, lab, ha="center", va="top", fontsize=FS, style="italic", color="#333333")
+        fig.text((x + T / 2) / W, (y0 - 0.165) / H, role, ha="center", va="top", fontsize=FS)
+        fig.text((x + T / 2) / W, (y0 - 0.28) / H, f"n = {n[key]:,}", ha="center", va="top", fontsize=FS)
+        fig.text((x + T / 2) / W, (y0 - 0.395) / H, lab, ha="center", va="top", fontsize=FS, style="italic", color="#333333")
         xs.append(x)
         x += T + G
     # task bands over panel (a): consecutive tiles of one task share a band
@@ -157,15 +157,15 @@ def main():
     xa_end = xs[-1] + T
     x = xa_end + GG
     xb0 = x
-    for (c, name, desc), img in zip(CONDS, shifts):
+    for (c, name, desc), img in zip(CONDS[1:], shifts):
         ax_at(x, img)
         fig.text((x + T / 2) / W, (y0 - 0.05) / H, name, ha="center", va="top", fontsize=FS, fontweight="bold")
-        fig.text((x + T / 2) / W, (y0 - 0.155) / H, desc, ha="center", va="top", fontsize=FS)
+        fig.text((x + T / 2) / W, (y0 - 0.165) / H, desc, ha="center", va="top", fontsize=FS)
         x += T + G
-    band(xb0, x - G, "Fundus, external (IDRiD), same image", GREEN)
+    band(xb0, x - G, "IDRiD image of (a)", GREEN)
     ty = (y0 + T + 0.03 + band_h + 0.035) / H
-    fig.text(0, ty, "(a) One image per public source whose licence permits reproduction", ha="left", va="bottom", fontsize=FS + 0.3, fontweight="bold")
-    fig.text(xb0 / W, ty, "(b) The four synthetic acquisition shifts", ha="left", va="bottom", fontsize=FS + 0.3, fontweight="bold")
+    fig.text(0, ty, "(a) One image per source whose licence permits reproduction", ha="left", va="bottom", fontsize=FS + 0.3, fontweight="bold")
+    fig.text(xb0 / W, ty, "(b) The four synthetic shifts", ha="left", va="bottom", fontsize=FS + 0.3, fontweight="bold")
     fig.add_artist(plt.Line2D([(xa_end + GG / 2) / W] * 2, [0.02, ty + 0.1], transform=fig.transFigure,
                               color="#999999", lw=0.6, ls=(0, (3, 2))))
     check_layout(fig)

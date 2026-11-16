@@ -28,7 +28,7 @@ def pipeline_panel(cascade: dict):
     """Compact single-column schematic of the executed dispatch path."""
     from matplotlib.patches import Patch
     fig, ax = plt.subplots(figsize=(3.32, 2.95), constrained_layout=True)
-    ax.set(xlim=(0, 10), ylim=(0, 9.4))
+    ax.set(xlim=(0, 10), ylim=(-0.1, 9.4))
     ax.axis("off")
     ax.grid(False)
     data, model, algo, proc = "#D9EEF8", "#EADCF0", "#DCE8F5", "#E8ECEF"
@@ -50,10 +50,11 @@ def pipeline_panel(cascade: dict):
     for text, x in lanes:
         _, _, lane_l = _box(ax, x, 2.15, 2.9, 1.15, text, model, emodel, 7.6)
         _arrow(ax, (reg_c[0], 3.95), (x + 1.45, 3.3))
-    chk_c, _, _ = _box(ax, 0.9, 0.35, 8.2, 1.15,
+    # taller box so the three text lines sit clear of the incoming arrowheads (QA 2026-11-16)
+    chk_c, _, _ = _box(ax, 0.9, 0.0, 8.2, 1.62,
                        "Score with the lane metric;\nwrong route = null output\n(0.5, grade 0, no mask)", proc, eproc, 7.6)
     for _, x in lanes:
-        _arrow(ax, (x + 1.45, 2.15), (chk_c[0], 1.5))
+        _arrow(ax, (x + 1.45, 2.15), (chk_c[0], 1.66))
     handles = [Patch(facecolor=data, edgecolor=edata, label="data"),
                Patch(facecolor=model, edgecolor=emodel, label="checkpoint"),
                Patch(facecolor=algo, edgecolor=ealgo, label="decision"),

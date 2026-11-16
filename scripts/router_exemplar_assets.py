@@ -95,11 +95,11 @@ def teaser(main, desc):
         ax.annotate(f"{PLAIN[e]} alone: {F3(S[e]['macro']['value'])}↓", (cost[e] * 0.93, lo_y + 0.001),
                     fontsize=FS, color="#8a8a8a", ha="left")
     ch = min(ENC, key=lambda e: cost[e])
-    ax.annotate("Cheapest", (cost[ch], S[ch]["macro"]["value"]), textcoords="offset points", xytext=(-4, -9),
-                fontsize=FS, color="#666666", ha="left")
+    ax.annotate("Cheapest", (cost[ch], S[ch]["macro"]["value"]), textcoords="offset points", xytext=(-3, 6),
+                fontsize=FS, color="#666666", ha="left")  # above the marker, clear of the frontier (QA 2026-11-16)
     so = M["best_single_overall"]
     ax.annotate("Strongest", (so["latency_ms_mean"], so["macro"]["value"]), textcoords="offset points",
-                xytext=(-14, -10), fontsize=FS, color="#666666")
+                xytext=(-12, -12), fontsize=FS, color="#666666")
     handles = []
     for lab, col, mk, ns in FAMILY:
         for n in ns:
@@ -128,9 +128,11 @@ def teaser(main, desc):
         ax.annotate(txt, (M[n]["latency_ms_mean"], M[n]["macro"]["value"]), textcoords="offset points",
                     xytext=(5, dy), fontsize=FS, color="#333333")
     kn = M["knn_router"]
+    ax.scatter(kn["latency_ms_mean"], kn["macro"]["value"], s=70, facecolor="none", edgecolor="#333333",
+               linewidth=0.6, zorder=8)  # ring marks the neighbourhood router; the leader ends on it (QA 2026-11-16)
     ax.annotate("Neighbourhood router (tied)", (kn["latency_ms_mean"], kn["macro"]["value"]), xytext=(6.2, 0.8475),
-                fontsize=FS, color="#333333", arrowprops=dict(arrowstyle="-", color="#888888", lw=0.5,
-                                                              shrinkA=0, shrinkB=3))
+                fontsize=FS, color="#333333", arrowprops=dict(arrowstyle="-", color="#555555", lw=0.6,
+                                                              shrinkA=0, shrinkB=3.6))
     o = M["oracle_single"]["macro"]["value"]
     ax.text(5.6, hi_y - 0.0008, f"Oracle {F3(o)} \u2191 (off scale)", fontsize=FS, color="black",
             ha="left", va="top")
@@ -216,7 +218,7 @@ def selection_figure(main, desc):
         ys = [v["y_mean"] for v in b]
         lo = [v["y_ci"][0] for v in b]
         hi = [v["y_ci"][1] for v in b]
-        ax.plot(xs, ys, "-o", color=TASK_COL[t], ms=2.2, lw=0.9, label=f"{SHORT[t]} $\\rho$={G[t]['spearman']:+.2f}")
+        ax.plot(xs, ys, "-o", color=TASK_COL[t], ms=2.2, lw=0.9, label=f"{SHORT[t]} $\\rho$=" + f"{G[t]['spearman']:+.2f}".replace("-", "\u2212"))  # true minus (QA 2026-11-16)
         band(ax, xs, lo, hi, TASK_COL[t])
     ax.axhline(0, color="#777777", lw=0.6, ls="--")
     ax.set_xscale("symlog", linthresh=0.01)
@@ -246,7 +248,7 @@ def gain_tasks_figure(desc):
         ax.plot(xx, G[t]["slope"] * xx + G[t]["intercept"], "--", color="#555555", lw=0.8)
         ax.axhline(0, color="#999999", lw=0.5)
         lo, hi = G[t]["spearman_ci"]
-        ax.set_title(f"{TNAME[t]}\n$\\rho$={G[t]['spearman']:+.3f} [{lo:+.3f}, {hi:+.3f}]", fontsize=7.5)
+        ax.set_title(f"{TNAME[t]}\n$\\rho$=" + f"{G[t]['spearman']:+.3f} [{lo:+.3f}, {hi:+.3f}]".replace("-", "\u2212"), fontsize=7.5)
     axes[0].set_ylabel("realised advantage (nats)")
     fig.tight_layout(rect=(0, 0.06, 1, 1))
     fig.supxlabel("estimated advantage (nats)", fontsize=8, y=0.02)
@@ -437,16 +439,16 @@ def supp_tables(main, gen, desc):
     lines = []
     for e in sorted(ENC, key=lambda e: cost[e]):
         c = S["candidates"][e]
-        cells = [f"{F3(c['per_task'][t]['value'])}{{\\tiny\\,[{F3(c['per_task'][t]['ci'][0])},\\,{F3(c['per_task'][t]['ci'][1])}]}}" for t in TASKS]
-        cells.append(f"{F3(c['macro']['value'])}{{\\tiny\\,[{F3(c['macro']['ci'][0])},\\,{F3(c['macro']['ci'][1])}]}}")
+        cells = [f"{F3(c['per_task'][t]['value'])}{{\\ivsize\\,[{F3(c['per_task'][t]['ci'][0])},\\,{F3(c['per_task'][t]['ci'][1])}]}}" for t in TASKS]
+        cells.append(f"{F3(c['macro']['value'])}{{\\ivsize\\,[{F3(c['macro']['ci'][0])},\\,{F3(c['macro']['ci'][1])}]}}")
         lines.append(f"{PRETTY[e]} & {cost[e]:.1f} & " + " & ".join(cells) + "\\\\")
     pb = S["per_image_other_candidate_better"]
     lines.append("\\midrule")
     lines.append("\\multicolumn{2}{@{}l}{Another candidate better on the image (\\%)} & " +
                  " & ".join(f"{100 * pb[t]:.1f}" for t in TASKS) + f" & {100 * pb['all']:.1f}\\\\")
     o = M["oracle_single"]  # label-aware upper bound (moved here from the main leaderboard, user 2026-11-16)
-    oc = [f"{F3(o['per_task'][t]['value'])}{{\\tiny\\,[{F3(o['per_task'][t]['ci'][0])},\\,{F3(o['per_task'][t]['ci'][1])}]}}" for t in TASKS]
-    oc.append(f"{F3(o['macro']['value'])}{{\\tiny\\,[{F3(o['macro']['ci'][0])},\\,{F3(o['macro']['ci'][1])}]}}")
+    oc = [f"{F3(o['per_task'][t]['value'])}{{\\ivsize\\,[{F3(o['per_task'][t]['ci'][0])},\\,{F3(o['per_task'][t]['ci'][1])}]}}" for t in TASKS]
+    oc.append(f"{F3(o['macro']['value'])}{{\\ivsize\\,[{F3(o['macro']['ci'][0])},\\,{F3(o['macro']['ci'][1])}]}}")
     lines.append("\\midrule")
     lines.append(f"Oracle (uses the label) & {o['latency_ms_mean']:.0f} & " + " & ".join(oc) + "\\\\")
     (A.PAPER / "tables" / "supp_candidates_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
@@ -455,12 +457,12 @@ def supp_tables(main, gen, desc):
     lam = sorted([(0.0, "healthrouter")] + [(float(k[len("cost_lam"):]), k) for k in M if k.startswith("cost_lam")])
     for v, k in lam:
         m = M[k]
-        lines.append(f"$\\lambda{{=}}{v:g}$ & {F3(m['macro']['value'])}{{\\tiny\\,[{F3(m['macro']['ci'][0])},\\,{F3(m['macro']['ci'][1])}]}} & {m['invoked_mean']:.2f} & {m['latency_ms_mean']:.0f}\\\\")
+        lines.append(f"$\\lambda{{=}}{v:g}$ & {F3(m['macro']['value'])}{{\\ivsize\\,[{F3(m['macro']['ci'][0])},\\,{F3(m['macro']['ci'][1])}]}} & {m['invoked_mean']:.2f} & {m['latency_ms_mean']:.0f}\\\\")
     lines.append("\\midrule")
     th = sorted((float(k[len("harness_theta"):]), k) for k in M if k.startswith("harness_theta"))
     for v, k in th:
         m = M[k]
-        lines.append(f"$\\theta{{=}}{v:g}$ & {F3(m['macro']['value'])}{{\\tiny\\,[{F3(m['macro']['ci'][0])},\\,{F3(m['macro']['ci'][1])}]}} & {m['invoked_mean']:.2f} & {m['latency_ms_mean']:.0f}\\\\")
+        lines.append(f"$\\theta{{=}}{v:g}$ & {F3(m['macro']['value'])}{{\\ivsize\\,[{F3(m['macro']['ci'][0])},\\,{F3(m['macro']['ci'][1])}]}} & {m['invoked_mean']:.2f} & {m['latency_ms_mean']:.0f}\\\\")
     (A.PAPER / "tables" / "supp_sweeps_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
     # S-T6: label-free inference
     L = desc["label_free"]
@@ -477,7 +479,7 @@ def supp_tables(main, gen, desc):
             l_ = v["methods"][lf]["macro"]
             if lf == "healthrouter_labelfree":
                 dd = v["differences_vs_healthrouter"][lf]["macro"]
-                dtxt = f"{0.0 - dd['value']:+.3f}{{\\tiny\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}"
+                dtxt = f"{0.0 - dd['value']:+.3f}{{\\ivsize\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}"
             else:
                 dtxt = f"{l_['value'] - b_['value']:+.3f}"
             lines.append(f"{lab} & {nm} & {100 * acc:.2f} ({mis}/{ev}) & {F3(b_['value'])} & {F3(l_['value'])} & {dtxt}\\\\")
@@ -490,7 +492,7 @@ def supp_tables(main, gen, desc):
         l_ = v["methods"]["healthrouter_labelfree"]["macro"]
         dd = l_ if False else v["methods"]["healthrouter_labelfree"]["diff_base_minus_this"]
         lines.append(f"External, {cname[c]} & HealthRouter & {100 * v['task_inference_accuracy']['all']:.2f} & {F3(b_)} & "
-                     f"{F3(l_['value'])} & {0.0 - dd['value']:+.3f}{{\\tiny\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}\\\\")
+                     f"{F3(l_['value'])} & {0.0 - dd['value']:+.3f}{{\\ivsize\\,[{0.0 - dd['ci'][1]:+.3f},\\,{0.0 - dd['ci'][0]:+.3f}]}}\\\\")
     (A.PAPER / "tables" / "supp_labelfree_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
     # S-T6b: external task-inference accuracy per cohort
     lines = []
@@ -504,10 +506,10 @@ def supp_tables(main, gen, desc):
     for t in TASKS:
         d = Dd[t]
         lines.append(f"{TNAME[t]} & {100 * d['share_one_call']:.0f} & "
-                     f"{F3(d['error_one_call'])}{{\\tiny\\,[{F3(d['error_one_call_ci'][0])},\\,{F3(d['error_one_call_ci'][1])}]}} & "
-                     f"{F3(d['error_multi_call'])}{{\\tiny\\,[{F3(d['error_multi_call_ci'][0])},\\,{F3(d['error_multi_call_ci'][1])}]}} & "
+                     f"{F3(d['error_one_call'])}{{\\ivsize\\,[{F3(d['error_one_call_ci'][0])},\\,{F3(d['error_one_call_ci'][1])}]}} & "
+                     f"{F3(d['error_multi_call'])}{{\\ivsize\\,[{F3(d['error_multi_call_ci'][0])},\\,{F3(d['error_multi_call_ci'][1])}]}} & "
                      f"{F3(d['logloss_one_call'])} & {F3(d['logloss_multi_call'])} & "
-                     f"{d['spearman_calls_logloss']:.3f}{{\\tiny\\,[{d['spearman_calls_logloss_ci'][0]:.3f},\\,{d['spearman_calls_logloss_ci'][1]:.3f}]}}\\\\")
+                     f"{d['spearman_calls_logloss']:.3f}{{\\ivsize\\,[{d['spearman_calls_logloss_ci'][0]:.3f},\\,{d['spearman_calls_logloss_ci'][1]:.3f}]}}\\\\")
     (A.PAPER / "tables" / "supp_difficulty_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
     # S-T8: gain calibration summary
     G = desc["gain_calibration"]
@@ -515,12 +517,12 @@ def supp_tables(main, gen, desc):
     for t in TASKS:
         g = G[t]
         lines.append(f"{TNAME[t]} & {g['n_pairs']:,} & ".replace(",", "{,}") +
-                     f"{g['mean_realised_gain']:+.3f}{{\\tiny\\,[{g['mean_realised_gain_ci'][0]:+.3f},\\,{g['mean_realised_gain_ci'][1]:+.3f}]}} & "
-                     f"{g['spearman']:+.3f}{{\\tiny\\,[{g['spearman_ci'][0]:+.3f},\\,{g['spearman_ci'][1]:+.3f}]}}\\\\")
+                     f"{g['mean_realised_gain']:+.3f}{{\\ivsize\\,[{g['mean_realised_gain_ci'][0]:+.3f},\\,{g['mean_realised_gain_ci'][1]:+.3f}]}} & "
+                     f"{g['spearman']:+.3f}{{\\ivsize\\,[{g['spearman_ci'][0]:+.3f},\\,{g['spearman_ci'][1]:+.3f}]}}\\\\")
     g = G["pooled"]
     lines.append("\\midrule")
     lines.append(f"Pooled & {g['n_pairs']:,} & -- & ".replace(",", "{,}") +
-                 f"{g['spearman']:+.3f}{{\\tiny\\,[{g['spearman_ci'][0]:+.3f},\\,{g['spearman_ci'][1]:+.3f}]}}\\\\")
+                 f"{g['spearman']:+.3f}{{\\ivsize\\,[{g['spearman_ci'][0]:+.3f},\\,{g['spearman_ci'][1]:+.3f}]}}\\\\")
     (A.PAPER / "tables" / "supp_gain_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
     # six-task table gets a label-free row
     A.general_table(gen)
@@ -528,8 +530,9 @@ def supp_tables(main, gen, desc):
     body = p.read_text().rstrip().split("\n")
     v = L["six_task"]["methods"]["healthrouter_labelfree"]
     row = ("HR, task voted$^\\ddagger$ & " +
-           " & ".join(f"{F3(v['per_task'][t]['value'])}{{\\tiny\\,[{F3(v['per_task'][t]['ci'][0])},\\,{F3(v['per_task'][t]['ci'][1])}]}}" for t in ("eurosat", "dtd")) +
-           f" & {F3(v['macro']['value'])}{{\\tiny\\,[{F3(v['macro']['ci'][0])},\\,{F3(v['macro']['ci'][1])}]}} & {gen['methods']['healthrouter']['invoked_mean']:.2f}\\\\")
+           " & ".join(f"{F3(v['per_task'][t]['value'])}{{\\ivsize\\,[{F3(v['per_task'][t]['ci'][0])},\\,{F3(v['per_task'][t]['ci'][1])}]}}" for t in ("eurosat", "dtd")) +
+           f" & {F3(v['macro']['value'])}{{\\ivsize\\,[{F3(v['macro']['ci'][0])},\\,{F3(v['macro']['ci'][1])}]}} & {gen['methods']['healthrouter']['invoked_mean']:.2f} & "
+           + ("$\\blacktriangledown$" if L["six_task"]["differences_vs_healthrouter"]["healthrouter_labelfree"]["macro"]["ci"][0] > 0 else "$\\approx$") + "\\\\")
     body.insert(len(body) - 1, row)
     p.write_text("\n".join(body) + "\n")
 

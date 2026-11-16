@@ -112,7 +112,7 @@ def main_table(main):
                 e = M[n]["macro"] if c == "macro" else M[n]["per_task"][c]
                 v = f3(e["value"])
                 v = f"\\textbf{{{v}}}" if n in best[c] else v
-                cells.append(f"{v}{{\\tiny\\,[{f3(e['ci'][0])},\\,{f3(e['ci'][1])}]}}")
+                cells.append(f"{v}{{\\ivsize\\,[{f3(e['ci'][0])},\\,{f3(e['ci'][1])}]}}")
             cells.append(f"{M[n]['invoked_mean']:.2f}")
             cells.append(f"{M[n]['latency_ms_mean']:.0f}")
             lines.append(f"{NAMES[n]} & " + " & ".join(cells) + "\\\\")
@@ -134,9 +134,10 @@ def diff_table(main, harness):
         for n in ns:
             def cell(d):
                 lo, hi = d["ci"]
-                v = f"{d['value']:+.3f}{{\\tiny\\,[{lo:+.3f},\\,{hi:+.3f}]}}"
+                v = f"{d['value']:+.3f}{{\\ivsize\\,[{lo:+.3f},\\,{hi:+.3f}]}}"
                 return v  # no bold (user 2026-11-16, round 2): no interval lies below zero; caption explains
-            lines.append(f"{NAMES[n]} & " + " & ".join(cell(D[n][t]) for t in TASKS + ["macro"]) +
+            nm = GEN_SHORT.get(n, EXT_SHORT.get(n, SHORT.get(n, n)))  # short names: 6.5 pt intervals fit (QA 2026-11-16)
+            lines.append(f"{nm} & " + " & ".join(cell(D[n][t]) for t in TASKS + ["macro"]) +
                          f" & {cell(H[n]['macro'])}\\\\")
     (PAPER / "tables" / "router_diff_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
 
@@ -170,7 +171,7 @@ def ablation_table(main):
             d = "--"
         else:
             dd = D[n]["macro"]
-            d = f"{-dd['value']:+.3f}{{\\tiny\\,[{-dd['ci'][1]:+.3f},\\,{-dd['ci'][0]:+.3f}]}}"
+            d = f"{-dd['value']:+.3f}{{\\ivsize\\,[{-dd['ci'][1]:+.3f},\\,{-dd['ci'][0]:+.3f}]}}"
         lines.append(f"{label} & {f3(m['macro']['value'])} & {d} & {m['invoked_mean']:.2f} & {m['latency_ms_mean']:.0f}\\\\")
         if n in ("healthrouter", "abl_size4", "abl_geometric_fusion", "abl_feat_task_id", "hr_candidate_mlp"):
             lines.append("\\midrule")
@@ -179,17 +180,23 @@ def ablation_table(main):
     (PAPER / "tables" / "router_ablation_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
 
 
-EXT_ROWS = ["best_single_per_task", "uniform_ensemble", "stacking", "greedy_ensemble_selection",
-            "modality_router_supervised", "modality_router_zeroshot_biomedclip", "soft_moe", "sparse_topk_moe",
-            "knora_u", "meta_des", "knn_router", "routellm_mf", "healthrouter", "healthrouter_harness",
+EXT_ROWS = ["best_single_overall", "best_single_per_task", "best_single_per_task_oof", "uniform_ensemble", "stacking",
+            "greedy_ensemble_selection", "logme_selection", "modality_router_supervised", "modality_router_supervised_oof",
+            "modality_router_zeroshot_biomedclip", "soft_moe", "sparse_topk_moe", "knora_u", "knora_e", "meta_des",
+            "knn_router", "routerbench_mlp", "routellm_mf", "healthrouter", "healthrouter_harness",
             "healthrouter_fallback", "harness_fallback"]
 EXT_SHORT = {"healthrouter": "\\textbf{HealthRouter}", "healthrouter_harness": "\\textbf{Harness}",
              "healthrouter_fallback": "HealthRouter + fallback$^\\dagger$", "harness_fallback": "Harness + fallback$^\\dagger$",
              "modality_router_zeroshot_biomedclip": "Modality, zero-shot", "modality_router_supervised": "Modality, supervised",
              "best_single_per_task": "Best single per task", "uniform_ensemble": "Uniform ensemble",
              "greedy_ensemble_selection": "Greedy ens. selection", "knn_router": "Neighbourhood router",
-             "routellm_mf": "MF router"}
-GEN_SHORT = {"modality_router_supervised_oof": "Modality router", "logme_selection": "LogME top-$k$",
+             "routellm_mf": "MF router", "best_single_overall": "Best single (overall)",
+             "best_single_per_task_oof": "Best single per task (OOF)", "logme_selection": "LogME top-$k$",
+             "modality_router_supervised_oof": "Modality, sup. (OOF)", "knora_e": "KNORA-E", "knora_u": "KNORA-U",
+             "meta_des": "META-DES", "routerbench_mlp": "Predictive router", "soft_moe": "Soft MoE",
+             "sparse_topk_moe": "Sparse MoE", "stacking": "Stacking"}
+GEN_SHORT = {"modality_router_supervised_oof": "Modality, sup. (OOF)", "best_single_per_task_oof": "Best single per task (OOF)",
+             "best_single_overall": "Best single (overall)", "logme_selection": "LogME top-$k$",
              "routerbench_mlp": "Predictive router", "sparse_topk_moe": "Sparse MoE", "soft_moe": "Soft MoE"}
 CONDS = ["standard", "grayscale", "blur", "low_resolution", "jpeg"]
 
@@ -224,7 +231,7 @@ def external_pertask_table(ext):
             if n not in R[c]:
                 continue
             m = R[c][n]
-            cells = [f"{f3(m['per_task'][t]['value'])}{{\\tiny\\,[{f3(m['per_task'][t]['ci'][0])},\\,{f3(m['per_task'][t]['ci'][1])}]}}" for t in TASKS]
+            cells = [f"{f3(m['per_task'][t]['value'])}{{\\ivsize\\,[{f3(m['per_task'][t]['ci'][0])},\\,{f3(m['per_task'][t]['ci'][1])}]}}" for t in TASKS]
             nm = EXT_SHORT.get(n, SHORT.get(n, n))
             lines.append(f"{nm} & " + " & ".join(cells) + f" & {f3(m['macro']['value'])}\\\\")
         lines.append("\\midrule")
@@ -233,25 +240,33 @@ def external_pertask_table(ext):
 
 
 def general_table(gen):
-    M = gen["methods"]
-    tasks = gen["tasks"]
-    rows = [n for n in ["best_single_per_task", "uniform_ensemble", "stacking", "greedy_ensemble_selection",
-                        "logme_selection", "modality_router_supervised_oof", "soft_moe", "sparse_topk_moe", "knora_u",
-                        "meta_des", "knn_router", "routerbench_mlp", "routellm_mf", "healthrouter", "healthrouter_harness"] if n in M]
+    """Supplement tab:general: all 20 methods on the six-task problem (task heads given to every method),
+    with the paired significance mark against HealthRouter (user QA 2026-11-16)."""
+    M, D = gen["methods"], gen["differences_vs_healthrouter"]
+    rows = [n for n in ["best_single_overall", "best_single_per_task", "best_single_per_task_oof", "uniform_ensemble",
+                        "stacking", "greedy_ensemble_selection", "logme_selection", "modality_router_supervised",
+                        "modality_router_supervised_oof", "modality_router_zeroshot_biomedclip", "soft_moe",
+                        "sparse_topk_moe", "knora_u", "knora_e", "meta_des", "knn_router", "routerbench_mlp",
+                        "routellm_mf", "healthrouter", "healthrouter_harness"] if n in M]
     cols = ["eurosat", "dtd", "macro"]
     def val(n, c):
         return M[n]["macro"]["value"] if c == "macro" else M[n]["per_task"][c]["value"]
-    best = {c: max(val(n, c) for n in rows) for c in cols}
+    best = {c: max(rows, key=lambda n: val(n, c)) for c in cols}  # single highest per column
     lines = []
     for n in rows:
         cells = []
         for c in cols:
             e = M[n]["macro"] if c == "macro" else M[n]["per_task"][c]
-            s = f3(e["value"])
-            s = f"\\textbf{{{s}}}" if round(e["value"], 3) == round(best[c], 3) else s
-            cells.append(f"{s}{{\\tiny\\,[{f3(e['ci'][0])},\\,{f3(e['ci'][1])}]}}")
+            s_ = f3(e["value"])
+            s_ = f"\\textbf{{{s_}}}" if n == best[c] else s_
+            cells.append(f"{s_}{{\\ivsize\\,[{f3(e['ci'][0])},\\,{f3(e['ci'][1])}]}}")
+        if n == "healthrouter":
+            mark = "--"
+        else:
+            lo, hi = D[n]["macro"]["ci"]
+            mark = "$\\blacktriangledown$" if lo > 0 else ("$\\blacktriangle$" if hi < 0 else "$\\approx$")
         nm = GEN_SHORT.get(n, EXT_SHORT.get(n, SHORT.get(n, n)))
-        lines.append(f"{nm} & " + " & ".join(cells) + f" & {M[n]['invoked_mean']:.2f}\\\\")
+        lines.append(f"{nm} & " + " & ".join(cells) + f" & {M[n]['invoked_mean']:.2f} & {mark}\\\\")
         if n == "routellm_mf":
             lines.append("\\midrule")
     (PAPER / "tables" / "router_general_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
@@ -475,6 +490,27 @@ def robustness_figure(ext):
     plt.rcdefaults()
 
 
+
+def typeset_minus(text: str, math: bool = False) -> str:
+    """True minus signs (user QA 2026-11-16): '-0.000' prints as '0.000', and a hyphen before a digit becomes
+    a minus ('$-$' in table cells, '\\ensuremath{-}' in number macros, which are also used inside math)."""
+    import re
+    text = re.sub(r"\$-\$(0\.0+)(?![0-9])", r"\1", text)
+    text = re.sub(r"(?<![$\w{}\\-])-(0\.0+)(?![0-9])", r"\1", text)
+    text = re.sub(r"(?<=\{)-(0\.0+)(?![0-9])", r"\1", text)
+    rep = r"\\ensuremath{-}" if math else r"$-$"
+    return re.sub(r"(?<![$\w\\-])-(?=[0-9])", rep, text)
+
+
+def finalize_minus():
+    for f in sorted((PAPER / "tables").glob("*.tex")):
+        if f.name.startswith(("router_", "supp_candidates", "supp_sweeps", "supp_labelfree", "supp_taskinf",
+                              "supp_difficulty", "supp_gain")):
+            f.write_text(typeset_minus(f.read_text()))
+    nt = PAPER / "numbers.tex"
+    nt.write_text("\n".join(l if l.startswith("%") else typeset_minus(l, math=True) for l in nt.read_text().split("\n")))
+
+
 def main():
     import router_exemplar_assets as X
     X.A = sys.modules[__name__]  # share NUM/PAPER with the running module
@@ -489,6 +525,7 @@ def main():
     numbers(main_res, harness, ext, gen)
     X.run(main_res, ext, gen, desc)
     write_numbers()
+    finalize_minus()
     import shutil
     (PAPER / "figures").mkdir(exist_ok=True)
     for f in FIG.glob("router_*.pdf"):

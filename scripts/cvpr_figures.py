@@ -60,19 +60,27 @@ def grid_heatmap(ax, grid: dict, size: str, fontsize=7.0, cbar=True, decimals=3,
             if np.isnan(gap[i, j]):
                 continue
             score = doms[d]["packages"][p]["oof_score"]
-            star = p == doms[d]["best_package"]
-            label = f"{score:.{decimals}f}"
+            # star and bold for every package tied with the best at the printed precision (QA 2026-11-16)
+            best_score = max(v["oof_score"] for v in doms[d]["packages"].values())
+            star = round(score, decimals) == round(best_score, decimals)
+            label = f"{score:.{decimals}f}".replace("-", "\u2212")  # true minus (QA 2026-11-16)
             if short:
                 label = label.replace("0.", ".", 1)
-            ax.text(j, i, label + ("" if short or not star else "★"), ha="center", va="center",
-                    fontsize=fontsize, color="#1b2a38" if gap[i, j] > -0.13 else "white",
-                    fontweight="bold" if star else "normal")
+            col = "#1b2a38" if gap[i, j] > -0.13 else "white"
+            if short or not star:
+                ax.text(j, i, label, ha="center", va="center", fontsize=fontsize, color=col,
+                        fontweight="bold" if star else "normal")
+            else:  # number left of centre, star in the upper-right corner: padding inside the in-domain box
+                ax.text(j - 0.02, i + 0.08, label, ha="center", va="center", fontsize=fontsize, color=col,
+                        fontweight="bold")
+                ax.text(j + 0.36, i - 0.26, "★", ha="center", va="center", fontsize=fontsize - 0.2, color=col)
             if p in IN_DOMAIN[d]:
                 ax.add_patch(plt.Rectangle((j - 0.48, i - 0.48), 0.96, 0.96, fill=False,
                                            edgecolor="#D55E00", linewidth=1.6))
     ax.set_xticks(range(len(ORDER)), [LABEL[p] for p in ORDER], rotation=40, ha="right",
                   fontsize=fontsize + 0.6)
-    ax.set_yticks(range(len(DOMAINS)), [DOMAIN_LABEL[d].replace("\n", " ") for d in DOMAINS],
+    ax.set_yticks(range(len(DOMAINS)), [DOMAIN_LABEL[d] if not short else DOMAIN_LABEL[d].replace("\n", " ")
+                                         for d in DOMAINS],  # two-line labels widen the cells (QA 2026-11-16)
                   fontsize=fontsize + 0.6)
     for x in (3.5, 4.5):
         ax.axvline(x, color="white", linewidth=2.5)
