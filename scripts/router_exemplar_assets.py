@@ -275,7 +275,8 @@ def _best_second(vals):
 def main_table(main):
     M, D = main["methods"], main["differences_vs_healthrouter"]
     cols = TASKS + ["macro"]
-    bold = {c: _ties("main", c) for c in cols}
+    bold = {c: _best_second({n: (M[n]["macro"]["value"] if c == "macro" else M[n]["per_task"][c]["value"])
+                             for _, ns in GROUPS_T1 for n in ns})[0] for c in cols}  # highest per column (user 2026-11-16, round 2)
     def calls_ms(n):
         return {"calls": M[n]["invoked_mean"], "ms": M[n]["latency_ms_mean"]}
     lines = []  # the label-aware Oracle is reported in the supplement (tab:supp_candidates), not here
@@ -355,7 +356,9 @@ def ablation_table(main, desc):
         [("hr_collection_mlp", "MLP gate, collections"), ("hr_candidate_mlp", "MLP gate, single models")],
         [("healthrouter_fallback", "Distance fallback$^\\dagger$")],
     ]
-    bold = _ties("ablation", "macro")  # tie rule, results/router_ties.json (label-free row included)
+    cand = {n: M[n]["macro"]["value"] for g in groups for n, _ in g if n in M}
+    cand["healthrouter_labelfree"] = LF["methods"]["healthrouter_labelfree"]["macro"]["value"]
+    bold = {max(cand, key=cand.get)}  # single highest value (user 2026-11-16, round 2)
     lines = []
     for g in groups:
         for n, label in g:
@@ -390,7 +393,15 @@ def external_table(ext, desc):
     LFE = desc["label_free"]["external"]
     CONDS = A.CONDS
     rows = [n for n in A.EXT_ROWS if all(n in R[c] for c in CONDS)]
-    bold = {c: _ties("external", c) for c in CONDS + ["mean"]}  # fallback rows are not ranked
+    ranked = [n for n in rows if "fallback" not in n]  # fallback rows are not ranked
+    lfv = {c: LFE[c]["methods"]["healthrouter_labelfree"]["macro"]["value"] for c in CONDS}
+    def top(get):
+        v = {n: get(n) for n in ranked}
+        v["healthrouter_labelfree"] = get("healthrouter_labelfree")
+        return {max(v, key=v.get)}  # single highest value per column (user 2026-11-16, round 2)
+    val = lambda c: (lambda n: lfv[c] if n == "healthrouter_labelfree" else R[c][n]["macro"]["value"])
+    bold = {c: top(val(c)) for c in CONDS}
+    bold["mean"] = top(lambda n: np.mean([val(c)(n) for c in CONDS]))
     lines = []
     for n in rows:
         cells = []

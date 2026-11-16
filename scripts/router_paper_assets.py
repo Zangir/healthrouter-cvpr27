@@ -135,7 +135,7 @@ def diff_table(main, harness):
             def cell(d):
                 lo, hi = d["ci"]
                 v = f"{d['value']:+.3f}{{\\tiny\\,[{lo:+.3f},\\,{hi:+.3f}]}}"
-                return f"\\textbf{{{v}}}" if lo > 0 else v
+                return v  # no bold (user 2026-11-16, round 2): no interval lies below zero; caption explains
             lines.append(f"{NAMES[n]} & " + " & ".join(cell(D[n][t]) for t in TASKS + ["macro"]) +
                          f" & {cell(H[n]['macro'])}\\\\")
     (PAPER / "tables" / "router_diff_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
@@ -454,7 +454,8 @@ def robustness_figure(ext):
     R = ext["results"]
     fig, ax = plt.subplots(figsize=(3.3, 2.4))
     # family colours as in the main-paper figures (router_exemplar_assets.FAMILY)
-    show = [("healthrouter", BLUE, "-o", "HealthRouter", 2.0), ("soft_moe", RED, "-^", "Soft MoE", 1.1),
+    show = [("healthrouter", BLUE, "-o", "HealthRouter", 2.0), ("best_single_per_task", GRAY, "-o", "Best single/task", 1.1),
+            ("soft_moe", RED, "-^", "Soft MoE", 1.1),
             ("stacking", ORANGE, "-s", "Stacking", 1.1), ("uniform_ensemble", ORANGE, "--s", "Uniform ens.", 1.1),
             ("modality_router_zeroshot_biomedclip", "#C9B800", "-v", "Modality (zero-shot)", 1.1),
             ("knora_u", "#CC79A7", "-P", "KNORA-U", 1.1)]
@@ -464,7 +465,10 @@ def robustness_figure(ext):
     ax.set_xticks(range(5))
     ax.set_xticklabels(lab)
     ax.set_ylabel("external macro score")
-    ax.legend(fontsize=7.4, ncol=2, columnspacing=0.6, handlelength=1.6, labelspacing=0.25)
+    ax.set_ylim(0.395, 0.795)
+    ax.set_xlim(-0.2, 4.2)
+    ax.legend(fontsize=7.4, ncol=2, columnspacing=0.6, handlelength=1.6, labelspacing=0.25, loc="lower left",
+              bbox_to_anchor=(0.0, 0.0))
     fig.savefig(FIG / "router_robustness.pdf")
     fig.savefig(FIG / "router_robustness.png", dpi=300)
     plt.close(fig)
