@@ -70,44 +70,21 @@ def save(fig, stem):
 
 # ----------------------------------------------------------------------------- F1 teaser
 def teaser(main, desc):
-    # Drawn at the printed column width (3.28 in) so that no label prints below 7 pt (review 2026-11-14).
+    """Fig. 1, focused on HealthRouter (user round 9): baselines as small family-coloured markers, the
+    two statistically tied baselines labelled, HealthRouter's star and cost dial, and the harness curve.
+    No encoders-alone points, frontier, Oracle note, Cheapest/Strongest labels or 'better' arrow."""
     style()
     FS = 7.4
     plt.rcParams.update({"font.size": FS, "axes.labelsize": FS, "xtick.labelsize": FS, "ytick.labelsize": FS})
     M = main["methods"]
-    S = desc["single_candidates"]["candidates"]
-    cost = dict(zip(ENC, main["candidate_cost_ms"]))
-    fig, ax = plt.subplots(figsize=(2.98, 2.25))
-    lo_y, hi_y = 0.789, 0.898
-    # single candidates (gray) and their Pareto frontier
-    pts = sorted((cost[e], S[e]["macro"]["value"], e) for e in ENC)
-    for x, y, e in pts:
-        if y >= lo_y:
-            ax.scatter(x, y, s=16, color="#c4c4c4", zorder=2, edgecolor="none")
-    front, best = [], -1
-    for x, y, e in pts:
-        if y > best:
-            front.append((x, y))
-            best = y
-    ax.plot(*zip(*front), ls="--", color="#b0b0b0", lw=1.0, zorder=1)
-    off = [e for _, y, e in pts if y < lo_y]
-    for e in off:
-        ax.annotate(f"{PLAIN[e]} alone: {F2(S[e]['macro']['value'])}↓", (cost[e] * 0.93, lo_y + 0.001),
-                    fontsize=FS, color="#8a8a8a", ha="left")
-    ch = min(ENC, key=lambda e: cost[e])
-    ax.annotate("Cheapest", (cost[ch], S[ch]["macro"]["value"]), textcoords="offset points", xytext=(-3, 6),
-                fontsize=FS, color="#666666", ha="left")  # above the marker, clear of the frontier (QA 2026-11-16)
-    so = M["best_single_overall"]
-    ax.annotate("Strongest", (so["latency_ms_mean"], so["macro"]["value"]), textcoords="offset points",
-                xytext=(-12, -12), fontsize=FS, color="#666666")
+    fig, ax = plt.subplots(figsize=(2.98, 2.15))
     handles = []
     for lab, col, mk, ns in FAMILY:
         for n in ns:
-            h = ax.scatter(M[n]["latency_ms_mean"], M[n]["macro"]["value"], s=22, marker=mk, color=col,
-                           edgecolor="#333333" if col == YELLOW else "none", linewidth=0.5, zorder=3)
+            h = ax.scatter(M[n]["latency_ms_mean"], M[n]["macro"]["value"], s=16, marker=mk, color=col,
+                           edgecolor="#333333" if col == YELLOW else "none", linewidth=0.5, zorder=3, alpha=0.9)
         short = {"Single models": "Single models", "Task-level ensembles": "Task ensembles"}.get(lab, lab)
         handles.append((h, short))
-    # cost dial (lambda) and harness dial (theta)
     lam = [(M["healthrouter"]["latency_ms_mean"], M["healthrouter"]["macro"]["value"])]
     lam += [(M[k]["latency_ms_mean"], M[k]["macro"]["value"]) for k in M if k.startswith("cost_lam")]
     lam.sort()
@@ -117,39 +94,27 @@ def teaser(main, desc):
     hm = M["healthrouter_harness"]
     h1 = ax.scatter(hm["latency_ms_mean"], hm["macro"]["value"], s=40, marker="D", color=GREEN, edgecolor="white", zorder=6)
     hr = M["healthrouter"]
-    h2 = ax.scatter(hr["latency_ms_mean"], hr["macro"]["value"], s=110, marker="*", color=BLUE, edgecolor="white", zorder=7)
-    ax.text(hr["latency_ms_mean"] * 1.40, hr["macro"]["value"] + 0.0010, "HealthRouter", fontsize=FS + 0.6,
-            color=BLUE, fontweight="bold", ha="left", va="bottom")
-    ax.text(th[0][0] * 0.92, th[0][1], "Harness", fontsize=FS + 0.6, color=GREEN, fontweight="bold",
+    h2 = ax.scatter(hr["latency_ms_mean"], hr["macro"]["value"], s=150, marker="*", color=BLUE, edgecolor="white", zorder=7)
+    ax.text(hr["latency_ms_mean"] * 0.98, hr["macro"]["value"] + 0.0045, "HealthRouter", fontsize=FS + 1.6,
+            color=BLUE, fontweight="bold", ha="center", va="bottom", zorder=8)
+    ax.text(th[0][0] * 0.92, th[0][1], "Harness", fontsize=FS + 0.4, color=GREEN, fontweight="bold",
             ha="right", va="center")
-    for n, txt, dy in [("stacking", "Stacking (tied)", 1), ("soft_moe", "Soft MoE", -2.5),
-                       ("uniform_ensemble", "Uniform", -10), ("knora_u", "KNORA-U", -2.5),
-                       ("meta_des", "META-DES", -2.5), ("knora_e", "KNORA-E", -2.5)]:
-        ax.annotate(txt, (M[n]["latency_ms_mean"], M[n]["macro"]["value"]), textcoords="offset points",
-                    xytext=(5, dy), fontsize=FS, color="#333333")
+    st = M["stacking"]
+    ax.annotate("Stacking (tied)", (st["latency_ms_mean"], st["macro"]["value"]), textcoords="offset points",
+                xytext=(-4, 7), fontsize=FS, color="#333333", ha="center")
     kn = M["knn_router"]
-    ax.scatter(kn["latency_ms_mean"], kn["macro"]["value"], s=70, facecolor="none", edgecolor="#333333",
-               linewidth=0.6, zorder=8)  # ring marks the neighbourhood router; the leader ends on it (QA 2026-11-16)
-    ax.annotate("Neighbourhood router (tied)", (kn["latency_ms_mean"], kn["macro"]["value"]), xytext=(6.2, 0.8475),
-                fontsize=FS, color="#333333", arrowprops=dict(arrowstyle="-", color="#555555", lw=0.6,
-                                                              shrinkA=0, shrinkB=3.6))
-    o = M["oracle_single"]["macro"]["value"]
-    ax.text(5.6, hi_y - 0.0008, f"Oracle {F2(o)} \u2191 (off scale)", fontsize=FS, color="black",
-            ha="left", va="top")
-    ax.annotate("", xy=(520, 0.833), xytext=(950, 0.818),
-                arrowprops=dict(arrowstyle="-|>", color="#555555", lw=0.8))
-    ax.text(480, 0.808, "better", fontsize=FS, color="#555555")
+    ring = ax.scatter(kn["latency_ms_mean"], kn["macro"]["value"], s=60, facecolor="none", edgecolor="#333333",
+                      linewidth=0.7, zorder=8)  # identified in the legend; no leader line crossing other markers
     ax.set_xscale("log")
-    ax.set_xticks([6, 10, 20, 50, 100, 200, 500])
-    ax.set_xticklabels(["6", "10", "20", "50", "100", "200", "500"])
-    ax.set_xlim(5, 1100)
-    ax.set_ylim(lo_y, hi_y)
+    ax.set_xticks([20, 50, 100, 200])
+    ax.set_xticklabels(["20", "50", "100", "200"])
+    ax.set_xlim(15, 330)
+    ax.set_ylim(0.795, 0.893)
     ax.set_xlabel("encoder time per image (ms)")
-    ax.set_ylabel("macro score, 4 medical tasks")
-    sc = ax.scatter([], [], s=16, color="#c4c4c4")
-    leg = [(sc, "Encoders alone"), *handles, (h2, "HealthRouter"), (h1, "Harness")]
+    ax.set_ylabel("macro score")
+    leg = [*handles, (h2, "HealthRouter"), (h1, "Harness"), (ring, "Neighb. router (tied)")]
     ax.legend([h for h, _ in leg], [l for _, l in leg], loc="lower center", ncol=3, fontsize=FS,
-              bbox_to_anchor=(0.43, 1.01), frameon=True, columnspacing=0.5, handletextpad=0.15,
+              bbox_to_anchor=(0.45, 1.01), frameon=True, columnspacing=0.5, handletextpad=0.15,
               borderpad=0.3, labelspacing=0.2, handlelength=1.0, borderaxespad=0.2)
     save(fig, "router_teaser")
     plt.rcdefaults()
