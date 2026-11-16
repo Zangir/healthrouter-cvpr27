@@ -293,7 +293,7 @@ def main_table(main):
                 if n == "healthrouter" and c != "macro":  # double dagger: tied with the column's best (user round 4)
                     T = A.load("router_ties.json")["main"][c]
                     if T["best"] != n and T["pairs"][n]["tied"]:
-                        v += "$^{\\ddagger}$"
+                        v = f"\\textbf{{{F3(e['value'])}}}$^{{\\ddagger}}$"  # bold where tied (user round 5)
                 cells.append(v)
             cells += [f"{calls_ms(n)['calls']:.2f}", f"{calls_ms(n)['ms']:.0f}"]
             if n == "healthrouter":
