@@ -1,0 +1,3198 @@
+{
+ "amendment": "router_plan.json amendment 8 (post-plan, post-hoc, external review request)",
+ "provenance": "scripts/router_review_oodgate.py",
+ "variants": [
+  "maha_uniform",
+  "maha_top3",
+  "entropy_uniform",
+  "entropy_top3"
+ ],
+ "q_grid": [
+  90,
+  95,
+  99
+ ],
+ "external": {
+  "standard": {
+   "scores": {
+    "maha_uniform": {
+     "chest_xray": 0.9375,
+     "pathology": 0.9821,
+     "fundus": 0.6549,
+     "mammography": 0.4661,
+     "macro": 0.7602,
+     "macro_ci": [
+      0.7366,
+      0.7818
+     ]
+    },
+    "maha_top3": {
+     "chest_xray": 0.9321,
+     "pathology": 0.9819,
+     "fundus": 0.6507,
+     "mammography": 0.4583,
+     "macro": 0.7558,
+     "macro_ci": [
+      0.7329,
+      0.7776
+     ]
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.9515,
+     "pathology": 0.9833,
+     "fundus": 0.663,
+     "mammography": 0.4822,
+     "macro": 0.77,
+     "macro_ci": [
+      0.7475,
+      0.7907
+     ]
+    },
+    "entropy_top3": {
+     "chest_xray": 0.953,
+     "pathology": 0.9831,
+     "fundus": 0.6693,
+     "mammography": 0.4799,
+     "macro": 0.7714,
+     "macro_ci": [
+      0.7507,
+      0.7922
+     ]
+    },
+    "healthrouter": {
+     "chest_xray": 0.9466,
+     "pathology": 0.9823,
+     "fundus": 0.6594,
+     "mammography": 0.4828,
+     "macro": 0.7677,
+     "macro_ci": [
+      0.746,
+      0.7892
+     ]
+    },
+    "distance_fallback": {
+     "chest_xray": 0.9466,
+     "pathology": 0.9811,
+     "fundus": 0.6594,
+     "mammography": 0.4833,
+     "macro": 0.7676,
+     "macro_ci": [
+      0.7456,
+      0.7888
+     ]
+    },
+    "uniform": {
+     "chest_xray": 0.9375,
+     "pathology": 0.9828,
+     "fundus": 0.6346,
+     "mammography": 0.4753,
+     "macro": 0.7575,
+     "macro_ci": [
+      0.7342,
+      0.7788
+     ]
+    }
+   },
+   "flag_rate": {
+    "distance_fallback": {
+     "chest_xray": 0.0,
+     "pathology": 0.043,
+     "fundus": 0.0,
+     "mammography": 0.0101,
+     "all": 0.0229
+    },
+    "maha_uniform": {
+     "chest_xray": 1.0,
+     "pathology": 0.025,
+     "fundus": 0.0872,
+     "mammography": 0.8788,
+     "all": 0.2712
+    },
+    "maha_top3": {
+     "chest_xray": 1.0,
+     "pathology": 0.087,
+     "fundus": 0.3663,
+     "mammography": 0.9899,
+     "all": 0.3932
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.087,
+     "pathology": 0.063,
+     "fundus": 0.1725,
+     "mammography": 0.0758,
+     "all": 0.0946
+    },
+    "entropy_top3": {
+     "chest_xray": 0.087,
+     "pathology": 0.063,
+     "fundus": 0.1725,
+     "mammography": 0.0758,
+     "all": 0.0946
+    }
+   },
+   "q": {
+    "maha_uniform": 99,
+    "maha_top3": 95,
+    "entropy_uniform": 95,
+    "entropy_top3": 95
+   },
+   "diffs": {
+    "maha_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0091,
+       "ci": [
+        -0.041,
+        0.0211
+       ]
+      },
+      "pathology": {
+       "value": -0.0002,
+       "ci": [
+        -0.0008,
+        0.0006
+       ]
+      },
+      "fundus": {
+       "value": -0.0045,
+       "ci": [
+        -0.0148,
+        0.0042
+       ]
+      },
+      "mammography": {
+       "value": -0.0167,
+       "ci": [
+        -0.07,
+        0.0354
+       ]
+      },
+      "macro": {
+       "value": -0.0076,
+       "ci": [
+        -0.0235,
+        0.0073
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.0091,
+       "ci": [
+        -0.041,
+        0.0211
+       ]
+      },
+      "pathology": {
+       "value": 0.0011,
+       "ci": [
+        0.0004,
+        0.0021
+       ]
+      },
+      "fundus": {
+       "value": -0.0045,
+       "ci": [
+        -0.0148,
+        0.0042
+       ]
+      },
+      "mammography": {
+       "value": -0.0172,
+       "ci": [
+        -0.0708,
+        0.0344
+       ]
+      },
+      "macro": {
+       "value": -0.0074,
+       "ci": [
+        -0.0234,
+        0.0074
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "pathology": {
+       "value": -0.0006,
+       "ci": [
+        -0.005,
+        0.0038
+       ]
+      },
+      "fundus": {
+       "value": 0.0203,
+       "ci": [
+        -0.0181,
+        0.0592
+       ]
+      },
+      "mammography": {
+       "value": -0.0092,
+       "ci": [
+        -0.0274,
+        0.0083
+       ]
+      },
+      "macro": {
+       "value": 0.0026,
+       "ci": [
+        -0.008,
+        0.0136
+       ]
+      }
+     }
+    },
+    "maha_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0144,
+       "ci": [
+        -0.0386,
+        0.0073
+       ]
+      },
+      "pathology": {
+       "value": -0.0004,
+       "ci": [
+        -0.0012,
+        0.0004
+       ]
+      },
+      "fundus": {
+       "value": -0.0087,
+       "ci": [
+        -0.0369,
+        0.019
+       ]
+      },
+      "mammography": {
+       "value": -0.0244,
+       "ci": [
+        -0.0972,
+        0.045
+       ]
+      },
+      "macro": {
+       "value": -0.012,
+       "ci": [
+        -0.0325,
+        0.0072
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.0144,
+       "ci": [
+        -0.0386,
+        0.0073
+       ]
+      },
+      "pathology": {
+       "value": 0.0008,
+       "ci": [
+        -0.0,
+        0.0019
+       ]
+      },
+      "fundus": {
+       "value": -0.0087,
+       "ci": [
+        -0.0369,
+        0.019
+       ]
+      },
+      "mammography": {
+       "value": -0.0249,
+       "ci": [
+        -0.0983,
+        0.0449
+       ]
+      },
+      "macro": {
+       "value": -0.0118,
+       "ci": [
+        -0.0326,
+        0.0075
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.0054,
+       "ci": [
+        -0.0377,
+        0.0261
+       ]
+      },
+      "pathology": {
+       "value": -0.0009,
+       "ci": [
+        -0.0054,
+        0.0036
+       ]
+      },
+      "fundus": {
+       "value": 0.0161,
+       "ci": [
+        -0.0278,
+        0.0592
+       ]
+      },
+      "mammography": {
+       "value": -0.0169,
+       "ci": [
+        -0.0703,
+        0.0337
+       ]
+      },
+      "macro": {
+       "value": -0.0018,
+       "ci": [
+        -0.0205,
+        0.0181
+       ]
+      }
+     }
+    },
+    "entropy_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.005,
+       "ci": [
+        -0.0047,
+        0.0164
+       ]
+      },
+      "pathology": {
+       "value": 0.001,
+       "ci": [
+        0.0004,
+        0.0017
+       ]
+      },
+      "fundus": {
+       "value": 0.0036,
+       "ci": [
+        -0.0242,
+        0.0312
+       ]
+      },
+      "mammography": {
+       "value": -0.0006,
+       "ci": [
+        -0.0103,
+        0.0094
+       ]
+      },
+      "macro": {
+       "value": 0.0022,
+       "ci": [
+        -0.0057,
+        0.0099
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": 0.005,
+       "ci": [
+        -0.0047,
+        0.0164
+       ]
+      },
+      "pathology": {
+       "value": 0.0022,
+       "ci": [
+        0.0013,
+        0.0033
+       ]
+      },
+      "fundus": {
+       "value": 0.0036,
+       "ci": [
+        -0.0242,
+        0.0312
+       ]
+      },
+      "mammography": {
+       "value": -0.0011,
+       "ci": [
+        -0.012,
+        0.01
+       ]
+      },
+      "macro": {
+       "value": 0.0024,
+       "ci": [
+        -0.0057,
+        0.0103
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.014,
+       "ci": [
+        -0.0138,
+        0.0442
+       ]
+      },
+      "pathology": {
+       "value": 0.0005,
+       "ci": [
+        -0.0038,
+        0.0048
+       ]
+      },
+      "fundus": {
+       "value": 0.0284,
+       "ci": [
+        0.0007,
+        0.0573
+       ]
+      },
+      "mammography": {
+       "value": 0.0069,
+       "ci": [
+        -0.045,
+        0.0624
+       ]
+      },
+      "macro": {
+       "value": 0.0125,
+       "ci": [
+        -0.004,
+        0.0301
+       ]
+      }
+     }
+    },
+    "entropy_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0065,
+       "ci": [
+        -0.0047,
+        0.02
+       ]
+      },
+      "pathology": {
+       "value": 0.0008,
+       "ci": [
+        0.0003,
+        0.0015
+       ]
+      },
+      "fundus": {
+       "value": 0.01,
+       "ci": [
+        -0.0139,
+        0.0351
+       ]
+      },
+      "mammography": {
+       "value": -0.0028,
+       "ci": [
+        -0.0159,
+        0.0113
+       ]
+      },
+      "macro": {
+       "value": 0.0036,
+       "ci": [
+        -0.004,
+        0.0114
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": 0.0065,
+       "ci": [
+        -0.0047,
+        0.02
+       ]
+      },
+      "pathology": {
+       "value": 0.0021,
+       "ci": [
+        0.0012,
+        0.0031
+       ]
+      },
+      "fundus": {
+       "value": 0.01,
+       "ci": [
+        -0.0139,
+        0.0351
+       ]
+      },
+      "mammography": {
+       "value": -0.0033,
+       "ci": [
+        -0.0174,
+        0.0115
+       ]
+      },
+      "macro": {
+       "value": 0.0038,
+       "ci": [
+        -0.004,
+        0.0117
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.0155,
+       "ci": [
+        -0.0147,
+        0.0479
+       ]
+      },
+      "pathology": {
+       "value": 0.0004,
+       "ci": [
+        -0.004,
+        0.0048
+       ]
+      },
+      "fundus": {
+       "value": 0.0347,
+       "ci": [
+        -0.0032,
+        0.0736
+       ]
+      },
+      "mammography": {
+       "value": 0.0047,
+       "ci": [
+        -0.0473,
+        0.0598
+       ]
+      },
+      "macro": {
+       "value": 0.0138,
+       "ci": [
+        -0.0037,
+        0.0333
+       ]
+      }
+     }
+    }
+   },
+   "temperatures": {
+    "chest_xray": 0.85,
+    "pathology": 0.767,
+    "fundus": 0.923,
+    "mammography": 0.674
+   },
+   "top3_candidates": {
+    "chest_xray": [
+     "siglip2_base",
+     "rad_dino",
+     "retfound"
+    ],
+    "pathology": [
+     "dinov2_large",
+     "phikon",
+     "phikon_v2"
+    ],
+    "fundus": [
+     "imagenet_convnext",
+     "dinov2_base",
+     "phikon_v2"
+    ],
+    "mammography": [
+     "dinov2_large",
+     "phikon_v2",
+     "mammo_clip"
+    ]
+   }
+  },
+  "grayscale": {
+   "scores": {
+    "maha_uniform": {
+     "chest_xray": 0.9375,
+     "pathology": 0.9744,
+     "fundus": 0.3706,
+     "mammography": 0.4661,
+     "macro": 0.6872,
+     "macro_ci": [
+      0.6647,
+      0.7098
+     ]
+    },
+    "maha_top3": {
+     "chest_xray": 0.9321,
+     "pathology": 0.9819,
+     "fundus": 0.5207,
+     "mammography": 0.4583,
+     "macro": 0.7233,
+     "macro_ci": [
+      0.6999,
+      0.7459
+     ]
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.9515,
+     "pathology": 0.9808,
+     "fundus": 0.4241,
+     "mammography": 0.4822,
+     "macro": 0.7096,
+     "macro_ci": [
+      0.6877,
+      0.7318
+     ]
+    },
+    "entropy_top3": {
+     "chest_xray": 0.953,
+     "pathology": 0.9813,
+     "fundus": 0.5269,
+     "mammography": 0.4799,
+     "macro": 0.7353,
+     "macro_ci": [
+      0.7128,
+      0.7579
+     ]
+    },
+    "healthrouter": {
+     "chest_xray": 0.9466,
+     "pathology": 0.9797,
+     "fundus": 0.4881,
+     "mammography": 0.4828,
+     "macro": 0.7243,
+     "macro_ci": [
+      0.7023,
+      0.7472
+     ]
+    },
+    "distance_fallback": {
+     "chest_xray": 0.9466,
+     "pathology": 0.974,
+     "fundus": 0.4881,
+     "mammography": 0.4833,
+     "macro": 0.723,
+     "macro_ci": [
+      0.7003,
+      0.7463
+     ]
+    },
+    "uniform": {
+     "chest_xray": 0.9375,
+     "pathology": 0.9809,
+     "fundus": 0.3686,
+     "mammography": 0.4753,
+     "macro": 0.6906,
+     "macro_ci": [
+      0.6681,
+      0.7131
+     ]
+    }
+   },
+   "flag_rate": {
+    "distance_fallback": {
+     "chest_xray": 0.0,
+     "pathology": 0.578,
+     "fundus": 0.0,
+     "mammography": 0.0101,
+     "all": 0.2839
+    },
+    "maha_uniform": {
+     "chest_xray": 1.0,
+     "pathology": 0.614,
+     "fundus": 0.9205,
+     "mammography": 0.8788,
+     "all": 0.7683
+    },
+    "maha_top3": {
+     "chest_xray": 1.0,
+     "pathology": 0.922,
+     "fundus": 1.0,
+     "mammography": 0.9899,
+     "all": 0.96
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.087,
+     "pathology": 0.075,
+     "fundus": 0.2616,
+     "mammography": 0.0758,
+     "all": 0.1229
+    },
+    "entropy_top3": {
+     "chest_xray": 0.087,
+     "pathology": 0.075,
+     "fundus": 0.2616,
+     "mammography": 0.0758,
+     "all": 0.1229
+    }
+   },
+   "q": {
+    "maha_uniform": 99,
+    "maha_top3": 95,
+    "entropy_uniform": 95,
+    "entropy_top3": 95
+   },
+   "diffs": {
+    "maha_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0091,
+       "ci": [
+        -0.041,
+        0.0211
+       ]
+      },
+      "pathology": {
+       "value": -0.0053,
+       "ci": [
+        -0.0104,
+        -0.0007
+       ]
+      },
+      "fundus": {
+       "value": -0.1175,
+       "ci": [
+        -0.1811,
+        -0.0521
+       ]
+      },
+      "mammography": {
+       "value": -0.0167,
+       "ci": [
+        -0.07,
+        0.0354
+       ]
+      },
+      "macro": {
+       "value": -0.0371,
+       "ci": [
+        -0.0591,
+        -0.0145
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.0091,
+       "ci": [
+        -0.041,
+        0.0211
+       ]
+      },
+      "pathology": {
+       "value": 0.0004,
+       "ci": [
+        -0.004,
+        0.0047
+       ]
+      },
+      "fundus": {
+       "value": -0.1175,
+       "ci": [
+        -0.1811,
+        -0.0521
+       ]
+      },
+      "mammography": {
+       "value": -0.0172,
+       "ci": [
+        -0.0708,
+        0.0344
+       ]
+      },
+      "macro": {
+       "value": -0.0358,
+       "ci": [
+        -0.0583,
+        -0.0132
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "pathology": {
+       "value": -0.0065,
+       "ci": [
+        -0.012,
+        -0.0019
+       ]
+      },
+      "fundus": {
+       "value": 0.0021,
+       "ci": [
+        0.0,
+        0.0052
+       ]
+      },
+      "mammography": {
+       "value": -0.0092,
+       "ci": [
+        -0.0274,
+        0.0083
+       ]
+      },
+      "macro": {
+       "value": -0.0034,
+       "ci": [
+        -0.0081,
+        0.0011
+       ]
+      }
+     }
+    },
+    "maha_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0144,
+       "ci": [
+        -0.0386,
+        0.0073
+       ]
+      },
+      "pathology": {
+       "value": 0.0022,
+       "ci": [
+        -0.0011,
+        0.0055
+       ]
+      },
+      "fundus": {
+       "value": 0.0325,
+       "ci": [
+        -0.026,
+        0.0956
+       ]
+      },
+      "mammography": {
+       "value": -0.0244,
+       "ci": [
+        -0.0972,
+        0.045
+       ]
+      },
+      "macro": {
+       "value": -0.001,
+       "ci": [
+        -0.0258,
+        0.0231
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.0144,
+       "ci": [
+        -0.0386,
+        0.0073
+       ]
+      },
+      "pathology": {
+       "value": 0.0079,
+       "ci": [
+        0.0034,
+        0.0131
+       ]
+      },
+      "fundus": {
+       "value": 0.0325,
+       "ci": [
+        -0.026,
+        0.0956
+       ]
+      },
+      "mammography": {
+       "value": -0.0249,
+       "ci": [
+        -0.0983,
+        0.0449
+       ]
+      },
+      "macro": {
+       "value": 0.0003,
+       "ci": [
+        -0.0248,
+        0.0243
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.0054,
+       "ci": [
+        -0.0377,
+        0.0261
+       ]
+      },
+      "pathology": {
+       "value": 0.001,
+       "ci": [
+        -0.0024,
+        0.0042
+       ]
+      },
+      "fundus": {
+       "value": 0.1521,
+       "ci": [
+        0.1142,
+        0.1928
+       ]
+      },
+      "mammography": {
+       "value": -0.0169,
+       "ci": [
+        -0.0703,
+        0.0337
+       ]
+      },
+      "macro": {
+       "value": 0.0327,
+       "ci": [
+        0.0141,
+        0.051
+       ]
+      }
+     }
+    },
+    "entropy_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.005,
+       "ci": [
+        -0.0047,
+        0.0164
+       ]
+      },
+      "pathology": {
+       "value": 0.0011,
+       "ci": [
+        0.0001,
+        0.0024
+       ]
+      },
+      "fundus": {
+       "value": -0.064,
+       "ci": [
+        -0.1185,
+        -0.0109
+       ]
+      },
+      "mammography": {
+       "value": -0.0006,
+       "ci": [
+        -0.0103,
+        0.0094
+       ]
+      },
+      "macro": {
+       "value": -0.0146,
+       "ci": [
+        -0.0288,
+        -0.0011
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": 0.005,
+       "ci": [
+        -0.0047,
+        0.0164
+       ]
+      },
+      "pathology": {
+       "value": 0.0068,
+       "ci": [
+        0.0022,
+        0.0118
+       ]
+      },
+      "fundus": {
+       "value": -0.064,
+       "ci": [
+        -0.1185,
+        -0.0109
+       ]
+      },
+      "mammography": {
+       "value": -0.0011,
+       "ci": [
+        -0.012,
+        0.01
+       ]
+      },
+      "macro": {
+       "value": -0.0133,
+       "ci": [
+        -0.0275,
+        0.0002
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.014,
+       "ci": [
+        -0.0138,
+        0.0442
+       ]
+      },
+      "pathology": {
+       "value": -0.0001,
+       "ci": [
+        -0.0042,
+        0.0039
+       ]
+      },
+      "fundus": {
+       "value": 0.0555,
+       "ci": [
+        0.0157,
+        0.0935
+       ]
+      },
+      "mammography": {
+       "value": 0.0069,
+       "ci": [
+        -0.045,
+        0.0624
+       ]
+      },
+      "macro": {
+       "value": 0.0191,
+       "ci": [
+        0.0012,
+        0.0377
+       ]
+      }
+     }
+    },
+    "entropy_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0065,
+       "ci": [
+        -0.0047,
+        0.02
+       ]
+      },
+      "pathology": {
+       "value": 0.0016,
+       "ci": [
+        0.0007,
+        0.0027
+       ]
+      },
+      "fundus": {
+       "value": 0.0388,
+       "ci": [
+        -0.0109,
+        0.0928
+       ]
+      },
+      "mammography": {
+       "value": -0.0028,
+       "ci": [
+        -0.0159,
+        0.0113
+       ]
+      },
+      "macro": {
+       "value": 0.011,
+       "ci": [
+        -0.0024,
+        0.0247
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": 0.0065,
+       "ci": [
+        -0.0047,
+        0.02
+       ]
+      },
+      "pathology": {
+       "value": 0.0073,
+       "ci": [
+        0.0026,
+        0.0125
+       ]
+      },
+      "fundus": {
+       "value": 0.0388,
+       "ci": [
+        -0.0109,
+        0.0928
+       ]
+      },
+      "mammography": {
+       "value": -0.0033,
+       "ci": [
+        -0.0174,
+        0.0115
+       ]
+      },
+      "macro": {
+       "value": 0.0123,
+       "ci": [
+        -0.0011,
+        0.0261
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.0155,
+       "ci": [
+        -0.0147,
+        0.0479
+       ]
+      },
+      "pathology": {
+       "value": 0.0004,
+       "ci": [
+        -0.0037,
+        0.0046
+       ]
+      },
+      "fundus": {
+       "value": 0.1584,
+       "ci": [
+        0.1099,
+        0.2077
+       ]
+      },
+      "mammography": {
+       "value": 0.0047,
+       "ci": [
+        -0.0473,
+        0.0598
+       ]
+      },
+      "macro": {
+       "value": 0.0447,
+       "ci": [
+        0.0255,
+        0.0654
+       ]
+      }
+     }
+    }
+   },
+   "temperatures": {
+    "chest_xray": 0.85,
+    "pathology": 0.767,
+    "fundus": 0.923,
+    "mammography": 0.674
+   },
+   "top3_candidates": {
+    "chest_xray": [
+     "siglip2_base",
+     "rad_dino",
+     "retfound"
+    ],
+    "pathology": [
+     "dinov2_large",
+     "phikon",
+     "phikon_v2"
+    ],
+    "fundus": [
+     "imagenet_convnext",
+     "dinov2_base",
+     "phikon_v2"
+    ],
+    "mammography": [
+     "dinov2_large",
+     "phikon_v2",
+     "mammo_clip"
+    ]
+   }
+  },
+  "blur": {
+   "scores": {
+    "maha_uniform": {
+     "chest_xray": 0.8802,
+     "pathology": 0.9841,
+     "fundus": 0.5393,
+     "mammography": 0.4817,
+     "macro": 0.7213,
+     "macro_ci": [
+      0.6961,
+      0.7461
+     ]
+    },
+    "maha_top3": {
+     "chest_xray": 0.8558,
+     "pathology": 0.9841,
+     "fundus": 0.5158,
+     "mammography": 0.5113,
+     "macro": 0.7168,
+     "macro_ci": [
+      0.6898,
+      0.7435
+     ]
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.8321,
+     "pathology": 0.9863,
+     "fundus": 0.4682,
+     "mammography": 0.4741,
+     "macro": 0.6902,
+     "macro_ci": [
+      0.6614,
+      0.7188
+     ]
+    },
+    "entropy_top3": {
+     "chest_xray": 0.8323,
+     "pathology": 0.9864,
+     "fundus": 0.4571,
+     "mammography": 0.4582,
+     "macro": 0.6835,
+     "macro_ci": [
+      0.6546,
+      0.7121
+     ]
+    },
+    "healthrouter": {
+     "chest_xray": 0.8364,
+     "pathology": 0.9857,
+     "fundus": 0.4633,
+     "mammography": 0.4785,
+     "macro": 0.691,
+     "macro_ci": [
+      0.6628,
+      0.7186
+     ]
+    },
+    "distance_fallback": {
+     "chest_xray": 0.8716,
+     "pathology": 0.9841,
+     "fundus": 0.4684,
+     "mammography": 0.4829,
+     "macro": 0.7017,
+     "macro_ci": [
+      0.6744,
+      0.7288
+     ]
+    },
+    "uniform": {
+     "chest_xray": 0.8802,
+     "pathology": 0.9836,
+     "fundus": 0.5393,
+     "mammography": 0.4817,
+     "macro": 0.7212,
+     "macro_ci": [
+      0.6962,
+      0.7457
+     ]
+    }
+   },
+   "flag_rate": {
+    "distance_fallback": {
+     "chest_xray": 0.9203,
+     "pathology": 0.067,
+     "fundus": 0.0039,
+     "mammography": 0.5177,
+     "all": 0.1956
+    },
+    "maha_uniform": {
+     "chest_xray": 1.0,
+     "pathology": 0.059,
+     "fundus": 1.0,
+     "mammography": 1.0,
+     "all": 0.541
+    },
+    "maha_top3": {
+     "chest_xray": 1.0,
+     "pathology": 0.25,
+     "fundus": 1.0,
+     "mammography": 1.0,
+     "all": 0.6341
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.0797,
+     "pathology": 0.047,
+     "fundus": 0.1919,
+     "mammography": 0.1136,
+     "all": 0.0985
+    },
+    "entropy_top3": {
+     "chest_xray": 0.0797,
+     "pathology": 0.047,
+     "fundus": 0.1919,
+     "mammography": 0.1136,
+     "all": 0.0985
+    }
+   },
+   "q": {
+    "maha_uniform": 99,
+    "maha_top3": 95,
+    "entropy_uniform": 95,
+    "entropy_top3": 95
+   },
+   "diffs": {
+    "maha_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0437,
+       "ci": [
+        -0.0136,
+        0.1028
+       ]
+      },
+      "pathology": {
+       "value": -0.0016,
+       "ci": [
+        -0.0025,
+        -0.0009
+       ]
+      },
+      "fundus": {
+       "value": 0.076,
+       "ci": [
+        0.0127,
+        0.1386
+       ]
+      },
+      "mammography": {
+       "value": 0.0032,
+       "ci": [
+        -0.0477,
+        0.0556
+       ]
+      },
+      "macro": {
+       "value": 0.0303,
+       "ci": [
+        0.0048,
+        0.056
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": 0.0086,
+       "ci": [
+        -0.0231,
+        0.0485
+       ]
+      },
+      "pathology": {
+       "value": 0.0,
+       "ci": [
+        -0.001,
+        0.001
+       ]
+      },
+      "fundus": {
+       "value": 0.0709,
+       "ci": [
+        0.0088,
+        0.1312
+       ]
+      },
+      "mammography": {
+       "value": -0.0012,
+       "ci": [
+        -0.0382,
+        0.0359
+       ]
+      },
+      "macro": {
+       "value": 0.0196,
+       "ci": [
+        0.0005,
+        0.0394
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "pathology": {
+       "value": 0.0005,
+       "ci": [
+        -0.0045,
+        0.0055
+       ]
+      },
+      "fundus": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "mammography": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "macro": {
+       "value": 0.0001,
+       "ci": [
+        -0.0011,
+        0.0014
+       ]
+      }
+     }
+    },
+    "maha_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0194,
+       "ci": [
+        -0.0062,
+        0.0485
+       ]
+      },
+      "pathology": {
+       "value": -0.0016,
+       "ci": [
+        -0.0032,
+        -0.0003
+       ]
+      },
+      "fundus": {
+       "value": 0.0525,
+       "ci": [
+        -0.0176,
+        0.1177
+       ]
+      },
+      "mammography": {
+       "value": 0.0328,
+       "ci": [
+        -0.037,
+        0.1014
+       ]
+      },
+      "macro": {
+       "value": 0.0258,
+       "ci": [
+        0.0009,
+        0.051
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.0157,
+       "ci": [
+        -0.0694,
+        0.0375
+       ]
+      },
+      "pathology": {
+       "value": -0.0,
+       "ci": [
+        -0.0012,
+        0.0012
+       ]
+      },
+      "fundus": {
+       "value": 0.0475,
+       "ci": [
+        -0.0237,
+        0.1139
+       ]
+      },
+      "mammography": {
+       "value": 0.0284,
+       "ci": [
+        -0.0322,
+        0.0866
+       ]
+      },
+      "macro": {
+       "value": 0.015,
+       "ci": [
+        -0.0114,
+        0.0412
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.0244,
+       "ci": [
+        -0.0798,
+        0.0315
+       ]
+      },
+      "pathology": {
+       "value": 0.0005,
+       "ci": [
+        -0.0044,
+        0.0052
+       ]
+      },
+      "fundus": {
+       "value": -0.0234,
+       "ci": [
+        -0.0664,
+        0.0176
+       ]
+      },
+      "mammography": {
+       "value": 0.0296,
+       "ci": [
+        -0.0161,
+        0.0744
+       ]
+      },
+      "macro": {
+       "value": -0.0044,
+       "ci": [
+        -0.0249,
+        0.0172
+       ]
+      }
+     }
+    },
+    "entropy_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0043,
+       "ci": [
+        -0.0168,
+        0.0067
+       ]
+      },
+      "pathology": {
+       "value": 0.0006,
+       "ci": [
+        0.0001,
+        0.0012
+       ]
+      },
+      "fundus": {
+       "value": 0.0049,
+       "ci": [
+        -0.0278,
+        0.0389
+       ]
+      },
+      "mammography": {
+       "value": -0.0044,
+       "ci": [
+        -0.0126,
+        0.0028
+       ]
+      },
+      "macro": {
+       "value": -0.0008,
+       "ci": [
+        -0.0098,
+        0.0085
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.0394,
+       "ci": [
+        -0.0976,
+        0.016
+       ]
+      },
+      "pathology": {
+       "value": 0.0022,
+       "ci": [
+        0.001,
+        0.0036
+       ]
+      },
+      "fundus": {
+       "value": -0.0002,
+       "ci": [
+        -0.0311,
+        0.0314
+       ]
+      },
+      "mammography": {
+       "value": -0.0089,
+       "ci": [
+        -0.0488,
+        0.0298
+       ]
+      },
+      "macro": {
+       "value": -0.0116,
+       "ci": [
+        -0.0313,
+        0.0063
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.0481,
+       "ci": [
+        -0.1075,
+        0.0106
+       ]
+      },
+      "pathology": {
+       "value": 0.0027,
+       "ci": [
+        -0.0021,
+        0.0076
+       ]
+      },
+      "fundus": {
+       "value": -0.0711,
+       "ci": [
+        -0.1288,
+        -0.0147
+       ]
+      },
+      "mammography": {
+       "value": -0.0077,
+       "ci": [
+        -0.0583,
+        0.0409
+       ]
+      },
+      "macro": {
+       "value": -0.031,
+       "ci": [
+        -0.0543,
+        -0.0079
+       ]
+      }
+     }
+    },
+    "entropy_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0041,
+       "ci": [
+        -0.0211,
+        0.0116
+       ]
+      },
+      "pathology": {
+       "value": 0.0007,
+       "ci": [
+        0.0002,
+        0.0013
+       ]
+      },
+      "fundus": {
+       "value": -0.0062,
+       "ci": [
+        -0.0421,
+        0.0291
+       ]
+      },
+      "mammography": {
+       "value": -0.0203,
+       "ci": [
+        -0.0389,
+        -0.0029
+       ]
+      },
+      "macro": {
+       "value": -0.0075,
+       "ci": [
+        -0.0176,
+        0.0027
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.0392,
+       "ci": [
+        -0.1004,
+        0.0192
+       ]
+      },
+      "pathology": {
+       "value": 0.0023,
+       "ci": [
+        0.0011,
+        0.0037
+       ]
+      },
+      "fundus": {
+       "value": -0.0112,
+       "ci": [
+        -0.048,
+        0.0249
+       ]
+      },
+      "mammography": {
+       "value": -0.0247,
+       "ci": [
+        -0.0671,
+        0.0166
+       ]
+      },
+      "macro": {
+       "value": -0.0182,
+       "ci": [
+        -0.0383,
+        0.0008
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.0478,
+       "ci": [
+        -0.1093,
+        0.0131
+       ]
+      },
+      "pathology": {
+       "value": 0.0028,
+       "ci": [
+        -0.002,
+        0.0078
+       ]
+      },
+      "fundus": {
+       "value": -0.0821,
+       "ci": [
+        -0.1426,
+        -0.0241
+       ]
+      },
+      "mammography": {
+       "value": -0.0235,
+       "ci": [
+        -0.075,
+        0.0262
+       ]
+      },
+      "macro": {
+       "value": -0.0377,
+       "ci": [
+        -0.0619,
+        -0.0131
+       ]
+      }
+     }
+    }
+   },
+   "temperatures": {
+    "chest_xray": 0.85,
+    "pathology": 0.767,
+    "fundus": 0.923,
+    "mammography": 0.674
+   },
+   "top3_candidates": {
+    "chest_xray": [
+     "siglip2_base",
+     "rad_dino",
+     "retfound"
+    ],
+    "pathology": [
+     "dinov2_large",
+     "phikon",
+     "phikon_v2"
+    ],
+    "fundus": [
+     "imagenet_convnext",
+     "dinov2_base",
+     "phikon_v2"
+    ],
+    "mammography": [
+     "dinov2_large",
+     "phikon_v2",
+     "mammo_clip"
+    ]
+   }
+  },
+  "low_resolution": {
+   "scores": {
+    "maha_uniform": {
+     "chest_xray": 0.8748,
+     "pathology": 0.9837,
+     "fundus": 0.5086,
+     "mammography": 0.4671,
+     "macro": 0.7085,
+     "macro_ci": [
+      0.683,
+      0.7346
+     ]
+    },
+    "maha_top3": {
+     "chest_xray": 0.7593,
+     "pathology": 0.9834,
+     "fundus": 0.479,
+     "mammography": 0.5145,
+     "macro": 0.684,
+     "macro_ci": [
+      0.6534,
+      0.7148
+     ]
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.7629,
+     "pathology": 0.9842,
+     "fundus": 0.4592,
+     "mammography": 0.4876,
+     "macro": 0.6735,
+     "macro_ci": [
+      0.6438,
+      0.7039
+     ]
+    },
+    "entropy_top3": {
+     "chest_xray": 0.7412,
+     "pathology": 0.9848,
+     "fundus": 0.4718,
+     "mammography": 0.4918,
+     "macro": 0.6724,
+     "macro_ci": [
+      0.642,
+      0.7026
+     ]
+    },
+    "healthrouter": {
+     "chest_xray": 0.7517,
+     "pathology": 0.9836,
+     "fundus": 0.4204,
+     "mammography": 0.4836,
+     "macro": 0.6598,
+     "macro_ci": [
+      0.6286,
+      0.6906
+     ]
+    },
+    "distance_fallback": {
+     "chest_xray": 0.8748,
+     "pathology": 0.9835,
+     "fundus": 0.4264,
+     "mammography": 0.4748,
+     "macro": 0.6898,
+     "macro_ci": [
+      0.664,
+      0.7171
+     ]
+    },
+    "uniform": {
+     "chest_xray": 0.8748,
+     "pathology": 0.983,
+     "fundus": 0.5086,
+     "mammography": 0.4671,
+     "macro": 0.7084,
+     "macro_ci": [
+      0.6824,
+      0.7344
+     ]
+    }
+   },
+   "flag_rate": {
+    "distance_fallback": {
+     "chest_xray": 1.0,
+     "pathology": 0.071,
+     "fundus": 0.0039,
+     "mammography": 0.8485,
+     "all": 0.2668
+    },
+    "maha_uniform": {
+     "chest_xray": 1.0,
+     "pathology": 0.062,
+     "fundus": 1.0,
+     "mammography": 1.0,
+     "all": 0.5424
+    },
+    "maha_top3": {
+     "chest_xray": 1.0,
+     "pathology": 0.194,
+     "fundus": 1.0,
+     "mammography": 1.0,
+     "all": 0.6068
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.1594,
+     "pathology": 0.068,
+     "fundus": 0.2016,
+     "mammography": 0.0859,
+     "all": 0.1112
+    },
+    "entropy_top3": {
+     "chest_xray": 0.1594,
+     "pathology": 0.068,
+     "fundus": 0.2016,
+     "mammography": 0.0859,
+     "all": 0.1112
+    }
+   },
+   "q": {
+    "maha_uniform": 99,
+    "maha_top3": 95,
+    "entropy_uniform": 95,
+    "entropy_top3": 95
+   },
+   "diffs": {
+    "maha_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.1231,
+       "ci": [
+        0.0489,
+        0.2045
+       ]
+      },
+      "pathology": {
+       "value": 0.0001,
+       "ci": [
+        -0.0009,
+        0.0013
+       ]
+      },
+      "fundus": {
+       "value": 0.0882,
+       "ci": [
+        0.022,
+        0.159
+       ]
+      },
+      "mammography": {
+       "value": -0.0164,
+       "ci": [
+        -0.066,
+        0.0333
+       ]
+      },
+      "macro": {
+       "value": 0.0487,
+       "ci": [
+        0.0211,
+        0.0774
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "pathology": {
+       "value": 0.0002,
+       "ci": [
+        -0.0009,
+        0.0013
+       ]
+      },
+      "fundus": {
+       "value": 0.0822,
+       "ci": [
+        0.0163,
+        0.1505
+       ]
+      },
+      "mammography": {
+       "value": -0.0076,
+       "ci": [
+        -0.0288,
+        0.0111
+       ]
+      },
+      "macro": {
+       "value": 0.0187,
+       "ci": [
+        0.0018,
+        0.0361
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "pathology": {
+       "value": 0.0006,
+       "ci": [
+        -0.0032,
+        0.005
+       ]
+      },
+      "fundus": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "mammography": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "macro": {
+       "value": 0.0002,
+       "ci": [
+        -0.0008,
+        0.0012
+       ]
+      }
+     }
+    },
+    "maha_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0075,
+       "ci": [
+        -0.0282,
+        0.0431
+       ]
+      },
+      "pathology": {
+       "value": -0.0002,
+       "ci": [
+        -0.0017,
+        0.0014
+       ]
+      },
+      "fundus": {
+       "value": 0.0586,
+       "ci": [
+        -0.0219,
+        0.14
+       ]
+      },
+      "mammography": {
+       "value": 0.0309,
+       "ci": [
+        -0.0363,
+        0.0975
+       ]
+      },
+      "macro": {
+       "value": 0.0242,
+       "ci": [
+        -0.0027,
+        0.051
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.1155,
+       "ci": [
+        -0.192,
+        -0.0448
+       ]
+      },
+      "pathology": {
+       "value": -0.0,
+       "ci": [
+        -0.0019,
+        0.0019
+       ]
+      },
+      "fundus": {
+       "value": 0.0526,
+       "ci": [
+        -0.0262,
+        0.132
+       ]
+      },
+      "mammography": {
+       "value": 0.0397,
+       "ci": [
+        -0.0064,
+        0.0827
+       ]
+      },
+      "macro": {
+       "value": -0.0058,
+       "ci": [
+        -0.0359,
+        0.023
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.1155,
+       "ci": [
+        -0.192,
+        -0.0448
+       ]
+      },
+      "pathology": {
+       "value": 0.0004,
+       "ci": [
+        -0.0035,
+        0.0046
+       ]
+      },
+      "fundus": {
+       "value": -0.0296,
+       "ci": [
+        -0.0875,
+        0.027
+       ]
+      },
+      "mammography": {
+       "value": 0.0474,
+       "ci": [
+        0.0064,
+        0.0888
+       ]
+      },
+      "macro": {
+       "value": -0.0244,
+       "ci": [
+        -0.0506,
+        0.0001
+       ]
+      }
+     }
+    },
+    "entropy_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0112,
+       "ci": [
+        -0.0157,
+        0.0388
+       ]
+      },
+      "pathology": {
+       "value": 0.0006,
+       "ci": [
+        -0.0008,
+        0.0018
+       ]
+      },
+      "fundus": {
+       "value": 0.0388,
+       "ci": [
+        0.007,
+        0.0728
+       ]
+      },
+      "mammography": {
+       "value": 0.0041,
+       "ci": [
+        -0.001,
+        0.0093
+       ]
+      },
+      "macro": {
+       "value": 0.0137,
+       "ci": [
+        0.0033,
+        0.0248
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.1119,
+       "ci": [
+        -0.1851,
+        -0.0414
+       ]
+      },
+      "pathology": {
+       "value": 0.0007,
+       "ci": [
+        -0.0011,
+        0.0023
+       ]
+      },
+      "fundus": {
+       "value": 0.0328,
+       "ci": [
+        -0.0031,
+        0.0678
+       ]
+      },
+      "mammography": {
+       "value": 0.0129,
+       "ci": [
+        -0.0365,
+        0.0598
+       ]
+      },
+      "macro": {
+       "value": -0.0163,
+       "ci": [
+        -0.04,
+        0.0057
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.1119,
+       "ci": [
+        -0.1851,
+        -0.0414
+       ]
+      },
+      "pathology": {
+       "value": 0.0012,
+       "ci": [
+        -0.002,
+        0.0047
+       ]
+      },
+      "fundus": {
+       "value": -0.0494,
+       "ci": [
+        -0.1132,
+        0.0108
+       ]
+      },
+      "mammography": {
+       "value": 0.0205,
+       "ci": [
+        -0.0287,
+        0.0692
+       ]
+      },
+      "macro": {
+       "value": -0.0349,
+       "ci": [
+        -0.0609,
+        -0.009
+       ]
+      }
+     }
+    },
+    "entropy_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0106,
+       "ci": [
+        -0.0541,
+        0.0291
+       ]
+      },
+      "pathology": {
+       "value": 0.0013,
+       "ci": [
+        0.0002,
+        0.0024
+       ]
+      },
+      "fundus": {
+       "value": 0.0513,
+       "ci": [
+        0.0136,
+        0.0925
+       ]
+      },
+      "mammography": {
+       "value": 0.0083,
+       "ci": [
+        -0.0012,
+        0.0187
+       ]
+      },
+      "macro": {
+       "value": 0.0126,
+       "ci": [
+        -0.0021,
+        0.0271
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.1336,
+       "ci": [
+        -0.2123,
+        -0.0595
+       ]
+      },
+      "pathology": {
+       "value": 0.0014,
+       "ci": [
+        -0.0002,
+        0.0029
+       ]
+      },
+      "fundus": {
+       "value": 0.0454,
+       "ci": [
+        0.006,
+        0.0881
+       ]
+      },
+      "mammography": {
+       "value": 0.0171,
+       "ci": [
+        -0.0312,
+        0.0623
+       ]
+      },
+      "macro": {
+       "value": -0.0174,
+       "ci": [
+        -0.042,
+        0.0062
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.1336,
+       "ci": [
+        -0.2123,
+        -0.0595
+       ]
+      },
+      "pathology": {
+       "value": 0.0018,
+       "ci": [
+        -0.0016,
+        0.0057
+       ]
+      },
+      "fundus": {
+       "value": -0.0369,
+       "ci": [
+        -0.1057,
+        0.0289
+       ]
+      },
+      "mammography": {
+       "value": 0.0247,
+       "ci": [
+        -0.0235,
+        0.0724
+       ]
+      },
+      "macro": {
+       "value": -0.036,
+       "ci": [
+        -0.0631,
+        -0.0094
+       ]
+      }
+     }
+    }
+   },
+   "temperatures": {
+    "chest_xray": 0.85,
+    "pathology": 0.767,
+    "fundus": 0.923,
+    "mammography": 0.674
+   },
+   "top3_candidates": {
+    "chest_xray": [
+     "siglip2_base",
+     "rad_dino",
+     "retfound"
+    ],
+    "pathology": [
+     "dinov2_large",
+     "phikon",
+     "phikon_v2"
+    ],
+    "fundus": [
+     "imagenet_convnext",
+     "dinov2_base",
+     "phikon_v2"
+    ],
+    "mammography": [
+     "dinov2_large",
+     "phikon_v2",
+     "mammo_clip"
+    ]
+   }
+  },
+  "jpeg": {
+   "scores": {
+    "maha_uniform": {
+     "chest_xray": 0.8099,
+     "pathology": 0.9663,
+     "fundus": 0.4408,
+     "mammography": 0.467,
+     "macro": 0.671,
+     "macro_ci": [
+      0.6411,
+      0.7008
+     ]
+    },
+    "maha_top3": {
+     "chest_xray": 0.7129,
+     "pathology": 0.9596,
+     "fundus": 0.3975,
+     "mammography": 0.4927,
+     "macro": 0.6407,
+     "macro_ci": [
+      0.6058,
+      0.6716
+     ]
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.6692,
+     "pathology": 0.9697,
+     "fundus": 0.3443,
+     "mammography": 0.4789,
+     "macro": 0.6155,
+     "macro_ci": [
+      0.5828,
+      0.6498
+     ]
+    },
+    "entropy_top3": {
+     "chest_xray": 0.6543,
+     "pathology": 0.9693,
+     "fundus": 0.3005,
+     "mammography": 0.4773,
+     "macro": 0.6004,
+     "macro_ci": [
+      0.5655,
+      0.6359
+     ]
+    },
+    "healthrouter": {
+     "chest_xray": 0.6647,
+     "pathology": 0.9684,
+     "fundus": 0.2051,
+     "mammography": 0.4795,
+     "macro": 0.5794,
+     "macro_ci": [
+      0.5454,
+      0.6152
+     ]
+    },
+    "distance_fallback": {
+     "chest_xray": 0.8099,
+     "pathology": 0.9618,
+     "fundus": 0.2281,
+     "mammography": 0.4624,
+     "macro": 0.6155,
+     "macro_ci": [
+      0.5839,
+      0.6466
+     ]
+    },
+    "uniform": {
+     "chest_xray": 0.8099,
+     "pathology": 0.9728,
+     "fundus": 0.4408,
+     "mammography": 0.467,
+     "macro": 0.6726,
+     "macro_ci": [
+      0.6424,
+      0.7022
+     ]
+    }
+   },
+   "flag_rate": {
+    "distance_fallback": {
+     "chest_xray": 1.0,
+     "pathology": 0.144,
+     "fundus": 0.0213,
+     "mammography": 0.8864,
+     "all": 0.3141
+    },
+    "maha_uniform": {
+     "chest_xray": 1.0,
+     "pathology": 0.092,
+     "fundus": 1.0,
+     "mammography": 1.0,
+     "all": 0.5571
+    },
+    "maha_top3": {
+     "chest_xray": 1.0,
+     "pathology": 0.274,
+     "fundus": 1.0,
+     "mammography": 1.0,
+     "all": 0.6459
+    },
+    "entropy_uniform": {
+     "chest_xray": 0.1522,
+     "pathology": 0.07,
+     "fundus": 0.5853,
+     "mammography": 0.0985,
+     "all": 0.2107
+    },
+    "entropy_top3": {
+     "chest_xray": 0.1522,
+     "pathology": 0.07,
+     "fundus": 0.5853,
+     "mammography": 0.0985,
+     "all": 0.2107
+    }
+   },
+   "q": {
+    "maha_uniform": 99,
+    "maha_top3": 95,
+    "entropy_uniform": 95,
+    "entropy_top3": 95
+   },
+   "diffs": {
+    "maha_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.1453,
+       "ci": [
+        0.0556,
+        0.2341
+       ]
+      },
+      "pathology": {
+       "value": -0.0021,
+       "ci": [
+        -0.005,
+        0.0011
+       ]
+      },
+      "fundus": {
+       "value": 0.2357,
+       "ci": [
+        0.1491,
+        0.3233
+       ]
+      },
+      "mammography": {
+       "value": -0.0125,
+       "ci": [
+        -0.0791,
+        0.0537
+       ]
+      },
+      "macro": {
+       "value": 0.0916,
+       "ci": [
+        0.057,
+        0.1255
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "pathology": {
+       "value": 0.0045,
+       "ci": [
+        0.0023,
+        0.0072
+       ]
+      },
+      "fundus": {
+       "value": 0.2128,
+       "ci": [
+        0.1278,
+        0.2986
+       ]
+      },
+      "mammography": {
+       "value": 0.0046,
+       "ci": [
+        -0.0253,
+        0.0352
+       ]
+      },
+      "macro": {
+       "value": 0.0555,
+       "ci": [
+        0.0329,
+        0.0775
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "pathology": {
+       "value": -0.0065,
+       "ci": [
+        -0.0141,
+        0.0007
+       ]
+      },
+      "fundus": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "mammography": {
+       "value": 0.0,
+       "ci": [
+        0.0,
+        0.0
+       ]
+      },
+      "macro": {
+       "value": -0.0016,
+       "ci": [
+        -0.0035,
+        0.0002
+       ]
+      }
+     }
+    },
+    "maha_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0483,
+       "ci": [
+        -0.0172,
+        0.1164
+       ]
+      },
+      "pathology": {
+       "value": -0.0089,
+       "ci": [
+        -0.013,
+        -0.005
+       ]
+      },
+      "fundus": {
+       "value": 0.1924,
+       "ci": [
+        0.084,
+        0.2991
+       ]
+      },
+      "mammography": {
+       "value": 0.0132,
+       "ci": [
+        -0.0634,
+        0.0901
+       ]
+      },
+      "macro": {
+       "value": 0.0612,
+       "ci": [
+        0.0253,
+        0.0973
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.097,
+       "ci": [
+        -0.1759,
+        -0.0218
+       ]
+      },
+      "pathology": {
+       "value": -0.0022,
+       "ci": [
+        -0.0062,
+        0.0021
+       ]
+      },
+      "fundus": {
+       "value": 0.1694,
+       "ci": [
+        0.0612,
+        0.2755
+       ]
+      },
+      "mammography": {
+       "value": 0.0303,
+       "ci": [
+        -0.0158,
+        0.0828
+       ]
+      },
+      "macro": {
+       "value": 0.0251,
+       "ci": [
+        -0.009,
+        0.0586
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.097,
+       "ci": [
+        -0.1759,
+        -0.0218
+       ]
+      },
+      "pathology": {
+       "value": -0.0132,
+       "ci": [
+        -0.0216,
+        -0.0057
+       ]
+      },
+      "fundus": {
+       "value": -0.0433,
+       "ci": [
+        -0.1241,
+        0.033
+       ]
+      },
+      "mammography": {
+       "value": 0.0257,
+       "ci": [
+        -0.0147,
+        0.0679
+       ]
+      },
+      "macro": {
+       "value": -0.032,
+       "ci": [
+        -0.0619,
+        -0.0034
+       ]
+      }
+     }
+    },
+    "entropy_uniform": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": 0.0045,
+       "ci": [
+        -0.0058,
+        0.0159
+       ]
+      },
+      "pathology": {
+       "value": 0.0013,
+       "ci": [
+        0.0004,
+        0.0023
+       ]
+      },
+      "fundus": {
+       "value": 0.1392,
+       "ci": [
+        0.0714,
+        0.2098
+       ]
+      },
+      "mammography": {
+       "value": -0.0006,
+       "ci": [
+        -0.005,
+        0.0042
+       ]
+      },
+      "macro": {
+       "value": 0.0361,
+       "ci": [
+        0.019,
+        0.0539
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.1407,
+       "ci": [
+        -0.2282,
+        -0.0543
+       ]
+      },
+      "pathology": {
+       "value": 0.0079,
+       "ci": [
+        0.0043,
+        0.0118
+       ]
+      },
+      "fundus": {
+       "value": 0.1162,
+       "ci": [
+        0.0484,
+        0.1851
+       ]
+      },
+      "mammography": {
+       "value": 0.0165,
+       "ci": [
+        -0.0444,
+        0.0789
+       ]
+      },
+      "macro": {
+       "value": -0.0,
+       "ci": [
+        -0.0322,
+        0.0322
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.1407,
+       "ci": [
+        -0.2282,
+        -0.0543
+       ]
+      },
+      "pathology": {
+       "value": -0.003,
+       "ci": [
+        -0.0095,
+        0.0029
+       ]
+      },
+      "fundus": {
+       "value": -0.0965,
+       "ci": [
+        -0.1546,
+        -0.0367
+       ]
+      },
+      "mammography": {
+       "value": 0.0119,
+       "ci": [
+        -0.0522,
+        0.0781
+       ]
+      },
+      "macro": {
+       "value": -0.0571,
+       "ci": [
+        -0.0884,
+        -0.0268
+       ]
+      }
+     }
+    },
+    "entropy_top3": {
+     "minus_healthrouter": {
+      "chest_xray": {
+       "value": -0.0103,
+       "ci": [
+        -0.0429,
+        0.0198
+       ]
+      },
+      "pathology": {
+       "value": 0.0009,
+       "ci": [
+        -0.0001,
+        0.002
+       ]
+      },
+      "fundus": {
+       "value": 0.0954,
+       "ci": [
+        0.0165,
+        0.1728
+       ]
+      },
+      "mammography": {
+       "value": -0.0022,
+       "ci": [
+        -0.0147,
+        0.0105
+       ]
+      },
+      "macro": {
+       "value": 0.0209,
+       "ci": [
+        -0.0007,
+        0.0429
+       ]
+      }
+     },
+     "minus_distance_fallback": {
+      "chest_xray": {
+       "value": -0.1556,
+       "ci": [
+        -0.2472,
+        -0.0698
+       ]
+      },
+      "pathology": {
+       "value": 0.0076,
+       "ci": [
+        0.0037,
+        0.0114
+       ]
+      },
+      "fundus": {
+       "value": 0.0724,
+       "ci": [
+        -0.0062,
+        0.1509
+       ]
+      },
+      "mammography": {
+       "value": 0.0149,
+       "ci": [
+        -0.0437,
+        0.0764
+       ]
+      },
+      "macro": {
+       "value": -0.0152,
+       "ci": [
+        -0.05,
+        0.019
+       ]
+      }
+     },
+     "minus_uniform": {
+      "chest_xray": {
+       "value": -0.1556,
+       "ci": [
+        -0.2472,
+        -0.0698
+       ]
+      },
+      "pathology": {
+       "value": -0.0034,
+       "ci": [
+        -0.0101,
+        0.0027
+       ]
+      },
+      "fundus": {
+       "value": -0.1403,
+       "ci": [
+        -0.2191,
+        -0.0581
+       ]
+      },
+      "mammography": {
+       "value": 0.0103,
+       "ci": [
+        -0.0534,
+        0.075
+       ]
+      },
+      "macro": {
+       "value": -0.0723,
+       "ci": [
+        -0.1061,
+        -0.0384
+       ]
+      }
+     }
+    }
+   },
+   "temperatures": {
+    "chest_xray": 0.85,
+    "pathology": 0.767,
+    "fundus": 0.923,
+    "mammography": 0.674
+   },
+   "top3_candidates": {
+    "chest_xray": [
+     "siglip2_base",
+     "rad_dino",
+     "retfound"
+    ],
+    "pathology": [
+     "dinov2_large",
+     "phikon",
+     "phikon_v2"
+    ],
+    "fundus": [
+     "imagenet_convnext",
+     "dinov2_base",
+     "phikon_v2"
+    ],
+    "mammography": [
+     "dinov2_large",
+     "phikon_v2",
+     "mammo_clip"
+    ]
+   }
+  }
+ },
+ "in_source": {
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "scores": {
+   "maha_uniform": {
+    "chest_xray": 0.9714,
+    "pathology": 0.9878,
+    "fundus": 0.853,
+    "mammography": 0.7036,
+    "macro": 0.879,
+    "macro_ci": [
+     0.8676,
+     0.8898
+    ]
+   },
+   "maha_top3": {
+    "chest_xray": 0.9719,
+    "pathology": 0.9881,
+    "fundus": 0.8542,
+    "mammography": 0.6995,
+    "macro": 0.8784,
+    "macro_ci": [
+     0.8672,
+     0.8898
+    ]
+   },
+   "entropy_uniform": {
+    "chest_xray": 0.9707,
+    "pathology": 0.9879,
+    "fundus": 0.8515,
+    "mammography": 0.7061,
+    "macro": 0.8791,
+    "macro_ci": [
+     0.868,
+     0.8902
+    ]
+   },
+   "entropy_top3": {
+    "chest_xray": 0.9712,
+    "pathology": 0.9882,
+    "fundus": 0.8462,
+    "mammography": 0.7014,
+    "macro": 0.8767,
+    "macro_ci": [
+     0.8654,
+     0.8882
+    ]
+   },
+   "healthrouter": {
+    "chest_xray": 0.9719,
+    "pathology": 0.988,
+    "fundus": 0.8569,
+    "mammography": 0.7026,
+    "macro": 0.8799,
+    "macro_ci": [
+     0.8687,
+     0.8907
+    ]
+   },
+   "distance_fallback": {
+    "chest_xray": 0.9719,
+    "pathology": 0.9876,
+    "fundus": 0.8569,
+    "mammography": 0.7026,
+    "macro": 0.8798,
+    "macro_ci": [
+     0.8685,
+     0.8906
+    ]
+   }
+  },
+  "diff_minus_healthrouter": {
+   "maha_uniform": {
+    "value": -0.0009,
+    "ci": [
+     -0.0026,
+     0.0005
+    ]
+   },
+   "maha_top3": {
+    "value": -0.0014,
+    "ci": [
+     -0.0045,
+     0.0011
+    ]
+   },
+   "entropy_uniform": {
+    "value": -0.0008,
+    "ci": [
+     -0.0036,
+     0.0018
+    ]
+   },
+   "entropy_top3": {
+    "value": -0.0031,
+    "ci": [
+     -0.0063,
+     -0.0002
+    ]
+   },
+   "distance_fallback": {
+    "value": -0.0001,
+    "ci": [
+     -0.0003,
+     0.0001
+    ]
+   }
+  },
+  "flag_rate": {
+   "maha_uniform": {
+    "chest_xray": 0.0332,
+    "pathology": 0.0227,
+    "fundus": 0.0314,
+    "mammography": 0.032,
+    "all": 0.0273
+   },
+   "maha_top3": {
+    "chest_xray": 0.068,
+    "pathology": 0.0623,
+    "fundus": 0.0682,
+    "mammography": 0.0527,
+    "all": 0.0626
+   },
+   "entropy_uniform": {
+    "chest_xray": 0.0443,
+    "pathology": 0.0342,
+    "fundus": 0.0451,
+    "mammography": 0.0565,
+    "all": 0.0411
+   },
+   "entropy_top3": {
+    "chest_xray": 0.07,
+    "pathology": 0.0612,
+    "fundus": 0.0658,
+    "mammography": 0.089,
+    "all": 0.0678
+   },
+   "distance_fallback": {
+    "chest_xray": 0.0,
+    "pathology": 0.034,
+    "fundus": 0.0,
+    "mammography": 0.0,
+    "all": 0.0177
+   }
+  }
+ },
+ "missing_runs": [],
+ "status": "complete"
+}

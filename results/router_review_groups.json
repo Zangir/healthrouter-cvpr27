@@ -1,0 +1,21 @@
+{
+ "amendment": "router_plan.json amendment 9, R3b step 1",
+ "provenance": "scripts/router_review_groups.py",
+ "mammography_cbis_ddsm": {
+  "rows": 614,
+  "matched_file": 614,
+  "series_in_tcia": 614,
+  "unique_patient": 614,
+  "rows_with_several_local_copies": 8,
+  "patients": 329,
+  "mapping_complete": true,
+  "max_rows_per_patient": 4
+ },
+ "pathology_pcam": {
+  "rows": 2000,
+  "sha256_rows_verified": 2000,
+  "mapping_complete": true,
+  "slides": 129,
+  "max_rows_per_slide": 56
+ }
+}

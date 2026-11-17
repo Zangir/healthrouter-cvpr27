@@ -1,0 +1,360 @@
+{
+ "amendment": "router_plan.json amendment 7 (post-plan, external review request)",
+ "provenance": "scripts/router_review_extnr.py on cache/router/final_external.pkl and final_main.pkl",
+ "bootstrap": "stratified paired, 2,000 replicates; external seeds 31+task index (as router_external.json); in distribution seeds 17+task index, seed-averaged (as router_aggregate.py)",
+ "external_hr_minus_nr": {
+  "standard": {
+   "chest_xray": {
+    "healthrouter": 0.9466,
+    "neighbourhood_router": 0.9134,
+    "diff": 0.0332,
+    "ci": [
+     0.0054,
+     0.0634
+    ],
+    "n": 138
+   },
+   "pathology": {
+    "healthrouter": 0.9823,
+    "neighbourhood_router": 0.9823,
+    "diff": 0.0,
+    "ci": [
+     -0.0015,
+     0.0016
+    ],
+    "n": 1000
+   },
+   "fundus": {
+    "healthrouter": 0.6594,
+    "neighbourhood_router": 0.6327,
+    "diff": 0.0267,
+    "ci": [
+     -0.0136,
+     0.0636
+    ],
+    "n": 516
+   },
+   "mammography": {
+    "healthrouter": 0.4828,
+    "neighbourhood_router": 0.4757,
+    "diff": 0.007,
+    "ci": [
+     -0.029,
+     0.0448
+    ],
+    "n": 396
+   },
+   "macro": {
+    "healthrouter": 0.7678,
+    "neighbourhood_router": 0.751,
+    "ci": [
+     0.0012,
+     0.0309
+    ],
+    "diff": 0.0167
+   },
+   "calls": {
+    "healthrouter": 2.973,
+    "knn_router": 2.0
+   }
+  },
+  "grayscale": {
+   "chest_xray": {
+    "healthrouter": 0.9466,
+    "neighbourhood_router": 0.9134,
+    "diff": 0.0332,
+    "ci": [
+     0.0054,
+     0.0634
+    ],
+    "n": 138
+   },
+   "pathology": {
+    "healthrouter": 0.9797,
+    "neighbourhood_router": 0.9807,
+    "diff": -0.001,
+    "ci": [
+     -0.0038,
+     0.002
+    ],
+    "n": 1000
+   },
+   "fundus": {
+    "healthrouter": 0.4881,
+    "neighbourhood_router": 0.5298,
+    "diff": -0.0417,
+    "ci": [
+     -0.0878,
+     0.0014
+    ],
+    "n": 516
+   },
+   "mammography": {
+    "healthrouter": 0.4828,
+    "neighbourhood_router": 0.4757,
+    "diff": 0.007,
+    "ci": [
+     -0.029,
+     0.0448
+    ],
+    "n": 396
+   },
+   "macro": {
+    "healthrouter": 0.7243,
+    "neighbourhood_router": 0.7249,
+    "ci": [
+     -0.0178,
+     0.0159
+    ],
+    "diff": -0.0006
+   },
+   "calls": {
+    "healthrouter": 2.947,
+    "knn_router": 2.0
+   }
+  },
+  "blur": {
+   "chest_xray": {
+    "healthrouter": 0.8364,
+    "neighbourhood_router": 0.7636,
+    "diff": 0.0728,
+    "ci": [
+     0.0177,
+     0.125
+    ],
+    "n": 138
+   },
+   "pathology": {
+    "healthrouter": 0.9857,
+    "neighbourhood_router": 0.9854,
+    "diff": 0.0003,
+    "ci": [
+     -0.0012,
+     0.0018
+    ],
+    "n": 1000
+   },
+   "fundus": {
+    "healthrouter": 0.4633,
+    "neighbourhood_router": 0.4569,
+    "diff": 0.0064,
+    "ci": [
+     -0.0441,
+     0.0577
+    ],
+    "n": 516
+   },
+   "mammography": {
+    "healthrouter": 0.4785,
+    "neighbourhood_router": 0.484,
+    "diff": -0.0054,
+    "ci": [
+     -0.0429,
+     0.0316
+    ],
+    "n": 396
+   },
+   "macro": {
+    "healthrouter": 0.691,
+    "neighbourhood_router": 0.6725,
+    "ci": [
+     -0.0032,
+     0.0386
+    ],
+    "diff": 0.0185
+   },
+   "calls": {
+    "healthrouter": 3.018,
+    "knn_router": 2.0
+   }
+  },
+  "low_resolution": {
+   "chest_xray": {
+    "healthrouter": 0.7517,
+    "neighbourhood_router": 0.731,
+    "diff": 0.0207,
+    "ci": [
+     -0.0494,
+     0.0886
+    ],
+    "n": 138
+   },
+   "pathology": {
+    "healthrouter": 0.9836,
+    "neighbourhood_router": 0.9848,
+    "diff": -0.0012,
+    "ci": [
+     -0.003,
+     0.0006
+    ],
+    "n": 1000
+   },
+   "fundus": {
+    "healthrouter": 0.4204,
+    "neighbourhood_router": 0.4096,
+    "diff": 0.0108,
+    "ci": [
+     -0.0526,
+     0.0763
+    ],
+    "n": 516
+   },
+   "mammography": {
+    "healthrouter": 0.4836,
+    "neighbourhood_router": 0.4761,
+    "diff": 0.0075,
+    "ci": [
+     -0.0316,
+     0.0483
+    ],
+    "n": 396
+   },
+   "macro": {
+    "healthrouter": 0.6598,
+    "neighbourhood_router": 0.6504,
+    "ci": [
+     -0.0157,
+     0.0347
+    ],
+    "diff": 0.0094
+   },
+   "calls": {
+    "healthrouter": 3.073,
+    "knn_router": 2.0
+   }
+  },
+  "jpeg": {
+   "chest_xray": {
+    "healthrouter": 0.6647,
+    "neighbourhood_router": 0.6377,
+    "diff": 0.0269,
+    "ci": [
+     -0.0229,
+     0.0778
+    ],
+    "n": 138
+   },
+   "pathology": {
+    "healthrouter": 0.9684,
+    "neighbourhood_router": 0.9708,
+    "diff": -0.0024,
+    "ci": [
+     -0.0063,
+     0.0013
+    ],
+    "n": 1000
+   },
+   "fundus": {
+    "healthrouter": 0.2051,
+    "neighbourhood_router": 0.0863,
+    "diff": 0.1189,
+    "ci": [
+     0.0305,
+     0.2015
+    ],
+    "n": 516
+   },
+   "mammography": {
+    "healthrouter": 0.4795,
+    "neighbourhood_router": 0.4613,
+    "diff": 0.0181,
+    "ci": [
+     -0.0299,
+     0.0667
+    ],
+    "n": 396
+   },
+   "macro": {
+    "healthrouter": 0.5794,
+    "neighbourhood_router": 0.539,
+    "ci": [
+     0.0124,
+     0.0692
+    ],
+    "diff": 0.0404
+   },
+   "calls": {
+    "healthrouter": 3.062,
+    "knn_router": 2.0
+   }
+  }
+ },
+ "in_distribution": {
+  "harness": {
+   "macro": {
+    "value": 0.8773,
+    "ci": [
+     0.8657,
+     0.8888
+    ],
+    "seed_values": [
+     0.8742,
+     0.8696,
+     0.8881
+    ],
+    "seed_std": 0.0079
+   },
+   "calls": 1.813,
+   "ms": 42.73
+  },
+  "neighbourhood_router": {
+   "macro": {
+    "value": 0.8764,
+    "ci": [
+     0.8639,
+     0.8877
+    ],
+    "seed_values": [
+     0.8764,
+     0.8717,
+     0.8812
+    ],
+    "seed_std": 0.0039
+   },
+   "calls": 2.866,
+   "ms": 65.15
+  },
+  "diff_harness_minus_neighbourhood_router": {
+   "chest_xray": {
+    "value": -0.0023,
+    "ci": [
+     -0.0079,
+     0.0029
+    ],
+    "p_le_0": 0.818
+   },
+   "pathology": {
+    "value": -0.0009,
+    "ci": [
+     -0.0027,
+     0.0008
+    ],
+    "p_le_0": 0.8335
+   },
+   "fundus": {
+    "value": 0.0017,
+    "ci": [
+     -0.0091,
+     0.0125
+    ],
+    "p_le_0": 0.3555
+   },
+   "mammography": {
+    "value": 0.0049,
+    "ci": [
+     -0.0054,
+     0.0149
+    ],
+    "p_le_0": 0.1845
+   },
+   "macro": {
+    "value": 0.0009,
+    "ci": [
+     -0.0033,
+     0.0048
+    ],
+    "p_le_0": 0.3165
+   }
+  }
+ }
+}
