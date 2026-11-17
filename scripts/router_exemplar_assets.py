@@ -448,7 +448,22 @@ def supp_tables(main, gen, desc):
     for v, k in th:
         m = M[k]
         lines.append(f"$\\theta{{=}}{v:g}$ & {F3(m['macro']['value'])}{{\\ivsize\\,[{F3(m['macro']['ci'][0])},\\,{F3(m['macro']['ci'][1])}]}} & {m['invoked_mean']:.2f} & {m['latency_ms_mean']:.0f}\\\\")
+    # harness control (plan amendment 2026-11-17): same stop rule, fixed per-task order (validation ranking)
+    lines.append("\\midrule")
+    for k, lab in (("healthrouter_harness", "Harness, per-image order"), ("fixed_order_harness", "Harness, fixed per-task order")):
+        if k in M:
+            m = M[k]
+            lines.append(f"{lab} & {F3(m['macro']['value'])}{{\\ivsize\\,[{F3(m['macro']['ci'][0])},\\,{F3(m['macro']['ci'][1])}]}} & {m['invoked_mean']:.2f} & {m['latency_ms_mean']:.0f}\\\\")
     (A.PAPER / "tables" / "supp_sweeps_body.tex").write_text("\n".join(lines + ["\\bottomrule"]) + "\n")
+    if "fixed_order_harness" in M:
+        fo, hm, un = M["fixed_order_harness"], M["healthrouter_harness"], M["uniform_ensemble"]
+        A.put("fo_macro", fo["macro"]["value"], F3(fo["macro"]["value"]), "router_main.json methods.fixed_order_harness.macro.value", fo["macro"]["ci"])
+        A.put("fo_calls", fo["invoked_mean"], f"{fo['invoked_mean']:.2f}", "router_main.json methods.fixed_order_harness.invoked_mean")
+        A.put("fo_ms", fo["latency_ms_mean"], f"{fo['latency_ms_mean']:.1f}", "router_main.json methods.fixed_order_harness.latency_ms_mean")
+        fe = 100 * (1 - fo["invoked_mean"] / un["invoked_mean"])
+        A.put("fo_fewer_calls", fe, f"{fe:.0f}\\%", "100*(1 - fixed_order_harness.invoked_mean / uniform_ensemble.invoked_mean)")
+        H = A.load("router_main_harness.json")["differences_vs_healthrouter_harness"]["fixed_order_harness"]["macro"]
+        A.put("h_fixed", H["value"], f"{H['value']:.3f}", "router_main_harness.json differences_vs_healthrouter_harness.fixed_order_harness.macro", H["ci"])
     # S-T6: label-free inference
     L = desc["label_free"]
     lines = []

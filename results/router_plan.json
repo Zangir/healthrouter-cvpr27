@@ -191,6 +191,14 @@
    "changes": [
     "Duplicate audit (scripts/router_duplicates.py -> results/router_duplicates.json): count duplicated hashes and conflicting labels per pool; for the in-source pools, count (seed, fold) cases where copies of one image fall in both the training part (train_oof or validation) and the test fold; recompute HealthRouter's and every method's per-task score with all duplicated rows removed and report the difference; for IDRiD (external, test-only) recompute external per-task scores with duplicated rows removed."
    ]
+  },
+  {
+   "at": "2026-11-17T09:16:08+04:00 (local machine clock)",
+   "basis": "External review (user-approved, 2026-11-17). ALL TEST SCORING WAS ALREADY DONE; this amendment is logged before the two analyses below are run, and their results are reported whatever they show.",
+   "changes": [
+    "DES tuning: KNORA-U, KNORA-E and META-DES (DESlib, same region of competence in router-feature space, same dynamic selection set) choose the neighbourhood size k on validation from {5, 7, 10, 25, 50, 100} with the selection rule of every method (validation macro, ties to fewer invoked models); META-DES keeps Kp=5. The three methods are re-scored once on the test folds (in-source main, external, six-task) and replace the k=7 rows everywhere.",
+    "Harness control: the same confidence stop rule as the harness, but candidates are called in a FIXED per-task order (descending validation score of each candidate on that task) instead of HealthRouter's per-image order; theta and k_max are chosen on validation from the harness grid with the same rule. Reported as calls, ms and macro next to the harness, to split the call saving into early exit and per-image ordering."
+   ]
   }
  ],
  "timestamp_correction": "2026-11-11T13:45+04:00: the two amendment timestamps were originally typed by hand as 13:05 and 13:25. They are corrected here to the actual write times (amendment 2: file mtime 13:09:53; amendment 1: between 12:54:35 and 12:59:31 from the guard log and a shell timestamp). The content of both amendments is unchanged, and both precede the first test-scoring job (hr-final, started 13:11:44). The original frozen_at value (typed as 12:05) is likewise replaced by the guard-log bound: the plan was written before the first candidate-building job started at 12:09:33.",

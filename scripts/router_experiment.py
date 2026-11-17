@@ -20,6 +20,7 @@ from healthrouter.collection import candidates, data, methods, metrics
 ROOT = Path(__file__).resolve().parents[1]
 PLAN = json.loads((ROOT / "results" / "router_plan.json").read_text())
 GRID = PLAN["method"]["grid"]
+DES_K = (5, 7, 10, 25, 50, 100)  # plan amendment 2026-11-17 (was k = 7)
 
 
 def load_run(seed, fold, tasks, sizes=(224,), need_logme=False, zkey_encoder="dinov2_large"):
@@ -84,9 +85,10 @@ def families(run, splits, text_emb, cost):
         "soft_moe": lambda: methods.soft_moe(run, splits, GRID),
         "sparse_topk_moe": lambda: methods.sparse_moe(run, splits, GRID),
         "knn_router": lambda: methods.knn_router(run, splits),
-        "knora_u": lambda: methods.des(run, splits, "knora_u"),
-        "knora_e": lambda: methods.des(run, splits, "knora_e"),
-        "meta_des": lambda: methods.des(run, splits, "meta_des"),
+        "knora_u": lambda: methods.des(run, splits, "knora_u", ks=DES_K),
+        "knora_e": lambda: methods.des(run, splits, "knora_e", ks=DES_K),
+        "meta_des": lambda: methods.des(run, splits, "meta_des", ks=DES_K),
+        "fixed_order_harness": lambda: methods.fixed_order_harness(run, splits),
         "routerbench_mlp": lambda: methods.routerbench_mlp(run, splits, GRID),
         "routellm_mf": lambda: methods.routellm_mf(run, splits, GRID),
         "logme_selection": lambda: methods.logme_selection(run, splits),

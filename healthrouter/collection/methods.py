@@ -395,7 +395,13 @@ class _Lookup(ClassifierMixin, BaseEstimator):
         return True
 
 
-def des(run, splits, which):
+def des(run, splits, which, ks=(7,)):
+    """DESlib dynamic selection. ks: neighbourhood sizes; one result per k, chosen on validation
+    by the common rule (plan amendment of 2026-11-17: ks = (5, 7, 10, 25, 50, 100); before it, k = 7)."""
+    return [r for k in ks for r in _des_k(run, splits, which, k)]
+
+
+def _des_k(run, splits, which, k):
     _patch_deslib()
     from deslib.des import KNORAE, KNORAU, METADES
     cls = {"knora_u": KNORAU, "knora_e": KNORAE, "meta_des": METADES}[which]
@@ -411,12 +417,15 @@ def des(run, splits, which):
                                      ((offs[j] + np.arange(len(run[t][f"P_{sp}"]))) * scale)[:, None]])
         with warnings.catch_warnings():
             warnings.simplefilter("ignore")
-            m = cls(pool, k=7, random_state=run["seed"]) if which != "meta_des" else \
-                cls(pool, k=7, Kp=5, random_state=run["seed"])
+            m = cls(pool, k=k, random_state=run["seed"]) if which != "meta_des" else \
+                cls(pool, k=k, Kp=5, random_state=run["seed"])
             m.fit(X("tr", 0), run[t]["y_tr"])
             for j, sp in enumerate(splits, start=1):
                 Xs = X(sp, j)
                 P = m.predict_proba(Xs)
+                bad = ~np.isfinite(P).all(1)
+                if bad.any():  # no competent classifier (zero weights): use all candidates, as KNORA does
+                    P[bad] = run[t][f"P_{sp}"][bad].mean(1)
                 if which == "meta_des":
                     M = np.ones((len(P), len(pool)), bool)
                 else:
@@ -436,7 +445,7 @@ def des(run, splits, which):
                                 M[i] = True
                     M[~M.any(1)] = True
                 out[sp][t] = (P, M)
-    return [({"k": 7}, out)]
+    return [({"k": k}, out)]
 
 
 # ----------------------------------------------------------------------------- oracle
@@ -549,6 +558,35 @@ def smart_harness(run, splits, neighbours=(25, 50, 100), thetas=(0.5, 0.6, 0.7, 
                             M[np.where(sel)[0], rank[sp][t][sel, j]] = True
                         out[sp][t] = (fused, M)
                 res.append(({"neighbours": nn, "k_max": k_max, "theta": th}, out))
+    return res
+
+
+def fixed_order_harness(run, splits, thetas=(0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.99, 1.01), k_maxes=(2, 3, 5, 10)):
+    """Harness control (plan amendment of 2026-11-17): the harness's confidence stop rule, but candidates
+    are called in a FIXED per-task order (descending validation score on that task) instead of
+    HealthRouter's per-image order. No router features are needed. theta and k_max chosen on validation."""
+    rank = {t: np.argsort(-np.nan_to_num(val_metric_per_candidate(run, t, "va"), nan=-1.0)) for t in run["tasks"]}
+    cums = {sp: {} for sp in splits}
+    for sp in splits:
+        for t in run["tasks"]:
+            P = run[t][f"P_{sp}"][:, rank[t]]
+            cums[sp][t] = np.cumsum(P, 1) / np.arange(1, P.shape[1] + 1)[None, :, None]
+    res = []
+    for k_max in k_maxes:
+        for th in thetas:
+            out = {}
+            for sp in splits:
+                out[sp] = {}
+                for t in run["tasks"]:
+                    cum = cums[sp][t][:, :k_max]
+                    ok = cum.max(2) >= th
+                    n_call = np.where(ok.any(1), ok.argmax(1) + 1, k_max)
+                    fused = cum[np.arange(len(cum)), n_call - 1]
+                    M = np.zeros((len(cum), run["n_cand"]), bool)
+                    for j in range(k_max):
+                        M[n_call > j, rank[t][j]] = True
+                    out[sp][t] = (fused, M)
+            res.append(({"order": "fixed per task (validation)", "k_max": k_max, "theta": th}, out))
     return res
 
 

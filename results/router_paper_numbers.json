@@ -30,34 +30,34 @@
   "ci_text": "[0.009, 0.022]"
  },
  "d_knora_u": {
-  "value": 0.0407,
-  "text": "0.041",
+  "value": 0.0381,
+  "text": "0.038",
   "formula": "differences_vs_healthrouter.knora_u.macro",
   "ci": [
-   0.0301,
-   0.0518
+   0.0282,
+   0.0487
   ],
-  "ci_text": "[0.030, 0.052]"
+  "ci_text": "[0.028, 0.049]"
  },
  "d_meta_des": {
-  "value": 0.062,
-  "text": "0.062",
+  "value": 0.0569,
+  "text": "0.057",
   "formula": "differences_vs_healthrouter.meta_des.macro",
   "ci": [
-   0.0512,
-   0.0739
+   0.0461,
+   0.068
   ],
-  "ci_text": "[0.051, 0.074]"
+  "ci_text": "[0.046, 0.068]"
  },
  "d_knora_e": {
-  "value": 0.0778,
-  "text": "0.078",
+  "value": 0.0741,
+  "text": "0.074",
   "formula": "differences_vs_healthrouter.knora_e.macro",
   "ci": [
-   0.0652,
-   0.0906
+   0.0618,
+   0.0866
   ],
-  "ci_text": "[0.065, 0.091]"
+  "ci_text": "[0.062, 0.087]"
  },
  "d_stacking": {
   "value": 0.0056,
@@ -1715,8 +1715,8 @@
   "formula": "rank of healthrouter among the 20 methods in router_external.results.standard"
  },
  "ext_rank_harness_standard": {
-  "value": 11,
-  "text": "11",
+  "value": 12,
+  "text": "12",
   "formula": "rank of the harness among the 20 methods in router_external.results.standard"
  },
  "ext_hr_fundus_standard": {
@@ -1885,18 +1885,18 @@
   "formula": "abs(router_external.results.standard.modality_router_zeroshot_biomedclip.diff)"
  },
  "ext_d_knora_u_standard": {
-  "value": 0.0145,
-  "text": "0.015",
+  "value": 0.0109,
+  "text": "0.011",
   "formula": "router_external.results.standard.knora_u.diff",
   "ci": [
-   -0.0064,
-   0.0356
+   -0.0098,
+   0.032
   ],
-  "ci_text": "[-0.006, 0.036]"
+  "ci_text": "[-0.010, 0.032]"
  },
  "a_ext_d_knora_u_standard": {
-  "value": 0.0145,
-  "text": "0.015",
+  "value": 0.0109,
+  "text": "0.011",
   "formula": "abs(router_external.results.standard.knora_u.diff)"
  },
  "ext_d_healthrouter_harness_standard": {
@@ -2185,18 +2185,18 @@
   "formula": "abs(router_external.results.grayscale.modality_router_zeroshot_biomedclip.diff)"
  },
  "ext_d_knora_u_grayscale": {
-  "value": 0.0279,
-  "text": "0.028",
+  "value": 0.0205,
+  "text": "0.021",
   "formula": "router_external.results.grayscale.knora_u.diff",
   "ci": [
-   0.0037,
-   0.0511
+   -0.0035,
+   0.0436
   ],
-  "ci_text": "[0.004, 0.051]"
+  "ci_text": "[-0.004, 0.044]"
  },
  "a_ext_d_knora_u_grayscale": {
-  "value": 0.0279,
-  "text": "0.028",
+  "value": 0.0205,
+  "text": "0.021",
   "formula": "abs(router_external.results.grayscale.knora_u.diff)"
  },
  "ext_d_healthrouter_harness_grayscale": {
@@ -2485,18 +2485,18 @@
   "formula": "abs(router_external.results.blur.modality_router_zeroshot_biomedclip.diff)"
  },
  "ext_d_knora_u_blur": {
-  "value": -0.0204,
-  "text": "-0.020",
+  "value": -0.0246,
+  "text": "-0.025",
   "formula": "router_external.results.blur.knora_u.diff",
   "ci": [
-   -0.0467,
-   0.0065
+   -0.0492,
+   0.0014
   ],
-  "ci_text": "[-0.047, 0.006]"
+  "ci_text": "[-0.049, 0.001]"
  },
  "a_ext_d_knora_u_blur": {
-  "value": 0.0204,
-  "text": "0.020",
+  "value": 0.0246,
+  "text": "0.025",
   "formula": "abs(router_external.results.blur.knora_u.diff)"
  },
  "ext_d_healthrouter_harness_blur": {
@@ -2610,13 +2610,13 @@
   "formula": "number of the 20 methods present in router_external.results.low_resolution"
  },
  "ext_rank_hr_low_resolution": {
-  "value": 10,
-  "text": "10",
+  "value": 11,
+  "text": "11",
   "formula": "rank of healthrouter among the 20 methods in router_external.results.low_resolution"
  },
  "ext_rank_harness_low_resolution": {
-  "value": 12,
-  "text": "12",
+  "value": 13,
+  "text": "13",
   "formula": "rank of the harness among the 20 methods in router_external.results.low_resolution"
  },
  "ext_hr_fundus_low_resolution": {
@@ -2785,18 +2785,18 @@
   "formula": "abs(router_external.results.low_resolution.modality_router_zeroshot_biomedclip.diff)"
  },
  "ext_d_knora_u_low_resolution": {
-  "value": -0.0372,
-  "text": "-0.037",
+  "value": -0.0218,
+  "text": "-0.022",
   "formula": "router_external.results.low_resolution.knora_u.diff",
   "ci": [
-   -0.0687,
-   -0.0056
+   -0.051,
+   0.0085
   ],
-  "ci_text": "[-0.069, -0.006]"
+  "ci_text": "[-0.051, 0.009]"
  },
  "a_ext_d_knora_u_low_resolution": {
-  "value": 0.0372,
-  "text": "0.037",
+  "value": 0.0218,
+  "text": "0.022",
   "formula": "abs(router_external.results.low_resolution.knora_u.diff)"
  },
  "ext_d_healthrouter_harness_low_resolution": {
@@ -2910,8 +2910,8 @@
   "formula": "number of the 20 methods present in router_external.results.jpeg"
  },
  "ext_rank_hr_jpeg": {
-  "value": 11,
-  "text": "11",
+  "value": 12,
+  "text": "12",
   "formula": "rank of healthrouter among the 20 methods in router_external.results.jpeg"
  },
  "ext_rank_harness_jpeg": {
@@ -3085,18 +3085,18 @@
   "formula": "abs(router_external.results.jpeg.modality_router_zeroshot_biomedclip.diff)"
  },
  "ext_d_knora_u_jpeg": {
-  "value": -0.0587,
-  "text": "-0.059",
+  "value": -0.0607,
+  "text": "-0.061",
   "formula": "router_external.results.jpeg.knora_u.diff",
   "ci": [
-   -0.0975,
-   -0.0202
+   -0.0995,
+   -0.0231
   ],
-  "ci_text": "[-0.098, -0.020]"
+  "ci_text": "[-0.100, -0.023]"
  },
  "a_ext_d_knora_u_jpeg": {
-  "value": 0.0587,
-  "text": "0.059",
+  "value": 0.0607,
+  "text": "0.061",
   "formula": "abs(router_external.results.jpeg.knora_u.diff)"
  },
  "ext_d_healthrouter_harness_jpeg": {
@@ -3400,24 +3400,24 @@
   "ci_text": "[0.873, 0.889]"
  },
  "gen_knora_e": {
-  "value": 0.8214,
-  "text": "0.821",
+  "value": 0.824,
+  "text": "0.824",
   "formula": "router_general.methods.knora_e.macro",
   "ci": [
-   0.8126,
-   0.8298
+   0.8151,
+   0.8324
   ],
-  "ci_text": "[0.813, 0.830]"
+  "ci_text": "[0.815, 0.832]"
  },
  "gen_knora_u": {
-  "value": 0.854,
-  "text": "0.854",
+  "value": 0.8549,
+  "text": "0.855",
   "formula": "router_general.methods.knora_u.macro",
   "ci": [
-   0.8453,
-   0.8622
+   0.8461,
+   0.8632
   ],
-  "ci_text": "[0.845, 0.862]"
+  "ci_text": "[0.846, 0.863]"
  },
  "gen_logme_selection": {
   "value": 0.8777,
@@ -3430,14 +3430,14 @@
   "ci_text": "[0.870, 0.886]"
  },
  "gen_meta_des": {
-  "value": 0.8347,
-  "text": "0.835",
+  "value": 0.8397,
+  "text": "0.840",
   "formula": "router_general.methods.meta_des.macro",
   "ci": [
-   0.8263,
-   0.8434
+   0.831,
+   0.8483
   ],
-  "ci_text": "[0.826, 0.843]"
+  "ci_text": "[0.831, 0.848]"
  },
  "gen_modality_router_supervised": {
   "value": 0.8784,
@@ -3810,62 +3810,62 @@
   "formula": "abs(router_general.differences.knn_router.dtd)"
  },
  "gen_d_knora_e": {
-  "value": 0.0631,
-  "text": "0.063",
+  "value": 0.0605,
+  "text": "0.060",
   "formula": "router_general.differences.knora_e.macro",
   "ci": [
-   0.0545,
-   0.0717
+   0.0523,
+   0.0689
   ],
-  "ci_text": "[0.054, 0.072]"
+  "ci_text": "[0.052, 0.069]"
  },
  "a_gen_d_knora_e": {
-  "value": 0.0631,
-  "text": "0.063",
+  "value": 0.0605,
+  "text": "0.060",
   "formula": "abs(router_general.differences.knora_e.macro)"
  },
  "gen_d_knora_e_eurosat": {
-  "value": 0.0168,
-  "text": "0.017",
+  "value": 0.0151,
+  "text": "0.015",
   "formula": "router_general.differences.knora_e.eurosat",
   "ci": [
-   0.0107,
-   0.023
+   0.0092,
+   0.0215
   ],
-  "ci_text": "[0.011, 0.023]"
+  "ci_text": "[0.009, 0.021]"
  },
  "a_gen_d_knora_e_eurosat": {
-  "value": 0.0168,
-  "text": "0.017",
+  "value": 0.0151,
+  "text": "0.015",
   "formula": "abs(router_general.differences.knora_e.eurosat)"
  },
  "gen_d_knora_e_dtd": {
-  "value": 0.0501,
-  "text": "0.050",
+  "value": 0.0527,
+  "text": "0.053",
   "formula": "router_general.differences.knora_e.dtd",
   "ci": [
-   0.0416,
-   0.0582
+   0.0443,
+   0.0607
   ],
-  "ci_text": "[0.042, 0.058]"
+  "ci_text": "[0.044, 0.061]"
  },
  "a_gen_d_knora_e_dtd": {
-  "value": 0.0501,
-  "text": "0.050",
+  "value": 0.0527,
+  "text": "0.053",
   "formula": "abs(router_general.differences.knora_e.dtd)"
  },
  "gen_d_knora_u": {
-  "value": 0.0305,
+  "value": 0.0296,
   "text": "0.030",
   "formula": "router_general.differences.knora_u.macro",
   "ci": [
-   0.0233,
-   0.0378
+   0.0223,
+   0.037
   ],
-  "ci_text": "[0.023, 0.038]"
+  "ci_text": "[0.022, 0.037]"
  },
  "a_gen_d_knora_u": {
-  "value": 0.0305,
+  "value": 0.0296,
   "text": "0.030",
   "formula": "abs(router_general.differences.knora_u.macro)"
  },
@@ -3874,8 +3874,8 @@
   "text": "0.003",
   "formula": "router_general.differences.knora_u.eurosat",
   "ci": [
-   -0.0027,
-   0.0082
+   -0.0025,
+   0.008
   ],
   "ci_text": "[-0.003, 0.008]"
  },
@@ -3885,18 +3885,18 @@
   "formula": "abs(router_general.differences.knora_u.eurosat)"
  },
  "gen_d_knora_u_dtd": {
-  "value": 0.0154,
-  "text": "0.015",
+  "value": 0.0169,
+  "text": "0.017",
   "formula": "router_general.differences.knora_u.dtd",
   "ci": [
-   0.0075,
-   0.0231
+   0.0092,
+   0.0247
   ],
-  "ci_text": "[0.007, 0.023]"
+  "ci_text": "[0.009, 0.025]"
  },
  "a_gen_d_knora_u_dtd": {
-  "value": 0.0154,
-  "text": "0.015",
+  "value": 0.0169,
+  "text": "0.017",
   "formula": "abs(router_general.differences.knora_u.dtd)"
  },
  "gen_d_logme_selection": {
@@ -3945,48 +3945,48 @@
   "formula": "abs(router_general.differences.logme_selection.dtd)"
  },
  "gen_d_meta_des": {
-  "value": 0.0498,
-  "text": "0.050",
+  "value": 0.0448,
+  "text": "0.045",
   "formula": "router_general.differences.meta_des.macro",
   "ci": [
-   0.0421,
-   0.0575
+   0.037,
+   0.0527
   ],
-  "ci_text": "[0.042, 0.058]"
+  "ci_text": "[0.037, 0.053]"
  },
  "a_gen_d_meta_des": {
-  "value": 0.0498,
-  "text": "0.050",
+  "value": 0.0448,
+  "text": "0.045",
   "formula": "abs(router_general.differences.meta_des.macro)"
  },
  "gen_d_meta_des_eurosat": {
-  "value": 0.0006,
-  "text": "0.001",
+  "value": -0.0014,
+  "text": "-0.001",
   "formula": "router_general.differences.meta_des.eurosat",
   "ci": [
-   -0.0045,
-   0.0058
+   -0.0063,
+   0.0037
   ],
-  "ci_text": "[-0.004, 0.006]"
+  "ci_text": "[-0.006, 0.004]"
  },
  "a_gen_d_meta_des_eurosat": {
-  "value": 0.0006,
+  "value": 0.0014,
   "text": "0.001",
   "formula": "abs(router_general.differences.meta_des.eurosat)"
  },
  "gen_d_meta_des_dtd": {
-  "value": 0.0605,
-  "text": "0.060",
+  "value": 0.0236,
+  "text": "0.024",
   "formula": "router_general.differences.meta_des.dtd",
   "ci": [
-   0.0512,
-   0.0698
+   0.0166,
+   0.0309
   ],
-  "ci_text": "[0.051, 0.070]"
+  "ci_text": "[0.017, 0.031]"
  },
  "a_gen_d_meta_des_dtd": {
-  "value": 0.0605,
-  "text": "0.060",
+  "value": 0.0236,
+  "text": "0.024",
   "formula": "abs(router_general.differences.meta_des.dtd)"
  },
  "gen_d_modality_router_supervised": {
@@ -4580,24 +4580,24 @@
   "ci_text": "[0.816, 0.840]"
  },
  "gen_knora_e_eurosat": {
-  "value": 0.943,
-  "text": "0.943",
+  "value": 0.9447,
+  "text": "0.945",
   "formula": "router_general.methods.knora_e.per_task.eurosat",
   "ci": [
-   0.935,
-   0.9507
+   0.9365,
+   0.9522
   ],
-  "ci_text": "[0.935, 0.951]"
+  "ci_text": "[0.936, 0.952]"
  },
  "gen_knora_e_dtd": {
-  "value": 0.7769,
-  "text": "0.777",
+  "value": 0.7743,
+  "text": "0.774",
   "formula": "router_general.methods.knora_e.per_task.dtd",
   "ci": [
-   0.7631,
-   0.7895
+   0.7604,
+   0.7874
   ],
-  "ci_text": "[0.763, 0.789]"
+  "ci_text": "[0.760, 0.787]"
  },
  "gen_knora_u_eurosat": {
   "value": 0.9572,
@@ -4605,19 +4605,19 @@
   "formula": "router_general.methods.knora_u.per_task.eurosat",
   "ci": [
    0.9492,
-   0.9647
+   0.9645
   ],
   "ci_text": "[0.949, 0.965]"
  },
  "gen_knora_u_dtd": {
-  "value": 0.8116,
-  "text": "0.812",
+  "value": 0.8101,
+  "text": "0.810",
   "formula": "router_general.methods.knora_u.per_task.dtd",
   "ci": [
-   0.7977,
-   0.8244
+   0.7957,
+   0.8223
   ],
-  "ci_text": "[0.798, 0.824]"
+  "ci_text": "[0.796, 0.822]"
  },
  "gen_logme_selection_eurosat": {
   "value": 0.9563,
@@ -4640,24 +4640,24 @@
   "ci_text": "[0.817, 0.842]"
  },
  "gen_meta_des_eurosat": {
-  "value": 0.9592,
-  "text": "0.959",
+  "value": 0.9612,
+  "text": "0.961",
   "formula": "router_general.methods.meta_des.per_task.eurosat",
   "ci": [
-   0.9512,
-   0.9662
+   0.9533,
+   0.9678
   ],
-  "ci_text": "[0.951, 0.966]"
+  "ci_text": "[0.953, 0.968]"
  },
  "gen_meta_des_dtd": {
-  "value": 0.7665,
-  "text": "0.766",
+  "value": 0.8034,
+  "text": "0.803",
   "formula": "router_general.methods.meta_des.per_task.dtd",
   "ci": [
-   0.7521,
-   0.7791
+   0.7892,
+   0.8157
   ],
-  "ci_text": "[0.752, 0.779]"
+  "ci_text": "[0.789, 0.816]"
  },
  "gen_modality_router_supervised_eurosat": {
   "value": 0.9597,
@@ -4864,6 +4864,21 @@
   "text": "1",
   "formula": "rank of healthrouter by 6-task macro in router_general"
  },
+ "bench_released_sources": {
+  "value": 6,
+  "text": "6",
+  "formula": "benchmark_comparison.json ours.released_sources"
+ },
+ "bench_sources_total": {
+  "value": 10,
+  "text": "10",
+  "formula": "benchmark_comparison.json ours.sources_total"
+ },
+ "bench_n_compared": {
+  "value": 9,
+  "text": "9",
+  "formula": "len(benchmark_comparison.json rows) + ours"
+ },
  "d_uniform_chest_xray": {
   "value": 0.0206,
   "text": "+0.021",
@@ -4914,6 +4929,131 @@
   ],
   "ci_text": "[0.006, 0.019]"
  },
+ "hr_rank_chest_xray": {
+  "value": 1,
+  "text": "1",
+  "formula": "1 + #(Table 1 rows with per_task.chest_xray.value > healthrouter) (router_main.json)"
+ },
+ "hr_rank_pathology": {
+  "value": 3,
+  "text": "3",
+  "formula": "1 + #(Table 1 rows with per_task.pathology.value > healthrouter) (router_main.json)"
+ },
+ "hr_rank_fundus": {
+  "value": 2,
+  "text": "2",
+  "formula": "1 + #(Table 1 rows with per_task.fundus.value > healthrouter) (router_main.json)"
+ },
+ "hr_rank_mammography": {
+  "value": 3,
+  "text": "3",
+  "formula": "1 + #(Table 1 rows with per_task.mammography.value > healthrouter) (router_main.json)"
+ },
+ "hr_rank_worst_task": {
+  "value": 3,
+  "text": "3",
+  "formula": "max_t hr_rank_t"
+ },
+ "m_macro_best_single_overall": {
+  "value": 0.8318,
+  "text": "0.832",
+  "formula": "router_main.json methods.best_single_overall.macro.value"
+ },
+ "m_macro_best_single_per_task": {
+  "value": 0.8626,
+  "text": "0.863",
+  "formula": "router_main.json methods.best_single_per_task.macro.value"
+ },
+ "m_macro_best_single_per_task_oof": {
+  "value": 0.8582,
+  "text": "0.858",
+  "formula": "router_main.json methods.best_single_per_task_oof.macro.value"
+ },
+ "m_macro_uniform_ensemble": {
+  "value": 0.8673,
+  "text": "0.867",
+  "formula": "router_main.json methods.uniform_ensemble.macro.value"
+ },
+ "m_macro_stacking": {
+  "value": 0.8742,
+  "text": "0.874",
+  "formula": "router_main.json methods.stacking.macro.value"
+ },
+ "m_macro_greedy_ensemble_selection": {
+  "value": 0.8747,
+  "text": "0.875",
+  "formula": "router_main.json methods.greedy_ensemble_selection.macro.value"
+ },
+ "m_macro_logme_selection": {
+  "value": 0.8664,
+  "text": "0.866",
+  "formula": "router_main.json methods.logme_selection.macro.value"
+ },
+ "m_macro_modality_router_supervised": {
+  "value": 0.8698,
+  "text": "0.870",
+  "formula": "router_main.json methods.modality_router_supervised.macro.value"
+ },
+ "m_macro_modality_router_supervised_oof": {
+  "value": 0.8729,
+  "text": "0.873",
+  "formula": "router_main.json methods.modality_router_supervised_oof.macro.value"
+ },
+ "m_macro_modality_router_zeroshot_biomedclip": {
+  "value": 0.8698,
+  "text": "0.870",
+  "formula": "router_main.json methods.modality_router_zeroshot_biomedclip.macro.value"
+ },
+ "m_macro_soft_moe": {
+  "value": 0.8692,
+  "text": "0.869",
+  "formula": "router_main.json methods.soft_moe.macro.value"
+ },
+ "m_macro_sparse_topk_moe": {
+  "value": 0.8645,
+  "text": "0.865",
+  "formula": "router_main.json methods.sparse_topk_moe.macro.value"
+ },
+ "m_macro_knora_u": {
+  "value": 0.8417,
+  "text": "0.842",
+  "formula": "router_main.json methods.knora_u.macro.value"
+ },
+ "m_macro_knora_e": {
+  "value": 0.8057,
+  "text": "0.806",
+  "formula": "router_main.json methods.knora_e.macro.value"
+ },
+ "m_macro_meta_des": {
+  "value": 0.8229,
+  "text": "0.823",
+  "formula": "router_main.json methods.meta_des.macro.value"
+ },
+ "m_macro_knn_router": {
+  "value": 0.8764,
+  "text": "0.876",
+  "formula": "router_main.json methods.knn_router.macro.value"
+ },
+ "m_macro_routerbench_mlp": {
+  "value": 0.868,
+  "text": "0.868",
+  "formula": "router_main.json methods.routerbench_mlp.macro.value"
+ },
+ "m_macro_routellm_mf": {
+  "value": 0.8697,
+  "text": "0.870",
+  "formula": "router_main.json methods.routellm_mf.macro.value"
+ },
+ "m_macro_healthrouter": {
+  "value": 0.8798,
+  "text": "0.880",
+  "formula": "router_main.json methods.healthrouter.macro.value"
+ },
+ "m_macro_healthrouter_harness": {
+  "value": 0.8773,
+  "text": "0.877",
+  "formula": "router_main.json methods.healthrouter_harness.macro.value"
+ },
  "sel_imagenet_convnext": {
   "value": 14.79235018238666,
   "text": "15\\%",
@@ -4963,6 +5103,41 @@
   "value": 23.11275664408546,
   "text": "23\\%",
   "formula": "sum_t selection_frequency[t][enc]*n_t / sum_t n_t (router_main.json)"
+ },
+ "fo_macro": {
+  "value": 0.869,
+  "text": "0.869",
+  "formula": "router_main.json methods.fixed_order_harness.macro.value",
+  "ci": [
+   0.8568,
+   0.8812
+  ],
+  "ci_text": "[0.857, 0.881]"
+ },
+ "fo_calls": {
+  "value": 1.825,
+  "text": "1.82",
+  "formula": "router_main.json methods.fixed_order_harness.invoked_mean"
+ },
+ "fo_ms": {
+  "value": 38.19,
+  "text": "38.2",
+  "formula": "router_main.json methods.fixed_order_harness.latency_ms_mean"
+ },
+ "fo_fewer_calls": {
+  "value": 81.75,
+  "text": "82\\%",
+  "formula": "100*(1 - fixed_order_harness.invoked_mean / uniform_ensemble.invoked_mean)"
+ },
+ "h_fixed": {
+  "value": 0.0083,
+  "text": "0.008",
+  "formula": "router_main_harness.json differences_vs_healthrouter_harness.fixed_order_harness.macro",
+  "ci": [
+   0.0026,
+   0.0139
+  ],
+  "ci_text": "[0.003, 0.014]"
  },
  "lf_in_distribution_healthrouter_labelfree": {
   "value": 0.8798,
