@@ -97,7 +97,7 @@ Logged in `results/router_plan.json` after all test scoring. They change no conf
 The rest of this section is the benchmark suite on which the candidate pool is built.
 
 
-All rows are measured by this release on one laptop. Bracketed intervals are stratified item bootstraps on fixed evaluation items; they do not include retraining or population variability.
+All rows are measured by this release on a single GPU with 16 GB of memory. Bracketed intervals are stratified item bootstraps on fixed evaluation items; they do not include retraining or population variability.
 
 ### Q1: no frozen encoder serves every modality (matched-resolution grid)
 
@@ -186,7 +186,7 @@ python scripts/router_schematic.py                                    # method f
 python scripts/router_paper_assets.py path/to/paper                   # tables, figures, derived numbers (calls router_exemplar_assets.py)
 ```
 
-Every step caches and resumes. On a 16 GB laptop, run one step at a time.
+Every step caches and resumes. On a single 16 GB GPU, run one step at a time.
 
 ### Benchmark suite
 
@@ -228,7 +228,7 @@ python scripts/cvpr_figures.py
 
 Every step caches its intermediate arrays on disk and resumes after an interruption. The same one-step-at-a-time advice applies.
 
-The whole suite takes 1691.49 s on one Apple M2 Pro laptop (938.39 s of that is the four-encoder grid, 143.85 s the executed dispatch). The probe and grid pin RAD-DINO revision `110cbc18d5133582e320b43d53bf5c44e410c936` and download `facebook/dinov2-base` and `facebook/dinov2-large` from the Hugging Face Hub. `--seed` controls process seeding and router-baseline fitting. The committed bootstrap and router-subset paths use the recorded seed 2026. Supplied neural checkpoints are evaluated frozen, and intervals resample fixed evaluation items rather than repeated training seeds.
+The whole suite takes 1691.49 s on a single GPU with 16 GB of memory (938.39 s of that is the four-encoder grid, 143.85 s the executed dispatch). The probe and grid pin RAD-DINO revision `110cbc18d5133582e320b43d53bf5c44e410c936` and download `facebook/dinov2-base` and `facebook/dinov2-large` from the Hugging Face Hub. `--seed` controls process seeding and router-baseline fitting. The committed bootstrap and router-subset paths use the recorded seed 2026. Supplied neural checkpoints are evaluated frozen, and intervals resample fixed evaluation items rather than repeated training seeds.
 
 To regenerate only the release visuals, no image data or checkpoint is needed:
 
